@@ -16,4 +16,9 @@ and by `DEPGRAPH.md`. Rulings are made only by the author. Entries are append-on
 
 ## Decided
 
-(none yet)
+| ID | Date | Ruling (by the author, Ewain Gwynne) | Record |
+|----|------|--------------------------------------|--------|
+| R1 | 2026-10-28 | Batch 1A: all 14 definitions approved exactly as written, together with the 8 conventions listed in the packet (offspring-law encoding with 0-indexed types; `ℙ_k = pathLaw μ (single k 1)`; one-generation quantities via `μ k`; `f` on `[0,∞]^ι`, `g` on `[-∞,∞]^ι`; finiteness of `M` inside `IsSubcritical`, `ρ` = complex spectral radius; sup norm in (2.9); `N ≥ 1`; Def 1.1 context not inside `IsConjugate`). | `review/batch-1A.md` |
+| R2 | 2026-10-28 | Anchor surface: freeze roots and definitions only (≈25 declarations). Numbered lemmas are proved as audited dependency-graph nodes without frozen statements. | this table |
+| R3 | 2026-10-28 | Theorem 1.4 is split into three anchors: (i) fixed point in `(1,∞)^d`; (ii) a conjugate exists; (iii) the equivalence of paper.tex:238. Each anchor's witness is independent. | this table |
+| R4 | 2026-10-28 | Example 1.5 is anchored as "at least three distinct fixed points in `(1,∞)²`" (plus the hypotheses of Thm 1.4). | this table |

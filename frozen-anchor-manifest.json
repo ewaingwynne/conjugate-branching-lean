@@ -1,0 +1,524 @@
+{
+  "schema_version": 1,
+  "manifest_state": "AUTHOR_APPROVED",
+  "seal_limits": {
+    "max_body_lines": 3,
+    "max_body_bytes": 240
+  },
+  "anchors": [
+    {
+      "id": "def.populationMeasurableSpace.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:176,402,427,915-918"
+      },
+      "contract": {
+        "id": "paper.def.populationMeasurableSpace",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+      "export": "Conjugate.populationMeasurableSpace",
+      "split_policy": {
+        "source_group": "paper.def.populationMeasurableSpace",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "98d6e8f17a8fbbf47f2376e7f4b24e45caeebc5a06a5eae8bbb2a81a7deb1613",
+      "definition_closure": [],
+      "state": "SEALED",
+      "full_file_sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+    },
+    {
+      "id": "def.stepKernel.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:176-177"
+      },
+      "contract": {
+        "id": "paper.def.stepKernel",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+      "export": "Conjugate.stepKernel",
+      "split_policy": {
+        "source_group": "paper.def.stepKernel",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "adde03310e606b6255e52a5077af0424ba2bc245679ea0e947f3f0c43b928a7a",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        }
+      ],
+      "state": "SEALED",
+      "full_file_sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
+    },
+    {
+      "id": "def.pathLaw.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:176-177"
+      },
+      "contract": {
+        "id": "paper.def.pathLaw",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/PathLaw.lean",
+      "export": "Conjugate.pathLaw",
+      "split_policy": {
+        "source_group": "paper.def.pathLaw",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "2372048aaa8bc54fbfa32e7bd267288703d52bd79a97acbf3e07309474f3d1a1",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
+        }
+      ],
+      "state": "SEALED",
+      "full_file_sha256": "da3c41021d0dc5c517288c78b0f194b220817bd7cf77ac4b39ab34cef5ce9cc6"
+    },
+    {
+      "id": "def.extinctionEvent.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:179,930"
+      },
+      "contract": {
+        "id": "paper.def.extinctionEvent",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/ExtinctionEvent.lean",
+      "export": "Conjugate.extinctionEvent",
+      "split_policy": {
+        "source_group": "paper.def.extinctionEvent",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "029afe3845b4a340f7f51ca5ad0c46ac5c86167dee9a1668f6910cc3bcdfcace",
+      "definition_closure": [],
+      "state": "SEALED",
+      "full_file_sha256": "fe1efe0e9bdf068c18aef68988adf2854179fbff15df6502b62635e14bc0fa47"
+    },
+    {
+      "id": "def.IsConjugate.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:184-187,934"
+      },
+      "contract": {
+        "id": "paper.def.IsConjugate",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/IsConjugate.lean",
+      "export": "Conjugate.IsConjugate",
+      "split_policy": {
+        "source_group": "paper.def.IsConjugate",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "f6bcafcfaf8bd0ae3f9ee76d0e290d7c7ae70a0c175ef00027da56e0a789c22d",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/PathLaw.lean",
+          "sha256": "da3c41021d0dc5c517288c78b0f194b220817bd7cf77ac4b39ab34cef5ce9cc6"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/ExtinctionEvent.lean",
+          "sha256": "fe1efe0e9bdf068c18aef68988adf2854179fbff15df6502b62635e14bc0fa47"
+        }
+      ],
+      "state": "SEALED",
+      "full_file_sha256": "3fb0bd6923c1b24591c62bb8d8639a1d7b80333a7902009580400cf43e441fd8"
+    },
+    {
+      "id": "def.genFun.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:203-208,919-925"
+      },
+      "contract": {
+        "id": "paper.def.genFun",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/GenFun.lean",
+      "export": "Conjugate.genFun",
+      "split_policy": {
+        "source_group": "paper.def.genFun",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "5d96211315214940f56bc4128ab12c73b79fa91d079d185c1f50b4be8f3b0d1c",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        }
+      ],
+      "state": "SEALED",
+      "full_file_sha256": "1a22b82acfb5cff23c59854bc9b66b00dd4260b67d958222ad02eb7de44668bf"
+    },
+    {
+      "id": "def.meanMatrix.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:215-218"
+      },
+      "contract": {
+        "id": "paper.def.meanMatrix",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/MeanMatrix.lean",
+      "export": "Conjugate.meanMatrix",
+      "split_policy": {
+        "source_group": "paper.def.meanMatrix",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "dff61f8e61cbe15e3579255adc6f1d37b5baa6abcd5ae5f6899ace77e6f66cbb",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        }
+      ],
+      "state": "SEALED",
+      "full_file_sha256": "acb7f93d0e972be3731d87cffee397f367d0c52d9fa2f1560d3028fbe9c7e2b5"
+    },
+    {
+      "id": "def.IsSubcritical.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:219-220"
+      },
+      "contract": {
+        "id": "paper.def.IsSubcritical",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/IsSubcritical.lean",
+      "export": "Conjugate.IsSubcritical",
+      "split_policy": {
+        "source_group": "paper.def.IsSubcritical",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "e70d8da7c37614b34bd483024a839f1be91c19ee7b6bd021bdd6c99df38a5e4a",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/MeanMatrix.lean",
+          "sha256": "acb7f93d0e972be3731d87cffee397f367d0c52d9fa2f1560d3028fbe9c7e2b5"
+        }
+      ],
+      "state": "SEALED",
+      "full_file_sha256": "bb474e3f83aec86690ec5a37f5e2adc99c158eadbb769f08b5b9f66cd2e137d9"
+    },
+    {
+      "id": "def.IsPositiveRegular.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:225-229"
+      },
+      "contract": {
+        "id": "paper.def.IsPositiveRegular",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/IsPositiveRegular.lean",
+      "export": "Conjugate.IsPositiveRegular",
+      "split_policy": {
+        "source_group": "paper.def.IsPositiveRegular",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "e05d2b9a55ef42cf5628e1a4460361152c5d0f0c198614c69ef3e769a4291435",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/PathLaw.lean",
+          "sha256": "da3c41021d0dc5c517288c78b0f194b220817bd7cf77ac4b39ab34cef5ce9cc6"
+        }
+      ],
+      "state": "SEALED",
+      "full_file_sha256": "dd1a38384b357f7bff350bb621e702d085efd61b189bbe036c4b749537fe207e"
+    },
+    {
+      "id": "def.IsNonsingular.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:230-233"
+      },
+      "contract": {
+        "id": "paper.def.IsNonsingular",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/IsNonsingular.lean",
+      "export": "Conjugate.IsNonsingular",
+      "split_policy": {
+        "source_group": "paper.def.IsNonsingular",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "246bd29740c5ec0b8a051ef2c5dd283b578c5d27bcb90febab7318df7452d5d9",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        }
+      ],
+      "state": "SEALED",
+      "full_file_sha256": "d8fd9ff4b76adf424094de86fa62b57ba7772359f700266707954f07b548edf9"
+    },
+    {
+      "id": "def.logGenFun.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:533-546,991-995"
+      },
+      "contract": {
+        "id": "paper.def.logGenFun",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/LogGenFun.lean",
+      "export": "Conjugate.logGenFun",
+      "split_policy": {
+        "source_group": "paper.def.logGenFun",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "6323bd49d4d920a8615979bad829c80575e5cb2287b49079f468a1078067da2a",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/GenFun.lean",
+          "sha256": "1a22b82acfb5cff23c59854bc9b66b00dd4260b67d958222ad02eb7de44668bf"
+        }
+      ],
+      "state": "SEALED",
+      "full_file_sha256": "57452a0d55fcb2e3fa107f7ed558ca1ce015216c4ed1296a063a79c1b28e16cb"
+    },
+    {
+      "id": "def.basinZero.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:726-729"
+      },
+      "contract": {
+        "id": "paper.def.basinZero",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/BasinZero.lean",
+      "export": "Conjugate.basinZero",
+      "split_policy": {
+        "source_group": "paper.def.basinZero",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "f2c0dd7ccb2b062e31b279ed5f2ef546f4ff7baed6bab7b69c5125a00dfbb702",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/GenFun.lean",
+          "sha256": "1a22b82acfb5cff23c59854bc9b66b00dd4260b67d958222ad02eb7de44668bf"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/LogGenFun.lean",
+          "sha256": "57452a0d55fcb2e3fa107f7ed558ca1ce015216c4ed1296a063a79c1b28e16cb"
+        }
+      ],
+      "state": "SEALED",
+      "full_file_sha256": "c31018d93c7010079063064cabda2ec63a270d6211f04cf3273e002df8a06ab6"
+    },
+    {
+      "id": "def.basinInfty.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:726-729"
+      },
+      "contract": {
+        "id": "paper.def.basinInfty",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/BasinInfty.lean",
+      "export": "Conjugate.basinInfty",
+      "split_policy": {
+        "source_group": "paper.def.basinInfty",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "5b77ae3e04c31f9db7d9bdc3f5c0959e35d4398ebc99896298879a88133e8a0c",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/GenFun.lean",
+          "sha256": "1a22b82acfb5cff23c59854bc9b66b00dd4260b67d958222ad02eb7de44668bf"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/LogGenFun.lean",
+          "sha256": "57452a0d55fcb2e3fa107f7ed558ca1ce015216c4ed1296a063a79c1b28e16cb"
+        }
+      ],
+      "state": "SEALED",
+      "full_file_sha256": "ba673f4b6871d357325e6db45dd89bf35641b077f69c1c53912477cff108d7e2"
+    },
+    {
+      "id": "def.truncate.v1",
+      "kind": "definition",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-1A.md; ERRATA.md R1",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:937-948"
+      },
+      "contract": {
+        "id": "paper.def.truncate",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Defs/Truncate.lean",
+      "export": "Conjugate.truncate",
+      "split_policy": {
+        "source_group": "paper.def.truncate",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R1"
+      },
+      "abi_sha256": "8c0eb7b86da143d341441e880b49fe6eb178b6132f157ba5ed5f491598122531",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        }
+      ],
+      "state": "SEALED",
+      "full_file_sha256": "e2dab0ff3f095ca03d4ef14b4711858e2d6e3f3cff92fed93855df6fd27e67d9"
+    }
+  ]
+}

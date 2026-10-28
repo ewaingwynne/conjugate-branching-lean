@@ -8,6 +8,8 @@ Subcommands (run from the project root):
                       elaborated type, and (for definitions) elaborated value,
                       rendered with `Expr.dbgToString`. The hash is what the
                       manifest stores as `abi_sha256`.
+  abi-many MODULE:DECL...  ABI hashes of several declarations in one Lean run.
+  verify-abi MANIFEST Recompute every anchor's ABI hash and fail on any drift.
   axioms MODULE DECL  Run `#print axioms DECL` and report the axiom list.
   sha FILE...         SHA-256 of raw file bytes (for `full_file_sha256`).
   regions FILE        SHA-256 of the frozen prefix and suffix of a theorem file.
@@ -109,8 +111,38 @@ def regions(path: str) -> None:
                       "body": text[body_start:body_end]}))
 
 
+def abi_many(pairs: list[tuple[str, str]]) -> dict[str, str]:
+    """ABI hashes for several (module, decl) pairs in a single Lean run."""
+    imports = "\n".join(sorted({f"import {module}" for module, _ in pairs}))
+    body = ABI_PROBE.split("\n", 1)[1]
+    blocks = [body.format(module="", decl=decl).replace("ABI_BEGIN", f"ABI_BEGIN {decl}")
+              for _, decl in pairs]
+    out = run_probe(imports + "\n" + "\n".join(blocks))
+    found = dict(re.findall(r"ABI_BEGIN (\S+)\n(.*?)\nABI_END", out, re.S))
+    missing = [decl for _, decl in pairs if decl not in found]
+    if missing:
+        raise SystemExit(f"probe produced no ABI record for {missing}")
+    return {decl: hashlib.sha256(record.encode()).hexdigest() for decl, record in found.items()}
+
+
+def verify_abi(manifest: str) -> None:
+    """Recompute every anchor's ABI hash and compare it with the manifest."""
+    data = json.loads(Path(manifest).read_text(encoding="utf-8"))
+    pairs = [(".".join(Path(a["path"]).with_suffix("").parts), a["export"]) for a in data["anchors"]]
+    actual = abi_many(pairs)
+    bad = [a["export"] for a in data["anchors"] if actual[a["export"]] != a["abi_sha256"]]
+    if bad:
+        raise SystemExit(f"ABI hash drift: {bad}")
+    print(f"ABI OK ({len(pairs)} anchors)")
+
+
 def main(argv: list[str]) -> None:
-    if len(argv) >= 3 and argv[0] == "abi":
+    if len(argv) >= 2 and argv[0] == "verify-abi":
+        verify_abi(argv[1])
+    elif len(argv) >= 2 and argv[0] == "abi-many":
+        pairs = [tuple(item.split(":", 1)) for item in argv[1:]]
+        print(json.dumps(abi_many(pairs), indent=1))
+    elif len(argv) >= 3 and argv[0] == "abi":
         abi(argv[1], argv[2])
     elif len(argv) >= 3 and argv[0] == "axioms":
         axioms(argv[1], argv[2])

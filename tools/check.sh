@@ -25,6 +25,10 @@ fi
 if [[ -f frozen-anchor-manifest.json ]]; then
   echo "== frozen anchors"
   python3 -I tools/check_frozen_anchors.py --root . --manifest frozen-anchor-manifest.json
+  if [[ "${1:-}" != "--quick" ]]; then
+    echo "== elaborated ABI hashes"
+    python3 -I tools/leanprobe.py verify-abi frozen-anchor-manifest.json
+  fi
 else
   echo "== frozen anchors: no manifest yet; checking for stray placeholders"
   if grep -rnwE 'sorry|admit' --include='*.lean' Conjugate; then
