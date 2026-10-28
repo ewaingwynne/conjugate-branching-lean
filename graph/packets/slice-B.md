@@ -18,9 +18,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: EXTERNAL
 LEAN_REF: -
 LEAN_NOTE: -
@@ -44,9 +44,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: EXTERNAL
 LEAN_REF: -
 LEAN_NOTE: -
@@ -70,9 +70,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: EXTERNAL
 LEAN_REF: -
 LEAN_NOTE: -
@@ -96,9 +96,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: EXTERNAL
 LEAN_REF: -
 LEAN_NOTE: -
@@ -122,9 +122,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: EXTERNAL
 LEAN_REF: -
 LEAN_NOTE: -
@@ -148,9 +148,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: EXTERNAL
 LEAN_REF: -
 LEAN_NOTE: -
@@ -174,9 +174,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: EXTERNAL
 LEAN_REF: -
 LEAN_NOTE: -
@@ -202,9 +202,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: ext:jl08-thm1 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-cond-on-ext.cond-law@L405-L405 | proof cites [jl-cond-on-ext, Theorem 1] for the description of the conditional law of X given E, i.e. formula (2.1)
 EDGE: ext:an72-v3-thm2 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-cond-on-ext.cond-law@L405-L405 | proof cites [an-branching-processes, Theorem 2, Section V.3] for the properties of a (a is a fixed point of f, so that (2.1) defines probability laws)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -231,9 +231,9 @@ ROUTE_FOR: -
 EDGE: prop-conjugate#offspring-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate@L430-L430 | first proof sentence: (2.2) defines a genuine offspring law, which is the existence assertion of the statement
 EDGE: prop-conjugate#ext-prob-hat | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate@L431-L431 | proof concludes that 1/A is the vector of extinction probabilities of X-hat
 EDGE: prop-conjugate#cond-law-hat | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate@L431-L431 | proof concludes that the conditional law of X-hat given extinction is the law of X
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -258,9 +258,9 @@ DEPS: eqn-generating-function
 ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-generating-function | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#offspring-law@L430-L430 | total mass of (2.2) is A_k^{-1} E_k[prod_j A_j^{X_j(1)}] = A_k^{-1} f_k(A) = 1: unfolds the definition of f at the finite point A
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -285,9 +285,9 @@ DEPS: prop-conjugate#offspring-law
 ROUTES: -
 ROUTE_FOR: -
 EDGE: prop-conjugate#offspring-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#abs-continuity@L430-L430 | (2.2) gives the offspring law of X-hat as a strictly positive, finite density A_k^{-1} prod_j A_j^{c_j} with respect to that of X
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -314,9 +314,9 @@ ROUTE_FOR: -
 EDGE: prop-conjugate#abs-continuity | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#hat-pos-reg-nonsing@L430-L430 | mutual absolute continuity of the first n generations transfers positivity of the relevant probabilities from X to X-hat
 EDGE: def-bp-basic.positive-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#hat-pos-reg-nonsing@L430-L430 | positive regularity of X is transferred through events {X_j(N) >= 1} of the first N generations
 EDGE: def-bp-basic.non-singular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#hat-pos-reg-nonsing@L430-L430 | non-singularity of X is transferred through the event {sum_j X_j(1) >= 2} of the first generation
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -342,9 +342,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: prop-conjugate#offspring-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#hat-fixed-point@L431-L431 | (2.2) applied with the bounded function F(c) = prod_j A_j^{-c_j} gives f-hat_k(1/A) = A_k^{-1} E_k[1] = 1/A_k
 EDGE: eqn-generating-function | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#hat-fixed-point@L431-L431 | f-hat is the generating function (1.1) of X-hat evaluated at 1/A
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -377,7 +377,7 @@ REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: Source sentence: 'By Proposition 2.1, it follows that 1/A is the vector of extinction probabilities for X-hat' (L431). Uses part (a) of Proposition 2.1 (L395, external). The sub-case A = (1,...,1) (so 1/A = (1,...,1), X-hat = X, extinction probability one by hypothesis) is not spelled out in the source.
+NOTE: SOURCE_GAP: Proposition 2.1(a) identifies the extinction vector of X-hat with 1/A only if 1/A != (1,...,1) (the fixed points in [0,1]^d are the extinction vector and (1,...,1)). The case A = (1,...,1) (so 1/A = (1,...,1), X-hat has the offspring laws of X, and the extinction vector is (1,...,1) by the extinction hypothesis) is not treated in the source. Source sentence: 'By Proposition 2.1, it follows that 1/A is the vector of extinction probabilities for X-hat' (L431). Uses part (a) of Proposition 2.1 (L395, external).
 
 NODE: prop-conjugate#cond-law-hat
 KIND: application
@@ -401,9 +401,9 @@ EDGE: prop-cond-on-ext.cond-law | source/arxiv-2411.06301v2/fixed-pt-finite-type
 EDGE: prop-conjugate#ext-prob-hat | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#cond-law-hat@L431-L431 | identifies the extinction vector of X-hat with 1/A, so that a_k = 1/A_k in (2.1)
 EDGE: prop-conjugate#hat-pos-reg-nonsing | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#cond-law-hat@L430-L431 | hypothesis (positive regular, non-singular) of Proposition 2.1 for X-hat
 EDGE: lem-fixed-pos | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#cond-law-hat@L431-L431 | supplies the hypothesis 0 < a_k < 1 of Prop 2.1: A = (1,...,1) or A in (1,inf)^d (the dichotomy announced at L437, not cited in the proof)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -429,9 +429,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-fixed-pos#geq-one | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-pos@L459-L459 | first assertion (2.3) is the conclusion 'Thus (2.3) holds'
 EDGE: lem-fixed-pos#pos-reg-strict | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-pos@L461-L471 | second assertion: a coordinate q_{j*} > 1 forces all q_k > 1 (the alternative q_k = 1 for all k then follows from (2.3))
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -458,9 +458,9 @@ ROUTE_FOR: -
 EDGE: ext:fatou | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-pos#geq-one@L451-L458 | Fatou's lemma gives lim_n E_k[prod_j q_j^{X_j(n)}] >= E_k[lim_n prod_j q_j^{X_j(n)}]
 EDGE: eqn-gen-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-pos#geq-one@L450-L455 | f^{(n)}(q) = q for all n and f_k^{(n)}(q) = E_k[prod_j q_j^{X_j(n)}]
 EDGE: def:extinction | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-pos#geq-one@L449-L449 | extinction probability one: P_k-a.s. X_j(n) = 0 for all large n, so prod_j q_j^{X_j(n)} -> 1
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -487,9 +487,9 @@ ROUTE_FOR: -
 EDGE: lem-fixed-pos#geq-one | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-pos#pos-reg-strict@L468-L468 | q_j >= 1 for all j makes prod_j q_j^{X_j(N)} >= 1 off the event {X_{j*}(N) >= 1} and >= q_{j*} on it
 EDGE: eqn-gen-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-pos#pos-reg-strict@L466-L467 | q_k = f_k^{(N)}(q) = E_k[prod_j q_j^{X_j(N)}]
 EDGE: def-bp-basic.positive-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-pos#pos-reg-strict@L462-L462 | choice of N with P_k[X_{j*}(N) >= 1] > 0 for all k
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -514,9 +514,9 @@ DEPS: lem-gf-pos#kj-descendants
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-gf-pos#kj-descendants | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-pos@L493-L493 | proof concludes 'the lemma statement holds with N = 2N_0 + 1'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -542,9 +542,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: def-bp-basic.positive-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-pos#choose-N0-k0@L489-L492 | 'By positive regularity, there exists N_0 ...'
 EDGE: def-bp-basic.non-singular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-pos#choose-N0-k0@L493-L493 | 'By non-singularity, there exists k_0 ...'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -576,7 +576,7 @@ REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: Markov (branching) property used implicitly in 'Conditional on this'; no canonical node exists for it, so the edge goes to the frozen path-law definition (see report).
+NOTE: The Markov (branching) property is used implicitly in 'Conditional on this' (L493); it is modeled by the shared node claim:branching-property. The positive probability of a type-k_0 individual in generation N_0 comes from positive regularity (lem-gf-pos#choose-N0-k0).
 
 NODE: lem-gf-pos#kj-descendants
 KIND: step
@@ -599,9 +599,9 @@ ROUTE_FOR: -
 EDGE: lem-gf-pos#two-individuals | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-pos#kj-descendants@L493-L493 | supplies the positive-probability event of two individuals in generation N_0 + 1 to condition on
 EDGE: lem-gf-pos#choose-N0-k0 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-pos#kj-descendants@L493-L493 | positive regularity at time N_0 gives each of the two individuals a positive chance of a type-k (resp. type-j) descendant N_0 generations later
 EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-pos#kj-descendants@L493-L493 | Markov property at generation N_0 + 1 and independence of the two individuals' descendant lines (branching property)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -626,9 +626,9 @@ DEPS: lem-gf-bded#choose-eps
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-gf-bded#choose-eps | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded@L514-L514 | proof concludes the lemma with q^0 = 1 + eps v for small eps
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -649,16 +649,17 @@ FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: ext:perron-frobenius, eqn-mean-matrix, claim:mean-matrix-powers, def-bp-basic.positive-regular
+DEPS: ext:perron-frobenius, eqn-mean-matrix, claim:mean-matrix-powers, def-bp-basic.positive-regular, def-bp-basic.positive-regular#matrix-equiv
 ROUTES: -
 ROUTE_FOR: -
 EDGE: ext:perron-frobenius | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#perron-frobenius@L508-L508 | 'the Perron-Frobenius theorem implies that each of the d components of v is positive'
 EDGE: eqn-mean-matrix | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#perron-frobenius@L508-L508 | 'Recall the matrix M from (1.3)': M_kj = E_k[X_j(1)]
 EDGE: claim:mean-matrix-powers | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#perron-frobenius@L508-L508 | M^N has entries E_k[X_j(N)] > 0 for the positive regularity time N, which is what Perron-Frobenius needs
 EDGE: def-bp-basic.positive-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#perron-frobenius@L508-L508 | 'we have assumed that our branching process is positive regular': source of the positive power of M
-TOPOLOGY_STATUS: PROPOSED
+EDGE: def-bp-basic.positive-regular#matrix-equiv | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#perron-frobenius@L508-L508 | 'we have assumed that our branching process is positive regular and non-singular, the Perron-Frobenius theorem implies ...': the theorem needs a power of M with all positive entries, which is the L229 clause
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -683,9 +684,9 @@ DEPS: eqn-generating-function
 ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-generating-function | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#finite-nbhd@L510-L510 | f(1) = 1 from the definition of f as an expectation of a product of powers, so continuity (III) at 1 forces finiteness nearby
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -712,9 +713,9 @@ ROUTE_FOR: -
 EDGE: lem-gf-bded#finite-nbhd | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#jacobian@L510-L510 | differentiation under the expectation at 1 needs f finite in a neighborhood of 1
 EDGE: eqn-mean-matrix | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#jacobian@L510-L510 | identifies the derivative E_k[X_j(1)] with the entry M_kj
 EDGE: eqn-generating-function | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#jacobian@L510-L510 | f_k(q) = E_k[prod_j q_j^{X_j(1)}] is the function being differentiated
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -741,9 +742,9 @@ ROUTE_FOR: -
 EDGE: ext:taylor | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#taylor@L510-L513 | 'By Taylor expansion, for eps > 0, we have f(1 + eps v) = 1 + rho eps v + O(eps^2)'
 EDGE: lem-gf-bded#jacobian | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#taylor@L510-L510 | Jacobian of f at 1 is M and f has a quadratic remainder
 EDGE: lem-gf-bded#perron-frobenius | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#taylor@L512-L512 | M v = rho v turns 1 + eps M v into 1 + rho eps v
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -769,9 +770,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-gf-bded#taylor | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#choose-eps@L514-L514 | 'Since rho < 1, this implies the lemma statement': rho eps v_k + O(eps^2) < eps v_k for small eps
 EDGE: lem-gf-bded#perron-frobenius | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded#choose-eps@L514-L514 | v_k > 0 gives q^0 in (1,inf)^d and rho < 1 gives the strict inequality
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -796,9 +797,9 @@ DEPS: eqn-generating-function
 ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-generating-function | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-log-gf@L536-L537 | g_k is defined by composing f_k with the coordinatewise exponential and then taking log
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -824,9 +825,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: def-log-gf | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-convex-func-n@L540-L543 | g^{(n)} is the n-fold composition of g = log o f o exp (coordinatewise), so g^{(n)} = log o f^{(n)} o exp
 EDGE: eqn-gen-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-convex-func-n@L540-L540 | 'Then, using (1.2), we see that ...': f_k^{(n)}(q) = E_k[prod_j q_j^{X_j(n)}]
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -851,9 +852,9 @@ DEPS: def-log-gf
 ROUTES: -
 ROUTE_FOR: -
 EDGE: def-log-gf | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-fixed-pt-equiv@L548-L552 | g = log o f o exp coordinatewise with log and exp mutually inverse between (-inf,inf] and (0,inf], so fixed points correspond
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -877,9 +878,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -895,7 +896,7 @@ CONTRACT_VERSION: 1
 SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); lambda, eta in [0,inf)^d with lambda <= eta; (second assertion only) lambda < eta
 SOURCE_QUANTIFIERS: Theorem 1.4 setting; d; X; lambda, eta in [0,inf)^d with lambda <= eta; [for all k in {1,...,d}, n in N: g_k^{(n)}(lambda) <= g_k^{(n)}(eta)]; exists N in N such that [if lambda < eta then for all k and all n >= N with |g^{(n)}(eta)| < inf: g_k^{(n)}(lambda) < g_k^{(n)}(eta)]
 SOURCE_CONCLUSION: g_k^{(n)}(lambda) <= g_k^{(n)}(eta) for every k in {1,...,d} and n in N; moreover there exists N in N such that if lambda < eta then g_k^{(n)}(lambda) < g_k^{(n)}(eta) for every k in {1,...,d} and every n >= N such that |g^{(n)}(eta)| < inf
-CONSTANT_SCOPE: N is introduced after lambda, eta in the statement, so literally it may depend on lambda, eta; the proof's N is the positive-regularity time and depends only on X (orchestrator to fix the reading)
+CONSTANT_SCOPE: N is introduced after lambda and eta ('Let lambda, eta ... Moreover, there exists N such that ...'), so the statement lets N depend on X, lambda and eta (not on k or n)
 FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
@@ -911,7 +912,7 @@ REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: Consumed at L646 (this slice), L689/L676 (lem-monotone-lim), L772/L799 (slice C), L1054 (slice D). Values g_k^{(n)} lie in [0,inf] (g^{(n)}(0) = 0 since f(1) = 1).
+NOTE: Consumed at L646 (this slice), L689/L676 (lem-monotone-lim), L772/L799 (slice C), L1054 (slice D). Values g_k^{(n)} lie in [0,inf] (g^{(n)}(0) = 0 since f(1) = 1). The proof's N is the positive-regularity time of lem-mono#positivity-all-n and depends only on X; that uniform reading is stronger than the statement and is recorded for Lean planning only (ADJUDICATION B4).
 
 NODE: lem-mono#positivity-all-n
 KIND: step
@@ -939,7 +940,7 @@ REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: The Markov property is invoked by name in the source; there is no canonical node for it, so the edge goes to the frozen path-law definition (see report).
+NOTE: The Markov property is invoked by name in the source ('From this and the Markov property of the branching process', L602); it is modeled by the shared node claim:branching-property.
 
 NODE: lem-mono#strict-ineq
 KIND: step
@@ -962,9 +963,9 @@ ROUTE_FOR: -
 EDGE: lem-mono#positivity-all-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-mono#strict-ineq@L603-L603 | positive probability of X_{j*}(n) >= 1 for n >= N gives the strict pointwise inequality on a positive-probability event
 EDGE: eqn-convex-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-mono#strict-ineq@L603-L603 | g_k^{(n)} = log E_k[prod_j e^{lambda_j X_j(n)}]: expectations of the two products are compared
 EDGE: def-componentwise | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-mono#strict-ineq@L602-L602 | 'let j* be such that lambda_{j*} < eta_{j*}': unfolds lambda < eta of Definition 2.8
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -989,9 +990,9 @@ DEPS: lem-unstable-scaled#vitali
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-unstable-scaled#vitali | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-scaled@L635-L635 | the lemma conclusion is the Vitali-convergence conclusion g_k^{(n)}(r lambda) -> 0
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1017,9 +1018,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: claim:subcritical-extinction | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-scaled#extinction-as@L628-L628 | 'Since the extinction probability is one (Hypothesis I)': subcriticality is the stated reason
 EDGE: def:extinction | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-scaled#extinction-as@L628-L628 | extinction event: a.s. X_j(n) = 0 for all large n, so Z_n = 1 eventually
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1051,7 +1052,7 @@ REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: Holder needs r > 0; the case r = 0 (where Z_n = 1 and g^{(n)}(0) = 0) is not discussed in the source.
+NOTE: SOURCE_GAP: Holder needs r > 0 (exponent 1/r) while Lemma 2.11 is stated for r in [0,1); the case r = 0 (Z_n = 1, g^{(n)}(0) = 0) is not discussed in the source, so lem-unstable-scaled#vitali obtains its conclusion from the source text only for r in (0,1).
 
 NODE: lem-unstable-scaled#vitali
 KIND: application
@@ -1075,9 +1076,9 @@ EDGE: ext:vitali | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstab
 EDGE: lem-unstable-scaled#holder-bound | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-scaled#vitali@L635-L635 | 'this goes to zero as n -> inf': the Holder bound controls E_k[Z_n 1_{Z_n > 1}]
 EDGE: lem-unstable-scaled#extinction-as | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-scaled#vitali@L635-L635 | Z_n -> 1 a.s. and P_k[Z_n > 1] -> 0
 EDGE: eqn-convex-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-scaled#vitali@L624-L626 | g_k^{(n)}(r lambda) = log E_k[Z_n]
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1103,9 +1104,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: prop-unstable#part-i | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable@L647-L647 | 'This gives assertion (i)'
 EDGE: prop-unstable#part-ii | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable@L648-L648 | 'Assertion (ii) follows by ...'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1131,9 +1132,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-unstable-scaled | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable#strict-case@L643-L643 | 'By Lemma 2.11, this implies that lim_n ‖g^{(n)}(eta)‖ = 0'
 EDGE: lem-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable#strict-case@L642-L643 | implicit in 'this implies': eta <= r lambda gives g^{(n)}(eta) <= g^{(n)}(r lambda) coordinatewise (first assertion of Lemma 2.9), with g^{(n)} >= 0 on [0,inf)^d, so ‖g^{(n)}(eta)‖ is controlled by ‖g^{(n)}(r lambda)‖
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1166,7 +1167,7 @@ REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: Source writes 'limsup_n |g^{(n)}(eta)| = 0' at L646 for the conclusion of (i); read as lim (typo; limsup = 0 is equivalent to lim = 0 for nonnegative quantities). Side conditions for the reduction (g^{(N)}(lambda) finite and nonzero, limsup_n |g^{(n)}(g^{(N)}(lambda))| < inf) are stated only partially at L646.
+NOTE: SOURCE_GAP: premises of the two cited results are not discharged at L646: the strict clause of Lemma 2.9 holds only for n >= N with |g^{(n)}(lambda)| < inf (lambda is the larger argument), so N has to be chosen with g^{(N)}(lambda) finite, and the first paragraph needs g^{(N)}(lambda) in [0,inf)^d \ {0} and limsup_n |g^{(n)}(g^{(N)}(lambda))| < inf (stated by the source). Source writes 'limsup_n |g^{(n)}(eta)| = 0' at L646 for the conclusion of (i); read as lim (typo; limsup = 0 is equivalent to lim = 0 for nonnegative quantities).
 
 NODE: prop-unstable#part-ii
 KIND: step
@@ -1187,9 +1188,9 @@ DEPS: prop-unstable#part-i
 ROUTES: -
 ROUTE_FOR: -
 EDGE: prop-unstable#part-i | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable#part-ii@L648-L648 | 'follows by applying Assertion (i) with the roles of lambda and eta interchanged'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1214,9 +1215,9 @@ DEPS: lem-unstable-ssl#apply-prop-unstable
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-unstable-ssl#apply-prop-unstable | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-ssl@L663-L663 | 'The lemma follows by applying Proposition 2.10 to this branching process'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1240,9 +1241,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1267,9 +1268,9 @@ DEPS: eqn-convex-func-n
 ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-convex-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-ssl#skeleton-gf@L663-L663 | g-tilde_k(lambda) = log E_k[prod_j e^{lambda_j X-tilde_j(1)}] = log E_k[prod_j e^{lambda_j X_j(m)}] = g_k^{(m)}(lambda)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1296,9 +1297,9 @@ ROUTE_FOR: -
 EDGE: prop-unstable | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-ssl#apply-prop-unstable@L663-L663 | 'The lemma follows by applying Proposition 2.10 to this branching process'
 EDGE: lem-unstable-ssl#skeleton-hypotheses | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-ssl#apply-prop-unstable@L663-L663 | the hypotheses of Theorem 1.4 (which Prop 2.10 assumes) for X-tilde
 EDGE: lem-unstable-ssl#skeleton-gf | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-ssl#apply-prop-unstable@L663-L663 | translates g-tilde^{(r)} into g^{(r m)}
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1324,9 +1325,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-monotone-lim#limits-zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim@L691-L691 | 'which implies that lim_n g^{(n)}(lambda) = 0': first assertion
 EDGE: lem-monotone-lim#part-b | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim@L693-L693 | 'The statement when g^{(m)}(lambda) > lambda is proven similarly': second assertion
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1358,7 +1359,7 @@ REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: Minor omission (not a gap node): the finiteness proviso |g^{(n)}(lambda)| < inf of the strict clause of Lemma 2.9 is not discussed for 'n sufficiently large' (L680).
+NOTE: SOURCE_GAP (minor): the strict clause of Lemma 2.9 holds only for n >= N with |g^{(n)}(lambda)| < inf (lambda is the larger argument); the source asserts 'strict if n is sufficiently large' (L680) without showing that this finiteness proviso holds for all large n.
 
 NODE: lem-monotone-lim#limits-exist
 KIND: step
@@ -1379,9 +1380,9 @@ DEPS: lem-monotone-lim#shifted-mono
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-monotone-lim#shifted-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#limits-exist@L681-L681 | apply (2.7) with n = r m + s
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1406,9 +1407,9 @@ DEPS: lem-monotone-lim#limits-exist
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-monotone-lim#limits-exist | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#limit-fixed@L689-L689 | lambda-bar^s is the limit (2.8) of g^{(r m + s)}(lambda)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1443,7 +1444,7 @@ REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: Proof by contradiction for the first assertion; the m subsequences s = 0,...,m-1 are combined to conclude convergence of the full sequence (routine).
+NOTE: SOURCE_GAP (minor): Lemma 2.12(ii) is applied at L690 with lambda := lambda-bar^s and eta := g^{(s)}(lambda), but its premises (lambda-bar^s in [0,inf)^d \ {0}, eta in [0,inf)^d, i.e. finiteness of g^{(s)}(lambda) for s in {0,...,m-1}) are not discharged in the source; lambda-bar^s < g^{(s)}(lambda) is asserted in one clause from the large-n strictness of (2.7). Proof by contradiction for the first assertion; the m subsequences s = 0,...,m-1 are combined to conclude convergence of the full sequence (routine).
 
 NODE: lem-monotone-lim#part-b
 KIND: step
@@ -1466,9 +1467,9 @@ ROUTE_FOR: -
 EDGE: lem-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#part-b@L675-L693 | 'proven similarly' (L693): the increasing analogue of the (2.7) argument at L676-L680
 EDGE: lem-unstable-ssl | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#part-b@L675-L693 | 'proven similarly' (L693): the analogue of the contradiction argument at L690
 EDGE: def-componentwise | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#part-b@L675-L693 | 'proven similarly' (L693): the sense of '>' is that of Definition 2.8
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1481,204 +1482,204 @@ KIND: heading
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#heading-sec-proof@L380-L380
 DISPOSITION: EXCLUDED
 REASON: Section heading 'Proof of main theorem'; no mathematical content and no proof obligation.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:heading:L384
 KIND: heading
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#heading-sec-prelim@L384-L384
 DISPOSITION: EXCLUDED
 REASON: Subsection heading 'Preliminaries on branching processes'; no mathematical content and no proof obligation.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:prop-cond-on-ext
 KIND: proposition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-cond-on-ext@L390-L403
 DISPOSITION: NODE prop-cond-on-ext.cond-law, ext:an72-v3-thm2
 REASON: Spec R6 split: the conditional-law paragraph (L397-L402) is the root prop-cond-on-ext.cond-law; the first paragraph (L395, only fixed points in [0,1]^d are a and 1) is the external ext:an72-v3-thm2, consumed by prop-conjugate#ext-prob-hat. The clause 'Moreover, this branching process is subcritical' (L402) is a cited result consumed by no root and is not modeled (covered by this item, no separate node).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:eqn-cond-on-ext
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-cond-on-ext@L398-L398
 DISPOSITION: NODE prop-cond-on-ext.cond-law
 REASON: Display (2.1) is the offspring-law formula inside the statement of the anchored conditional-law paragraph; part of the root's SOURCE_CONCLUSION, not a separate node.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:proof:prop-cond-on-ext
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-prop-cond-on-ext@L404-L406
 DISPOSITION: NODE prop-cond-on-ext.cond-law
 REASON: The proof is two citations; its topology (edges to ext:jl08-thm1 and ext:an72-v3-thm2) is recorded on the root node.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:cite:L405:an-branching-processes
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-an-branching-processes@L405-L405
 DISPOSITION: NODE ext:an72-v3-thm2
 REASON: Citation [an-branching-processes, Theorem 2, Section V.3] is the external leaf for the first paragraph of Prop 2.1.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:cite:L405:jl-cond-on-ext
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-jl-cond-on-ext@L405-L405
 DISPOSITION: NODE ext:jl08-thm1
 REASON: Citation [jl-cond-on-ext, Theorem 1] is the external leaf for the description of the conditional law.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:prop-conjugate
 KIND: proposition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate@L420-L428
 DISPOSITION: NODE prop-conjugate
 REASON: Root anchor for Proposition 2.2 (statement including display (2.2)).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:eqn-conjugate-def
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-conjugate-def@L423-L423
 DISPOSITION: NODE prop-conjugate, prop-conjugate#offspring-law
 REASON: Display (2.2) defines X-hat inside the root statement; its well-definedness (normalization from f(A) = A) is the step prop-conjugate#offspring-law.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:proof:prop-conjugate
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-prop-conjugate@L429-L432
 DISPOSITION: NODE prop-conjugate#offspring-law, prop-conjugate#abs-continuity, prop-conjugate#hat-pos-reg-nonsing, prop-conjugate#hat-fixed-point, prop-conjugate#ext-prob-hat, prop-conjugate#cond-law-hat
 REASON: Proof paragraph split into its substantive steps: normalization (L430), unproved mutual absolute continuity (SOURCE_GAP, L430), regularity transfer (L430), f-hat(1/A) = 1/A (L431), extinction vector via Prop 2.1(a) (L431), conditional law via Prop 2.1 plus Lemma 2.3 (SOURCE_GAP, L431).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:lem-fixed-pos
 KIND: lemma
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-pos@L440-L446
 DISPOSITION: NODE lem-fixed-pos
 REASON: Lemma 2.3 statement node.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:eqn-fixed-pos-geq
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-fixed-pos-geq@L442-L442
 DISPOSITION: NODE lem-fixed-pos#geq-one
 REASON: Display (2.3) q_k >= 1 is the first assertion, proved by the Fatou argument and reused in the second assertion; modeled as lem-fixed-pos#geq-one.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:proof:lem-fixed-pos
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-lem-fixed-pos@L447-L472
 DISPOSITION: NODE lem-fixed-pos#geq-one, lem-fixed-pos#pos-reg-strict, ext:fatou
 REASON: Proof has two substantive parts: the Fatou argument (L449-L458, ext:fatou) and the positive-regularity strictness argument (L461-L471).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:lem-gf-pos
 KIND: lemma
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-pos@L477-L487
 DISPOSITION: NODE lem-gf-pos
 REASON: Lemma 2.4 statement node.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:eqn-gf-pos
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-gf-pos@L479-L479
 DISPOSITION: NODE lem-gf-pos
 REASON: Display (2.4) is the lemma's conclusion (definition of p_{k,j}(N) and its positivity); part of lem-gf-pos, not a separate node.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:proof:lem-gf-pos
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-lem-gf-pos@L488-L494
 DISPOSITION: NODE lem-gf-pos#choose-N0-k0, lem-gf-pos#two-individuals, lem-gf-pos#kj-descendants
 REASON: Proof split into witness choice (N_0, k_0), the two-individuals step, and the descendants step giving N = 2N_0 + 1.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:lem-gf-bded
 KIND: lemma
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-bded@L500-L506
 DISPOSITION: NODE lem-gf-bded
 REASON: Lemma 2.5 statement node (carries the Theorem 1.4 setting as SOURCE_HYPOTHESES).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:proof:lem-gf-bded
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-lem-gf-bded@L507-L515
 DISPOSITION: NODE lem-gf-bded#perron-frobenius, lem-gf-bded#finite-nbhd, lem-gf-bded#jacobian, lem-gf-bded#taylor, lem-gf-bded#choose-eps, ext:perron-frobenius, ext:taylor
 REASON: Proof split into Perron-Frobenius (L508, ext:perron-frobenius), finiteness near 1 (L510), the unproved Jacobian claim (SOURCE_GAP, L510), Taylor expansion (L510-L513, ext:taylor) and the choice of eps (L514).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:heading:L525
 KIND: heading
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#heading-sec-mono@L525-L525
 DISPOSITION: EXCLUDED
 REASON: Subsection heading 'Monotonicity properties'; the standing sentence at L528 (setting of Theorem 1.4) is carried as SOURCE_HYPOTHESES of each consuming lemma per spec section 4.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:def-log-gf
 KIND: definition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-log-gf@L533-L546
 DISPOSITION: NODE def-log-gf
 REASON: Frozen definition anchor for Definition 2.6 (g and its iterates).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:eqn-convex-func-n
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-convex-func-n@L541-L541
 DISPOSITION: NODE eqn-convex-func-n
 REASON: Display (2.5) is consumed as the characterization of g^{(n)} by lem-mono, lem-unstable-scaled and the skeleton step of lem-unstable-ssl.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:eqn-fixed-pt-equiv
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-fixed-pt-equiv@L549-L549
 DISPOSITION: NODE eqn-fixed-pt-equiv
 REASON: Display (2.6) is a canonical cross-slice claim (spec section 9).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:thm-fixed
 KIND: theorem
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed@L555-L557
 DISPOSITION: NODE thm-fixed
-REASON: Theorem 2.7: the node thm-fixed (root) is owned by slice C per spec section 9 (statement L555-L557 lies in slice-B lines, proof L894-L905 in slice C); this packet defines no block for it. Orchestrator: confirm slice C's packet covers it.
+REASON: Theorem 2.7: the statement (L555-L557) lies in slice-B lines, but the root node thm-fixed is owned by slice C per spec section 9 (statement L555-L557, proof L894-L905); slice B defines no block for it.
 COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-B/sonnet
 REVIEWER: -
@@ -1688,126 +1689,126 @@ KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#g-convex-remark@L560-L560
 DISPOSITION: EXCLUDED
 REASON: Remark that each g_k is convex by Holder's inequality: stated as 'not needed for our proofs' (L559) and the commented-out lemma at L562-L582 is not part of the paper; feeds no root (spec section 7).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:def-componentwise
 KIND: definition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-componentwise@L587-L589
 DISPOSITION: NODE def-componentwise
 REASON: Definition 2.8 is consumed as the unfolding of '<' in lem-mono, prop-unstable and lem-monotone-lim proofs.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:lem-mono
 KIND: lemma
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-mono@L594-L598
 DISPOSITION: NODE lem-mono
 REASON: Lemma 2.9 statement node.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:proof:lem-mono
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-lem-mono@L599-L604
 DISPOSITION: NODE lem-mono#positivity-all-n, lem-mono#strict-ineq
 REASON: First assertion is immediate from (2.5) (edge on lem-mono); the strict assertion is split into positivity for all n >= N (Markov property) and the strict-inequality step.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:prop-unstable
 KIND: proposition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable@L608-L615
 DISPOSITION: NODE prop-unstable, prop-unstable#part-i, prop-unstable#part-ii
 REASON: Proposition 2.10 statement node plus its two parts (i) and (ii) as separate step nodes.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:lem-unstable-scaled
 KIND: lemma
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-scaled@L619-L622
 DISPOSITION: NODE lem-unstable-scaled
 REASON: Lemma 2.11 statement node.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:proof:lem-unstable-scaled
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-lem-unstable-scaled@L623-L636
 DISPOSITION: NODE lem-unstable-scaled#extinction-as, lem-unstable-scaled#holder-bound, lem-unstable-scaled#vitali, ext:holder, ext:vitali
 REASON: Proof split into almost-sure extinction (SOURCE_GAP, L628), the Holder bound (L629-L634, ext:holder) and the Vitali conclusion (L635, ext:vitali).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:proof:prop-unstable
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-prop-unstable@L640-L649
 DISPOSITION: NODE prop-unstable#strict-case, prop-unstable#part-i, prop-unstable#part-ii
 REASON: Proof split into the strict-in-every-coordinate case (L641-L643), the general case via Lemma 2.9 (L645-L647) and assertion (ii) by role reversal (L648).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:lem-unstable-ssl
 KIND: lemma
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-ssl@L653-L661
 DISPOSITION: NODE lem-unstable-ssl
 REASON: Lemma 2.12 statement node.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:proof:lem-unstable-ssl
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-lem-unstable-ssl@L662-L664
 DISPOSITION: NODE lem-unstable-ssl#skeleton-hypotheses, lem-unstable-ssl#skeleton-gf, lem-unstable-ssl#apply-prop-unstable
 REASON: Proof split into the unproved m-skeleton hypotheses (SOURCE_GAP, 'one easily verifies'), the unstated identification g-tilde = g^{(m)}, and the application of Prop 2.10.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:lem-monotone-lim
 KIND: lemma
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim@L669-L673
 DISPOSITION: NODE lem-monotone-lim
 REASON: Lemma 2.13 statement node.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:proof:lem-monotone-lim
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-lem-monotone-lim@L674-L694
 DISPOSITION: NODE lem-monotone-lim#shifted-mono, lem-monotone-lim#limits-exist, lem-monotone-lim#limit-fixed, lem-monotone-lim#limits-zero, lem-monotone-lim#part-b
 REASON: Proof split into (2.7), (2.8), the continuity/limit step (SOURCE_GAP), the contradiction argument via Lemma 2.12, and the unproved second assertion ('proven similarly', SOURCE_GAP). The commented-out proof at L696-L715 is ignored.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:eqn-shifted-mono
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-shifted-mono@L677-L677
 DISPOSITION: NODE lem-monotone-lim#shifted-mono
 REASON: Display (2.7) is the content of the step lem-monotone-lim#shifted-mono.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ITEM: inv:eqn-mono-ssl
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-mono-ssl@L682-L682
 DISPOSITION: NODE lem-monotone-lim#limits-exist
 REASON: Display (2.8) defines the limits lambda-bar^s; it is the content of the step lem-monotone-lim#limits-exist.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: reviewer-B/sonnet
 
 ## Report
 

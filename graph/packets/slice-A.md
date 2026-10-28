@@ -13,7 +13,7 @@ CONTRACT_ID: paper.def.populationMeasurableSpace
 CONTRACT_VERSION: 1
 SOURCE_HYPOTHESES: d ∈ ℕ; X = {X(n)}_{n∈ℕ_0} is a d-type branching process whose population vector X(n) = (X_1(n),…,X_d(n)) takes values in ℕ_0^d
 SOURCE_QUANTIFIERS: d ∈ ℕ; process X; generation n ∈ ℕ_0
-SOURCE_CONCLUSION: the (implicit) measurable structure on the population space ℕ_0^d and on the space of paths of populations with respect to which X_j(n), the laws ℙ_k, the expectations 𝔼_k and the bounded measurable test functions F : ℕ_0^d → ℝ of (2.1) and (1.5) (L402, L427, slice B) are understood; the paper never writes this structure out
+SOURCE_CONCLUSION: the (implicit) measurable structure on the population space ℕ_0^d and on the space of paths of populations with respect to which X_j(n), the laws ℙ_k, the expectations 𝔼_k and the bounded measurable test functions F : ℕ_0^d → ℝ of (2.1) and (2.2) (L402, L427, slice B) are understood; the paper never writes this structure out
 CONSTANT_SCOPE: none
 FROZEN_FILE: Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean
 FROZEN_DECL: Conjugate.populationMeasurableSpace
@@ -49,9 +49,9 @@ DEPS: def:population-sigma
 ROUTES: -
 ROUTE_FOR: -
 EDGE: def:population-sigma | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#bp-setup@L176-L177 | the kernel is a law on populations, which carry the discrete sigma-algebra
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -76,9 +76,9 @@ DEPS: def:step-kernel
 ROUTES: -
 ROUTE_FOR: -
 EDGE: def:step-kernel | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#bp-setup@L176-L177 | the path law is the Markov chain whose transitions are the one-step offspring kernel
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -102,9 +102,9 @@ FROZEN_ABI_SHA256: 029afe3845b4a340f7f51ca5ad0c46ac5c86167dee9a1668f6910cc3bcdfc
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -128,9 +128,9 @@ FROZEN_ABI_SHA256: f6bcafcfaf8bd0ae3f9ee76d0e290d7c7ae70a0c175ef00027da56e0a789c
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -154,9 +154,9 @@ FROZEN_ABI_SHA256: 5d96211315214940f56bc4128ab12c73b79fa91d079d185c1f50b4be8f3b0
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -180,9 +180,9 @@ FROZEN_ABI_SHA256: dff61f8e61cbe15e3579255adc6f1d37b5baa6abcd5ae5f6899ace77e6f66
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -206,9 +206,9 @@ FROZEN_ABI_SHA256: e70d8da7c37614b34bd483024a839f1be91c19ee7b6bd021bdd6c99df38a5
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -238,7 +238,7 @@ REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: definition leaf. The clause 'equivalent to M^N has all positive entries' (L229) is not consumed by any root's proof and is excluded (ADJUDICATION A1). N ≥ 1 (R1)
+NOTE: definition leaf. The clause 'equivalent to the condition that M^N has all positive entries' (L229) is a separate claim: it is consumed by the Perron-Frobenius application at L508 (lem-gf-bded#perron-frobenius) and is modeled as def-bp-basic.positive-regular#matrix-equiv. N ≥ 1 (R1)
 
 NODE: def-bp-basic.non-singular
 KIND: definition
@@ -258,9 +258,9 @@ FROZEN_ABI_SHA256: 246bd29740c5ec0b8a051ef2c5dd283b578c5d27bcb90febab7318df7452d
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -281,20 +281,19 @@ FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: eqn-generating-function, def:step-kernel, def:path-law, def:population-sigma
+DEPS: eqn-generating-function, claim:branching-property, def:path-law
 ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-generating-function | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-gen-func-n@L209-L213 | f in 'the composition of f with itself n times' is the one-generation generating function of display (1.1)
-EDGE: def:step-kernel | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-gen-func-n@L209-L213 | the identity between the n-fold composition and the generation-n expectation rests on the branching (independent-offspring) property of the one-generation mechanism; the paper gives no argument
 EDGE: def:path-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-gen-func-n@L209-L213 | the generation-n expectation is taken under ℙ_k, the law of the process started from one type-k individual
-EDGE: def:population-sigma | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-gen-func-n@L209-L213 | 𝔼_k of a function of X(n) requires X(n) to be measurable for the population structure
+EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-gen-func-n@L209-L213 | the identity between the n-fold composition and the generation-n expectation ('Equivalently') is the branching (independent offspring) and Markov property of the generation process; the paper gives no argument
 TOPOLOGY_STATUS: PROPOSED
 EXTRACTOR: extractor-A/sonnet
 REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP: the paper asserts the identification with a bare 'Equivalently' and gives no proof. Edges to the three process-definition nodes are the characterization consumption of spec §8, not source-stated. Feeds slices B-D (lem-fixed-pos L454-L467, display (2.5) L540)
+NOTE: SOURCE_GAP: the paper asserts the identification with a bare 'Equivalently' and gives no proof. The edge to claim:branching-property is the characterization consumption of spec §8, not source-stated; def:step-kernel and def:population-sigma are reached through def:path-law and claim:branching-property. Feeds slices B-D (lem-fixed-pos L454-L467, display (2.5) L540)
 
 NODE: claim:mean-matrix-powers
 KIND: claim
@@ -311,13 +310,12 @@ FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: eqn-mean-matrix, def:step-kernel, def:path-law, def:population-sigma
+DEPS: eqn-mean-matrix, claim:branching-property, def:path-law
 ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-mean-matrix | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#mean-matrix-powers@L219-L220 | M is the matrix of display (1.3) whose powers are being identified
-EDGE: def:step-kernel | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#mean-matrix-powers@L219-L220 | the n-th generation mean is obtained by iterating the one-generation branching mechanism; the paper gives no argument
 EDGE: def:path-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#mean-matrix-powers@L219-L220 | the mean 𝔼_k[X_j(n)] is taken under ℙ_k
-EDGE: def:population-sigma | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#mean-matrix-powers@L219-L220 | 𝔼_k[X_j(n)] requires X_j(n) to be measurable
+EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#mean-matrix-powers@L219-L220 | the n-th generation mean is obtained by iterating the one-generation mechanism, i.e. by the branching and Markov property; the paper gives no argument
 TOPOLOGY_STATUS: PROPOSED
 EXTRACTOR: extractor-A/sonnet
 REVIEWER: -
@@ -345,9 +343,9 @@ DEPS: thm-fixed-gf.fixed-point#reduce-to-thm-2-7
 ROUTES: -
 ROUTE_FOR: -
 EDGE: thm-fixed-gf.fixed-point#reduce-to-thm-2-7 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-fixed-pt-equiv@L548-L557 | L553: 'Therefore, Theorem 1.4 is equivalent to the following statement'; the root is obtained from Theorem 2.7 through the g to f carrier change
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -360,9 +358,9 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed-g
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-fixed-pt-equiv@L548-L557
 CONTRACT_ID: paper.thm-fixed-gf.fixed-point#reduce-to-thm-2-7
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: hypotheses (I)-(III) of Theorem 1.4 (the setting assumed throughout §2.2, L528); λ ∈ (0,∞)^d with g(λ) = λ is provided by Theorem 2.7
-SOURCE_QUANTIFIERS: d ∈ ℕ; X satisfying (I)-(III); λ ∈ (0,∞)^d with g(λ) = λ; q := e^λ componentwise
-SOURCE_CONCLUSION: q := (e^{λ_1},…,e^{λ_d}) lies in (1,∞)^d and satisfies f(q) = q, by the equivalence (2.6) g(λ) = λ iff f(e^λ) = e^λ
+SOURCE_HYPOTHESES: hypotheses (I)-(III) of Theorem 1.4 (the setting assumed throughout §2.2, L528)
+SOURCE_QUANTIFIERS: d ∈ ℕ; X satisfying (I)-(III); λ ∈ (0,∞)^d with g(λ) = λ (the witness of Theorem 2.7); q := e^λ componentwise
+SOURCE_CONCLUSION: q := (e^{λ_1},…,e^{λ_d}) lies in (1,∞)^d and satisfies f(q) = q
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
 FROZEN_DECL: -
@@ -400,7 +398,7 @@ DEPS: thm-fixed-gf.fixed-point, thm-fixed-gf.equivalence
 ROUTES: -
 ROUTE_FOR: -
 EDGE: thm-fixed-gf.fixed-point | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed-gf@L249-L249 | the conclusion 'equivalently, there exists q ∈ (1,∞)^d such that f(q) = q' supplies the fixed point; hypotheses (I)-(III) are the root's own
-EDGE: thm-fixed-gf.equivalence | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238 | converts the fixed point into a conjugate; its premises (subcritical, positive regular, non-singular) are the root's hypotheses (I) and (II)
+EDGE: thm-fixed-gf.equivalence | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed-gf@L249-L249 | the 'equivalently' clause of Theorem 1.4 (restating the equivalence of L238) converts the fixed point into a conjugate; its premises (subcritical, positive regular, non-singular) are the root's hypotheses (I) and (II)
 TOPOLOGY_STATUS: PROPOSED
 EXTRACTOR: extractor-A/sonnet
 REVIEWER: -
@@ -429,9 +427,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: thm-fixed-gf.equivalence#fixed-point-to-conjugate | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238 | the direction 'fixed point implies conjugate' of the iff; the paper points to Proposition 2.2 for it
 EDGE: thm-fixed-gf.equivalence#conjugate-to-fixed-point | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238 | the direction 'conjugate implies fixed point' of the iff
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -455,9 +453,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -470,7 +468,7 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-i
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238
 CONTRACT_ID: paper.thm-fixed-gf.equivalence#hat-differs-from-X
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: d ∈ ℕ; X is a subcritical, positive regular and non-singular d-type branching process with certain extinction; A ∈ (1,∞)^d with f(A) = A; X̂ is the branching process of display (1.5) built from A
+SOURCE_HYPOTHESES: d ∈ ℕ; X is a subcritical, positive regular and non-singular d-type branching process with generating function f; A ∈ (1,∞)^d with f(A) = A; X̂ is the branching process of display (2.2) built from A
 SOURCE_QUANTIFIERS: d ∈ ℕ; X; A ∈ (1,∞)^d with f(A) = A; X̂ determined by A
 SOURCE_CONCLUSION: X̂ does not have the same law as X (clause (a) of Definition 1.1)
 CONSTANT_SCOPE: none
@@ -500,7 +498,7 @@ CONTRACT_ID: paper.thm-fixed-gf.equivalence#fixed-point-to-conjugate
 CONTRACT_VERSION: 1
 SOURCE_HYPOTHESES: d ∈ ℕ; X is a subcritical, positive regular and non-singular d-type branching process with generating function f; q ∈ (1,∞)^d with f(q) = q
 SOURCE_QUANTIFIERS: d ∈ ℕ; X; q ∈ (1,∞)^d with f(q) = q; ∃ X̂
-SOURCE_CONCLUSION: there exists a conjugate branching process X̂ for X in the sense of Definition 1.1, namely the process of display (1.5) with A = q
+SOURCE_CONCLUSION: there exists a conjugate branching process X̂ for X in the sense of Definition 1.1, namely the process of display (2.2) with A = q
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
 FROZEN_DECL: -
@@ -523,14 +521,14 @@ NOTE: SOURCE_GAP: the paper only points to Proposition 2.2; discharge of its pre
 
 NODE: thm-fixed-gf.equivalence#conjugate-regularity
 KIND: step
-TITLE: Regularity and positive extinction probability of a conjugate process X̂ (premises for formula 2.1)
+TITLE: Premises of Proposition 2.1 for a conjugate process X̂ (positive regular, non-singular, 0 < ℙ̂_k[E] < 1)
 STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238
 CONTRACT_ID: paper.thm-fixed-gf.equivalence#conjugate-regularity
 CONTRACT_VERSION: 1
 SOURCE_HYPOTHESES: d ∈ ℕ; X is a subcritical, positive regular and non-singular d-type branching process; X̂ is a conjugate branching process for X in the sense of Definition 1.1
 SOURCE_QUANTIFIERS: d ∈ ℕ; X; X̂ conjugate for X; k ∈ {1,…,d}
-SOURCE_CONCLUSION: X̂ is positive regular and non-singular and ℙ̂_k[E] > 0 for each k ∈ {1,…,d}, so that the conditioning in clause (b) of Definition 1.1 is defined and the conditional-law formula (2.1) of Proposition 2.1 is available for X̂
+SOURCE_CONCLUSION: X̂ is positive regular and non-singular and 0 < ℙ̂_k[E] < 1 for each k ∈ {1,…,d}, i.e. every premise of Proposition 2.1 (L391, L397) holds for X̂ (the lower bound is also what makes the conditioning in clause (b) of Definition 1.1 meaningful)
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
 FROZEN_DECL: -
@@ -545,7 +543,7 @@ REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP: Proposition 2.1 (L391, L397) is stated for a positive regular, non-singular process with 0 < a_k < 1; a conjugate X̂ is assumed to satisfy none of these and the paper never checks them. Ambiguity for the orchestrator: the upper bound ℙ̂_k[E] < 1 of Proposition 2.1 would itself give A in (1,∞)^d and make Lemma 2.3 redundant, but it is only available after the trivial case A = (1,…,1) is excluded by clause (a); this node therefore records only the positive-regularity and ℙ̂_k[E] > 0 premises, and the bound < 1 is left to the Lemma 2.3 plus clause (a) route of conjugate-to-fixed-point
+NOTE: SOURCE_GAP: Proposition 2.1 (L391, L397) is stated for a positive regular, non-singular process with 0 < a_k < 1 for every k; a conjugate X̂ is assumed to satisfy none of these and the paper never checks them. This node exposes all of them as the premises under which thm-fixed-gf.equivalence#conjugate-is-tilt applies Proposition 2.1 to X̂. The bound ℙ̂_k[E] < 1 is NOT supplied by the source; the extractor's observation that it would make Lemma 2.3 redundant, and that A = (1,…,1) is only excluded afterwards by clause (a), is retained as an ambiguity for the orchestrator (neither argument is supplied here; if the orchestrator prefers to keep this node at `> 0` only, then `#conjugate-is-tilt` must instead be marked DISPUTED because Proposition 2.1 is applied without its premise a_k < 1)
 
 NODE: thm-fixed-gf.equivalence#conjugate-is-tilt
 KIND: application
@@ -554,9 +552,9 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-i
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238
 CONTRACT_ID: paper.thm-fixed-gf.equivalence#conjugate-is-tilt
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: d ∈ ℕ; X is a subcritical, positive regular and non-singular d-type branching process with generating function f; X̂ is a conjugate for X; X̂ is positive regular and non-singular with ℙ̂_k[E] > 0 for each k
-SOURCE_QUANTIFIERS: d ∈ ℕ; X; X̂ conjugate for X; â_k := ℙ̂_k[E] for k ∈ {1,…,d}; A_k := 1/â_k
-SOURCE_CONCLUSION: A ∈ [1,∞)^d; the offspring laws of X̂ are the tilt of those of X by A as in display (1.5), equivalently those of X are the tilt of X̂ by â as in display (2.1); and f(A) = A
+SOURCE_HYPOTHESES: d ∈ ℕ; X is a subcritical, positive regular and non-singular d-type branching process with generating function f; X̂ is a conjugate branching process for X in the sense of Definition 1.1
+SOURCE_QUANTIFIERS: d ∈ ℕ; X; X̂ conjugate for X; â_k := ℙ̂_k[E] for k ∈ {1,…,d}; A_k := 1/â_k (well defined by thm-fixed-gf.equivalence#conjugate-regularity)
+SOURCE_CONCLUSION: A ∈ [1,∞)^d; the offspring laws of X̂ are the tilt of those of X by A as in display (2.2), equivalently those of X are the tilt of X̂ by â as in display (2.1); and f(A) = A
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
 FROZEN_DECL: -
@@ -600,9 +598,9 @@ EDGE: thm-fixed-gf.equivalence#conjugate-is-tilt | source/arxiv-2411.06301v2/fix
 EDGE: lem-fixed-pos | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-pos-role@L437-L437 | L437: Lemma 2.3 implies that a fixed point A in the setting of Proposition 2.2 is either (1,…,1) or in (1,∞)^d; it needs A ∈ (0,∞)^d with f(A) = A, positive regularity and certain extinction
 EDGE: claim:subcritical-extinction | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-pos-role@L437-L437 | discharges the premise 'extinction probability started from any state is one' of Lemma 2.3
 EDGE: def-conjugate | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238 | clause (a) (X̂ is not equal in law to X) excludes A = (1,…,1), for which the tilt is trivial
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -628,9 +626,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: prop-single-type#fixed-point-exists | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354 | 'there exists q̄ ∈ [s,t] for which f(q̄) = q̄' gives existence, and q̄ ≥ s > 1
 EDGE: prop-single-type#at-most-two-fixed-points | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354 | 'at most two values of q ... namely 1 and q̄' gives uniqueness in (1,∞)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -655,9 +653,9 @@ DEPS: eqn-generating-function
 ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-generating-function | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L353-L353 | 'Since f(1) = 1': f_1(1) = 𝔼[1^{X(1)}] = 1 by the definition of f
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -670,9 +668,9 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354
 CONTRACT_ID: paper.prop-single-type#mean-eq-derivative
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: X single-type with generating function f finite on [1,1+ε]
-SOURCE_QUANTIFIERS: X; ε from the previous step
-SOURCE_CONCLUSION: 𝔼[X(1)] = f'(1), the derivative of f at 1, and f'(1) < 1 by hypothesis (I)
+SOURCE_HYPOTHESES: X single-type branching process started from a single individual with generating function f; (I) 𝔼[X(1)] < 1; (III) f is continuous from (0,∞] to (0,∞], with (0,∞] carrying the half-open-interval topology
+SOURCE_QUANTIFIERS: X; ε the witness of prop-single-type#finite-near-one
+SOURCE_CONCLUSION: 𝔼[X(1)] = f'(1), the derivative of f at 1 (f being finite on [1,1+ε]), and consequently f'(1) < 1
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
 FROZEN_DECL: -
@@ -699,7 +697,7 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354
 CONTRACT_ID: paper.prop-single-type#f-below-diagonal
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: X single-type with generating function f; (I) 𝔼[X(1)] < 1; f'(1) = 𝔼[X(1)]
+SOURCE_HYPOTHESES: X single-type branching process started from a single individual with generating function f; (I) 𝔼[X(1)] < 1
 SOURCE_QUANTIFIERS: X; ∃ s > 1 (sufficiently close to 1)
 SOURCE_CONCLUSION: there exists s > 1 with f(s) < s
 CONSTANT_SCOPE: s depends on f only
@@ -738,9 +736,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -753,8 +751,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354
 CONTRACT_ID: paper.prop-single-type#fixed-point-exists
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: X single-type with generating function f; (III) f is continuous from (0,∞] to (0,∞]; s > 1 with f(s) < s; t > s with f(t) > t
-SOURCE_QUANTIFIERS: X; s, t as above; ∃ q̄ ∈ [s,t]
+SOURCE_HYPOTHESES: X single-type branching process started from a single individual with generating function f; (III) f is continuous from (0,∞] to (0,∞], with (0,∞] carrying the half-open-interval topology
+SOURCE_QUANTIFIERS: X; s and t the witnesses of prop-single-type#f-below-diagonal and prop-single-type#f-above-diagonal (s < t); ∃ q̄ ∈ [s,t]
 SOURCE_CONCLUSION: there exists q̄ ∈ [s,t] ⊂ (1,∞) with f(q̄) = q̄
 CONSTANT_SCOPE: q̄ depends on f only
 FROZEN_FILE: -
@@ -792,9 +790,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -807,19 +805,20 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354
 CONTRACT_ID: paper.prop-single-type#at-most-two-fixed-points
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: X single-type with generating function f; f convex on the maximal interval where it is finite; q̄ ∈ (1,∞) with f(q̄) = q̄ and f(1) = 1
-SOURCE_QUANTIFIERS: X; q > 0
+SOURCE_HYPOTHESES: X single-type branching process started from a single individual with generating function f; (II) ℙ[X(1) ≥ 2] > 0
+SOURCE_QUANTIFIERS: X; q > 0; q̄ the fixed point of prop-single-type#fixed-point-exists
 SOURCE_CONCLUSION: there are at most two values of q with f(q) = q, namely 1 and q̄; in particular q̄ is the only solution in (1,∞)
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: prop-single-type#strict-convexity, prop-single-type#fixed-point-exists
+DEPS: prop-single-type#strict-convexity, prop-single-type#fixed-point-exists, eqn-generating-function
 ROUTES: -
 ROUTE_FOR: -
 EDGE: prop-single-type#strict-convexity | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354 | 'Hence there are at most two values of q for which f(q) = q' follows from convexity on the finite interval
 EDGE: prop-single-type#fixed-point-exists | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354 | identifies the second fixed point as q̄ ('namely 1 and q̄')
+EDGE: eqn-generating-function | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L353-L354 | 'namely 1 and q̄': f(1) = 𝔼[1^{X(1)}] = 1 (the proof's 'Since f(1) = 1') shows that 1 is the other fixed point
 TOPOLOGY_STATUS: PROPOSED
 EXTRACTOR: extractor-A/sonnet
 REVIEWER: -
@@ -848,9 +847,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: prop-single-type.conjugate#existence | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L350-L350 | 'there exists a unique conjugate branching process for X': the existence part
 EDGE: prop-single-type.conjugate#unique-in-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L350-L350 | 'there exists a unique conjugate branching process for X': the uniqueness part
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -871,12 +870,13 @@ FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: def:subcritical, def-bp-basic.positive-regular, def-bp-basic.non-singular
+DEPS: def:subcritical, eqn-mean-matrix, def-bp-basic.positive-regular, def-bp-basic.non-singular
 ROUTES: -
 ROUTE_FOR: -
 EDGE: def:subcritical | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L346-L346 | hypothesis (I) rewrites 'subcritical' as 𝔼[X(1)] < 1, i.e. spectral radius of the 1 × 1 mean matrix below one
 EDGE: def-bp-basic.positive-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L347-L347 | positive regularity for d = 1 is not stated in Proposition 1.6 and must be derived from (II)
 EDGE: def-bp-basic.non-singular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L347-L347 | hypothesis (II) is Definition 1.3 non-singularity for d = 1
+EDGE: eqn-mean-matrix | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L346-L346 | 'subcritical, i.e. 𝔼[X(1)] < 1': for d = 1 the mean matrix is M_{1,1} = 𝔼[X(1)] by (1.3), so ρ = M_{1,1}
 TOPOLOGY_STATUS: PROPOSED
 EXTRACTOR: extractor-A/sonnet
 REVIEWER: -
@@ -892,7 +892,7 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L350-L350
 CONTRACT_ID: paper.prop-single-type.conjugate#existence
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: X single-type satisfying (I)-(III) of Proposition 1.6; X subcritical, positive regular and non-singular as a 1-type process
+SOURCE_HYPOTHESES: X single-type branching process started from a single individual satisfying (I)-(III) of Proposition 1.6
 SOURCE_QUANTIFIERS: X (d = 1); ∃ X̂
 SOURCE_CONCLUSION: there exists a conjugate branching process for X
 CONSTANT_SCOPE: none
@@ -936,9 +936,9 @@ EDGE: prop-single-type.fixed-point | source/arxiv-2411.06301v2/fixed-pt-finite-t
 EDGE: thm-fixed-gf.equivalence#conjugate-is-tilt | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L350-L350 | each conjugate is the tilt of X by A = 1/ℙ̂[E], so its law is determined by A
 EDGE: thm-fixed-gf.equivalence#conjugate-to-fixed-point | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L350-L350 | places A in (1,∞) so that the uniqueness of the fixed point in (1,∞) applies
 EDGE: prop-single-type.conjugate#hyps-imply-equivalence-hypotheses | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L350-L350 | discharges the premises of the two steps of thm-fixed-gf.equivalence used above
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -966,9 +966,9 @@ EDGE: counterexample#hyp-I-subcritical | source/arxiv-2411.06301v2/fixed-pt-fini
 EDGE: counterexample#hyp-II-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#counterexample@L262-L262 | 'clearly satisfies the hypotheses of Theorem 1.4': hypothesis (II)
 EDGE: counterexample#hyp-III-continuous | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#counterexample@L262-L262 | 'clearly satisfies the hypotheses of Theorem 1.4': hypothesis (III)
 EDGE: counterexample#three-fixed-points | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#counterexample@L262-L262 | 'one can check that the equation f(q_1,q_2) = (q_1,q_2) has three solutions in (1,∞)^2'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -992,9 +992,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1018,9 +1018,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1044,9 +1044,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1070,9 +1070,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1100,9 +1100,9 @@ EDGE: rem:hyp-iii-necessary#constants-and-hyp-I | source/arxiv-2411.06301v2/fixe
 EDGE: rem:hyp-iii-necessary#hyp-II-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-necessary@L252-L252 | 'the first two hypotheses hold': hypothesis (II)
 EDGE: rem:hyp-iii-necessary#f-infinite | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-necessary@L252-L252 | 'f(q) = (∞,…,∞) ≠ q for all q ∈ (1,∞)^d' for the concrete example
 EDGE: rem:hyp-iii-necessary#no-conjugate | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-necessary@L252-L252 | '(in which case no conjugate branching process exists)'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1126,9 +1126,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1152,9 +1152,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1178,9 +1178,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1193,7 +1193,7 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-nec
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-necessary@L252-L252
 CONTRACT_ID: paper.rem:hyp-iii-necessary#no-conjugate
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: the example is a subcritical, positive regular, non-singular single-type process with f(q) ≠ q for every q ∈ (1,∞)
+SOURCE_HYPOTHESES: the single-type branching process with ℙ[X(1) = m] = a m^{-3} for m ≥ 1 and ℙ[X(1) = 0] = b, for the constants a, b > 0 of rem:hyp-iii-necessary#constants-and-hyp-I
 SOURCE_QUANTIFIERS: the process above; ∄ X̂ conjugate for X
 SOURCE_CONCLUSION: there is no conjugate branching process for X
 CONSTANT_SCOPE: none
@@ -1235,9 +1235,9 @@ DEPS: rem:hyp-iii-automatic#continuity-from-finiteness
 ROUTES: -
 ROUTE_FOR: -
 EDGE: rem:hyp-iii-automatic#continuity-from-finiteness | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-automatic@L252-L252 | 'Hypothesis III is automatically satisfied if X is positive regular and non-singular and f_k(q) < ∞ ...' is the entire argument
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1261,9 +1261,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1287,13 +1287,42 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 LEAN_STATUS: EXTERNAL
 LEAN_REF: -
 LEAN_NOTE: -
 NOTE: canonical external (spec §5). Slice A consumes it in prop-single-type#f-below-diagonal (L354 'by Taylor expansion'); slice B (lem-gf-bded L511) consumes it too, so this block is expected to duplicate slice B's; orchestrator to merge by ID
+
+NODE: def-bp-basic.positive-regular#matrix-equiv
+KIND: claim
+TITLE: Positive regularity at time N is equivalent to M^N having all positive entries
+STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-bp-basic@L229-L229
+PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-bp-basic@L229-L229
+CONTRACT_ID: paper.def-bp-basic.positive-regular#matrix-equiv
+CONTRACT_VERSION: 1
+SOURCE_HYPOTHESES: d ∈ ℕ; X = {X(n)}_{n∈ℕ_0} is a d-type branching process with mean matrix M of display (1.3); each M_{k,j} is finite (L219); N ∈ ℕ
+SOURCE_QUANTIFIERS: d ∈ ℕ; X; N ∈ ℕ; k, j ∈ {1,…,d}
+SOURCE_CONCLUSION: ℙ_k[X_j(N) ≥ 1] > 0 for all k, j ∈ {1,…,d} if and only if the matrix M^N has all positive entries
+CONSTANT_SCOPE: none
+FROZEN_FILE: -
+FROZEN_DECL: -
+FROZEN_ANCHOR_ID: -
+FROZEN_ABI_SHA256: -
+DEPS: claim:mean-matrix-powers, def-bp-basic.positive-regular
+ROUTES: -
+ROUTE_FOR: -
+EDGE: claim:mean-matrix-powers | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-bp-basic@L229-L229 | 'the matrix M^N has all positive entries': (M^N)_{k,j} = 𝔼_k[X_j(N)], so positivity of the entries is positivity of the means
+EDGE: def-bp-basic.positive-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-bp-basic@L225-L229 | the probabilistic form ℙ_k[X_j(N) ≥ 1] > 0 of the same definition
+TOPOLOGY_STATUS: PROPOSED
+EXTRACTOR: extractor-A/sonnet
+REVIEWER: -
+LEAN_STATUS: NOT_STARTED
+LEAN_REF: -
+LEAN_NOTE: -
+NOTE: SOURCE_GAP: asserted ('which is equivalent to') without argument; that 𝔼_k[X_j(N)] > 0 iff ℙ_k[X_j(N) ≥ 1] > 0 and the passage from M^N entries to means are not written. Consumed (cross-slice, owned by slice B) by lem-gf-bded#perron-frobenius, whose use of the Perron-Frobenius theorem (L508) needs M^N > 0
+
 
 ## Coverage
 
@@ -1302,24 +1331,24 @@ KIND: heading
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#sec-intro@L170-L170
 DISPOSITION: EXCLUDED
 REASON: section heading 'Introduction'; no mathematical statement or proof content
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:heading:L173
 KIND: heading
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#sec-overview@L173-L173
 DISPOSITION: EXCLUDED
 REASON: subsection heading 'Overview'; no mathematical statement or proof content
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:L176:bp-setup
 KIND: definition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#bp-setup@L176-L177
 DISPOSITION: NODE def:population-sigma, def:step-kernel, def:path-law, claim:branching-property
-REASON: the sentence introducing the d-type branching process X(n), the measures ℙ_k and expectations 𝔼_k is split into the three frozen definition anchors for population structure, one-generation mechanism and path law
+REASON: the sentence introducing the d-type branching process X(n), the measures ℙ_k and expectations 𝔼_k is split into the three frozen definition anchors for population structure, one-generation mechanism and path law, plus the shared implicit branching/Markov-property node claim:branching-property used without statement by later proofs (ADJUDICATION B2)
 COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-A/sonnet
 REVIEWER: -
@@ -1329,213 +1358,213 @@ KIND: definition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#extinction-event@L179-L179
 DISPOSITION: NODE def:extinction
 REASON: defines the extinction event E; the classical conditioning fact restated in the same sentence is Proposition 2.1 (slice B node prop-cond-on-ext.cond-law, R6) and is not duplicated in slice A
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:cite:L179:jl-cond-on-ext
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#extinction-event@L179-L179
 DISPOSITION: EXCLUDED
 REASON: expository pointer ('for a more general result') in the overview; no slice-A proof consumes the cited theorem, whose use is in the proof of Proposition 2.1 (L405, slice B, ext:jl08-thm1)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:def-conjugate
 KIND: definition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-conjugate@L184-L187
 DISPOSITION: NODE def-conjugate
 REASON: Definition 1.1 is the frozen definition anchor; consumed by the direction steps of thm-fixed-gf.equivalence
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:L193:remark
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#remark-other-conditioning@L193-L196
 DISPOSITION: EXCLUDED
 REASON: literature remark on other ways to condition on non-extinction (spec §7: expository, no proof obligation for any root)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:cite:L194:Penisson-thesis
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#remark-other-conditioning@L194-L194
 DISPOSITION: EXCLUDED
 REASON: citation inside the expository remark L193-L196 (spec §7); not invoked by any proof
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:cite:L194:dallaporta2008q
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#remark-other-conditioning@L194-L194
 DISPOSITION: EXCLUDED
 REASON: citation inside the expository remark L193-L196 (spec §7); not invoked by any proof
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:cite:L194:harris1963theory
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#remark-other-conditioning@L194-L194
 DISPOSITION: EXCLUDED
 REASON: citation inside the expository remark L193-L196 (spec §7); not invoked by any proof
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:cite:L194:kolmogorov1938losung
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#remark-other-conditioning@L194-L194
 DISPOSITION: EXCLUDED
 REASON: citation inside the expository remark L193-L196 (spec §7); not invoked by any proof
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:cite:L194:lamperti1968conditioned
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#remark-other-conditioning@L194-L194
 DISPOSITION: EXCLUDED
 REASON: citation inside the expository remark L193-L196 (spec §7); not invoked by any proof
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:cite:L194:seneta1966quasi
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#remark-other-conditioning@L194-L194
 DISPOSITION: EXCLUDED
 REASON: citation inside the expository remark L193-L196 (spec §7); not invoked by any proof
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:cite:L194:yaglom1947certain.2
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#remark-other-conditioning@L194-L194
 DISPOSITION: EXCLUDED
 REASON: citation inside the expository remark L193-L196 (spec §7); not invoked by any proof
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:cite:L194:yaglom1947certain.3
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#remark-other-conditioning@L194-L194
 DISPOSITION: EXCLUDED
 REASON: citation inside the expository remark L193-L196 (spec §7); not invoked by any proof
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:cite:L194:yaglom1947certain.4
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#remark-other-conditioning@L194-L194
 DISPOSITION: EXCLUDED
 REASON: citation inside the expository remark L193-L196 (spec §7); not invoked by any proof
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:heading:L199
 KIND: heading
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#sec-result@L199-L199
 DISPOSITION: EXCLUDED
 REASON: subsection heading 'Main result'; no mathematical statement or proof content
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:eqn-generating-function
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-generating-function@L205-L205
 DISPOSITION: NODE eqn-generating-function
 REASON: display (1.1) is the frozen definition anchor of the generating function f (with the ∞ conventions of L208)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:L209:iterate-equivalence
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-gen-func-n@L209-L213
 DISPOSITION: NODE eqn-gen-func-n
 REASON: the 'Equivalently' sentence identifies the n-fold composition of f with a generation-n expectation; reused by later lemmas, so it is a claim node with SOURCE_GAP
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:eqn-gen-func-n
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-gen-func-n@L211-L211
 DISPOSITION: NODE eqn-gen-func-n
 REASON: display (1.2) is the content of the same claim node (E2 applied: product over j ≤ d)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:eqn-mean-matrix
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-mean-matrix@L216-L216
 DISPOSITION: NODE eqn-mean-matrix
 REASON: display (1.3) is the frozen definition anchor of the mean matrix M
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:L219:finite-mean
 KIND: assumption
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#subcritical-def@L219-L219
 DISPOSITION: NODE def:subcritical, claim:mean-matrix-powers
 REASON: 'We assume that each M_{k,j} is finite' is bundled into the subcritical anchor (R1) and recorded as a hypothesis of the L220 claim; it is not a standing assumption (STANDING_ASSUMPTIONS is -)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:L220:mean-matrix-powers
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#mean-matrix-powers@L220-L220
 DISPOSITION: NODE claim:mean-matrix-powers
 REASON: reused unlabeled claim (M^n)_{k,j} = 𝔼_k[X_j(n)] (spec §6); asserted without proof, so SOURCE_GAP
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:L220:subcritical-def
 KIND: definition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#subcritical-def@L220-L220
 DISPOSITION: NODE def:subcritical
 REASON: definition of subcritical/critical/supercritical through the largest eigenvalue of M is the frozen definition anchor
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:cite:L222:an-branching-processes
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-bp-basic-cite@L222-L222
 DISPOSITION: EXCLUDED
 REASON: 'see, e.g., [Section 6]' only motivates the non-degeneracy conditions of Definition 1.3; no slice-A proof invokes this reference (the An72 result used by Proposition 2.1 is ext:an72-v3-thm2, slice B)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:def-bp-basic
 KIND: definition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-bp-basic@L224-L234
 DISPOSITION: NODE def-bp-basic.positive-regular, def-bp-basic.non-singular
 REASON: Definition 1.3 is split into its two frozen definition anchors (positive regular; non-singular)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:L229:pos-reg-matrix-equiv
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-bp-basic@L229-L229
-DISPOSITION: EXCLUDED
-REASON: the claim 'positive regular iff M^N has all positive entries' (L229) is not consumed by any root's proof; per ERRATA R2 only roots are anchored, so it is excluded (ADJUDICATION A1)
+DISPOSITION: NODE def-bp-basic.positive-regular#matrix-equiv
+REASON: the clause 'which is equivalent to the condition that the matrix M^N has all positive entries' (L229) is consumed by the Perron-Frobenius application at L508 (lem-gf-bded#perron-frobenius); asserted without argument, so a SOURCE_GAP claim node (supersedes ADJUDICATION A1, whose condition 'if still unreachable' does not hold)
 COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-A/sonnet
 REVIEWER: -
@@ -1545,51 +1574,78 @@ KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238
 DISPOSITION: NODE thm-fixed-gf.equivalence, thm-fixed-gf.equivalence#fixed-point-to-conjugate, thm-fixed-gf.equivalence#conjugate-to-fixed-point, claim:subcritical-extinction, thm-fixed-gf.equivalence#hat-differs-from-X, thm-fixed-gf.equivalence#conjugate-regularity, thm-fixed-gf.equivalence#conjugate-is-tilt
 REASON: the 'It is easy to see ... equivalent' sentence is the frozen equivalence root; its two directions and the premise-discharge bridges (extinction certain, clause (a), regularity premises for formula (2.1), inverse tilt) are separate SOURCE_GAP nodes
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:thm-fixed-gf
 KIND: theorem
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed-gf@L241-L250
 DISPOSITION: NODE thm-fixed-gf.fixed-point, thm-fixed-gf.fixed-point#reduce-to-thm-2-7, thm-fixed-gf.conjugate, thm-fixed-gf.equivalence
 REASON: Theorem 1.4 is split (R3) into the fixed-point and conjugate roots; the 'equivalently' clause of L249 is the equivalence root; the reduction to Theorem 2.7 (carrier change q = e^λ) is a separate application node
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:L252:hyp-i-necessary
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-necessary-remarks@L252-L252
 DISPOSITION: EXCLUDED
 REASON: 'Hypothesis I is necessary since a supercritical branching process conditioned on extinction is always subcritical' feeds no root (spec §7, R2); the cited fact is the un-anchored 'Moreover' clause of Proposition 2.1 (R6)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:L252:hyp-iii-automatic
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-automatic@L252-L252
 DISPOSITION: NODE rem:hyp-iii-automatic, rem:hyp-iii-automatic#continuity-from-finiteness
 REASON: frozen remark root and its single unproved bridge (SOURCE_GAP)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:L252:hyp-iii-necessary
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-necessary@L252-L252
 DISPOSITION: NODE rem:hyp-iii-necessary, rem:hyp-iii-necessary#constants-and-hyp-I, rem:hyp-iii-necessary#hyp-II-regular, rem:hyp-iii-necessary#f-infinite, rem:hyp-iii-necessary#no-conjugate
 REASON: frozen remark root, split into the unspecified constants with subcriticality, positive regularity and non-singularity, divergence of f, and the application of the equivalence for 'no conjugate exists' (all SOURCE_GAP)
+COVERAGE_STATUS: REVIEWED
+EXTRACTOR: extractor-A/sonnet
+REVIEWER: reviewer-A/sonnet
+
+ITEM: inv:L265:counterexample-claims
+KIND: claim
+SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#counterexample@L262-L262
+DISPOSITION: NODE counterexample, counterexample#hyp-I-subcritical, counterexample#hyp-II-regular, counterexample#hyp-III-continuous, counterexample#three-fixed-points
+REASON: 'clearly satisfies the hypotheses of Theorem 1.4' and 'one can check that f(q) = q has three solutions in (1,∞)^2' are the root and its SOURCE_GAP steps (R4)
 COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-A/sonnet
 REVIEWER: -
 
-ITEM: inv:L265:counterexample-claims
+ITEM: inv:L262:robustness-claim
 KIND: claim
-SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#counterexample@L255-L276
-DISPOSITION: NODE counterexample, counterexample#hyp-I-subcritical, counterexample#hyp-II-regular, counterexample#hyp-III-continuous, counterexample#three-fixed-points
-REASON: Example 1.5's hypotheses-hold and three-solutions claims are the root and its SOURCE_GAP steps (R4). The robustness-under-perturbation claim, the d = 3 seven-fixed-point claim and the 'arbitrarily large' expectation (L262-L263) feed no root and have no node (spec §7); they are not separately inventoried
+SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#counterexample@L262-L262
+DISPOSITION: EXCLUDED
+REASON: 'this example is robust' (three fixed points persist under small perturbations) feeds no root (spec §7; Example 1.5 is anchored only as the concrete offspring law with at least three fixed points, R4)
+COVERAGE_STATUS: PROPOSED
+EXTRACTOR: extractor-A/sonnet
+REVIEWER: -
+
+ITEM: inv:L262:d3-seven-fixed-points
+KIND: claim
+SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#counterexample@L262-L262
+DISPOSITION: EXCLUDED
+REASON: 'a similar example where d = 3 and there are seven fixed points' is not in the anchored statement and feeds no root (spec §7)
+COVERAGE_STATUS: PROPOSED
+EXTRACTOR: extractor-A/sonnet
+REVIEWER: -
+
+ITEM: inv:L263:arbitrarily-many-fixed-points
+KIND: claim
+SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#counterexample@L263-L263
+DISPOSITION: EXCLUDED
+REASON: 'we expect that ... the number of fixed points can be arbitrarily large' is a stated expectation with no proof obligation and feeds no root (spec §7)
 COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-A/sonnet
 REVIEWER: -
@@ -1599,36 +1655,55 @@ KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#counterexample@L255-L264
 DISPOSITION: NODE counterexample, counterexample#hyp-I-subcritical, counterexample#hyp-II-regular, counterexample#hyp-III-continuous, counterexample#three-fixed-points
 REASON: the example environment itself (offspring law and the two asserted conclusions) is the frozen root and its SOURCE_GAP steps; same nodes as the claim item above
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:prop-single-type
 KIND: proposition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L343-L351
 DISPOSITION: NODE prop-single-type.fixed-point, prop-single-type.conjugate, prop-single-type.conjugate#hyps-imply-equivalence-hypotheses, prop-single-type.conjugate#existence, prop-single-type.conjugate#unique-in-law
 REASON: Proposition 1.6 is split (R5) into the fixed-point and conjugate roots; the 'Equivalently' bridge from conjugate to fixed point is the existence and uniqueness-in-law application steps plus the d = 1 hypothesis check (SOURCE_GAP)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:proof:prop-single-type
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L352-L355
 DISPOSITION: NODE prop-single-type#finite-near-one, prop-single-type#mean-eq-derivative, prop-single-type#f-below-diagonal, prop-single-type#f-above-diagonal, prop-single-type#fixed-point-exists, prop-single-type#strict-convexity, prop-single-type#at-most-two-fixed-points, ext:taylor
 REASON: the proof paragraph is decomposed sentence by sentence into finiteness near 1, mean equals derivative, the two diagonal-crossing witnesses (using the named Taylor expansion), the intermediate-value fixed point, strict convexity, and the at-most-two-fixed-points conclusion
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: reviewer-A/sonnet
 
 ITEM: inv:heading:L359
 KIND: heading
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#sec-outline@L359-L359
 DISPOSITION: EXCLUDED
-REASON: subsection heading 'Proof outline'; the outline body (L360-L377) is expository and duplicates §2 statements (spec §7)
+REASON: subsection heading 'Proof outline'; its body is the separate excluded item inv:outline:L360
 COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-A/sonnet
 REVIEWER: -
+
+ITEM: inv:outline:L360
+KIND: proof-region
+SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#sec-outline@L360-L379
+DISPOSITION: EXCLUDED
+REASON: §1.3 proof outline (spec §7): expository summary of §2 and §3; the display of S_0 and S_∞ (L366-L369) restates the basin definitions (2.9) (eqn-basin-def.zero/infty, L726-L729) and every lemma it cites (Lemmas 2.3, 2.16-2.19 and Theorem 3.1) has its own node in slices B-D; it supplies no hypothesis, step or edge for any root
+COVERAGE_STATUS: PROPOSED
+EXTRACTOR: extractor-A/sonnet
+REVIEWER: -
+
+ITEM: inv:L188:equivalence-preview
+KIND: claim
+SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#equivalence-preview@L188-L188
+DISPOSITION: NODE thm-fixed-gf.equivalence
+REASON: 'By basic branching process theory, this is equivalent to the existence of a fixed point for the generating function which lies in (1,∞)^d' is the first informal statement of the equivalence of L238 (repeated at L249); same node, no separate obligation
+COVERAGE_STATUS: PROPOSED
+EXTRACTOR: extractor-A/sonnet
+REVIEWER: -
+
 
 ## Report
 

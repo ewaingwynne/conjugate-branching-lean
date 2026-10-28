@@ -19,9 +19,9 @@ DEPS: def-log-gf
 ROUTES: -
 ROUTE_FOR: -
 EDGE: def-log-gf | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-basin-def.zero@L728-L728 | S_0 is defined through the iterates g^{(n)} of g from Definition 2.6
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -46,9 +46,9 @@ DEPS: def-log-gf
 ROUTES: -
 ROUTE_FOR: -
 EDGE: def-log-gf | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-basin-def.infty@L729-L729 | S_inf is defined through the iterates g^{(n)} of g from Definition 2.6
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -79,7 +79,7 @@ REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP: asserted ('since our branching process is positive regular, there exists N such that if any of the d coordinates of lambda is equal to inf, then g^{(N)}(lambda) = (inf,...,inf)', L732) with no argument. The source does not show how positive regularity (P_k[X_j(N) >= 1] > 0 for all k, j) interacts with the infinite-coordinate convention for f^{(N)} and the exponential/log carrier. The paper's 'Definition 2.8' here is Definition 1.3 (E5). The edge to eqn-convex-func-n records the formula through which g^{(N)} can be evaluated at infinite points; the source cites only positive regularity.
+NOTE: SOURCE_GAP: asserted ('since our branching process is positive regular, there exists N such that if any of the d coordinates of lambda is equal to inf, then g^{(N)}(lambda) = (inf,...,inf)', L732) with no argument. The source does not show how positive regularity (P_k[X_j(N) >= 1] > 0 for all k, j) interacts with the infinite-coordinate convention for f^{(N)} and the exponential/log carrier. The paper's 'Definition 2.8' here is Definition 1.3 (E5). The only edge is to the definition of positive regularity; the edge to eqn-convex-func-n was dropped (ADJUDICATION C5) because the source cites only positive regularity.
 
 NODE: eqn-infty-subset
 KIND: display
@@ -101,9 +101,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-infty-subset#blowup | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-infty-subset@L732-L733 | 'This implies that (2.10)': g^{(N)}(lambda) = (inf,...,inf) is the stated reason
 EDGE: eqn-basin-def.infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-infty-subset@L733-L734 | membership in S_inf means limsup of the norm of g^{(n)}(lambda) is inf, by (2.9)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -129,9 +129,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-closed@L741-L741 | 'immediate from the definition (2.9)': g^{(n)}(g(lambda)) = g^{(n+1)}(lambda) shifts the sequence inside the lim
 EDGE: eqn-basin-def.infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-closed@L741-L741 | same shift inside the limsup
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -158,9 +158,9 @@ ROUTE_FOR: -
 EDGE: lem-gf-bded | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#subinvariant-point@L771-L771 | 'By Lemma 2.5, there exists lambda^0 ... such that g(lambda^0) < lambda^0': Lemma 2.5 supplies q^0 in (1,inf)^d with f_k(q^0) < q^0_k for all k
 EDGE: def-log-gf | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#subinvariant-point@L771-L771 | lambda^0 := log q^0 coordinatewise gives g_k(lambda^0) = log f_k(q^0) < log q^0_k = lambda^0_k since g = log o f o exp
 EDGE: def-componentwise | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#subinvariant-point@L771-L771 | g_k(lambda^0) < lambda^0_k for every k yields g(lambda^0) < lambda^0 in the sense of Definition 2.8 (<= with at least one strict coordinate)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -173,8 +173,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attract
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#orbit-lambda0@L771-L771
 CONTRACT_ID: paper.lem-attractive-zero#orbit-lambda0
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); lambda^0 in (0,inf)^d with g(lambda^0) < lambda^0
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; lambda^0
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf])
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; lambda^0 the witness of lem-attractive-zero#subinvariant-point (lambda^0 in (0,inf)^d with g(lambda^0) < lambda^0)
 SOURCE_CONCLUSION: lim_{n -> inf} |g^{(n)}(lambda^0)| = 0
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
@@ -201,19 +201,20 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attract
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#comparison@L772-L775
 CONTRACT_ID: paper.lem-attractive-zero#comparison
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); lambda^0 in (0,inf)^d with lim_n |g^{(n)}(lambda^0)| = 0
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; lambda^0; eps; lambda in [0,eps]^d
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf])
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; lambda^0 the witness of lem-attractive-zero#subinvariant-point (lambda^0 in (0,inf)^d) with lim_n |g^{(n)}(lambda^0)| = 0 by lem-attractive-zero#orbit-lambda0; eps := min_{j in {1,...,d}} lambda^0_j; lambda in [0,eps]^d
 SOURCE_CONCLUSION: with eps := min_{j in {1,...,d}} lambda^0_j > 0, for every lambda in [0,eps]^d: lim_{n -> inf} |g^{(n)}(lambda)| = 0
 CONSTANT_SCOPE: eps depends only on X (through lambda^0)
 FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: lem-mono, lem-attractive-zero#orbit-lambda0
+DEPS: lem-mono, lem-attractive-zero#orbit-lambda0, lem-attractive-zero#subinvariant-point
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#comparison@L772-L772 | 'By the monotonicity of g (Lemma 2.9)': lambda <= lambda^0 gives g^{(n)}(lambda) <= g^{(n)}(lambda^0) coordinatewise (first assertion)
 EDGE: lem-attractive-zero#orbit-lambda0 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#comparison@L771-L772 | supplies lim of the norm of g^{(n)}(lambda^0) = 0, which is transferred to every lambda in [0,eps]^d
+EDGE: lem-attractive-zero#subinvariant-point | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#comparison@L772-L775 | 'eps := min_j lambda^0_j > 0': positivity of eps and lambda <= lambda^0 for lambda in [0,eps]^d use lambda^0 in (0,inf)^d, the conclusion of the node that chooses lambda^0
 TOPOLOGY_STATUS: PROPOSED
 EXTRACTOR: extractor-C/sonnet
 REVIEWER: -
@@ -241,9 +242,9 @@ DEPS: lem-attractive-zero#comparison
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-attractive-zero#comparison | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero@L772-L775 | proof concludes 'the lemma statement holds with eps := min_j lambda^0_j > 0'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -256,7 +257,7 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attract
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#choose-N-m@L786-L791
 CONTRACT_ID: paper.lem-attractive-infty#choose-N-m
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); N and p_{k,j}(N) as in Lemma 2.4 (p_{k,j}(N) := P_k[X_j(N) >= 1 and X_k(N) >= 1] for k != j and p_{k,k}(N) := P_k[X_k(N) >= 2])
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); p_{k,j}(N) for N in N as defined in Lemma 2.4 (p_{k,j}(N) := P_k[X_j(N) >= 1 and X_k(N) >= 1] for k != j and p_{k,k}(N) := P_k[X_k(N) >= 2])
 SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; exists N in N; m := min over k, j in {1,...,d} of p_{k,j}(N)
 SOURCE_CONCLUSION: there exists N in N with p_{k,j}(N) > 0 for all k, j in {1,...,d} (Lemma 2.4), hence m := min{p_{k,j}(N) : k, j in {1,...,d}} > 0
 CONSTANT_SCOPE: N and m depend only on X
@@ -283,8 +284,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attract
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#lower-bound@L792-L798
 CONTRACT_ID: paper.lem-attractive-infty#lower-bound
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); N, m as in lem-attractive-infty#choose-N-m; lambda in [0,inf)^d
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; N; m; lambda in [0,inf)^d; k in {1,...,d}
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); lambda in [0,inf)^d
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; N, m the witnesses of lem-attractive-infty#choose-N-m; lambda in [0,inf)^d; k in {1,...,d}
 SOURCE_CONCLUSION: for every lambda in [0,inf)^d and k in {1,...,d}: exp(g_k^{(N)}(lambda)) = E_k[prod_j e^{lambda_j X_j(N)}] >= max_j (e^{lambda_j + lambda_k} p_{k,j}(N)) >= e^{lambda_k} m exp(max_j lambda_j)  (ruled reading E3; the source display has min_j)
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
@@ -311,8 +312,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attract
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#strict-increase@L799-L799
 CONTRACT_ID: paper.lem-attractive-infty#strict-increase
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); N, m as in lem-attractive-infty#choose-N-m; C := log m^{-1}; lambda in [0,inf)^d \ [0,C]^d (i.e. max_j lambda_j > C)
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; N; m; C; lambda in [0,inf)^d \ [0,C]^d; k in {1,...,d}
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); lambda in [0,inf)^d \ [0,C]^d (i.e. max_j lambda_j > C)
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; N, m the witnesses of lem-attractive-infty#choose-N-m; C := log m^{-1}; lambda in [0,inf)^d \ [0,C]^d; k in {1,...,d}
 SOURCE_CONCLUSION: for every lambda in [0,inf)^d \ [0,C]^d: g^{(N)}_k(lambda) > lambda_k for every k in {1,...,d}; in particular g^{(N)}(lambda) > lambda in the sense of Definition 2.8 (ruled reading E3)
 CONSTANT_SCOPE: C depends only on X (through m)
 FROZEN_FILE: -
@@ -339,9 +340,9 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attract
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#divergence@L799-L799
 CONTRACT_ID: paper.lem-attractive-infty#divergence
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); lambda in [0,inf)^d with g^{(N)}(lambda) > lambda
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; N; lambda in [0,inf)^d
-SOURCE_CONCLUSION: lim_{n -> inf} |g^{(n)}(lambda)| = inf
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); g, g^{(n)} as in Definition 2.6 evaluated on [0,inf]^d
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; N, C the witnesses of lem-attractive-infty#strict-increase (g^{(N)}(lambda) > lambda for every lambda in [0,inf)^d \ [0,C]^d); lambda in [0,inf)^d \ [0,C]^d
+SOURCE_CONCLUSION: for every lambda in [0,inf)^d \ [0,C]^d: lim_{n -> inf} |g^{(n)}(lambda)| = inf
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
 FROZEN_DECL: -
@@ -368,8 +369,8 @@ PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-
 CONTRACT_ID: paper.lem-attractive-infty
 CONTRACT_VERSION: 1
 SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); g, g^{(n)} as in Definition 2.6 evaluated on [0,inf]^d; |.| is any norm on R^d (R1)
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; exists N in N (N as in Lemma 2.4); exists C > 0; for all lambda in [0,inf)^d \ [0,C]^d
-SOURCE_CONCLUSION: [Ruled reading E3] there exist N in N (the Lemma 2.4 time with p_{k,j}(N) > 0) and C > 0 such that for every lambda in [0,inf)^d \ [0,C]^d: g^{(N)}(lambda) > lambda (componentwise order of Definition 2.8) and lim_{n -> inf} |g^{(n)}(lambda)| = inf
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; exists N in N; exists C > 0; for all lambda in [0,inf)^d \ [0,C]^d
+SOURCE_CONCLUSION: [Ruled reading E3] there exist N in N and C > 0 such that for every lambda in [0,inf)^d \ [0,C]^d: g^{(N)}(lambda) > lambda (componentwise order of Definition 2.8) and lim_{n -> inf} |g^{(n)}(lambda)| = inf
 CONSTANT_SCOPE: N and C depend only on X (both precede lambda)
 FROZEN_FILE: -
 FROZEN_DECL: -
@@ -407,9 +408,9 @@ DEPS: def-log-gf
 ROUTES: -
 ROUTE_FOR: -
 EDGE: def-log-gf | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#g-iter-continuous@L814-L814 | g = log o f o exp coordinatewise (Definition 2.6): continuity of each f_k from (0,inf]^d to (0,inf] (Hypothesis III) transfers to g and its iterates by composition
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -422,8 +423,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-use-att
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-use-attractive-zero@L808-L811
 CONTRACT_ID: paper.eqn-use-attractive-zero
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); eps > 0 as in Lemma 2.15
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; eps from Lemma 2.15
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9)
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; eps the witness of lem-attractive-zero (Lemma 2.15)
 SOURCE_CONCLUSION: [0,eps]^d is a subset of S_0, where eps > 0 is as in Lemma 2.15
 CONSTANT_SCOPE: eps depends only on X
 FROZEN_FILE: -
@@ -450,9 +451,9 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-o
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#S0-open@L812-L817
 CONTRACT_ID: paper.lem-basin-open#S0-open
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); eps > 0 as in Lemma 2.15
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; eps; lambda in S_0; n in N (chosen with g^{(n)}(lambda) in [0,eps)^d)
-SOURCE_CONCLUSION: S_0 is a relatively open subset of [0,inf]^d: for each lambda in S_0 there is n with g^{(n)}(lambda) in [0,eps)^d, and (g^{(n)})^{-1}([0,eps)^d) is a neighbourhood of lambda in [0,inf]^d contained in S_0
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9)
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; eps the witness of lem-attractive-zero; lambda in S_0; n in N (chosen with g^{(n)}(lambda) in [0,eps)^d)
+SOURCE_CONCLUSION: S_0 is a relatively open subset of [0,inf]^d
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
 FROZEN_DECL: -
@@ -480,8 +481,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-o
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#outside-cube-in-Sinf@L820-L820
 CONTRACT_ID: paper.lem-basin-open#outside-cube-in-Sinf
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); C > 0 as in Lemma 2.16
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; C from Lemma 2.16
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9)
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; C the witness of lem-attractive-infty (Lemma 2.16)
 SOURCE_CONCLUSION: [0,inf]^d \ [0,C]^d is a subset of S_inf, where C > 0 is as in Lemma 2.16
 CONSTANT_SCOPE: C depends only on X
 FROZEN_FILE: -
@@ -509,9 +510,9 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-o
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#Sinf-open@L820-L820
 CONTRACT_ID: paper.lem-basin-open#Sinf-open
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); C > 0 as in Lemma 2.16
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; C; lambda in S_inf; n in N (chosen with g^{(n)}(lambda) outside [0,C]^d)
-SOURCE_CONCLUSION: S_inf is a relatively open subset of [0,inf]^d: for each lambda in S_inf there is n with g^{(n)}(lambda) in [0,inf]^d \ [0,C]^d, and (g^{(n)})^{-1}([0,inf]^d \ [0,C]^d) is a neighbourhood of lambda contained in S_inf
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9)
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; C the witness of lem-attractive-infty; lambda in S_inf; n in N (chosen with g^{(n)}(lambda) in [0,inf]^d \ [0,C]^d)
+SOURCE_CONCLUSION: S_inf is a relatively open subset of [0,inf]^d
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
 FROZEN_DECL: -
@@ -552,9 +553,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-basin-open#S0-open | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open@L808-L817 | first half of the proof
 EDGE: lem-basin-open#Sinf-open | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open@L820-L820 | second half of the proof ('To prove the statement for S_inf')
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -582,9 +583,9 @@ EDGE: lem-attractive-zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#l
 EDGE: lem-attractive-infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect#ray-meets-both@L832-L832 | ru outside [0,C]^d for large r gives lim ‖g^{(n)}(ru)‖ = inf, a point of S_inf
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect#ray-meets-both@L832-L832 | membership in S_0 by (2.9)
 EDGE: eqn-basin-def.infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect#ray-meets-both@L832-L832 | membership in S_inf by (2.9)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -613,9 +614,9 @@ EDGE: lem-basin-open | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ra
 EDGE: lem-ray-intersect#ray-meets-both | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect#existence@L832-L832 | both relatively open pieces S_0 cap L and S_inf cap L are nonempty
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect#existence@L832-L832 | 'By (2.9), S_0 and S_inf are disjoint': lim of the norm = 0 excludes limsup = inf
 EDGE: eqn-basin-def.infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect#existence@L832-L832 | same disjointness statement
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -628,7 +629,7 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-int
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect#uniqueness@L835-L835
 CONTRACT_ID: paper.lem-ray-intersect#uniqueness
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); u in [0,inf)^d with |u| = 1; R > r > 0 with ru, Ru in [0,inf)^d \ (S_0 u S_inf)
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); u in [0,inf)^d with |u| = 1
 SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; u; R > r > 0
 SOURCE_CONCLUSION: there do not exist R > r > 0 with both ru and Ru in [0,inf)^d \ (S_0 u S_inf); equivalently L contains at most one element of [0,inf)^d \ (S_0 u S_inf)
 CONSTANT_SCOPE: none
@@ -670,9 +671,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-ray-intersect#existence | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect@L832-L833 | first paragraph: at least one such r
 EDGE: lem-ray-intersect#uniqueness | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect@L835-L835 | second paragraph: at most one such r
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -685,8 +686,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#choose-r-R@L865-L865
 CONTRACT_ID: paper.lem-retract#choose-r-R
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); Lambda := [0,inf)^d \ (S_0 u S_inf); eps and C as in Lemmas 2.15 and 2.16; A(r,R) as in (2.12)
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; exists R > r > 0
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); Lambda := [0,inf)^d \ (S_0 u S_inf); A(r,R) as in (2.12)
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; eps, C the witnesses of lem-attractive-zero and lem-attractive-infty; exists R > r > 0
 SOURCE_CONCLUSION: there exist R > r > 0 such that Lambda is a subset of A(r,R) = {lambda in [0,inf)^d : r <= |lambda| <= R}
 CONSTANT_SCOPE: r and R depend only on X
 FROZEN_FILE: -
@@ -727,9 +728,9 @@ DEPS: lem-ray-intersect
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-ray-intersect | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#radial-bijection@L868-L868 | 'By Lemma 2.18, pi restricted to Lambda is a bijection': for each u in B there is exactly one r > 0 with ru in Lambda
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -756,9 +757,9 @@ ROUTE_FOR: -
 EDGE: lem-basin-open | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#Lambda-compact@L870-L870 | 'By Lemma 2.17, Lambda is a relatively closed subset of [0,inf]^d': S_0 u S_inf is relatively open
 EDGE: lem-attractive-infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#Lambda-compact@L870-L870 | 'By Lemma 2.16, Lambda is also bounded'
 EDGE: eqn-infty-subset | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#Lambda-compact@L870-L870 | needed (not cited) to identify Lambda with the complement of the open set S_0 u S_inf in [0,inf]^d, since Lambda lies in [0,inf)^d
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -771,8 +772,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#phi-homeomorphism@L869-L875
 CONTRACT_ID: paper.lem-retract#phi-homeomorphism
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); Lambda := [0,inf)^d \ (S_0 u S_inf); B; pi continuous bijection Lambda -> B with Lambda compact
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; pi; B; phi
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); Lambda := [0,inf)^d \ (S_0 u S_inf); B := {lambda in [0,inf)^d : |lambda| = 1}; pi(lambda) := lambda/|lambda| on [0,inf)^d \ {0}
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; pi restricted to Lambda is the bijection onto B of lem-retract#radial-bijection, with Lambda compact by lem-retract#Lambda-compact; phi
 SOURCE_CONCLUSION: pi restricted to Lambda is a homeomorphism from Lambda onto B; its inverse phi : B -> Lambda is continuous and satisfies phi(u)/|phi(u)| = u for all u in B
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
@@ -800,8 +801,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-retract
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-retract-def@L877-L880
 CONTRACT_ID: paper.eqn-retract-def
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); Lambda := [0,inf)^d \ (S_0 u S_inf); r, R and A = A(r,R) as chosen in lem-retract#choose-r-R; B, pi, phi as in the proof of Lemma 2.19
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; r, R; lambda in A; t in [0,1]
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); Lambda := [0,inf)^d \ (S_0 u S_inf); B := {lambda in [0,inf)^d : |lambda| = 1}; pi(lambda) := lambda/|lambda|
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; r, R the witnesses of lem-retract#choose-r-R (A = A(r,R) as in (2.12)); phi the continuous inverse of pi restricted to Lambda from lem-retract#phi-homeomorphism; lambda in A; t in [0,1]
 SOURCE_CONCLUSION: for lambda in A and t in [0,1], H_t(lambda) := (1-t) lambda + t phi(lambda/|lambda|)
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
@@ -828,8 +829,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-continuous@L882-L882
 CONTRACT_ID: paper.lem-retract#H-continuous
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); Lambda := [0,inf)^d \ (S_0 u S_inf); A = A(r,R); phi continuous; H as in (2.13)
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; (lambda, t) in A x [0,1]
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); Lambda := [0,inf)^d \ (S_0 u S_inf); A = A(r,R); H as in (2.13)
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; phi continuous by lem-retract#phi-homeomorphism; (lambda, t) in A x [0,1]
 SOURCE_CONCLUSION: (lambda, t) -> H_t(lambda) is jointly continuous on A x [0,1]
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
@@ -869,9 +870,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-retract-def | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-fixes-Lambda@L884-L884 | substituting phi(lambda/‖lambda‖) = lambda into (2.13) gives H_t(lambda) = lambda
 EDGE: lem-retract#phi-homeomorphism | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-fixes-Lambda@L883-L883 | 'By construction, phi(lambda/‖lambda‖) = lambda for lambda in Lambda': phi is the inverse of pi restricted to Lambda
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -884,8 +885,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-preserves-A@L885-L889
 CONTRACT_ID: paper.lem-retract#H-preserves-A
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); Lambda := [0,inf)^d \ (S_0 u S_inf); A = A(r,R); H as in (2.13); Lambda subset A
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; lambda in A; t in [0,1]
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); Lambda := [0,inf)^d \ (S_0 u S_inf); A = A(r,R); H as in (2.13)
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; r, R the witnesses of lem-retract#choose-r-R (Lambda subset A(r,R)); lambda in A; t in [0,1]
 SOURCE_CONCLUSION: for every lambda in A and t in [0,1]: lambda and phi(lambda/|lambda|) lie on the same ray from 0, |H_t(lambda)| = (1-t)|lambda| + t|phi(lambda/|lambda|)| in [r,R], so H_t(lambda) in A
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
@@ -930,9 +931,9 @@ EDGE: lem-retract#phi-homeomorphism | source/arxiv-2411.06301v2/fixed-pt-finite-
 EDGE: lem-retract#H-continuous | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract@L882-L882 | continuity of H
 EDGE: lem-retract#H-fixes-Lambda | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract@L883-L884 | H_t restricted to Lambda is the identity for all t
 EDGE: lem-retract#H-preserves-A | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract@L885-L889 | each H_t maps A to itself
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -959,9 +960,9 @@ ROUTE_FOR: -
 EDGE: eqn-infty-subset | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#g-image-finite@L896-L896 | if g(lambda) were in [0,inf]^d \ [0,inf)^d it would lie in S_inf by (2.10)
 EDGE: lem-basin-closed | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#g-image-finite@L896-L896 | g(lambda) in S_inf would force lambda in S_inf (g^{-1}(S_inf) subset S_inf), contradicting lambda in Lambda
 EDGE: lem-basin-open#g-iter-continuous | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#g-image-finite@L896-L896 | g maps [0,inf]^d into [0,inf]^d (n = 1), so g(lambda) is a point of [0,inf]^d
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -987,9 +988,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-basin-closed | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#Lambda-invariant@L896-L896 | 'if lambda in [0,inf)^d and g(lambda) in S_0, then Lemma 2.14 implies lambda in S_0; similarly for S_inf': g^{-1}(S_0) subset S_0 and g^{-1}(S_inf) subset S_inf
 EDGE: thm-fixed#g-image-finite | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#Lambda-invariant@L896-L896 | 'Hence, if lambda in Lambda, we must have g(lambda) in Lambda' requires g(lambda) in [0,inf)^d
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1002,8 +1003,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#a
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#apply-retract@L898-L898
 CONTRACT_ID: paper.thm-fixed#apply-retract
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); Lambda := [0,inf)^d \ (S_0 u S_inf); r, R as in Lemma 2.19
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; r, R from Lemma 2.19; H_1
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); Lambda := [0,inf)^d \ (S_0 u S_inf)
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; r, R the witnesses of lem-retract (Lemma 2.19); H_1
 SOURCE_CONCLUSION: for r, R as in Lemma 2.19 and A = A(r,R): Lambda is a subset of A, and H_1 : A -> Lambda is a continuous retraction (H_1(A) subset Lambda, H_1 restricted to Lambda is the identity)
 CONSTANT_SCOPE: r and R depend only on X
 FROZEN_FILE: -
@@ -1029,8 +1030,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#A
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#A-homeomorphic-to-ball@L898-L898
 CONTRACT_ID: paper.thm-fixed#A-homeomorphic-to-ball
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); A = A(r,R) as in Lemma 2.19; |.| is any norm on R^d (R1)
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; r, R
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); |.| is any norm on R^d (R1)
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; r, R the witnesses of lem-retract (A = A(r,R) as in Lemma 2.19)
 SOURCE_CONCLUSION: A = {lambda in [0,inf)^d : r <= |lambda| <= R} is homeomorphic to a closed d-dimensional Euclidean ball
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
@@ -1056,8 +1057,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#b
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#brouwer-on-A@L899-L899
 CONTRACT_ID: paper.thm-fixed#brouwer-on-A
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); A = A(r,R) homeomorphic to a closed d-dimensional Euclidean ball
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; A; F : A -> A
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf])
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; A = A(r,R), homeomorphic to a closed d-dimensional Euclidean ball by thm-fixed#A-homeomorphic-to-ball; F : A -> A continuous
 SOURCE_CONCLUSION: every continuous function from A to itself has a fixed point
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
@@ -1084,8 +1085,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#g
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#gH1-self-map@L902-L902
 CONTRACT_ID: paper.thm-fixed#gH1-self-map
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); Lambda := [0,inf)^d \ (S_0 u S_inf); A, H_1 as in thm-fixed#apply-retract; g(Lambda) subset Lambda
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; A; H_1
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); Lambda := [0,inf)^d \ (S_0 u S_inf)
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; A, H_1 as given by thm-fixed#apply-retract; g(Lambda) subset Lambda by thm-fixed#Lambda-invariant
 SOURCE_CONCLUSION: g o H_1 : A -> Lambda is a continuous function from A to itself (Lambda subset A)
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
@@ -1113,8 +1114,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#f
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#fixed-point-in-Lambda@L902-L902
 CONTRACT_ID: paper.thm-fixed#fixed-point-in-Lambda
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); Lambda := [0,inf)^d \ (S_0 u S_inf); A, H_1 as in thm-fixed#apply-retract
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; lambda in A
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); Lambda := [0,inf)^d \ (S_0 u S_inf)
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; A, H_1 as given by thm-fixed#apply-retract; lambda in A
 SOURCE_CONCLUSION: there exists lambda in Lambda such that g(lambda) = lambda
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
@@ -1155,9 +1156,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-attractive-zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#zero-notin-Lambda@L904-L904 | 'Since 0 is not in Lambda': 0 lies in [0,eps]^d, on which the orbit tends to 0 (reading; the source gives no reason)
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#zero-notin-Lambda@L904-L904 | hence 0 is in S_0 by (2.9), so 0 is not in Lambda
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1170,8 +1171,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#p
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#positivity@L904-L904
 CONTRACT_ID: paper.thm-fixed#positivity
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); g, g^{(n)} as in Definition 2.6 evaluated on [0,inf]^d; lambda in [0,inf)^d \ {0} with g(lambda) = lambda
-SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; lambda in [0,inf)^d \ {0} with g(lambda) = lambda
+SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); g, g^{(n)} as in Definition 2.6 evaluated on [0,inf]^d
+SOURCE_QUANTIFIERS: Theorem 1.4 setting; d in N; X; lambda in Lambda with g(lambda) = lambda (the witness of thm-fixed#fixed-point-in-Lambda), lambda != 0 (thm-fixed#zero-notin-Lambda); q := e^lambda
 SOURCE_CONCLUSION: lambda in (0,inf)^d (every coordinate of lambda is positive)
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
@@ -1192,7 +1193,7 @@ REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP: the source says only 'Since 0 not in Lambda, we have lambda in [0,inf)^d \ {0}. By Lemma 2.3, in fact lambda in (0,inf)^d' (L904). It does not state (a) the translation q := e^lambda with f(q) = q through (2.6); (b) the premise of Lemma 2.3 that the extinction probability is one, which the setting delivers only through Hypothesis I (the same unproved step noted in lem-unstable-scaled#extinction-as at L628); (c) positive regularity (Hypothesis II) for the second assertion; (d) that the dichotomy 'all q_k = 1 or all q_k > 1' together with lambda != 0 gives positivity of every coordinate. lem-unstable-scaled#extinction-as is slice B's node (its fields mention lambda, r and Z_n; the extinction conclusion is what is consumed).
+NOTE: SOURCE_GAP: the source says only 'Since 0 not in Lambda, we have lambda in [0,inf)^d \ {0}. By Lemma 2.3, in fact lambda in (0,inf)^d' (L904). It does not state (a) the translation q := e^lambda with f(q) = q through (2.6); (b) the premise of Lemma 2.3 that the extinction probability is one, which the setting delivers only through Hypothesis I (modeled by the shared SOURCE_GAP node claim:subcritical-extinction, the same unproved step as at L628); (c) positive regularity (Hypothesis II) for the second assertion; (d) that the dichotomy 'all q_k = 1 or all q_k > 1' together with lambda != 0 gives positivity of every coordinate.
 
 NODE: thm-fixed
 KIND: theorem
@@ -1209,10 +1210,11 @@ FROZEN_FILE: Conjugate/Frozen/Theorem_2_7.lean
 FROZEN_DECL: Conjugate.theorem_2_7
 FROZEN_ANCHOR_ID: thm.theorem_2_7.v1
 FROZEN_ABI_SHA256: 0e7b189be47e05741d5424232b7bda2d63fd1958f0dce6b3d8873519c8bfe314
-DEPS: thm-fixed#positivity
+DEPS: thm-fixed#fixed-point-in-Lambda, thm-fixed#positivity
 ROUTES: -
 ROUTE_FOR: -
 EDGE: thm-fixed#positivity | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed@L904-L904 | the proof concludes 'By Lemma 2.3, in fact lambda in (0,inf)^d' for the Brouwer fixed point of g in Lambda
+EDGE: thm-fixed#fixed-point-in-Lambda | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed@L902-L902 | 'Thus g(lambda) = lambda': the Brouwer fixed point lambda in Lambda found at L902 supplies the equation g(lambda) = lambda of the theorem's conclusion; positivity (L904) supplies lambda in (0,inf)^d for the same lambda
 TOPOLOGY_STATUS: PROPOSED
 EXTRACTOR: extractor-C/sonnet
 REVIEWER: -
@@ -1239,9 +1241,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: EXTERNAL
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1265,9 +1267,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: EXTERNAL
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1291,9 +1293,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 LEAN_STATUS: EXTERNAL
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1306,22 +1308,22 @@ KIND: heading
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#heading-sec-basins@L722-L722
 DISPOSITION: EXCLUDED
 REASON: Subsection heading 'Basins of attraction of 0 and infinity'; no mathematical content and no proof obligation. The standing sentence of Theorem 1.4 (L528) is carried as SOURCE_HYPOTHESES of each node (spec section 4).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:eqn-basin-def
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-basin-def@L727-L727
 DISPOSITION: NODE eqn-basin-def.zero, eqn-basin-def.infty
 REASON: Display (2.9) defines the two basins S_0 and S_inf; it is split into the two frozen definition anchors.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:eqn-infty-subset
 KIND: display
-SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-infty-subset@L733-L733
+SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-infty-subset@L732-L735
 DISPOSITION: NODE eqn-infty-subset, eqn-infty-subset#blowup
 REASON: Display (2.10) is the node eqn-infty-subset; the preceding unproved claim (g^{(N)} blows up when a coordinate is infinite, L732) is the SOURCE_GAP step eqn-infty-subset#blowup.
 COVERAGE_STATUS: PROPOSED
@@ -1333,144 +1335,144 @@ KIND: lemma
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-closed@L737-L739
 DISPOSITION: NODE lem-basin-closed
 REASON: Lemma 2.14 statement.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:proof:lem-basin-closed
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-lem-basin-closed@L740-L742
 DISPOSITION: NODE lem-basin-closed
 REASON: One-sentence proof ('immediate from the definition (2.9)') is carried by the lemma node and its edges to the two basin definitions; below the step threshold.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:lem-attractive-zero
 KIND: lemma
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero@L767-L769
 DISPOSITION: NODE lem-attractive-zero
 REASON: Lemma 2.15 statement.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:proof:lem-attractive-zero
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-lem-attractive-zero@L770-L776
 DISPOSITION: NODE lem-attractive-zero#subinvariant-point, lem-attractive-zero#orbit-lambda0, lem-attractive-zero#comparison
 REASON: Proof split into: Lemma 2.5 in log coordinates (lambda^0), the application of Lemma 2.13 with m = 1, and the monotone comparison with eps := min_j lambda^0_j.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:lem-attractive-infty
 KIND: lemma
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty@L781-L784
 DISPOSITION: NODE lem-attractive-infty
 REASON: Lemma 2.16 statement, read as ruled by E3.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:proof:lem-attractive-infty
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-lem-attractive-infty@L785-L800
 DISPOSITION: NODE lem-attractive-infty#choose-N-m, lem-attractive-infty#lower-bound, lem-attractive-infty#strict-increase, lem-attractive-infty#divergence
 REASON: Proof split into: the choice of N and m (Lemma 2.4), the lower bound (E3: max_j), the strict increase outside [0,C]^d, and the application of Lemma 2.13(b).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:lem-basin-open
 KIND: lemma
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open@L804-L806
 DISPOSITION: NODE lem-basin-open
 REASON: Lemma 2.17 statement.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:proof:lem-basin-open
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-lem-basin-open@L807-L821
 DISPOSITION: NODE lem-basin-open#g-iter-continuous, lem-basin-open#S0-open, lem-basin-open#outside-cube-in-Sinf, lem-basin-open#Sinf-open
 REASON: Proof split into: continuity of g^{(n)} from Hypothesis III, openness of S_0 via (2.11), the inclusion of the complement of [0,C]^d in S_inf, and openness of S_inf.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:eqn-use-attractive-zero
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-use-attractive-zero@L809-L809
 DISPOSITION: NODE eqn-use-attractive-zero
 REASON: Display (2.11) is a labeled consequence of Lemma 2.15 used in the openness argument.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:lem-ray-intersect
 KIND: lemma
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect@L828-L830
 DISPOSITION: NODE lem-ray-intersect
 REASON: Lemma 2.18 statement.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:proof:lem-ray-intersect
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-lem-ray-intersect@L831-L836
 DISPOSITION: NODE lem-ray-intersect#ray-meets-both, lem-ray-intersect#existence, lem-ray-intersect#uniqueness, ext:connectedness
 REASON: Proof split into: the ray meets both basins, the connectedness application (existence), and the contradiction with Lemma 2.11 (uniqueness).
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:lem-retract
 KIND: lemma
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract@L851-L857
 DISPOSITION: NODE lem-retract
 REASON: Lemma 2.19 statement.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:eqn-retract-annulus
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-retract-annulus@L853-L853
 DISPOSITION: NODE lem-retract
 REASON: Display (2.12) defines A(r,R) inside the statement of Lemma 2.19; part of lem-retract, not a separate node.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:proof:lem-retract
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-lem-retract@L858-L891
 DISPOSITION: NODE lem-retract#choose-r-R, lem-retract#radial-bijection, lem-retract#Lambda-compact, lem-retract#phi-homeomorphism, lem-retract#H-continuous, lem-retract#H-fixes-Lambda, lem-retract#H-preserves-A, ext:compact-hausdorff
 REASON: Proof split into: choice of r, R; the radial bijection; compactness of Lambda; the homeomorphism phi (compact-Hausdorff); and the three verifications for H (continuity, fixing Lambda, mapping A to A); H itself is the node eqn-retract-def.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:eqn-retract-def
 KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-retract-def@L878-L878
 DISPOSITION: NODE eqn-retract-def
 REASON: Display (2.13) defines the deformation H_t; labeled display consumed by the verification steps.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ITEM: inv:proof:thm-fixed
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed@L894-L905
 DISPOSITION: NODE thm-fixed, thm-fixed#g-image-finite, thm-fixed#Lambda-invariant, thm-fixed#apply-retract, thm-fixed#A-homeomorphic-to-ball, thm-fixed#brouwer-on-A, thm-fixed#gH1-self-map, thm-fixed#fixed-point-in-Lambda, thm-fixed#zero-notin-Lambda, thm-fixed#positivity, ext:brouwer
 REASON: Proof of Theorem 2.7 split into: invariance of Lambda (with the finiteness bridge), the application of Lemma 2.19, the unproved ball homeomorphism, Brouwer for g o H_1, the fixed point in Lambda, 0 not in Lambda, and the positivity application of Lemma 2.3; assembled in the root node thm-fixed.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: reviewer-C/sonnet
 
 ## Report
 

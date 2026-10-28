@@ -5,7 +5,9 @@ and by `DEPGRAPH.md`. Rulings are made only by the author. Entries are append-on
 
 ## Open (proposed by the orchestrator, awaiting the author)
 
-(none)
+| ID | Source | Issue | Proposed reading |
+|----|--------|-------|-----------------|
+| E9 | paper.tex:1127, proof of Lemma 3.4 | "For each k ≥ d" | read as `d ≥ k` (forced by (3.16) and the definition of λ^d); graph-level only, no frozen statement depends on it |
 
 ## Decided
 

@@ -21,3 +21,29 @@
 - C3 Definition anchors carry no Hyp. I–III in SOURCE_HYPOTHESES: accepted (the frozen definitions are unconditional).
 - C4 `g^{-1}(S)` read as preimage within [0,∞]^d: accepted (matches (2.9) carrier).
 - C5 Drop the uncited `eqn-convex-func-n` edge from `eqn-infty-subset#blowup`: accepted.
+
+## Slice A review (reviewer-A/sonnet) — applied 2026-10-28
+- All 19 node fragments (F1-F19) and 5 coverage fragments (C1-C5) applied verbatim with tools/apply_review.py.
+- F3/C2 supersede A1 for the L229 claim: it is consumed by the Perron-Frobenius step at L508, so `def-bp-basic.positive-regular#matrix-equiv` is reinstated as a SOURCE_GAP claim (slice B reviewer agreed the content is consumed).
+- F10: `#conjugate-regularity` now exposes 0 < ℙ̂_k[E] < 1 as an unsupplied premise of Prop 2.1 for X̂ (SOURCE_GAP).
+- Records authored or rewritten by the reviewer are not self-approvable: they stay PROPOSED until the global review.
+
+## Slice B review (reviewer-B/sonnet) — applied 2026-10-28
+- All 8 node NOTE/CONSTANT_SCOPE fragments and 3 coverage fragments applied verbatim (via .lake/slice-B.fixes.md conversion; the `inv:thm-fixed` REASON by hand).
+- `lem-mono` CONSTANT_SCOPE: literal reading (N may depend on X, λ, η); the uniform reading is recorded for Lean only.
+
+## Slice C review (reviewer-C/sonnet) — applied 2026-10-28
+- All 25 node fragments (F1-F25) and 2 coverage fragments applied verbatim (the reviewer's `<SETTING>` shorthand expanded to its defined string; no placeholder survives).
+- F25 adds the direct edge `thm-fixed -> thm-fixed#fixed-point-in-Lambda` (L902 "Thus g(λ) = λ").
+- F24 widens the SOURCE_GAP on `thm-fixed#positivity` (translation q = e^λ, extinction premise via claim:subcritical-extinction, positive regularity, dichotomy).
+- C2 adds `inv:L731:asymmetry-note` (EXCLUDED, motivational).
+
+## Slice D review (reviewer-D/sonnet) — applied 2026-10-28
+- All 23 node fragments and 7 coverage fragments (C1 replacement; C2-C7 new items) applied verbatim.
+- A-4: "see Report" notes made durable (path to the packet's Report section).
+- A-5: L1127 "For each k ≥ d" read as d ≥ k — new erratum E9, to be put to the author (no frozen statement depends on it).
+- A-2: Ex 3.5's "implies the existence of a conjugate" (L1183) stops at the fixed point in the frozen anchor; the countable-type fixed point ⇒ conjugate bridge (L934) is the excluded unproved extension (spec §7) — report to the author.
+
+## Review bookkeeping
+- Records given PASS by a slice reviewer: TOPOLOGY_STATUS/COVERAGE_STATUS REVIEWED, REVIEWER = that reviewer.
+- Records rewritten from a reviewer's own fragment, orchestrator-authored records (slice O, slice X) and reviewer-added items stay PROPOSED; listed in graph/GLOBAL_QUEUE.md for the fresh global reviewer.
