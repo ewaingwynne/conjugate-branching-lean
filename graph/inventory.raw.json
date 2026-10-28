@@ -1,0 +1,1101 @@
+[
+{
+"env": "section",
+"start": 170,
+"end": 170,
+"label": null,
+"opt": "Introduction"
+},
+{
+"env": "subsection",
+"start": 173,
+"end": 173,
+"label": null,
+"opt": "Overview"
+},
+{
+"env": "citation",
+"start": 179,
+"end": 179,
+"label": "jl-cond-on-ext",
+"opt": "[Theorem 1]"
+},
+{
+"env": "defn",
+"start": 184,
+"end": 187,
+"label": "def-conjugate",
+"opt": ""
+},
+{
+"env": "remark",
+"start": 193,
+"end": 196,
+"label": null,
+"opt": ""
+},
+{
+"env": "citation",
+"start": 194,
+"end": 194,
+"label": "kolmogorov1938losung",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 194,
+"end": 194,
+"label": "yaglom1947certain",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 194,
+"end": 194,
+"label": "yaglom1947certain",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 194,
+"end": 194,
+"label": "yaglom1947certain",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 194,
+"end": 194,
+"label": "harris1963theory, jirina1957asymptotic, joffe1967, mullikin1963",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 194,
+"end": 194,
+"label": "seneta1966quasi",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 194,
+"end": 194,
+"label": "lamperti1968conditioned",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 194,
+"end": 194,
+"label": "dallaporta2008q",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 194,
+"end": 194,
+"label": "Penisson-thesis",
+"opt": ""
+},
+{
+"env": "subsection",
+"start": 199,
+"end": 199,
+"label": null,
+"opt": "Main result"
+},
+{
+"env": "display",
+"start": 205,
+"end": 205,
+"label": "eqn-generating-function",
+"opt": ""
+},
+{
+"env": "display",
+"start": 211,
+"end": 211,
+"label": "eqn-gen-func-n",
+"opt": ""
+},
+{
+"env": "display",
+"start": 216,
+"end": 216,
+"label": "eqn-mean-matrix",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 222,
+"end": 222,
+"label": "an-branching-processes",
+"opt": "[Section 6]"
+},
+{
+"env": "defn",
+"start": 224,
+"end": 234,
+"label": "def-bp-basic",
+"opt": ""
+},
+{
+"env": "thm",
+"start": 241,
+"end": 250,
+"label": "thm-fixed-gf",
+"opt": ""
+},
+{
+"env": "example",
+"start": 255,
+"end": 264,
+"label": "counterexample",
+"opt": "[Non-uniqueness]"
+},
+{
+"env": "prop",
+"start": 343,
+"end": 351,
+"label": "prop-single-type",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 352,
+"end": 355,
+"label": null,
+"opt": ""
+},
+{
+"env": "subsection",
+"start": 359,
+"end": 359,
+"label": null,
+"opt": "Proof outline"
+},
+{
+"env": "section",
+"start": 380,
+"end": 380,
+"label": null,
+"opt": "Proof of main theorem"
+},
+{
+"env": "subsection",
+"start": 384,
+"end": 384,
+"label": null,
+"opt": "Preliminaries on branching processes"
+},
+{
+"env": "prop",
+"start": 390,
+"end": 403,
+"label": "prop-cond-on-ext",
+"opt": ""
+},
+{
+"env": "display",
+"start": 398,
+"end": 398,
+"label": "eqn-cond-on-ext",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 404,
+"end": 406,
+"label": null,
+"opt": ""
+},
+{
+"env": "citation",
+"start": 405,
+"end": 405,
+"label": "an-branching-processes",
+"opt": "[Theorem 2, Section V.3]"
+},
+{
+"env": "citation",
+"start": 405,
+"end": 405,
+"label": "jl-cond-on-ext",
+"opt": "[Theorem 1]"
+},
+{
+"env": "prop",
+"start": 420,
+"end": 428,
+"label": "prop-conjugate",
+"opt": ""
+},
+{
+"env": "display",
+"start": 423,
+"end": 423,
+"label": "eqn-conjugate-def",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 429,
+"end": 432,
+"label": null,
+"opt": ""
+},
+{
+"env": "lem",
+"start": 440,
+"end": 446,
+"label": "lem-fixed-pos",
+"opt": ""
+},
+{
+"env": "display",
+"start": 442,
+"end": 442,
+"label": "eqn-fixed-pos-geq",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 447,
+"end": 472,
+"label": null,
+"opt": ""
+},
+{
+"env": "lem",
+"start": 477,
+"end": 487,
+"label": "lem-gf-pos",
+"opt": ""
+},
+{
+"env": "display",
+"start": 479,
+"end": 479,
+"label": "eqn-gf-pos",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 488,
+"end": 494,
+"label": null,
+"opt": ""
+},
+{
+"env": "lem",
+"start": 500,
+"end": 506,
+"label": "lem-gf-bded",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 507,
+"end": 515,
+"label": null,
+"opt": ""
+},
+{
+"env": "subsection",
+"start": 525,
+"end": 525,
+"label": null,
+"opt": "Monotonicity properties"
+},
+{
+"env": "defn",
+"start": 533,
+"end": 546,
+"label": "def-log-gf",
+"opt": ""
+},
+{
+"env": "display",
+"start": 541,
+"end": 541,
+"label": "eqn-convex-func-n",
+"opt": ""
+},
+{
+"env": "display",
+"start": 549,
+"end": 549,
+"label": "eqn-fixed-pt-equiv",
+"opt": ""
+},
+{
+"env": "thm",
+"start": 555,
+"end": 557,
+"label": "thm-fixed",
+"opt": ""
+},
+{
+"env": "defn",
+"start": 587,
+"end": 589,
+"label": "def-componentwise",
+"opt": ""
+},
+{
+"env": "lem",
+"start": 594,
+"end": 598,
+"label": "lem-mono",
+"opt": "[Monotonicity]"
+},
+{
+"env": "proof",
+"start": 599,
+"end": 604,
+"label": null,
+"opt": ""
+},
+{
+"env": "prop",
+"start": 608,
+"end": 615,
+"label": "prop-unstable",
+"opt": ""
+},
+{
+"env": "lem",
+"start": 619,
+"end": 622,
+"label": "lem-unstable-scaled",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 623,
+"end": 636,
+"label": null,
+"opt": ""
+},
+{
+"env": "proof",
+"start": 640,
+"end": 649,
+"label": null,
+"opt": "[Proof of Proposition~\\ref{prop-unstable}]"
+},
+{
+"env": "lem",
+"start": 653,
+"end": 661,
+"label": "lem-unstable-ssl",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 662,
+"end": 664,
+"label": null,
+"opt": ""
+},
+{
+"env": "lem",
+"start": 669,
+"end": 673,
+"label": "lem-monotone-lim",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 674,
+"end": 694,
+"label": null,
+"opt": ""
+},
+{
+"env": "display",
+"start": 677,
+"end": 677,
+"label": "eqn-shifted-mono",
+"opt": ""
+},
+{
+"env": "display",
+"start": 682,
+"end": 682,
+"label": "eqn-mono-ssl",
+"opt": ""
+},
+{
+"env": "subsection",
+"start": 722,
+"end": 722,
+"label": null,
+"opt": "Basins of attraction of 0 and $\\infty$"
+},
+{
+"env": "display",
+"start": 727,
+"end": 727,
+"label": "eqn-basin-def",
+"opt": ""
+},
+{
+"env": "display",
+"start": 733,
+"end": 733,
+"label": "eqn-infty-subset",
+"opt": ""
+},
+{
+"env": "lem",
+"start": 737,
+"end": 739,
+"label": "lem-basin-closed",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 740,
+"end": 742,
+"label": null,
+"opt": ""
+},
+{
+"env": "lem",
+"start": 767,
+"end": 769,
+"label": "lem-attractive-zero",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 770,
+"end": 776,
+"label": null,
+"opt": ""
+},
+{
+"env": "lem",
+"start": 781,
+"end": 784,
+"label": "lem-attractive-infty",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 785,
+"end": 800,
+"label": null,
+"opt": ""
+},
+{
+"env": "lem",
+"start": 804,
+"end": 806,
+"label": "lem-basin-open",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 807,
+"end": 821,
+"label": null,
+"opt": ""
+},
+{
+"env": "display",
+"start": 809,
+"end": 809,
+"label": "eqn-use-attractive-zero",
+"opt": ""
+},
+{
+"env": "lem",
+"start": 828,
+"end": 830,
+"label": "lem-ray-intersect",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 831,
+"end": 836,
+"label": null,
+"opt": ""
+},
+{
+"env": "lem",
+"start": 851,
+"end": 857,
+"label": "lem-retract",
+"opt": ""
+},
+{
+"env": "display",
+"start": 853,
+"end": 853,
+"label": "eqn-retract-annulus",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 858,
+"end": 891,
+"label": null,
+"opt": ""
+},
+{
+"env": "display",
+"start": 878,
+"end": 878,
+"label": "eqn-retract-def",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 894,
+"end": 905,
+"label": null,
+"opt": "[Proof of Theorem~\\ref{thm-fixed}]"
+},
+{
+"env": "section",
+"start": 908,
+"end": 908,
+"label": null,
+"opt": "The countable-type case"
+},
+{
+"env": "subsection",
+"start": 913,
+"end": 913,
+"label": null,
+"opt": "Countable-type branching processes"
+},
+{
+"env": "display",
+"start": 917,
+"end": 917,
+"label": "eqn-finite-offspring",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 930,
+"end": 930,
+"label": "Bertacchi2014, Bertacchi2017, Braunsteins2019",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 930,
+"end": 930,
+"label": "Bertacchi2020",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 932,
+"end": 932,
+"label": "Moyal1964",
+"opt": "[Theorem 3.1]"
+},
+{
+"env": "citation",
+"start": 932,
+"end": 932,
+"label": "Bertacchi2022",
+"opt": "[Theorem 3.1]"
+},
+{
+"env": "citation",
+"start": 934,
+"end": 934,
+"label": "jl-cond-on-ext",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 934,
+"end": 934,
+"label": "jl-cond-on-ext",
+"opt": ""
+},
+{
+"env": "display",
+"start": 946,
+"end": 946,
+"label": "eqn-gf-truncated",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 952,
+"end": 952,
+"label": "hln-ext-prob",
+"opt": ""
+},
+{
+"env": "subsection",
+"start": 955,
+"end": 955,
+"label": null,
+"opt": "Existence of a conjugate branching process"
+},
+{
+"env": "display",
+"start": 963,
+"end": 963,
+"label": "eqn-weight-function",
+"opt": ""
+},
+{
+"env": "thm",
+"start": 985,
+"end": 987,
+"label": "thm-fixed-pt-infty",
+"opt": ""
+},
+{
+"env": "display",
+"start": 992,
+"end": 992,
+"label": "eqn-log-gf-infty",
+"opt": ""
+},
+{
+"env": "display",
+"start": 999,
+"end": 999,
+"label": "eqn-fixed-pt-trunc",
+"opt": ""
+},
+{
+"env": "lem",
+"start": 1004,
+"end": 1006,
+"label": "lem-fixed-limsup",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 1007,
+"end": 1025,
+"label": null,
+"opt": ""
+},
+{
+"env": "lem",
+"start": 1031,
+"end": 1036,
+"label": "lem-fixed-liminf",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 1037,
+"end": 1097,
+"label": null,
+"opt": ""
+},
+{
+"env": "display",
+"start": 1041,
+"end": 1041,
+"label": "eqn-use-gf-bded-infty",
+"opt": ""
+},
+{
+"env": "display",
+"start": 1050,
+"end": 1050,
+"label": "eqn-gf-truncated-strict",
+"opt": ""
+},
+{
+"env": "display",
+"start": 1055,
+"end": 1055,
+"label": "eqn-use-mono-infty",
+"opt": ""
+},
+{
+"env": "display",
+"start": 1059,
+"end": 1059,
+"label": "eqn-fixed-liminf-zero",
+"opt": ""
+},
+{
+"env": "display",
+"start": 1063,
+"end": 1063,
+"label": "eqn-fixed-pt-one-coord",
+"opt": ""
+},
+{
+"env": "display",
+"start": 1072,
+"end": 1072,
+"label": "eqn-fixed-pt-exp-bd",
+"opt": ""
+},
+{
+"env": "display",
+"start": 1090,
+"end": 1090,
+"label": "eqn-fixed-pt-coord-compare",
+"opt": ""
+},
+{
+"env": "lem",
+"start": 1101,
+"end": 1115,
+"label": "lem-1d-soln",
+"opt": ""
+},
+{
+"env": "display",
+"start": 1103,
+"end": 1103,
+"label": "eqn-1d-soln",
+"opt": ""
+},
+{
+"env": "display",
+"start": 1108,
+"end": 1108,
+"label": "eqn-1d-soln-ineq",
+"opt": ""
+},
+{
+"env": "display",
+"start": 1112,
+"end": 1112,
+"label": "eqn-1d-soln-growth",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 1116,
+"end": 1145,
+"label": null,
+"opt": ""
+},
+{
+"env": "display",
+"start": 1128,
+"end": 1128,
+"label": "eqn-fixed-pt-first-coord",
+"opt": ""
+},
+{
+"env": "proof",
+"start": 1149,
+"end": 1179,
+"label": null,
+"opt": "[Proof of Theorem~\\ref{thm-fixed-pt-infty}]"
+},
+{
+"env": "display",
+"start": 1151,
+"end": 1151,
+"label": "eqn-ssl",
+"opt": ""
+},
+{
+"env": "display",
+"start": 1157,
+"end": 1157,
+"label": "eqn-before-fatou",
+"opt": ""
+},
+{
+"env": "display",
+"start": 1161,
+"end": 1161,
+"label": "eqn-fixed-pt-as-conv",
+"opt": ""
+},
+{
+"env": "display",
+"start": 1168,
+"end": 1168,
+"label": "eqn-dominate",
+"opt": ""
+},
+{
+"env": "example",
+"start": 1182,
+"end": 1201,
+"label": "example-ctble",
+"opt": ""
+},
+{
+"env": "display",
+"start": 1186,
+"end": 1186,
+"label": "eqn-example-condition",
+"opt": ""
+},
+{
+"env": "section",
+"start": 1216,
+"end": 1216,
+"label": null,
+"opt": "Applications"
+},
+{
+"env": "subsection",
+"start": 1218,
+"end": 1218,
+"label": null,
+"opt": "Applications to Liouville quantum gravity"
+},
+{
+"env": "citation",
+"start": 1221,
+"end": 1221,
+"label": "bp-lqg-notes,gwynne-ams-survey,sheffield-icm",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1237,
+"end": 1237,
+"label": "shef-cle,bbg-recursive-approach,bbg-loop-models,bbg-bending",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1238,
+"end": 1238,
+"label": "bbg-recursive-approach,bbg-loop-models,bbg-bending",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1246,
+"end": 1246,
+"label": "nachmias-circle-packing",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1246,
+"end": 1246,
+"label": "gms-tutte",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1246,
+"end": 1246,
+"label": "gms-tutte,hs-cardy-embedding",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1246,
+"end": 1246,
+"label": "bp-lqg-notes",
+"opt": "[Section 4]"
+},
+{
+"env": "citation",
+"start": 1248,
+"end": 1248,
+"label": "shef-cle",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1248,
+"end": 1248,
+"label": "msw-non-simple-cle,msw-simple-cle-lqg",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1253,
+"end": 1253,
+"label": "ghpr-central-charge,dg-supercritical-lfpp,pfeffer-supercritical-lqg,dg-uniqueness,ag-supercritical-cle4,bgs-supercritical-crt",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1253,
+"end": 1253,
+"label": "ag-supercritical-cle4",
+"opt": "[Remark 1.4]"
+},
+{
+"env": "citation",
+"start": 1255,
+"end": 1255,
+"label": "ag-supercritical-cle4",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1255,
+"end": 1255,
+"label": "bgs-supercritical-crt",
+"opt": "[Proposition 3.1]"
+},
+{
+"env": "citation",
+"start": 1260,
+"end": 1260,
+"label": "aldous-crt1",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1261,
+"end": 1261,
+"label": "ghpr-central-charge",
+"opt": "[Section 2.2]"
+},
+{
+"env": "citation",
+"start": 1261,
+"end": 1261,
+"label": "bgs-supercritical-crt",
+"opt": "[Section 1.1]"
+},
+{
+"env": "citation",
+"start": 1261,
+"end": 1261,
+"label": "feng-fk-triviality, bgs-supercritical-crt",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1266,
+"end": 1266,
+"label": "ghpr-central-charge",
+"opt": "[Section 2.2]"
+},
+{
+"env": "citation",
+"start": 1266,
+"end": 1266,
+"label": "apps-central-charge",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1266,
+"end": 1266,
+"label": "bgs-supercritical-crt",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1272,
+"end": 1272,
+"label": "ag-supercritical-cle4",
+"opt": "[Section 3.2]"
+},
+{
+"env": "citation",
+"start": 1274,
+"end": 1274,
+"label": "bgs-supercritical-crt",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1274,
+"end": 1274,
+"label": "bgs-supercritical-crt",
+"opt": "[Theorem 1.4]"
+},
+{
+"env": "citation",
+"start": 1274,
+"end": 1274,
+"label": "ag-supercritical-cle4",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1276,
+"end": 1276,
+"label": "ag-supercritical-cle4,bgs-supercritical-crt",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1276,
+"end": 1276,
+"label": "ag-supercritical-cle4",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1284,
+"end": 1284,
+"label": "zinn-justin-six-vertex,kostov-six-vertex",
+"opt": ""
+},
+{
+"env": "subsection",
+"start": 1289,
+"end": 1289,
+"label": null,
+"opt": "Applications to biology"
+},
+{
+"env": "citation",
+"start": 1294,
+"end": 1294,
+"label": "Davis2017",
+"opt": "[Section 6]"
+},
+{
+"env": "citation",
+"start": 1296,
+"end": 1296,
+"label": "Durrett2015cancer",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1298,
+"end": 1298,
+"label": "Bozic2010",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1307,
+"end": 1307,
+"label": "Sottoriva2017",
+"opt": "[Section 4]"
+},
+{
+"env": "citation",
+"start": 1333,
+"end": 1333,
+"label": "Del2009",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1335,
+"end": 1335,
+"label": "Jacob2010, Penisson2012",
+"opt": ""
+},
+{
+"env": "citation",
+"start": 1335,
+"end": 1335,
+"label": "Harnevo1991",
+"opt": ""
+}
+]

@@ -1,0 +1,254 @@
+{
+ "def:population-sigma": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+  "FROZEN_DECL": "Conjugate.populationMeasurableSpace",
+  "FROZEN_ANCHOR_ID": "def.populationMeasurableSpace.v1",
+  "FROZEN_ABI_SHA256": "98d6e8f17a8fbbf47f2376e7f4b24e45caeebc5a06a5eae8bbb2a81a7deb1613",
+  "CONTRACT_ID": "paper.def.populationMeasurableSpace",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "def:step-kernel": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/StepKernel.lean",
+  "FROZEN_DECL": "Conjugate.stepKernel",
+  "FROZEN_ANCHOR_ID": "def.stepKernel.v1",
+  "FROZEN_ABI_SHA256": "adde03310e606b6255e52a5077af0424ba2bc245679ea0e947f3f0c43b928a7a",
+  "CONTRACT_ID": "paper.def.stepKernel",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "def:path-law": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/PathLaw.lean",
+  "FROZEN_DECL": "Conjugate.pathLaw",
+  "FROZEN_ANCHOR_ID": "def.pathLaw.v1",
+  "FROZEN_ABI_SHA256": "2372048aaa8bc54fbfa32e7bd267288703d52bd79a97acbf3e07309474f3d1a1",
+  "CONTRACT_ID": "paper.def.pathLaw",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "def:extinction": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/ExtinctionEvent.lean",
+  "FROZEN_DECL": "Conjugate.extinctionEvent",
+  "FROZEN_ANCHOR_ID": "def.extinctionEvent.v1",
+  "FROZEN_ABI_SHA256": "029afe3845b4a340f7f51ca5ad0c46ac5c86167dee9a1668f6910cc3bcdfcace",
+  "CONTRACT_ID": "paper.def.extinctionEvent",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "def-conjugate": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/IsConjugate.lean",
+  "FROZEN_DECL": "Conjugate.IsConjugate",
+  "FROZEN_ANCHOR_ID": "def.IsConjugate.v1",
+  "FROZEN_ABI_SHA256": "f6bcafcfaf8bd0ae3f9ee76d0e290d7c7ae70a0c175ef00027da56e0a789c22d",
+  "CONTRACT_ID": "paper.def.IsConjugate",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "eqn-generating-function": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/GenFun.lean",
+  "FROZEN_DECL": "Conjugate.genFun",
+  "FROZEN_ANCHOR_ID": "def.genFun.v1",
+  "FROZEN_ABI_SHA256": "5d96211315214940f56bc4128ab12c73b79fa91d079d185c1f50b4be8f3b0d1c",
+  "CONTRACT_ID": "paper.def.genFun",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "eqn-mean-matrix": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/MeanMatrix.lean",
+  "FROZEN_DECL": "Conjugate.meanMatrix",
+  "FROZEN_ANCHOR_ID": "def.meanMatrix.v1",
+  "FROZEN_ABI_SHA256": "dff61f8e61cbe15e3579255adc6f1d37b5baa6abcd5ae5f6899ace77e6f66cbb",
+  "CONTRACT_ID": "paper.def.meanMatrix",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "def:subcritical": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/IsSubcritical.lean",
+  "FROZEN_DECL": "Conjugate.IsSubcritical",
+  "FROZEN_ANCHOR_ID": "def.IsSubcritical.v1",
+  "FROZEN_ABI_SHA256": "e70d8da7c37614b34bd483024a839f1be91c19ee7b6bd021bdd6c99df38a5e4a",
+  "CONTRACT_ID": "paper.def.IsSubcritical",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "def-bp-basic.positive-regular": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/IsPositiveRegular.lean",
+  "FROZEN_DECL": "Conjugate.IsPositiveRegular",
+  "FROZEN_ANCHOR_ID": "def.IsPositiveRegular.v1",
+  "FROZEN_ABI_SHA256": "e05d2b9a55ef42cf5628e1a4460361152c5d0f0c198614c69ef3e769a4291435",
+  "CONTRACT_ID": "paper.def.IsPositiveRegular",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "def-bp-basic.non-singular": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/IsNonsingular.lean",
+  "FROZEN_DECL": "Conjugate.IsNonsingular",
+  "FROZEN_ANCHOR_ID": "def.IsNonsingular.v1",
+  "FROZEN_ABI_SHA256": "246bd29740c5ec0b8a051ef2c5dd283b578c5d27bcb90febab7318df7452d5d9",
+  "CONTRACT_ID": "paper.def.IsNonsingular",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "def-log-gf": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/LogGenFun.lean",
+  "FROZEN_DECL": "Conjugate.logGenFun",
+  "FROZEN_ANCHOR_ID": "def.logGenFun.v1",
+  "FROZEN_ABI_SHA256": "6323bd49d4d920a8615979bad829c80575e5cb2287b49079f468a1078067da2a",
+  "CONTRACT_ID": "paper.def.logGenFun",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "eqn-basin-def.zero": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/BasinZero.lean",
+  "FROZEN_DECL": "Conjugate.basinZero",
+  "FROZEN_ANCHOR_ID": "def.basinZero.v1",
+  "FROZEN_ABI_SHA256": "f2c0dd7ccb2b062e31b279ed5f2ef546f4ff7baed6bab7b69c5125a00dfbb702",
+  "CONTRACT_ID": "paper.def.basinZero",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "eqn-basin-def.infty": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/BasinInfty.lean",
+  "FROZEN_DECL": "Conjugate.basinInfty",
+  "FROZEN_ANCHOR_ID": "def.basinInfty.v1",
+  "FROZEN_ABI_SHA256": "5b77ae3e04c31f9db7d9bdc3f5c0959e35d4398ebc99896298879a88133e8a0c",
+  "CONTRACT_ID": "paper.def.basinInfty",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "def:truncation": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/Truncate.lean",
+  "FROZEN_DECL": "Conjugate.truncate",
+  "FROZEN_ANCHOR_ID": "def.truncate.v1",
+  "FROZEN_ABI_SHA256": "8c0eb7b86da143d341441e880b49fe6eb178b6132f157ba5ed5f491598122531",
+  "CONTRACT_ID": "paper.def.truncate",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "def:stoch-dom": {
+  "FROZEN_FILE": "Conjugate/Frozen/Defs/StochDominated.lean",
+  "FROZEN_DECL": "Conjugate.StochDominated",
+  "FROZEN_ANCHOR_ID": "def.StochDominated.v1",
+  "FROZEN_ABI_SHA256": "44d5e5c00d3f94614e3c4473d3b4ab45776539b0144ee18d9b356f065dc58567",
+  "CONTRACT_ID": "paper.def.StochDominated",
+  "CONTRACT_VERSION": "1",
+  "kind": "definition"
+ },
+ "thm-fixed-gf.fixed-point": {
+  "FROZEN_FILE": "Conjugate/Frozen/Theorem_1_4_FixedPoint.lean",
+  "FROZEN_DECL": "Conjugate.theorem_1_4_fixedPoint",
+  "FROZEN_ANCHOR_ID": "thm.theorem_1_4_fixedPoint.v1",
+  "FROZEN_ABI_SHA256": "60a9a3c78807be049624125acbefc987e9480282f5407f9e72fbf8b1be682e79",
+  "CONTRACT_ID": "paper.thm1_4.fixedPoint",
+  "CONTRACT_VERSION": "1",
+  "kind": "theorem"
+ },
+ "thm-fixed-gf.conjugate": {
+  "FROZEN_FILE": "Conjugate/Frozen/Theorem_1_4_Conjugate.lean",
+  "FROZEN_DECL": "Conjugate.theorem_1_4_conjugate",
+  "FROZEN_ANCHOR_ID": "thm.theorem_1_4_conjugate.v1",
+  "FROZEN_ABI_SHA256": "ae0441875035cde86a0846001f3021e499f947d76f759864ce855d4b578c761f",
+  "CONTRACT_ID": "paper.thm1_4.conjugate",
+  "CONTRACT_VERSION": "1",
+  "kind": "theorem"
+ },
+ "thm-fixed-gf.equivalence": {
+  "FROZEN_FILE": "Conjugate/Frozen/ExistsConjugateIff.lean",
+  "FROZEN_DECL": "Conjugate.exists_conjugate_iff_exists_fixedPoint",
+  "FROZEN_ANCHOR_ID": "thm.exists_conjugate_iff_exists_fixedPoint.v1",
+  "FROZEN_ABI_SHA256": "8b5e83dea9a90b228d39d3b5cd00e167176f545879b0d61eaa1a780b1b761ae3",
+  "CONTRACT_ID": "paper.thm1_4.equivalence",
+  "CONTRACT_VERSION": "1",
+  "kind": "theorem"
+ },
+ "prop-single-type.fixed-point": {
+  "FROZEN_FILE": "Conjugate/Frozen/Proposition_1_6_FixedPoint.lean",
+  "FROZEN_DECL": "Conjugate.proposition_1_6_fixedPoint",
+  "FROZEN_ANCHOR_ID": "thm.proposition_1_6_fixedPoint.v1",
+  "FROZEN_ABI_SHA256": "ed854fd7bac3e9807f038336520fdb6c369ad7ea86bc3b07fefa04eb0836a736",
+  "CONTRACT_ID": "paper.prop1_6.fixedPoint",
+  "CONTRACT_VERSION": "1",
+  "kind": "theorem"
+ },
+ "prop-single-type.conjugate": {
+  "FROZEN_FILE": "Conjugate/Frozen/Proposition_1_6_Conjugate.lean",
+  "FROZEN_DECL": "Conjugate.proposition_1_6_conjugate",
+  "FROZEN_ANCHOR_ID": "thm.proposition_1_6_conjugate.v1",
+  "FROZEN_ABI_SHA256": "eb22dc06b010505b63a7a7772da6a03209fe64a2c23b3d1e8654107c9313ea16",
+  "CONTRACT_ID": "paper.prop1_6.conjugate",
+  "CONTRACT_VERSION": "1",
+  "kind": "theorem"
+ },
+ "prop-cond-on-ext.cond-law": {
+  "FROZEN_FILE": "Conjugate/Frozen/Proposition_2_1_CondLaw.lean",
+  "FROZEN_DECL": "Conjugate.proposition_2_1_condLaw",
+  "FROZEN_ANCHOR_ID": "thm.proposition_2_1_condLaw.v1",
+  "FROZEN_ABI_SHA256": "c35be0988368897ab13b4adf2f5ddc76f65b47041e3a2c331794933fc10ab6de",
+  "CONTRACT_ID": "paper.prop2_1.condLaw",
+  "CONTRACT_VERSION": "1",
+  "kind": "theorem"
+ },
+ "prop-conjugate": {
+  "FROZEN_FILE": "Conjugate/Frozen/Proposition_2_2.lean",
+  "FROZEN_DECL": "Conjugate.proposition_2_2",
+  "FROZEN_ANCHOR_ID": "thm.proposition_2_2.v1",
+  "FROZEN_ABI_SHA256": "927d2807e8bf34483ea1bcff664f03c4646ec4c310bcbfa0d6cc200dc7476939",
+  "CONTRACT_ID": "paper.prop2_2",
+  "CONTRACT_VERSION": "1",
+  "kind": "theorem"
+ },
+ "thm-fixed": {
+  "FROZEN_FILE": "Conjugate/Frozen/Theorem_2_7.lean",
+  "FROZEN_DECL": "Conjugate.theorem_2_7",
+  "FROZEN_ANCHOR_ID": "thm.theorem_2_7.v1",
+  "FROZEN_ABI_SHA256": "0e7b189be47e05741d5424232b7bda2d63fd1958f0dce6b3d8873519c8bfe314",
+  "CONTRACT_ID": "paper.thm2_7",
+  "CONTRACT_VERSION": "1",
+  "kind": "theorem"
+ },
+ "thm-fixed-pt-infty": {
+  "FROZEN_FILE": "Conjugate/Frozen/Theorem_3_1.lean",
+  "FROZEN_DECL": "Conjugate.theorem_3_1",
+  "FROZEN_ANCHOR_ID": "thm.theorem_3_1.v1",
+  "FROZEN_ABI_SHA256": "068d102eb9de927f8f4534494b8a560ad89f1fefedd48d8163838ea19d070819",
+  "CONTRACT_ID": "paper.thm3_1",
+  "CONTRACT_VERSION": "1",
+  "kind": "theorem"
+ },
+ "counterexample": {
+  "FROZEN_FILE": "Conjugate/Frozen/Example_1_5.lean",
+  "FROZEN_DECL": "Conjugate.example_1_5",
+  "FROZEN_ANCHOR_ID": "thm.example_1_5.v1",
+  "FROZEN_ABI_SHA256": "b00c67e0781cfdc17a070d2527c868c04f159bf161b256fbf7e30c07ea5b3287",
+  "CONTRACT_ID": "paper.ex1_5",
+  "CONTRACT_VERSION": "1",
+  "kind": "theorem"
+ },
+ "example-ctble": {
+  "FROZEN_FILE": "Conjugate/Frozen/Example_3_5.lean",
+  "FROZEN_DECL": "Conjugate.example_3_5",
+  "FROZEN_ANCHOR_ID": "thm.example_3_5.v1",
+  "FROZEN_ABI_SHA256": "625ddeabe869ec4d90a0ad4400b19dbf048cdbc9e6c26909e7b081695f1f85a9",
+  "CONTRACT_ID": "paper.ex3_5",
+  "CONTRACT_VERSION": "1",
+  "kind": "theorem"
+ },
+ "rem:hyp-iii-necessary": {
+  "FROZEN_FILE": "Conjugate/Frozen/Remark_HypIII_Necessary.lean",
+  "FROZEN_DECL": "Conjugate.remark_hypIII_necessary",
+  "FROZEN_ANCHOR_ID": "thm.remark_hypIII_necessary.v1",
+  "FROZEN_ABI_SHA256": "040e7973829d9af59daafcc3ff36fdf466f78258759694f79b4f8b781b024a11",
+  "CONTRACT_ID": "paper.rem1_4.hypIII_necessary",
+  "CONTRACT_VERSION": "1",
+  "kind": "theorem"
+ },
+ "rem:hyp-iii-automatic": {
+  "FROZEN_FILE": "Conjugate/Frozen/Remark_HypIII_Automatic.lean",
+  "FROZEN_DECL": "Conjugate.remark_hypIII_automatic",
+  "FROZEN_ANCHOR_ID": "thm.remark_hypIII_automatic.v1",
+  "FROZEN_ABI_SHA256": "7345689e590028548ae2178c9699138a6af41eec25eb8cd7bf186444f8ed77ef",
+  "CONTRACT_ID": "paper.rem1_4.hypIII_automatic",
+  "CONTRACT_VERSION": "1",
+  "kind": "theorem"
+ }
+}

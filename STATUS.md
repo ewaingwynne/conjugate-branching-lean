@@ -6,7 +6,7 @@ Single writer: orchestrator. Proof status is never inferred from compilation alo
 
 - Phase 0 (setup): done
 - Phase 1 (anchors): **done** — 15 definitions sealed, 13 root theorems frozen as DRAFT_SORRY (author-approved 2026-10-28)
-- Phase 2 (dependency graph): next
+- Phase 2 (dependency graph): extraction spec frozen (`graph/EXTRACTION_SPEC.md`); 173-item inventory; all 4 slices extracted and merged: 198 nodes, 392 edges, 13 roots, 12 externals, 46 SOURCE_GAP nodes, lint clean (PROPOSED); slice reviews running
 
 ## Mandatory report fields
 
