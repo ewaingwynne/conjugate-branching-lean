@@ -1,0 +1,25 @@
+{
+   "sources" : [
+      {
+         "usage" : "toplevel",
+         "filename" : "fixed-pt-finite-type.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "cibib.bib"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "extrabib.bib"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "hmralphaabbrv.bst"
+      }
+   ],
+   "spec_version" : 1,
+   "texlive_version" : "2025",
+   "process" : {
+      "compiler" : "pdflatex"
+   }
+}

@@ -1,0 +1,22 @@
+name = "conjugate"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["Conjugate"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+autoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.36.0-rc2"
+
+# No root aggregator module: an aggregator would import DRAFT_SORRY anchors and
+# break draft quarantine. Every module under Conjugate/ is built via the glob.
+[[lean_lib]]
+name = "Conjugate"
+globs = ["Conjugate.+"]
