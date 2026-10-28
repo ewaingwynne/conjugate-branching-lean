@@ -69,17 +69,18 @@ FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: def-bp-basic.positive-regular
+DEPS: def-bp-basic.positive-regular, eqn-convex-func-n
 ROUTES: -
 ROUTE_FOR: -
 EDGE: def-bp-basic.positive-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-infty-subset#blowup@L732-L732 | 'since our branching process is positive regular (Definition 2.8) there exists N such that ...' (E5: Definition 1.3)
-TOPOLOGY_STATUS: PROPOSED
+EDGE: eqn-convex-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-infty-subset#blowup@L732-L732 | g^{(N)}_k(λ) = log 𝔼_k[∏_j e^{λ_j X_j(N)}] on [0,∞]^d (conventions ∞^0 = 1, ∞^x = ∞ for x > 0) is the expression in which ℙ_k[X_j(N) ≥ 1] > 0 forces the value ∞ at a point with an infinite coordinate; logically consumed, not cited at L732 (part of the SOURCE_GAP)
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: global-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP: asserted ('since our branching process is positive regular, there exists N such that if any of the d coordinates of lambda is equal to inf, then g^{(N)}(lambda) = (inf,...,inf)', L732) with no argument. The source does not show how positive regularity (P_k[X_j(N) >= 1] > 0 for all k, j) interacts with the infinite-coordinate convention for f^{(N)} and the exponential/log carrier. The paper's 'Definition 2.8' here is Definition 1.3 (E5). The only edge is to the definition of positive regularity; the edge to eqn-convex-func-n was dropped (ADJUDICATION C5) because the source cites only positive regularity.
+NOTE: SOURCE_GAP: asserted ('since our branching process is positive regular, there exists N such that if any of the d coordinates of lambda is equal to inf, then g^{(N)}(lambda) = (inf,...,inf)', L732) with no argument. The source does not show how positive regularity (P_k[X_j(N) >= 1] > 0 for all k, j) interacts with the infinite-coordinate convention for f^{(N)} and the exponential/log carrier. The paper's 'Definition 2.8' here is Definition 1.3 (E5). The source cites only positive regularity; the edge to eqn-convex-func-n records the characterization of g^{(N)} that the missing bridge would consume. Reconstructed (uncited) use: the edge to eqn-convex-func-n records that the step reads g^{(N)}(λ) through (2.5), g_k^{(N)}(λ) = log 𝔼_k[∏_j e^{λ_j X_j(N)}].
 
 NODE: eqn-infty-subset
 KIND: display
@@ -186,9 +187,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-monotone-lim | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#orbit-lambda0@L771-L771 | 'By Lemma 2.13, this implies lim ‖g^{(n)}(lambda^0)‖ = 0': first assertion with m = 1 and lambda = lambda^0 in [0,inf)^d
 EDGE: lem-attractive-zero#subinvariant-point | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#orbit-lambda0@L771-L771 | supplies the premise g^{(m)}(lambda) < lambda for m = 1
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -215,9 +216,9 @@ ROUTE_FOR: -
 EDGE: lem-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#comparison@L772-L772 | 'By the monotonicity of g (Lemma 2.9)': lambda <= lambda^0 gives g^{(n)}(lambda) <= g^{(n)}(lambda^0) coordinatewise (first assertion)
 EDGE: lem-attractive-zero#orbit-lambda0 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#comparison@L771-L772 | supplies lim of the norm of g^{(n)}(lambda^0) = 0, which is transferred to every lambda in [0,eps]^d
 EDGE: lem-attractive-zero#subinvariant-point | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#comparison@L772-L775 | 'eps := min_j lambda^0_j > 0': positivity of eps and lambda <= lambda^0 for lambda in [0,eps]^d use lambda^0 in (0,inf)^d, the conclusion of the node that chooses lambda^0
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -269,9 +270,9 @@ DEPS: lem-gf-pos
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-gf-pos | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#choose-N-m@L786-L787 | 'Let N and p_{k,j}(N) be as in Lemma 2.4. By Lemma 2.4, each p_{k,j}(N) is positive'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -297,9 +298,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-attractive-infty#choose-N-m | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#lower-bound@L792-L793 | 'the definitions of p_{k,j}(N) and m imply': each event {X_j(N) >= 1, X_k(N) >= 1} (or X_k(N) >= 2 when j = k) has probability p_{k,j}(N) >= m
 EDGE: eqn-convex-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#lower-bound@L794-L795 | exp(g_k^{(N)}(lambda)) = E_k[prod_j e^{lambda_j X_j(N)}] is display (2.5)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -325,13 +326,13 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-attractive-infty#lower-bound | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#strict-increase@L799-L799 | 'Therefore, if ... >= C := log m^{-1}, then g^{(N)}(lambda) > lambda': the lower bound exp(g_k^{(N)}(lambda)) >= e^{lambda_k} m exp(max_j lambda_j) > e^{lambda_k} when max_j lambda_j > C
 EDGE: def-componentwise | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#strict-increase@L799-L799 | strict inequality in every coordinate gives g^{(N)}(lambda) > lambda in the sense of Definition 2.8
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: global-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: Ruling E3: the literal text (L799) reads 'if min_j lambda_j >= C ... then g^{(N)}(lambda) > lambda'; the ruled reading uses the lemma's range max_j lambda_j > C (strict). C := log m^{-1} >= 0 because m <= 1; the lemma asserts C > 0 and the source does not comment (any larger C also works); see report.
+NOTE: Ruling E3: the literal text (L799) reads 'if min_j lambda_j >= C ... then g^{(N)}(lambda) > lambda'; the ruled reading uses the lemma's range max_j lambda_j > C (strict). C := log m^{-1} >= 0 because m <= 1; the lemma asserts C > 0 and the source does not comment on this (any larger C also works)
 
 NODE: lem-attractive-infty#divergence
 KIND: application
@@ -353,9 +354,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-monotone-lim | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#divergence@L799-L799 | 'By Lemma 2.13, this implies lim ‖g^{(n)}(lambda)‖ = inf': second assertion with m = N
 EDGE: lem-attractive-infty#strict-increase | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#divergence@L799-L799 | supplies the premise g^{(N)}(lambda) > lambda
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -381,9 +382,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-attractive-infty#strict-increase | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty@L799-L799 | first conjunct g^{(N)}(lambda) > lambda (ruled reading)
 EDGE: lem-attractive-infty#divergence | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty@L799-L799 | second conjunct lim ‖g^{(n)}(lambda)‖ = inf
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -436,9 +437,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-attractive-zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-use-attractive-zero@L808-L810 | 'Let eps be as in Lemma 2.15, so that [0,eps]^d is a subset of S_0'
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-use-attractive-zero@L808-L810 | lim ‖g^{(n)}(lambda)‖ = 0 on [0,eps]^d is membership in S_0 by (2.9)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -466,9 +467,9 @@ EDGE: eqn-use-attractive-zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.t
 EDGE: lem-basin-open#g-iter-continuous | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#S0-open@L814-L815 | 'By Hypothesis III, g^{(n)} is continuous': the preimage of the relatively open set [0,eps)^d is open
 EDGE: lem-basin-closed | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#S0-open@L816-L816 | iterating g^{-1}(S_0) subset S_0 n times shows (g^{(n)})^{-1}(S_0) is a subset of S_0
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#S0-open@L813-L813 | 'By the definition of S_0, there exists n with g^{(n)}(lambda) in [0,eps)^d': lim of the norm is 0
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -495,9 +496,9 @@ ROUTE_FOR: -
 EDGE: lem-attractive-infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#outside-cube-in-Sinf@L820-L820 | 'By that lemma and (2.10)': on [0,inf)^d \ [0,C]^d, lim ‖g^{(n)}(lambda)‖ = inf, hence limsup = inf (only the divergence conjunct is used)
 EDGE: eqn-infty-subset | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#outside-cube-in-Sinf@L820-L820 | covers the points of [0,inf]^d with an infinite coordinate
 EDGE: eqn-basin-def.infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#outside-cube-in-Sinf@L820-L820 | membership in S_inf is limsup of the norm = inf by (2.9)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -525,9 +526,9 @@ EDGE: lem-basin-open#outside-cube-in-Sinf | source/arxiv-2411.06301v2/fixed-pt-f
 EDGE: lem-basin-open#g-iter-continuous | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#Sinf-open@L820-L820 | 'g^{(n)}: [0,inf]^d -> [0,inf]^d is continuous', so the preimage of the relatively open set [0,inf]^d \ [0,C]^d is open
 EDGE: lem-basin-closed | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#Sinf-open@L820-L820 | 'exactly the same argument': (g^{(n)})^{-1}(S_inf) is a subset of S_inf by iterating g^{-1}(S_inf) subset S_inf
 EDGE: eqn-basin-def.infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#Sinf-open@L820-L820 | 'exactly the same argument': limsup = inf provides n with g^{(n)}(lambda) outside [0,C]^d
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -643,9 +644,9 @@ ROUTE_FOR: -
 EDGE: lem-unstable-scaled | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect#uniqueness@L835-L835 | 'This contradicts Lemma 2.11': applied to lambda = Ru (nonzero, bounded orbit) with scaling factor r/R in (0,1) it gives lim of the norm of g^{(n)}(ru) = 0, contradicting limsup > 0
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect#uniqueness@L835-L835 | ru not in S_0 means limsup of the norm of g^{(n)}(ru) > 0 (by (2.9))
 EDGE: eqn-basin-def.infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect#uniqueness@L835-L835 | Ru not in S_inf means limsup of the norm of g^{(n)}(Ru) < inf (by (2.9))
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -701,9 +702,9 @@ EDGE: lem-attractive-zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#l
 EDGE: lem-attractive-infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#choose-r-R@L865-L865 | points of [0,inf)^d outside [0,C]^d lie in S_inf, so Lambda is a subset of [0,C]^d and ‖lambda‖ <= R on Lambda
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#choose-r-R@L865-L865 | membership in S_0 by (2.9)
 EDGE: eqn-basin-def.infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#choose-r-R@L865-L865 | membership in S_inf by (2.9)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -730,11 +731,11 @@ ROUTE_FOR: -
 EDGE: lem-ray-intersect | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#radial-bijection@L868-L868 | 'By Lemma 2.18, pi restricted to Lambda is a bijection': for each u in B there is exactly one r > 0 with ru in Lambda
 TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: reviewer-C/sonnet
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: pi is defined only on [0,inf)^d \ {0}; that Lambda lies in this domain (0 is not in Lambda) is used implicitly here and stated, without reason, at L904 (see thm-fixed#zero-notin-Lambda; it also follows from Lambda being a subset of A(r,R) with r > 0).
+NOTE: SOURCE_GAP: pi is defined only on [0,inf)^d \ {0}; that Lambda lies in this domain (0 is not in Lambda) is used implicitly here and stated, without reason, at L904 (see thm-fixed#zero-notin-Lambda; it also follows from Lambda being a subset of A(r,R) with r > 0). Lemma 2.18 itself only covers rays through u in B.
 
 NODE: lem-retract#Lambda-compact
 KIND: step
@@ -786,9 +787,9 @@ ROUTE_FOR: -
 EDGE: ext:compact-hausdorff | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#phi-homeomorphism@L871-L872 | 'Therefore, pi restricted to Lambda is a homeomorphism': a continuous bijection from a compact space onto a Hausdorff space (B in R^d) is a homeomorphism
 EDGE: lem-retract#radial-bijection | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#phi-homeomorphism@L871-L871 | supplies the bijection pi restricted to Lambda
 EDGE: lem-retract#Lambda-compact | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#phi-homeomorphism@L870-L871 | supplies compactness of the domain Lambda
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -814,9 +815,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-retract#phi-homeomorphism | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-retract-def@L879-L879 | H is defined through the continuous inverse phi : B -> Lambda of pi restricted to Lambda
 EDGE: lem-retract#choose-r-R | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-retract-def@L877-L877 | domain A = A(r,R): ‖lambda‖ >= r > 0 makes lambda/‖lambda‖ defined and in B
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -842,9 +843,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-retract-def | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-continuous@L882-L882 | formula (2.13) is a composition of continuous operations in (lambda, t)
 EDGE: lem-retract#phi-homeomorphism | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-continuous@L882-L882 | 'Since phi is continuous, H is jointly continuous in t and lambda'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -899,9 +900,9 @@ ROUTE_FOR: -
 EDGE: eqn-retract-def | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-preserves-A@L885-L887 | formula (2.13) for H_t(lambda)
 EDGE: lem-retract#phi-homeomorphism | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-preserves-A@L885-L885 | phi(u)/‖phi(u)‖ = u: lambda and phi(lambda/‖lambda‖) are positive multiples of the same unit vector, so their norms combine linearly
 EDGE: lem-retract#choose-r-R | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-preserves-A@L885-L887 | 'Since Lambda is a subset of A': ‖phi(lambda/‖lambda‖)‖ lies in [r,R], as does ‖lambda‖, so the convex combination does too
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -999,8 +1000,8 @@ NOTE: Source statement 'We first argue that g(Lambda) subset Lambda' (L896); the
 NODE: thm-fixed#apply-retract
 KIND: application
 TITLE: Application of Lemma 2.19: A = A(r,R) with Lambda subset A and a continuous retraction H_1 : A -> Lambda
-STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#apply-retract@L898-L898
-PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#apply-retract@L898-L898
+STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#apply-retract@L898-L901
+PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#apply-retract@L898-L901
 CONTRACT_ID: paper.thm-fixed#apply-retract
 CONTRACT_VERSION: 1
 SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); Lambda := [0,inf)^d \ (S_0 u S_inf)
@@ -1015,9 +1016,9 @@ DEPS: lem-retract
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-retract | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#apply-retract@L898-L901 | 'Let A be as in Lemma 2.19, so that Lambda subset A' and 'Let H_1 : A -> Lambda be a retraction, as given by Lemma 2.19'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: global-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1042,9 +1043,9 @@ DEPS: lem-retract
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-retract | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#A-homeomorphic-to-ball@L898-L898 | A is the set A(r,R) of Lemma 2.19 ('Let A be as in Lemma 2.19')
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1070,9 +1071,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: ext:brouwer | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#brouwer-on-A@L899-L899 | 'By the Brouwer fixed point theorem, every continuous function from A to itself has a fixed point'
 EDGE: thm-fixed#A-homeomorphic-to-ball | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#brouwer-on-A@L898-L899 | the premise of Brouwer's theorem: A is homeomorphic to a closed ball (the fixed-point property is invariant under homeomorphism)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1099,9 +1100,9 @@ ROUTE_FOR: -
 EDGE: thm-fixed#Lambda-invariant | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#gH1-self-map@L902-L902 | 'Since g(Lambda) subset Lambda, g o H_1 : A -> Lambda'
 EDGE: thm-fixed#apply-retract | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#gH1-self-map@L901-L902 | H_1 : A -> Lambda is a continuous retraction and Lambda subset A
 EDGE: lem-basin-open#g-iter-continuous | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#gH1-self-map@L902-L902 | 'g o H_1 is a continuous function': g is continuous (n = 1) on [0,inf]^d, in particular on A
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1128,9 +1129,9 @@ ROUTE_FOR: -
 EDGE: thm-fixed#brouwer-on-A | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#fixed-point-in-Lambda@L902-L902 | 'there exists lambda in A such that g(H_1(lambda)) = lambda': Brouwer applied to the continuous self-map g o H_1 of A
 EDGE: thm-fixed#gH1-self-map | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#fixed-point-in-Lambda@L902-L902 | supplies the continuous self-map g o H_1; its image lies in Lambda, so 'Necessarily, lambda in Lambda'
 EDGE: thm-fixed#apply-retract | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#fixed-point-in-Lambda@L902-L902 | 'H_1(lambda) = lambda since H_1 is a retraction', hence g(lambda) = lambda
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1158,11 +1159,11 @@ EDGE: lem-attractive-zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#t
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#zero-notin-Lambda@L904-L904 | hence 0 is in S_0 by (2.9), so 0 is not in Lambda
 TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: reviewer-C/sonnet
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: The source states 'Since 0 not in Lambda' without a reason; read as 0 in [0,eps]^d subset S_0 (Lemma 2.15). An alternative reading is Lambda subset A(r,R) with r > 0 (lem-retract#choose-r-R). Not marked SOURCE_GAP (immediate either way).
+NOTE: SOURCE_GAP: the source states 'Since 0 not in Lambda' (L904) without a reason; the edges record one reading (0 in [0,eps]^d subset S_0, Lemma 2.15). An alternative reading is Lambda subset A(r,R) with r > 0 (lem-retract#choose-r-R).
 
 NODE: thm-fixed#positivity
 KIND: application
@@ -1187,9 +1188,9 @@ EDGE: eqn-fixed-pt-equiv | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#th
 EDGE: claim:subcritical-extinction | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#positivity@L904-L904 | supplies the premise of Lemma 2.3 that the extinction probability from any state is one, from Hypothesis I of the setting (not discussed at L904)
 EDGE: thm-fixed#fixed-point-in-Lambda | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#positivity@L902-L904 | supplies lambda in Lambda with g(lambda) = lambda
 EDGE: thm-fixed#zero-notin-Lambda | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#positivity@L904-L904 | gives lambda != 0, so 'lambda in [0,inf)^d \ {0}'; q_k = 1 for all k would force lambda = 0
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1215,9 +1216,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: thm-fixed#positivity | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed@L904-L904 | the proof concludes 'By Lemma 2.3, in fact lambda in (0,inf)^d' for the Brouwer fixed point of g in Lambda
 EDGE: thm-fixed#fixed-point-in-Lambda | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed@L902-L902 | 'Thus g(lambda) = lambda': the Brouwer fixed point lambda in Lambda found at L902 supplies the equation g(lambda) = lambda of the theorem's conclusion; positivity (L904) supplies lambda in (0,inf)^d for the same lambda
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1326,9 +1327,9 @@ KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-infty-subset@L732-L735
 DISPOSITION: NODE eqn-infty-subset, eqn-infty-subset#blowup
 REASON: Display (2.10) is the node eqn-infty-subset; the preceding unproved claim (g^{(N)} blows up when a coordinate is infinite, L732) is the SOURCE_GAP step eqn-infty-subset#blowup.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:lem-basin-closed
 KIND: lemma
@@ -1473,6 +1474,15 @@ REASON: Proof of Theorem 2.7 split into: invariance of Lambda (with the finitene
 COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
 REVIEWER: reviewer-C/sonnet
+
+ITEM: inv:fig-brouwer-proof
+KIND: claim
+SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#fig-brouwer-proof@L841-L847
+DISPOSITION: EXCLUDED
+REASON: Figure 2 (illustration of the proof of Lemma 2.19 for d = 2: the deformation retraction from the region A to Λ by sliding points along rays through the origin) pictures the construction (2.13) and states nothing that the proof of Lemma 2.19 (nodes eqn-retract-def, lem-retract#phi-homeomorphism, #H-continuous, #H-fixes-Lambda, #H-preserves-A) does not prove; it is not a proof obligation
+COVERAGE_STATUS: REVIEWED
+EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
+REVIEWER: queue-reviewer/sonnet
 
 ## Report
 

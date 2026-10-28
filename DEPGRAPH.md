@@ -9,8 +9,8 @@ EXTERNAL_POLICY: cited literature results and named standard theorems explicitly
 FROZEN_ANCHORS: def:population-sigma, def:step-kernel, def:path-law, def:extinction, def-conjugate, eqn-generating-function, eqn-mean-matrix, def:subcritical, def-bp-basic.positive-regular, def-bp-basic.non-singular, def-log-gf, eqn-basin-def.zero, eqn-basin-def.infty, def:truncation, def:stoch-dom, thm-fixed-gf.fixed-point, thm-fixed-gf.conjugate, thm-fixed-gf.equivalence, prop-single-type.fixed-point, prop-single-type.conjugate, prop-cond-on-ext.cond-law, prop-conjugate, thm-fixed, thm-fixed-pt-infty, counterexample, example-ctble, rem:hyp-iii-necessary, rem:hyp-iii-automatic
 FROZEN_MANIFEST: frozen-anchor-manifest.json | sha256:a735f3ce9e29a57154affcc72f18e05490295a40306a231e960ef604bfca2844
 WRITER: orchestrator/opus-5.5/session-f41ccbab
-GLOBAL_REVIEWER: -
-GLOBAL_REVIEW_REF: -
+GLOBAL_REVIEWER: global-reviewer/sonnet
+GLOBAL_REVIEW_REF: graph/reviews/global.review.md (root verdicts §1, follow-up §5)
 
 The dependency direction is `NODE -> prerequisite`. `DEPS` is conjunctive. `ROUTES` lists
 alternative `KIND: route` nodes; one route is sufficient. Lean fields are initialized planning
@@ -28,7 +28,7 @@ CONTRACT_ID: paper.def.populationMeasurableSpace
 CONTRACT_VERSION: 1
 SOURCE_HYPOTHESES: d ∈ ℕ; X = {X(n)}_{n∈ℕ_0} is a d-type branching process whose population vector X(n) = (X_1(n),…,X_d(n)) takes values in ℕ_0^d
 SOURCE_QUANTIFIERS: d ∈ ℕ; process X; generation n ∈ ℕ_0
-SOURCE_CONCLUSION: the (implicit) measurable structure on the population space ℕ_0^d and on the space of paths of populations with respect to which X_j(n), the laws ℙ_k, the expectations 𝔼_k and the bounded measurable test functions F : ℕ_0^d → ℝ of (2.1) and (2.2) (L402, L427, slice B) are understood; the paper never writes this structure out
+SOURCE_CONCLUSION: the (implicit) measurable structure on the population space ℕ_0^d and on the space of paths of populations with respect to which X_j(n), the laws ℙ_k, the expectations 𝔼_k and the bounded measurable test functions F : ℕ_0^d → ℝ of (2.1) (L402) and (2.2) (L427) are understood; the paper never writes this structure out
 CONSTANT_SCOPE: none
 FROZEN_FILE: Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean
 FROZEN_DECL: Conjugate.populationMeasurableSpace
@@ -37,13 +37,13 @@ FROZEN_ABI_SHA256: 98d6e8f17a8fbbf47f2376e7f4b24e45caeebc5a06a5eae8bbb2a81a7deb1
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: global-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: definition leaf. Slice-A text is only L176-L177; the manifest range also cites L402, L427, L915-L918 (slices B, D). Consumed through eqn-gen-func-n and claim:mean-matrix-powers (measurability of X(n) for 𝔼_k); no definition-to-definition edge is proposed
+NOTE: definition leaf. The statement text is only L176-L177; the manifest source range also cites L402, L427 and L915-L918. Consumed directly by def:step-kernel (edge def:step-kernel -> def:population-sigma: the one-generation kernel is a law on populations, which carry this measurable structure) and, through def:step-kernel and def:path-law, by claim:branching-property, eqn-gen-func-n and claim:mean-matrix-powers (measurability of X(n) for 𝔼_k)
 
 NODE: def:step-kernel
 KIND: definition
@@ -247,9 +247,9 @@ FROZEN_ABI_SHA256: e05d2b9a55ef42cf5628e1a4460361152c5d0f0c198614c69ef3e769a4291
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -302,9 +302,9 @@ ROUTE_FOR: -
 EDGE: eqn-generating-function | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-gen-func-n@L209-L213 | f in 'the composition of f with itself n times' is the one-generation generating function of display (1.1)
 EDGE: def:path-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-gen-func-n@L209-L213 | the generation-n expectation is taken under ℙ_k, the law of the process started from one type-k individual
 EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-gen-func-n@L209-L213 | the identity between the n-fold composition and the generation-n expectation ('Equivalently') is the branching (independent offspring) and Markov property of the generation process; the paper gives no argument
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -331,9 +331,9 @@ ROUTE_FOR: -
 EDGE: eqn-mean-matrix | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#mean-matrix-powers@L219-L220 | M is the matrix of display (1.3) whose powers are being identified
 EDGE: def:path-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#mean-matrix-powers@L219-L220 | the mean 𝔼_k[X_j(n)] is taken under ℙ_k
 EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#mean-matrix-powers@L219-L220 | the n-th generation mean is obtained by iterating the one-generation mechanism, i.e. by the branching and Markov property; the paper gives no argument
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -386,9 +386,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: thm-fixed | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed@L553-L557 | supplies λ ∈ (0,∞)^d with g(λ) = λ; the hypotheses of Theorem 2.7 (setting of Theorem 1.4, L528) are exactly the root's (I)-(III)
 EDGE: eqn-fixed-pt-equiv | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-fixed-pt-equiv@L548-L553 | converts g(λ) = λ into f(e^λ) = e^λ; λ ∈ (0,∞)^d is e^λ ∈ (1,∞)^d
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -414,9 +414,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: thm-fixed-gf.fixed-point | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed-gf@L249-L249 | the conclusion 'equivalently, there exists q ∈ (1,∞)^d such that f(q) = q' supplies the fixed point; hypotheses (I)-(III) are the root's own
 EDGE: thm-fixed-gf.equivalence | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed-gf@L249-L249 | the 'equivalently' clause of Theorem 1.4 (restating the equivalence of L238) converts the fixed point into a conjugate; its premises (subcritical, positive regular, non-singular) are the root's hypotheses (I) and (II)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -458,23 +458,24 @@ PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-f
 CONTRACT_ID: paper.claim:subcritical-extinction
 CONTRACT_VERSION: 1
 SOURCE_HYPOTHESES: d ∈ ℕ; X is a subcritical, positive regular and non-singular d-type branching process
-SOURCE_QUANTIFIERS: d ∈ ℕ; X; k ∈ {1,…,d}
-SOURCE_CONCLUSION: ℙ_k[E] = 1 for every k ∈ {1,…,d}, where E is the extinction event
+SOURCE_QUANTIFIERS: d ∈ ℕ; X; initial population x ∈ ℕ_0^d (in particular x = one type-k individual, k ∈ {1,…,d})
+SOURCE_CONCLUSION: ℙ_x[E] = 1 for every initial population x ∈ ℕ_0^d, where E is the extinction event; in particular ℙ_k[E] = 1 for every k ∈ {1,…,d}
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: -
+DEPS: claim:branching-property
 ROUTES: -
 ROUTE_FOR: -
+EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238 | the consumers need extinction from any initial population (Proposition 2.2 L421, Lemma 2.3 L441) while Definition 1.1 (L185) and the proof of Lemma 2.3 (L449) use ℙ_k[E] = 1 per type; passing from one type-k individual to an arbitrary initial population is the independence part of the branching property, ℙ_x[E] = ∏_k ℙ_k[E]^{x_k}, which the source never states
 TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: reviewer-A/sonnet
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP: Definition 1.1 (L185) and Proposition 2.2 (L421) both assume that the extinction probability is one, while L238 and Theorem 1.4 assume only subcriticality, positive regularity and non-singularity; the paper never states that these imply certain extinction. No edge is added to ext:an72-v3-thm2 because the source does not invoke it here; orchestrator may decide whether to add it. Merged per ADJUDICATION A3/C1: the same unproved claim is invoked at L628 ("Since the extinction probability is one (Hypothesis I)") and in the Lemma 2.3 application at L905; all three uses consume this node
+NOTE: SOURCE_GAP: Definition 1.1 (L185) and Proposition 2.2 (L421) both assume that the extinction probability is one, while L238 and Theorem 1.4 assume only subcriticality, positive regularity and non-singularity; the paper never states that these imply certain extinction. No edge to ext:an72-v3-thm2 is recorded because the source does not invoke it here. Merged per ADJUDICATION A3/C1: the same unproved claim is invoked at L628 ("Since the extinction probability is one (Hypothesis I)") and in the Lemma 2.3 application at L904; all three uses consume this node. Second unwritten step: Definition 1.1 and the argument at L449 use certain extinction per starting type, whereas Proposition 2.2 (L421) and Lemma 2.3 (L441) assume it from any initial population; the bridge (independence of the individuals of the initial population, via claim:branching-property) is not written in the source
 
 NODE: thm-fixed-gf.equivalence#hat-differs-from-X
 KIND: step
@@ -496,9 +497,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: prop-conjugate | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238 | Proposition 2.2 gives extinction probability 1/A_k < 1 for X̂ (L427), which differs from the extinction probability one of X
 EDGE: claim:subcritical-extinction | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238 | the comparison needs X to have extinction probability exactly one
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -526,9 +527,9 @@ EDGE: prop-conjugate | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjug
 EDGE: claim:subcritical-extinction | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238 | discharges the premise 'extinction probability started from any state is one' of Proposition 2.2 (L421) and the context of Definition 1.1
 EDGE: thm-fixed-gf.equivalence#hat-differs-from-X | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238 | discharges clause (a) of Definition 1.1, which Proposition 2.2 does not state
 EDGE: def-conjugate | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238 | L238 asks for a conjugate 'in the sense of Definition 1.1'; both clauses (a) and (b) must be verified for X̂
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -543,7 +544,7 @@ CONTRACT_ID: paper.thm-fixed-gf.equivalence#conjugate-regularity
 CONTRACT_VERSION: 1
 SOURCE_HYPOTHESES: d ∈ ℕ; X is a subcritical, positive regular and non-singular d-type branching process; X̂ is a conjugate branching process for X in the sense of Definition 1.1
 SOURCE_QUANTIFIERS: d ∈ ℕ; X; X̂ conjugate for X; k ∈ {1,…,d}
-SOURCE_CONCLUSION: X̂ is positive regular and non-singular and 0 < ℙ̂_k[E] < 1 for each k ∈ {1,…,d}, i.e. every premise of Proposition 2.1 (L391, L397) holds for X̂ (the lower bound is also what makes the conditioning in clause (b) of Definition 1.1 meaningful)
+SOURCE_CONCLUSION: X̂ is positive regular and non-singular and 0 < ℙ̂_k[E] < 1 for each k ∈ {1,…,d}, i.e. every premise of Proposition 2.1 (L391, L397) holds for X̂
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
 FROZEN_DECL: -
@@ -552,13 +553,13 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: global-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP: Proposition 2.1 (L391, L397) is stated for a positive regular, non-singular process with 0 < a_k < 1 for every k; a conjugate X̂ is assumed to satisfy none of these and the paper never checks them. This node exposes all of them as the premises under which thm-fixed-gf.equivalence#conjugate-is-tilt applies Proposition 2.1 to X̂. The bound ℙ̂_k[E] < 1 is NOT supplied by the source; the extractor's observation that it would make Lemma 2.3 redundant, and that A = (1,…,1) is only excluded afterwards by clause (a), is retained as an ambiguity for the orchestrator (neither argument is supplied here; if the orchestrator prefers to keep this node at `> 0` only, then `#conjugate-is-tilt` must instead be marked DISPUTED because Proposition 2.1 is applied without its premise a_k < 1)
+NOTE: SOURCE_GAP: Proposition 2.1 (L391, L397) is stated for a positive regular, non-singular process with 0 < a_k < 1 for every k. Definition 1.1 and L238 supply none of these for a conjugate X̂ (clause (b) of Definition 1.1 conditions on extinction, which presupposes ℙ̂_k[E] > 0), and the paper never checks them. This node records the three premises as the package under which thm-fixed-gf.equivalence#conjugate-is-tilt applies Proposition 2.1 to X̂. In particular ℙ̂_k[E] < 1 is not supplied by the source, and no argument for it is given here.
 
 NODE: thm-fixed-gf.equivalence#conjugate-is-tilt
 KIND: application
@@ -583,13 +584,13 @@ EDGE: thm-fixed-gf.equivalence#conjugate-regularity | source/arxiv-2411.06301v2/
 EDGE: def:extinction | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238 | the tilting parameters are the extinction probabilities â_k = ℙ̂_k[E] of X̂
 EDGE: def-conjugate | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238 | clause (b) of Definition 1.1 identifies the conditional law of X̂ with the law of X
 EDGE: eqn-generating-function | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#conjugate-iff-fixed-point@L238-L238 | f_k(A) = 𝔼_k[∏ A_j^{X_j(1)}] is evaluated through the tilt to give f(A) = A
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: global-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP: the paper never writes the inverse tilt computation f(A) = A for a given conjugate; it is the converse of the proof of Proposition 2.2 (L430-L431). Edges are the reconstruction indicated by the orchestrator (Propositions 2.1/2.2); L238 itself does not invoke Proposition 2.1
+NOTE: SOURCE_GAP: the paper never writes the inverse tilt computation f(A) = A for a given conjugate; it is the converse of the proof of Proposition 2.2 (L430-L431). L238 itself does not invoke Proposition 2.1; the edges to prop-cond-on-ext.cond-law and to the premise node thm-fixed-gf.equivalence#conjugate-regularity are the reconstruction from Propositions 2.1/2.2 (Proposition 2.1 is applied to X̂ here, in the reverse direction of its use at L431)
 
 NODE: thm-fixed-gf.equivalence#conjugate-to-fixed-point
 KIND: application
@@ -691,15 +692,14 @@ FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: eqn-generating-function, eqn-mean-matrix, prop-single-type#finite-near-one
+DEPS: eqn-generating-function, prop-single-type#finite-near-one
 ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-generating-function | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354 | f'(1) is the derivative of f_1(q) = 𝔼[q^{X(1)}] at q = 1
-EDGE: eqn-mean-matrix | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354 | for d = 1 the mean matrix is M_{1,1} = 𝔼[X(1)]; the identity is the d = 1 case of 'M is the Jacobian matrix of f at 1' (L510)
 EDGE: prop-single-type#finite-near-one | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L353-L354 | differentiability at 1 uses that f is finite on [1,1+ε]
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: global-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -707,15 +707,15 @@ NOTE: SOURCE_GAP: 'We have 𝔼[X(1)] = f'(1)' is asserted without justification
 
 NODE: prop-single-type#f-below-diagonal
 KIND: step
-TITLE: f(s) < s for some s > 1 close to 1 (Taylor expansion)
+TITLE: f(s) < s for every s > 1 sufficiently close to 1 (Taylor expansion)
 STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L343-L351
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354
 CONTRACT_ID: paper.prop-single-type#f-below-diagonal
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: X single-type branching process started from a single individual with generating function f; (I) 𝔼[X(1)] < 1
-SOURCE_QUANTIFIERS: X; ∃ s > 1 (sufficiently close to 1)
-SOURCE_CONCLUSION: there exists s > 1 with f(s) < s
-CONSTANT_SCOPE: s depends on f only
+SOURCE_HYPOTHESES: X single-type branching process started from a single individual with generating function f; (I) 𝔼[X(1)] < 1; (III) f is continuous from (0,∞] to (0,∞], with (0,∞] carrying the half-open-interval topology
+SOURCE_QUANTIFIERS: X; ∃ ε' > 0 ∀ s ∈ (1, 1+ε')
+SOURCE_CONCLUSION: f(s) < s for every s > 1 sufficiently close to 1, i.e. there is ε' > 0 with f(s) < s for all s ∈ (1, 1+ε')
+CONSTANT_SCOPE: ε' depends on f only
 FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
@@ -725,13 +725,13 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: prop-single-type#mean-eq-derivative | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354 | 'E[X(1)] = f'(1) < 1, so ...' supplies f'(1) < 1
 EDGE: ext:taylor | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354 | 'by Taylor expansion' gives f(s) = 1 + f'(1)(s-1) + o(s-1) < s for s > 1 close to 1
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: witness choice of s; hypothesis (I) is the root's own
+NOTE: witness choice: the consumer prop-single-type#fixed-point-exists fixes one s ∈ (1, 1+ε'); hypotheses (I) and (III) are the root's own
 
 NODE: prop-single-type#f-above-diagonal
 KIND: step
@@ -753,11 +753,11 @@ ROUTES: -
 ROUTE_FOR: -
 TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: reviewer-A/sonnet
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: witness choice of t; justified in the source only by 'By Hypothesis II'; hypothesis (II) is the root's own. The requirement t > s is not written
+NOTE: SOURCE_GAP: 'By Hypothesis II, there exists a sufficiently large t > 1 for which f(t) > t' (L354) is asserted with no argument; hypothesis (II) is the root's own. The requirement t > s is not written
 
 NODE: prop-single-type#fixed-point-exists
 KIND: step
@@ -767,7 +767,7 @@ PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-typ
 CONTRACT_ID: paper.prop-single-type#fixed-point-exists
 CONTRACT_VERSION: 1
 SOURCE_HYPOTHESES: X single-type branching process started from a single individual with generating function f; (III) f is continuous from (0,∞] to (0,∞], with (0,∞] carrying the half-open-interval topology
-SOURCE_QUANTIFIERS: X; s and t the witnesses of prop-single-type#f-below-diagonal and prop-single-type#f-above-diagonal (s < t); ∃ q̄ ∈ [s,t]
+SOURCE_QUANTIFIERS: X; s a chosen point of the interval (1, 1+ε') of prop-single-type#f-below-diagonal and t the witness of prop-single-type#f-above-diagonal (s < t); ∃ q̄ ∈ [s,t]
 SOURCE_CONCLUSION: there exists q̄ ∈ [s,t] ⊂ (1,∞) with f(q̄) = q̄
 CONSTANT_SCOPE: q̄ depends on f only
 FROZEN_FILE: -
@@ -779,9 +779,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: prop-single-type#f-below-diagonal | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354 | f(s) < s is the lower endpoint sign of the crossing argument on [s,t]
 EDGE: prop-single-type#f-above-diagonal | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354 | f(t) > t is the upper endpoint sign of the crossing argument on [s,t]
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -834,9 +834,9 @@ ROUTE_FOR: -
 EDGE: prop-single-type#strict-convexity | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354 | 'Hence there are at most two values of q for which f(q) = q' follows from convexity on the finite interval
 EDGE: prop-single-type#fixed-point-exists | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L354-L354 | identifies the second fixed point as q̄ ('namely 1 and q̄')
 EDGE: eqn-generating-function | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L353-L354 | 'namely 1 and q̄': f(1) = 𝔼[1^{X(1)}] = 1 (the proof's 'Since f(1) = 1') shows that 1 is the other fixed point
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -892,9 +892,9 @@ EDGE: def:subcritical | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-
 EDGE: def-bp-basic.positive-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L347-L347 | positive regularity for d = 1 is not stated in Proposition 1.6 and must be derived from (II)
 EDGE: def-bp-basic.non-singular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L347-L347 | hypothesis (II) is Definition 1.3 non-singularity for d = 1
 EDGE: eqn-mean-matrix | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L346-L346 | 'subcritical, i.e. 𝔼[X(1)] < 1': for d = 1 the mean matrix is M_{1,1} = 𝔼[X(1)] by (1.3), so ρ = M_{1,1}
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -921,9 +921,9 @@ ROUTE_FOR: -
 EDGE: prop-single-type.fixed-point | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L350-L350 | 'Equivalently, there exists a unique value of q > 1 for which f(q) = q': the fixed point from the fixed-point form is the input of the equivalence
 EDGE: thm-fixed-gf.equivalence | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L350-L350 | the 'Equivalently' bridge between a conjugate and a fixed point in (1,∞) is the equivalence of L238 with d = 1
 EDGE: prop-single-type.conjugate#hyps-imply-equivalence-hypotheses | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-single-type@L350-L350 | discharges the premises (subcritical, positive regular, non-singular) of the equivalence
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1208,8 +1208,8 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-nec
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-necessary@L252-L252
 CONTRACT_ID: paper.rem:hyp-iii-necessary#no-conjugate
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: the single-type branching process with ℙ[X(1) = m] = a m^{-3} for m ≥ 1 and ℙ[X(1) = 0] = b, for the constants a, b > 0 of rem:hyp-iii-necessary#constants-and-hyp-I
-SOURCE_QUANTIFIERS: the process above; ∄ X̂ conjugate for X
+SOURCE_HYPOTHESES: the single-type branching process X with ℙ[X(1) = m] = a m^{-3} for every m ≥ 1 and ℙ[X(1) = 0] = b, for appropriate constants a, b > 0 (the source does not specify them)
+SOURCE_QUANTIFIERS: a, b > 0 as in the hypothesis; the process X above; ∄ X̂ conjugate for X
 SOURCE_CONCLUSION: there is no conjugate branching process for X
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
@@ -1223,9 +1223,9 @@ EDGE: thm-fixed-gf.equivalence | source/arxiv-2411.06301v2/fixed-pt-finite-type.
 EDGE: rem:hyp-iii-necessary#f-infinite | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-necessary@L252-L252 | f(q) = ∞ ≠ q for all q ∈ (1,∞) means no fixed point in (1,∞)
 EDGE: rem:hyp-iii-necessary#constants-and-hyp-I | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-necessary@L252-L252 | discharges the premise 'subcritical' of the equivalence
 EDGE: rem:hyp-iii-necessary#hyp-II-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#hyp-iii-necessary@L252-L252 | discharges the premises 'positive regular' and 'non-singular' of the equivalence
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: global-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1330,9 +1330,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: claim:mean-matrix-powers | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-bp-basic@L229-L229 | 'the matrix M^N has all positive entries': (M^N)_{k,j} = 𝔼_k[X_j(N)], so positivity of the entries is positivity of the means
 EDGE: def-bp-basic.positive-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-bp-basic@L225-L229 | the probabilistic form ℙ_k[X_j(N) ≥ 1] > 0 of the same definition
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1683,9 +1683,9 @@ ROUTE_FOR: -
 EDGE: ext:an72-v3-thm2 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#ext-prob-hat@L431-L431 | Prop 2.1 first paragraph applied to X-hat: its only fixed points in [0,1]^d are its extinction vector and (1,...,1), and 1/A is a fixed point
 EDGE: prop-conjugate#hat-fixed-point | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#ext-prob-hat@L431-L431 | supplies the fixed point 1/A of f-hat in [0,1]^d
 EDGE: prop-conjugate#hat-pos-reg-nonsing | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#ext-prob-hat@L430-L431 | hypothesis (positive regular, non-singular) of Proposition 2.1 for X-hat
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1882,9 +1882,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-gf-pos#choose-N0-k0 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-pos#two-individuals@L493-L493 | supplies N_0 (reach a type-k_0 individual from any type k) and k_0 (two offspring with positive chance)
 EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-pos#two-individuals@L493-L493 | 'Conditional on this ...' uses the Markov/branching property of the process at generation N_0
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -2218,9 +2218,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-convex-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-mono@L600-L600 | first assertion 'immediate from the definition of g^{(n)}': g_k^{(n)} = log E_k[prod_j e^{lambda_j X_j(n)}] is monotone in lambda since X_j(n) >= 0
 EDGE: lem-mono#strict-ineq | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-mono@L602-L603 | second assertion is the strict-inequality argument
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -2246,9 +2246,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: def-bp-basic.positive-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-mono#positivity-all-n@L602-L602 | 'By positive regularity (Definition 1.3), there exists N in N such that ...'
 EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-mono#positivity-all-n@L602-L602 | 'From this and the Markov property of the branching process, in fact ... for each n >= N'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -2358,9 +2358,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: ext:holder | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-scaled#holder-bound@L631-L632 | Holder's inequality with exponents 1/r and 1/(1-r) applied to Z_n and 1_{Z_n > 1}
 EDGE: eqn-convex-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-scaled#holder-bound@L633-L633 | E_k[Z_n^{1/r}] = E_k[prod_j e^{lambda_j X_j(n)}] = exp(g_k^{(n)}(lambda))
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -2446,11 +2446,11 @@ EDGE: lem-unstable-scaled | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#p
 EDGE: lem-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable#strict-case@L642-L643 | implicit in 'this implies': eta <= r lambda gives g^{(n)}(eta) <= g^{(n)}(r lambda) coordinatewise (first assertion of Lemma 2.9), with g^{(n)} >= 0 on [0,inf)^d, so ‖g^{(n)}(eta)‖ is controlled by ‖g^{(n)}(r lambda)‖
 TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: reviewer-B/sonnet
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: The monotonicity step from eta <= r lambda to the norm bound is not stated in the source (the edge to lem-mono records an implicit use; this node is not a gap node).
+NOTE: SOURCE_GAP: the monotonicity step from eta <= r lambda to the norm bound |g^{(n)}(eta)| <= |g^{(n)}(r lambda)| (first assertion of Lemma 2.9, g^{(n)} >= 0 on [0,inf)^d) is not stated in the source ('By Lemma 2.11, this implies', L643); the edge to lem-mono records that unwritten use.
 
 NODE: prop-unstable#part-i
 KIND: step
@@ -2473,9 +2473,9 @@ ROUTE_FOR: -
 EDGE: prop-unstable#strict-case | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable#part-i@L646-L646 | apply 'the first paragraph' with g^{(N)}(lambda) in place of lambda and g^{(N)}(eta) in place of eta
 EDGE: lem-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable#part-i@L646-L646 | 'By the second assertion of Lemma 2.9, there exists N with g_k^{(N)}(eta) < g_k^{(N)}(lambda) for each k'
 EDGE: def-componentwise | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable#part-i@L645-L645 | unfolds eta < lambda: eta_j <= lambda_j for every j with at least one strict inequality
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -2665,13 +2665,13 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#shifted-mono@L676-L680 | both assertions of Lemma 2.9 applied to g^{(m)}(lambda) < lambda: monotonicity gives (2.7), the strict clause gives strictness for large n
 EDGE: def-componentwise | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#shifted-mono@L675-L675 | the hypothesis g^{(m)}(lambda) < lambda is in the sense of Definition 2.8
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP (minor): the strict clause of Lemma 2.9 holds only for n >= N with |g^{(n)}(lambda)| < inf (lambda is the larger argument); the source asserts 'strict if n is sufficiently large' (L680) without showing that this finiteness proviso holds for all large n.
+NOTE: SOURCE_GAP: the strict clause of Lemma 2.9 holds only for n >= N with |g^{(n)}(lambda)| < inf (lambda is the larger argument); the source asserts 'strict if n is sufficiently large' (L680) without showing that this finiteness proviso holds for all large n.
 
 NODE: lem-monotone-lim#limits-exist
 KIND: step
@@ -2715,13 +2715,14 @@ FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: lem-monotone-lim#limits-exist
+DEPS: lem-monotone-lim#limits-exist, lem-basin-open#g-iter-continuous
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-monotone-lim#limits-exist | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#limit-fixed@L689-L689 | lambda-bar^s is the limit (2.8) of g^{(r m + s)}(lambda)
+EDGE: lem-basin-open#g-iter-continuous | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#limit-fixed@L689-L689 | SOURCE_GAP reconstruction, not cited at L689: g^{(m)}(lambda-bar^s) = lim_r g^{(m)}(g^{(r m + s)}(lambda)) needs continuity of g^{(m)} on [0,inf)^d, which the paper derives from Hypothesis III only later (L814)
 TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: reviewer-B/sonnet
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -2750,13 +2751,13 @@ EDGE: lem-monotone-lim#limit-fixed | source/arxiv-2411.06301v2/fixed-pt-finite-t
 EDGE: lem-monotone-lim#shifted-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#limits-zero@L689-L689 | strictness of (2.7) for large n gives lambda-bar^s < g^{(s)}(lambda)
 EDGE: lem-unstable-ssl | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#limits-zero@L690-L690 | assertion (ii) of Lemma 2.12 with lambda-bar^s and eta = g^{(s)}(lambda) gives limsup_r ‖g^{(r m)}(g^{(s)}(lambda))‖ = inf, contradicting (2.8)
 EDGE: def-componentwise | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#limits-zero@L688-L689 | 'lambda-bar^s > 0 (at least one component positive)' and 'lambda-bar^s < g^{(s)}(lambda)' use Definition 2.8
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP (minor): Lemma 2.12(ii) is applied at L690 with lambda := lambda-bar^s and eta := g^{(s)}(lambda), but its premises (lambda-bar^s in [0,inf)^d \ {0}, eta in [0,inf)^d, i.e. finiteness of g^{(s)}(lambda) for s in {0,...,m-1}) are not discharged in the source; lambda-bar^s < g^{(s)}(lambda) is asserted in one clause from the large-n strictness of (2.7). Proof by contradiction for the first assertion; the m subsequences s = 0,...,m-1 are combined to conclude convergence of the full sequence (routine).
+NOTE: SOURCE_GAP: Lemma 2.12(ii) is applied at L690 with lambda := lambda-bar^s and eta := g^{(s)}(lambda), but its premises (lambda-bar^s in [0,inf)^d \ {0}, eta in [0,inf)^d, i.e. finiteness of g^{(s)}(lambda) for s in {0,...,m-1}) are not discharged in the source; lambda-bar^s < g^{(s)}(lambda) is asserted in one clause from the large-n strictness of (2.7). Proof by contradiction for the first assertion; the m subsequences s = 0,...,m-1 are combined to conclude convergence of the full sequence (routine).
 
 NODE: lem-monotone-lim#part-b
 KIND: step
@@ -2773,15 +2774,16 @@ FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: lem-mono, lem-unstable-ssl, def-componentwise
+DEPS: lem-mono, lem-unstable-ssl, def-componentwise, lem-basin-open#g-iter-continuous
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#part-b@L675-L693 | 'proven similarly' (L693): the increasing analogue of the (2.7) argument at L676-L680
 EDGE: lem-unstable-ssl | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#part-b@L675-L693 | 'proven similarly' (L693): the analogue of the contradiction argument at L690
 EDGE: def-componentwise | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#part-b@L675-L693 | 'proven similarly' (L693): the sense of '>' is that of Definition 2.8
+EDGE: lem-basin-open#g-iter-continuous | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#part-b@L689-L693 | SOURCE_GAP reconstruction: the analogue of the limit-fixed step (L689) passes a monotone limit through g^{(m)}, which needs continuity of g^{(m)} (Hypothesis III)
 TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: reviewer-B/sonnet
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -2856,17 +2858,18 @@ FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: def-bp-basic.positive-regular
+DEPS: def-bp-basic.positive-regular, eqn-convex-func-n
 ROUTES: -
 ROUTE_FOR: -
 EDGE: def-bp-basic.positive-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-infty-subset#blowup@L732-L732 | 'since our branching process is positive regular (Definition 2.8) there exists N such that ...' (E5: Definition 1.3)
-TOPOLOGY_STATUS: PROPOSED
+EDGE: eqn-convex-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-infty-subset#blowup@L732-L732 | g^{(N)}_k(λ) = log 𝔼_k[∏_j e^{λ_j X_j(N)}] on [0,∞]^d (conventions ∞^0 = 1, ∞^x = ∞ for x > 0) is the expression in which ℙ_k[X_j(N) ≥ 1] > 0 forces the value ∞ at a point with an infinite coordinate; logically consumed, not cited at L732 (part of the SOURCE_GAP)
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: global-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP: asserted ('since our branching process is positive regular, there exists N such that if any of the d coordinates of lambda is equal to inf, then g^{(N)}(lambda) = (inf,...,inf)', L732) with no argument. The source does not show how positive regularity (P_k[X_j(N) >= 1] > 0 for all k, j) interacts with the infinite-coordinate convention for f^{(N)} and the exponential/log carrier. The paper's 'Definition 2.8' here is Definition 1.3 (E5). The only edge is to the definition of positive regularity; the edge to eqn-convex-func-n was dropped (ADJUDICATION C5) because the source cites only positive regularity.
+NOTE: SOURCE_GAP: asserted ('since our branching process is positive regular, there exists N such that if any of the d coordinates of lambda is equal to inf, then g^{(N)}(lambda) = (inf,...,inf)', L732) with no argument. The source does not show how positive regularity (P_k[X_j(N) >= 1] > 0 for all k, j) interacts with the infinite-coordinate convention for f^{(N)} and the exponential/log carrier. The paper's 'Definition 2.8' here is Definition 1.3 (E5). The source cites only positive regularity; the edge to eqn-convex-func-n records the characterization of g^{(N)} that the missing bridge would consume. Reconstructed (uncited) use: the edge to eqn-convex-func-n records that the step reads g^{(N)}(λ) through (2.5), g_k^{(N)}(λ) = log 𝔼_k[∏_j e^{λ_j X_j(N)}].
 
 NODE: eqn-infty-subset
 KIND: display
@@ -2973,9 +2976,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-monotone-lim | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#orbit-lambda0@L771-L771 | 'By Lemma 2.13, this implies lim ‖g^{(n)}(lambda^0)‖ = 0': first assertion with m = 1 and lambda = lambda^0 in [0,inf)^d
 EDGE: lem-attractive-zero#subinvariant-point | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#orbit-lambda0@L771-L771 | supplies the premise g^{(m)}(lambda) < lambda for m = 1
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3002,9 +3005,9 @@ ROUTE_FOR: -
 EDGE: lem-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#comparison@L772-L772 | 'By the monotonicity of g (Lemma 2.9)': lambda <= lambda^0 gives g^{(n)}(lambda) <= g^{(n)}(lambda^0) coordinatewise (first assertion)
 EDGE: lem-attractive-zero#orbit-lambda0 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#comparison@L771-L772 | supplies lim of the norm of g^{(n)}(lambda^0) = 0, which is transferred to every lambda in [0,eps]^d
 EDGE: lem-attractive-zero#subinvariant-point | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-zero#comparison@L772-L775 | 'eps := min_j lambda^0_j > 0': positivity of eps and lambda <= lambda^0 for lambda in [0,eps]^d use lambda^0 in (0,inf)^d, the conclusion of the node that chooses lambda^0
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3056,9 +3059,9 @@ DEPS: lem-gf-pos
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-gf-pos | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#choose-N-m@L786-L787 | 'Let N and p_{k,j}(N) be as in Lemma 2.4. By Lemma 2.4, each p_{k,j}(N) is positive'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3084,9 +3087,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-attractive-infty#choose-N-m | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#lower-bound@L792-L793 | 'the definitions of p_{k,j}(N) and m imply': each event {X_j(N) >= 1, X_k(N) >= 1} (or X_k(N) >= 2 when j = k) has probability p_{k,j}(N) >= m
 EDGE: eqn-convex-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#lower-bound@L794-L795 | exp(g_k^{(N)}(lambda)) = E_k[prod_j e^{lambda_j X_j(N)}] is display (2.5)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3112,13 +3115,13 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-attractive-infty#lower-bound | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#strict-increase@L799-L799 | 'Therefore, if ... >= C := log m^{-1}, then g^{(N)}(lambda) > lambda': the lower bound exp(g_k^{(N)}(lambda)) >= e^{lambda_k} m exp(max_j lambda_j) > e^{lambda_k} when max_j lambda_j > C
 EDGE: def-componentwise | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#strict-increase@L799-L799 | strict inequality in every coordinate gives g^{(N)}(lambda) > lambda in the sense of Definition 2.8
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: global-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: Ruling E3: the literal text (L799) reads 'if min_j lambda_j >= C ... then g^{(N)}(lambda) > lambda'; the ruled reading uses the lemma's range max_j lambda_j > C (strict). C := log m^{-1} >= 0 because m <= 1; the lemma asserts C > 0 and the source does not comment (any larger C also works); see report.
+NOTE: Ruling E3: the literal text (L799) reads 'if min_j lambda_j >= C ... then g^{(N)}(lambda) > lambda'; the ruled reading uses the lemma's range max_j lambda_j > C (strict). C := log m^{-1} >= 0 because m <= 1; the lemma asserts C > 0 and the source does not comment on this (any larger C also works)
 
 NODE: lem-attractive-infty#divergence
 KIND: application
@@ -3140,9 +3143,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-monotone-lim | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#divergence@L799-L799 | 'By Lemma 2.13, this implies lim ‖g^{(n)}(lambda)‖ = inf': second assertion with m = N
 EDGE: lem-attractive-infty#strict-increase | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty#divergence@L799-L799 | supplies the premise g^{(N)}(lambda) > lambda
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3168,9 +3171,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-attractive-infty#strict-increase | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty@L799-L799 | first conjunct g^{(N)}(lambda) > lambda (ruled reading)
 EDGE: lem-attractive-infty#divergence | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-attractive-infty@L799-L799 | second conjunct lim ‖g^{(n)}(lambda)‖ = inf
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3223,9 +3226,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-attractive-zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-use-attractive-zero@L808-L810 | 'Let eps be as in Lemma 2.15, so that [0,eps]^d is a subset of S_0'
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-use-attractive-zero@L808-L810 | lim ‖g^{(n)}(lambda)‖ = 0 on [0,eps]^d is membership in S_0 by (2.9)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3253,9 +3256,9 @@ EDGE: eqn-use-attractive-zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.t
 EDGE: lem-basin-open#g-iter-continuous | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#S0-open@L814-L815 | 'By Hypothesis III, g^{(n)} is continuous': the preimage of the relatively open set [0,eps)^d is open
 EDGE: lem-basin-closed | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#S0-open@L816-L816 | iterating g^{-1}(S_0) subset S_0 n times shows (g^{(n)})^{-1}(S_0) is a subset of S_0
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#S0-open@L813-L813 | 'By the definition of S_0, there exists n with g^{(n)}(lambda) in [0,eps)^d': lim of the norm is 0
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3282,9 +3285,9 @@ ROUTE_FOR: -
 EDGE: lem-attractive-infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#outside-cube-in-Sinf@L820-L820 | 'By that lemma and (2.10)': on [0,inf)^d \ [0,C]^d, lim ‖g^{(n)}(lambda)‖ = inf, hence limsup = inf (only the divergence conjunct is used)
 EDGE: eqn-infty-subset | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#outside-cube-in-Sinf@L820-L820 | covers the points of [0,inf]^d with an infinite coordinate
 EDGE: eqn-basin-def.infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#outside-cube-in-Sinf@L820-L820 | membership in S_inf is limsup of the norm = inf by (2.9)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3312,9 +3315,9 @@ EDGE: lem-basin-open#outside-cube-in-Sinf | source/arxiv-2411.06301v2/fixed-pt-f
 EDGE: lem-basin-open#g-iter-continuous | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#Sinf-open@L820-L820 | 'g^{(n)}: [0,inf]^d -> [0,inf]^d is continuous', so the preimage of the relatively open set [0,inf]^d \ [0,C]^d is open
 EDGE: lem-basin-closed | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#Sinf-open@L820-L820 | 'exactly the same argument': (g^{(n)})^{-1}(S_inf) is a subset of S_inf by iterating g^{-1}(S_inf) subset S_inf
 EDGE: eqn-basin-def.infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-basin-open#Sinf-open@L820-L820 | 'exactly the same argument': limsup = inf provides n with g^{(n)}(lambda) outside [0,C]^d
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3430,9 +3433,9 @@ ROUTE_FOR: -
 EDGE: lem-unstable-scaled | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect#uniqueness@L835-L835 | 'This contradicts Lemma 2.11': applied to lambda = Ru (nonzero, bounded orbit) with scaling factor r/R in (0,1) it gives lim of the norm of g^{(n)}(ru) = 0, contradicting limsup > 0
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect#uniqueness@L835-L835 | ru not in S_0 means limsup of the norm of g^{(n)}(ru) > 0 (by (2.9))
 EDGE: eqn-basin-def.infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-ray-intersect#uniqueness@L835-L835 | Ru not in S_inf means limsup of the norm of g^{(n)}(Ru) < inf (by (2.9))
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3488,9 +3491,9 @@ EDGE: lem-attractive-zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#l
 EDGE: lem-attractive-infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#choose-r-R@L865-L865 | points of [0,inf)^d outside [0,C]^d lie in S_inf, so Lambda is a subset of [0,C]^d and ‖lambda‖ <= R on Lambda
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#choose-r-R@L865-L865 | membership in S_0 by (2.9)
 EDGE: eqn-basin-def.infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#choose-r-R@L865-L865 | membership in S_inf by (2.9)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3517,11 +3520,11 @@ ROUTE_FOR: -
 EDGE: lem-ray-intersect | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#radial-bijection@L868-L868 | 'By Lemma 2.18, pi restricted to Lambda is a bijection': for each u in B there is exactly one r > 0 with ru in Lambda
 TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: reviewer-C/sonnet
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: pi is defined only on [0,inf)^d \ {0}; that Lambda lies in this domain (0 is not in Lambda) is used implicitly here and stated, without reason, at L904 (see thm-fixed#zero-notin-Lambda; it also follows from Lambda being a subset of A(r,R) with r > 0).
+NOTE: SOURCE_GAP: pi is defined only on [0,inf)^d \ {0}; that Lambda lies in this domain (0 is not in Lambda) is used implicitly here and stated, without reason, at L904 (see thm-fixed#zero-notin-Lambda; it also follows from Lambda being a subset of A(r,R) with r > 0). Lemma 2.18 itself only covers rays through u in B.
 
 NODE: lem-retract#Lambda-compact
 KIND: step
@@ -3573,9 +3576,9 @@ ROUTE_FOR: -
 EDGE: ext:compact-hausdorff | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#phi-homeomorphism@L871-L872 | 'Therefore, pi restricted to Lambda is a homeomorphism': a continuous bijection from a compact space onto a Hausdorff space (B in R^d) is a homeomorphism
 EDGE: lem-retract#radial-bijection | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#phi-homeomorphism@L871-L871 | supplies the bijection pi restricted to Lambda
 EDGE: lem-retract#Lambda-compact | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#phi-homeomorphism@L870-L871 | supplies compactness of the domain Lambda
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3601,9 +3604,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-retract#phi-homeomorphism | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-retract-def@L879-L879 | H is defined through the continuous inverse phi : B -> Lambda of pi restricted to Lambda
 EDGE: lem-retract#choose-r-R | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-retract-def@L877-L877 | domain A = A(r,R): ‖lambda‖ >= r > 0 makes lambda/‖lambda‖ defined and in B
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3629,9 +3632,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-retract-def | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-continuous@L882-L882 | formula (2.13) is a composition of continuous operations in (lambda, t)
 EDGE: lem-retract#phi-homeomorphism | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-continuous@L882-L882 | 'Since phi is continuous, H is jointly continuous in t and lambda'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3686,9 +3689,9 @@ ROUTE_FOR: -
 EDGE: eqn-retract-def | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-preserves-A@L885-L887 | formula (2.13) for H_t(lambda)
 EDGE: lem-retract#phi-homeomorphism | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-preserves-A@L885-L885 | phi(u)/‖phi(u)‖ = u: lambda and phi(lambda/‖lambda‖) are positive multiples of the same unit vector, so their norms combine linearly
 EDGE: lem-retract#choose-r-R | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-retract#H-preserves-A@L885-L887 | 'Since Lambda is a subset of A': ‖phi(lambda/‖lambda‖)‖ lies in [r,R], as does ‖lambda‖, so the convex combination does too
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3786,8 +3789,8 @@ NOTE: Source statement 'We first argue that g(Lambda) subset Lambda' (L896); the
 NODE: thm-fixed#apply-retract
 KIND: application
 TITLE: Application of Lemma 2.19: A = A(r,R) with Lambda subset A and a continuous retraction H_1 : A -> Lambda
-STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#apply-retract@L898-L898
-PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#apply-retract@L898-L898
+STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#apply-retract@L898-L901
+PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#apply-retract@L898-L901
 CONTRACT_ID: paper.thm-fixed#apply-retract
 CONTRACT_VERSION: 1
 SOURCE_HYPOTHESES: Theorem 1.4 setting (L528): X is a d-type branching process with generating function f and mean matrix M (all M_kj finite); (I) X subcritical (spectral radius rho < 1); (II) X positive regular and non-singular (Def 1.3); (III) each f_k, k in {1,...,d}, is continuous from (0,inf]^d to (0,inf] (half-open-interval topology on (0,inf]); S_0, S_inf as in (2.9); Lambda := [0,inf)^d \ (S_0 u S_inf)
@@ -3802,9 +3805,9 @@ DEPS: lem-retract
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-retract | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#apply-retract@L898-L901 | 'Let A be as in Lemma 2.19, so that Lambda subset A' and 'Let H_1 : A -> Lambda be a retraction, as given by Lemma 2.19'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: global-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3829,9 +3832,9 @@ DEPS: lem-retract
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-retract | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#A-homeomorphic-to-ball@L898-L898 | A is the set A(r,R) of Lemma 2.19 ('Let A be as in Lemma 2.19')
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3857,9 +3860,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: ext:brouwer | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#brouwer-on-A@L899-L899 | 'By the Brouwer fixed point theorem, every continuous function from A to itself has a fixed point'
 EDGE: thm-fixed#A-homeomorphic-to-ball | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#brouwer-on-A@L898-L899 | the premise of Brouwer's theorem: A is homeomorphic to a closed ball (the fixed-point property is invariant under homeomorphism)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3886,9 +3889,9 @@ ROUTE_FOR: -
 EDGE: thm-fixed#Lambda-invariant | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#gH1-self-map@L902-L902 | 'Since g(Lambda) subset Lambda, g o H_1 : A -> Lambda'
 EDGE: thm-fixed#apply-retract | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#gH1-self-map@L901-L902 | H_1 : A -> Lambda is a continuous retraction and Lambda subset A
 EDGE: lem-basin-open#g-iter-continuous | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#gH1-self-map@L902-L902 | 'g o H_1 is a continuous function': g is continuous (n = 1) on [0,inf]^d, in particular on A
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3915,9 +3918,9 @@ ROUTE_FOR: -
 EDGE: thm-fixed#brouwer-on-A | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#fixed-point-in-Lambda@L902-L902 | 'there exists lambda in A such that g(H_1(lambda)) = lambda': Brouwer applied to the continuous self-map g o H_1 of A
 EDGE: thm-fixed#gH1-self-map | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#fixed-point-in-Lambda@L902-L902 | supplies the continuous self-map g o H_1; its image lies in Lambda, so 'Necessarily, lambda in Lambda'
 EDGE: thm-fixed#apply-retract | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#fixed-point-in-Lambda@L902-L902 | 'H_1(lambda) = lambda since H_1 is a retraction', hence g(lambda) = lambda
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -3945,11 +3948,11 @@ EDGE: lem-attractive-zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#t
 EDGE: eqn-basin-def.zero | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#zero-notin-Lambda@L904-L904 | hence 0 is in S_0 by (2.9), so 0 is not in Lambda
 TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: reviewer-C/sonnet
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: The source states 'Since 0 not in Lambda' without a reason; read as 0 in [0,eps]^d subset S_0 (Lemma 2.15). An alternative reading is Lambda subset A(r,R) with r > 0 (lem-retract#choose-r-R). Not marked SOURCE_GAP (immediate either way).
+NOTE: SOURCE_GAP: the source states 'Since 0 not in Lambda' (L904) without a reason; the edges record one reading (0 in [0,eps]^d subset S_0, Lemma 2.15). An alternative reading is Lambda subset A(r,R) with r > 0 (lem-retract#choose-r-R).
 
 NODE: thm-fixed#positivity
 KIND: application
@@ -3974,9 +3977,9 @@ EDGE: eqn-fixed-pt-equiv | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#th
 EDGE: claim:subcritical-extinction | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#positivity@L904-L904 | supplies the premise of Lemma 2.3 that the extinction probability from any state is one, from Hypothesis I of the setting (not discussed at L904)
 EDGE: thm-fixed#fixed-point-in-Lambda | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#positivity@L902-L904 | supplies lambda in Lambda with g(lambda) = lambda
 EDGE: thm-fixed#zero-notin-Lambda | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed#positivity@L904-L904 | gives lambda != 0, so 'lambda in [0,inf)^d \ {0}'; q_k = 1 for all k would force lambda = 0
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4002,9 +4005,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: thm-fixed#positivity | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed@L904-L904 | the proof concludes 'By Lemma 2.3, in fact lambda in (0,inf)^d' for the Brouwer fixed point of g in Lambda
 EDGE: thm-fixed#fixed-point-in-Lambda | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed@L902-L902 | 'Thus g(lambda) = lambda': the Brouwer fixed point lambda in Lambda found at L902 supplies the equation g(lambda) = lambda of the theorem's conclusion; positivity (L904) supplies lambda in (0,inf)^d for the same lambda
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4229,7 +4232,7 @@ NODE: thm-fixed-pt-infty
 KIND: theorem
 TITLE: Theorem 3.1: a fixed point q∈(1,∞)^ℕ of the countable-type generating function
 STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed-pt-infty@L957-L987
-PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed-pt-infty@L1149-L1179
+PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed-pt-infty@L989-L1179
 CONTRACT_ID: paper.thm3_1
 CONTRACT_VERSION: 1
 SOURCE_HYPOTHESES: X = {X(n)}_{n∈ℕ_0} is a countable-type branching process with types k∈ℕ and finite offspring (3.1): ℙ_k[Σ_{j≥1} X_j(1)<∞]=1 for every k∈ℕ; X has global extinction probability one (L958; read as for every starting type k); Assumption I: for each d∈ℕ the truncation X^d satisfies the hypotheses of Theorem 1.4 (subcritical; positive regular and non-singular; f^d_k continuous from (0,∞]^d to (0,∞] for each k∈{1,…,d}); Assumption II: there exist φ,ψ:ℕ→[1,∞) with lim_{k→∞}φ(k)=∞ and lim_{k→∞}log ψ(k)/φ(k)=0 such that f_k(q)≤ψ(k)[f_1(q)]^{φ(k)} for all k∈ℕ and all q∈[1,∞)^ℕ; Assumption III: there exists s>1 with 𝔼_k[s^{Σ_{j≥1}φ(j)X_j(1)}]≤s^{φ(k)} for all k∈ℕ; Assumption IV: there exists t>1 with f_1(t,1,1,…)>t and f_k({ψ(j)t^{φ(j)}}_{j∈ℕ})<∞ for all k∈ℕ
@@ -4248,7 +4251,7 @@ EDGE: thm-fixed-pt-infty#interchange | source/arxiv-2411.06301v2/fixed-pt-finite
 EDGE: thm-fixed-pt-infty#positivity | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed-pt-infty@L1178-L1178 | 'in fact λ∈(0,∞)^ℕ': strict positivity, needed for q=exp λ∈(1,∞)^ℕ
 TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: reviewer-D/sonnet
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4273,9 +4276,9 @@ DEPS: eqn-log-gf-infty
 ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-log-gf-infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed-pt-infty@L996-L996 | g=log∘f∘exp coordinatewise with log and exp mutually inverse between (-∞,∞] and (0,∞], so g(λ)=λ iff f(e^λ)=e^λ, and λ∈(0,∞)^ℕ iff e^λ∈(1,∞)^ℕ
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4331,9 +4334,9 @@ ROUTE_FOR: -
 EDGE: lem-fixed-limsup | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-ssl@L1150-L1150 | 'By Lemma 3.2 and a standard compactness argument': limsup_dλ^d_k<∞ for each k makes {λ^d_k}_d pre-compact in [0,∞)
 EDGE: ext:diagonal-subsequence | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-ssl@L1150-L1150 | 'a standard compactness argument': diagonal extraction of one subsequence along which every coordinate converges
 EDGE: thm-fixed-pt-infty#choose-lambda-d | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-ssl@L1150-L1152 | supplies the family λ^d of (3.6) to which Lemma 3.2 is applied
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4360,9 +4363,9 @@ ROUTE_FOR: -
 EDGE: eqn-gf-truncated | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-before-fatou@L1156-L1156 | f^d_k(e^{λ^d})=f_k(e^{λ^d_1},…,e^{λ^d_d},1,1,…)=𝔼_k[∏_{j≤d}e^{λ^d_jX_j(1)}] expresses the truncated generating function through the offspring of X
 EDGE: eqn-log-gf-infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-before-fatou@L1156-L1156 | 'By the definitions of g^d': g^d_k(λ)=log f^d_k(e^λ)
 EDGE: thm-fixed-pt-infty#choose-lambda-d | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-before-fatou@L1156-L1156 | g^d(λ^d)=λ^d (3.6) gives e^{λ^d_k}=f^d_k(e^{λ^d})
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4387,9 +4390,9 @@ DEPS: thm-fixed-pt-infty#diagonal-limit
 ROUTES: -
 ROUTE_FOR: -
 EDGE: thm-fixed-pt-infty#diagonal-limit | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-fixed-pt-as-conv@L1160-L1160 | 'As 𝒟∋d→∞, we have λ^d_j→λ_j': termwise convergence of the exponents; with a.s. finitely many nonzero X_j(1) the sums eventually reduce to the same finite sum
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4415,9 +4418,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-1d-soln | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-dominate@L1167-L1167 | 'By Lemma 3.4, we have λ^d_j≤φ(j)log t+log ψ(j) for each d≥j': part (3.17) bounds the exponents uniformly in d
 EDGE: thm-fixed-pt-infty#choose-lambda-d | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-dominate@L1167-L1167 | Lemma 3.4 is a statement about the selected family λ^d of (3.6)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4447,9 +4450,9 @@ EDGE: thm-fixed-pt-infty#as-convergence | source/arxiv-2411.06301v2/fixed-pt-fin
 EDGE: thm-fixed-pt-infty#dominated-bound | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed-pt-infty@L1172-L1172 | (3.22) supplies the dominating variable Z=∏_j[ψ(j)t^{φ(j)}]^{X_j(1)}, integrable under 𝔼_k by Assumption IV
 EDGE: thm-fixed-pt-infty#diagonal-limit | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed-pt-infty@L1174-L1174 | λ_k=lim_{𝒟∋d→∞}λ^d_k (3.19) is the left end of the chain of equalities
 EDGE: eqn-log-gf-infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed-pt-infty@L1174-L1176 | identifies log 𝔼_k[exp(Σ_jλ_jX_j(1))] with g_k(λ) of (3.5)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4476,9 +4479,9 @@ ROUTE_FOR: -
 EDGE: lem-fixed-liminf | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed-pt-infty@L1178-L1178 | 'By Lemma 3.3, there exists k∈{1,…,K} such that λ_k>0': liminf_d max_{k≤K}λ^d_k>0 passes to the limit along 𝒟
 EDGE: thm-fixed-pt-infty#diagonal-limit | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed-pt-infty@L1178-L1178 | λ_k=lim_{𝒟}λ^d_k: the maximum over the finite index set {1,…,K} of the limits is the limit of the maxima; also gives λ∈[0,∞)^ℕ
 EDGE: thm-fixed-pt-infty#choose-lambda-d | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed-pt-infty@L1178-L1178 | Lemma 3.3 is applied to the selected family λ^d
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4504,11 +4507,11 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: thm-fixed-pt-infty#nonzero-limit | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed-pt-infty@L1178-L1178 | supplies λ∈[0,∞)^ℕ∖{0}, i.e. a coordinate j_* with λ_{j_*}>0 (the analogue of q_{j_*}>1 in Lemma 2.3)
 EDGE: thm-fixed-pt-infty#interchange | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed-pt-infty@L1176-L1178 | λ is a fixed point g(λ)=λ, hence g^{(N)}(λ)=λ for every N, the identity the argument iterates
-EDGE: lem-fixed-pos#pos-reg-strict | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed-pt-infty@L1178-L1178 | 'an argument similar to that in the second paragraph of the proof of Lemma 2.3' (L461-L471): one coordinate q_{j_*}>1 plus positive regularity forces q_k>1 for all k
+EDGE: lem-fixed-pos#pos-reg-strict | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed-pt-infty@L1178-L1178 | analogy only: 'an argument similar to that in the second paragraph of the proof of Lemma 2.3' (L461-L471): one coordinate q_{j_*}>1 plus positive regularity forces q_k>1 for all k
 EDGE: def-bp-basic.positive-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#proof-thm-fixed-pt-infty@L1178-L1178 | 'Since each truncated branching process X^d is positive regular (Definition 1.3)': supplies N with ℙ_k[X_{j_*}(N)≥1]>0
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4533,9 +4536,9 @@ DEPS: lem-fixed-limsup#moment-bound
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-fixed-limsup#moment-bound | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-limsup@L1024-L1024 | 'Re-arranging gives λ^d_k≤log(1/p_k)': the d-uniform bound gives limsup_dλ^d_k≤log(1/p_k)<∞
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4588,9 +4591,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-fixed-limsup#choose-N | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-limsup@L1013-L1016 | p_k=ℙ_k[X^k_k(N)≥2] is the level-k probability compared with the level-d probability
 EDGE: def:truncation | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-limsup@L1013-L1013 | 'by the definition of X^d': for d≥k every individual of X^k also belongs to X^d (all ancestors have type ≤k≤d), so {X^k_k(N)≥2}⊂{X^d_k(N)≥2}
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4645,9 +4648,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-fixed-liminf#step2 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-liminf@L1096-L1096 | Step 2 yields max_{k≤K}λ^d_k≥δ/2 for every d, hence the liminf is ≥δ/2>0
 EDGE: lem-fixed-liminf#choose-K | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-liminf@L1080-L1083 | supplies the witness K (not depending on d)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4838,9 +4841,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-fixed-liminf#step1 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-liminf@L1084-L1086 | (3.12): λ^d_{k(d)}≥δφ(k(d)), with φ≥1 giving ≥δ; k(d)≤K-1 puts k(d) in {1,…,K}
 EDGE: lem-fixed-liminf#choose-K | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-liminf@L1084-L1084 | K defines the case boundary k(d)≤K-1 and the index set {1,…,K}
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4867,9 +4870,9 @@ ROUTE_FOR: -
 EDGE: lem-fixed-liminf#growth-compare | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-fixed-pt-coord-compare@L1089-L1091 | 'we combine (3.12) and (3.13)': (3.13) with k=k(d) gives the left inequality of (3.14)
 EDGE: lem-fixed-liminf#step1 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-fixed-pt-coord-compare@L1089-L1091 | (3.12) gives the right inequality λ^d_{k(d)}≥δφ(k(d))
 EDGE: lem-fixed-liminf#choose-K | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-fixed-pt-coord-compare@L1093-L1093 | 'By our choice of K, we have log ψ(k(d))≤(δ/2)φ(k(d))' since k(d)≥K, giving λ^d_1≥δ/2 after dividing by φ(k(d))≥1
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -4896,9 +4899,9 @@ ROUTE_FOR: -
 EDGE: lem-fixed-liminf#case-small-k | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-liminf@L1084-L1087 | first case of the dichotomy k(d)≤K-1 versus k(d)≥K
 EDGE: lem-fixed-liminf#case-large-k | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-liminf@L1089-L1096 | second case; λ^d_1≥δ/2 and 1∈{1,…,K}
 EDGE: lem-fixed-liminf#choose-K | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-fixed-liminf@L1080-L1083 | K≥1 is the cut-off of the dichotomy and the size of the index set {1,…,K}
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5106,14 +5109,14 @@ NOTE: SOURCE_GAP: positivity of f̃_k second derivative is asserted in a parenth
 
 NODE: lem-1d-soln#diagonal-position
 KIND: step
-TITLE: Position of f̃_k relative to the diagonal: f̃_k(x)>x for x>e^{η_k}; f̃_k(x)≤x on [1,e^{η_k}]
+TITLE: Position of f̃_k relative to the diagonal: f̃_k(x)>x for x>e^{η_k}; f̃_1(x)≤x on [1,e^{η_1}]
 STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-1d-soln@L1134-L1136
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-1d-soln@L1134-L1136
 CONTRACT_ID: paper.lem-1d-soln#diagonal-position
 CONTRACT_VERSION: 1
 SOURCE_HYPOTHESES: k∈ℕ with ℙ_k[X_k(1)≥2]>0
-SOURCE_QUANTIFIERS: X; k; η_k the unique solution of (3.15) supplied by lem-1d-soln#apply-prop-1-6 (f̃_k(e^{η_k})=e^{η_k}); x≥1
-SOURCE_CONCLUSION: since f̃_k is convex with f̃_k(1)=1 and f̃_k(e^{η_k})=e^{η_k}: x<f̃_k(x) for all x>e^{η_k} (L1134), and f̃_k(x)≤x for all x∈[1,e^{η_k}] (stated at L1136 for k=1)
+SOURCE_QUANTIFIERS: X; k; η_k the unique solution of (3.15) supplied by lem-1d-soln#apply-prop-1-6 (f̃_k(e^{η_k})=e^{η_k}); x > e^{η_k} for the first conclusion; k = 1 and x ∈ [1,e^{η_1}] for the second
+SOURCE_CONCLUSION: since f̃_k is convex with f̃_k(1)=1 and f̃_k(e^{η_k})=e^{η_k}: x<f̃_k(x) for all x>e^{η_k} (L1134); for k=1 only, as stated at L1136: f̃_1(x)≤x for all x∈[1,e^{η_1}]
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
 FROZEN_DECL: -
@@ -5124,13 +5127,13 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-1d-soln#convexity | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-1d-soln@L1134-L1134 | 'Since f̃_k is convex … and satisfies f̃_k(1)=1': convexity together with the two diagonal points 1 and e^{η_k} gives the position relative to the diagonal
 EDGE: lem-1d-soln#apply-prop-1-6 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-1d-soln@L1134-L1134 | supplies η_k with f̃_k(e^{η_k})=e^{η_k}
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: The inequality f̃_k(x)≤x on [1,e^{η_k}] is stated in the source only for k=1 (L1136, By convexity); the same convexity argument gives it for every k. Reused by #bound-by-eta (strict part) and #eta1-lt-log-t (≤ part).
+NOTE: the inequality f̃_k(x)≤x on [1,e^{η_k}] is stated in the source only for k=1 (L1136, 'By convexity'); only that case is consumed (#eta1-lt-log-t). The strict part for general k is consumed by #bound-by-eta.
 
 NODE: lem-1d-soln#bound-by-eta
 KIND: step
@@ -5183,9 +5186,9 @@ ROUTE_FOR: -
 EDGE: lem-1d-soln#diagonal-position | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-1d-soln-growth@L1136-L1136 | 'By convexity, f̃_1(x)≤x for all x∈[1,e^{η_1}], so η_1<log t': f̃_1(t)>t with t>1 excludes t∈[1,e^{η_1}], hence t>e^{η_1}
 EDGE: lem-1d-soln#k1-nonsingular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-1d-soln-growth@L1136-L1136 | η_1 is defined by (3.15) for k=1, which requires ℙ_1[X_1(1)≥2]>0
 EDGE: lem-1d-soln#single-type-process | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-1d-soln-growth@L1136-L1136 | 'by Assumption IV we have f̃_1(t)>t': f̃_1(t)=f_1(t,1,1,…) by the definition of f̃_k (L1120-L1124), the identification of Assumption IV with the one-type function to which diagonal-position applies
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5248,9 +5251,9 @@ EDGE: example-ctble#assume-IV | source/arxiv-2411.06301v2/fixed-pt-finite-type.t
 EDGE: example-ctble#choose-s | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1196-L1200 | '(existence of such an s and t follows easily from (3.23))': the existence of s with 𝔼_1[s^{Σ_jjX_j(1)}]<s is part of the claim
 EDGE: example-ctble#choose-t | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1196-L1200 | '(existence of such an s and t follows easily from (3.23))': the existence of t with 𝔼_1[t^{X_1(1)}]>t is part of the claim
 EDGE: example-ctble#apply-thm-3-1 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1182-L1183 | 'a simple class of examples where Theorem 3.1 implies the existence of a conjugate branching process': application of Theorem 3.1 to this process
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5360,9 +5363,9 @@ DEPS: def:stoch-dom
 ROUTES: -
 ROUTE_FOR: -
 EDGE: def:stoch-dom | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1194-L1195 | obligation: f_k(q)≤[f_1(q)]^k for q∈[1,∞)^ℕ must follow from ℙ_k being dominated by the sum of k i.i.d. samples from ℙ_1 (x↦∏q_j^{x_j} is increasing for q≥1)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5388,9 +5391,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: def:stoch-dom | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1194-L1195 | obligation: for k≥2 the bound must come from ℙ_k being dominated by k i.i.d. samples from ℙ_1
 EDGE: example-ctble#choose-s | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1195-L1198 | supplies s with 𝔼_1[s^{Σ_jjX_j(1)}]<s, the case k=1 and the base for the other k
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5417,9 +5420,9 @@ ROUTE_FOR: -
 EDGE: def:stoch-dom | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1194-L1195 | obligation: finiteness of f_k({t^j}) for k≥2 must come from domination by k i.i.d. samples from ℙ_1 plus the finite exponential moments of (3.23)
 EDGE: example-ctble#choose-t | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1195-L1199 | supplies t with 𝔼_1[t^{X_1(1)}]>t
 EDGE: eqn-generating-function | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1195-L1199 | f_1(t,1,1,…)=𝔼_1[t^{X_1(1)}] by the definition of f, so the first condition of Assumption IV is the second inequality of the display
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5443,9 +5446,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5469,9 +5472,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5502,9 +5505,9 @@ EDGE: example-ctble#assume-I | source/arxiv-2411.06301v2/fixed-pt-finite-type.te
 EDGE: example-ctble#assume-II | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1195-L1195 | premise: Assumption II of Theorem 3.1 with φ(k)=k, ψ(k)=1
 EDGE: example-ctble#assume-III | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1195-L1198 | premise: Assumption III of Theorem 3.1 with the chosen s
 EDGE: example-ctble#assume-IV | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1195-L1199 | premise: Assumption IV of Theorem 3.1 with the chosen t
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5582,9 +5585,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: def:path-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#bp-setup@L176-L177 | the generation process is the Markov chain defined by the path law
 EDGE: def:step-kernel | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#bp-setup@L176-L177 | independence of individuals is built into the one-step offspring kernel
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5600,130 +5603,55 @@ Regenerated by `proof_depgraph.py`; do not hand-edit.
 * Total nodes: **199**
 * Frozen anchors: **28**
 * Versioned statement contracts: **199**
-* Total edges: **397**
+* Total edges: **400**
 * Root-closure nodes: **199**
-* Dependency leaves in root closure: **40**
+* Dependency leaves in root closure: **39**
 * Assumption boundary leaves: **0**
 * External boundary leaves: **12**
 * Alternative routes: **0**
-* Topology review queue: **75**
-* Explicit source gaps: **50**
-* Coverage items: **187**; excluded: **78**
+* Topology review queue: **0**
+* Explicit source gaps: **56**
+* Coverage items: **189**; excluded: **80**
 
 ### Roots
 
 * `thm-fixed-gf.fixed-point` [REVIEWED; frozen] — contract `paper.thm1_4.fixedPoint@1`
-* `thm-fixed-gf.conjugate` [PROPOSED; frozen] — contract `paper.thm1_4.conjugate@1`
+* `thm-fixed-gf.conjugate` [REVIEWED; frozen] — contract `paper.thm1_4.conjugate@1`
 * `thm-fixed-gf.equivalence` [REVIEWED; frozen] — contract `paper.thm1_4.equivalence@1`
 * `prop-single-type.fixed-point` [REVIEWED; frozen] — contract `paper.prop1_6.fixedPoint@1`
 * `prop-single-type.conjugate` [REVIEWED; frozen] — contract `paper.prop1_6.conjugate@1`
 * `prop-cond-on-ext.cond-law` [REVIEWED; frozen] — contract `paper.prop2_1.condLaw@1`
 * `prop-conjugate` [REVIEWED; frozen] — contract `paper.prop2_2@1`
-* `thm-fixed` [PROPOSED; frozen] — contract `paper.thm2_7@1`
+* `thm-fixed` [REVIEWED; frozen] — contract `paper.thm2_7@1`
 * `thm-fixed-pt-infty` [REVIEWED; frozen] — contract `paper.thm3_1@1`
 * `counterexample` [REVIEWED; frozen] — contract `paper.ex1_5@1`
-* `example-ctble` [PROPOSED; frozen] — contract `paper.ex3_5@1`
+* `example-ctble` [REVIEWED; frozen] — contract `paper.ex3_5@1`
 * `rem:hyp-iii-necessary` [REVIEWED; frozen] — contract `paper.rem1_4.hypIII_necessary@1`
 * `rem:hyp-iii-automatic` [REVIEWED; frozen] — contract `paper.rem1_4.hypIII_automatic@1`
 
 ### Topology review queue
 
-* `claim:branching-property` [PROPOSED] — Branching (independence) and Markov property of the generation process
-* `claim:mean-matrix-powers` [PROPOSED] — Entries of M^n are n-th generation means
-* `def-bp-basic.positive-regular` [PROPOSED] — Positive regular branching process (Definition 1.3, first part)
-* `def-bp-basic.positive-regular#matrix-equiv` [PROPOSED] — Positive regularity at time N is equivalent to M^N having all positive entries
-* `def:population-sigma` [PROPOSED] — Measurable structure on populations and paths of a d-type branching process
-* `eqn-gen-func-n` [PROPOSED] — Iterates of the generating function (display 1.2)
-* `eqn-infty-subset#blowup` [PROPOSED] — Positive regularity: g^{(N)}(lambda) = (inf,...,inf) whenever some coordinate of lambda in [0,inf]^d is inf
-* `eqn-retract-def` [PROPOSED] — (2.13): H_t(lambda) = (1-t) lambda + t phi(lambda/|lambda|) on A x [0,1]
-* `eqn-use-attractive-zero` [PROPOSED] — (2.11): [0,eps]^d is a subset of S_0
-* `example-ctble` [PROPOSED] — Example 3.5: a class of countable-type processes satisfying the assumptions of Theorem 3.1
-* `example-ctble#apply-thm-3-1` [PROPOSED] — Theorem 3.1 applied to the example process
-* `example-ctble#assume-II` [PROPOSED] — Assumption II holds with φ(k)=k, ψ(k)=1
-* `example-ctble#assume-III` [PROPOSED] — Assumption III holds with φ(k)=k and the chosen s
-* `example-ctble#assume-IV` [PROPOSED] — Assumption IV holds with ψ(k)=1, φ(k)=k and the chosen t
-* `example-ctble#choose-s` [PROPOSED] — Existence of s>1 with 𝔼_1[s^{Σ_jjX_j(1)}]<s
-* `example-ctble#choose-t` [PROPOSED] — Existence of t>1 with 𝔼_1[t^{X_1(1)}]>t
-* `lem-1d-soln#diagonal-position` [PROPOSED] — Position of f̃_k relative to the diagonal: f̃_k(x)>x for x>e^{η_k}; f̃_k(x)≤x on [1,e^{η_k}]
-* `lem-1d-soln#eta1-lt-log-t` [PROPOSED] — η_1<log t (from f̃_1(t)>t of Assumption IV)
-* `lem-attractive-infty` [PROPOSED] — Lemma 2.16 (ruled reading E3): g^{(N)}(lambda) > lambda and |g^{(n)}(lambda)| -> inf outside a cube [0,C]^d
-* `lem-attractive-infty#choose-N-m` [PROPOSED] — Choice of N and m := min p_{k,j}(N) > 0 (Lemma 2.4)
-* `lem-attractive-infty#divergence` [PROPOSED] — Lemma 2.13(b) with m = N: g^{(N)}(lambda) > lambda forces |g^{(n)}(lambda)| -> inf
-* `lem-attractive-infty#lower-bound` [PROPOSED] — Lower bound exp(g_k^{(N)}(lambda)) >= e^{lambda_k} m exp(max_j lambda_j) for lambda in [0,inf)^d (E3: max_j in place of min_j)
-* `lem-attractive-infty#strict-increase` [PROPOSED] — For lambda outside [0,C]^d: g^{(N)}(lambda) > lambda (C := log m^{-1})
-* `lem-attractive-zero#comparison` [PROPOSED] — eps := min_j lambda^0_j; monotone comparison 0 <= g^{(n)}(lambda) <= g^{(n)}(lambda^0) on [0,eps]^d
-* `lem-attractive-zero#orbit-lambda0` [PROPOSED] — Lemma 2.13(a) with m = 1 applied to lambda^0: |g^{(n)}(lambda^0)| -> 0
-* `lem-basin-open#S0-open` [PROPOSED] — S_0 is relatively open in [0,inf]^d
-* `lem-basin-open#Sinf-open` [PROPOSED] — S_inf is relatively open in [0,inf]^d (same argument as for S_0)
-* `lem-basin-open#outside-cube-in-Sinf` [PROPOSED] — [0,inf]^d \ [0,C]^d is a subset of S_inf (Lemma 2.16 and (2.10))
-* `lem-fixed-liminf` [PROPOSED] — Lemma 3.3: liminf_d max_{k≤K}λ^d_k>0 for some K
-* `lem-fixed-liminf#case-large-k` [PROPOSED] — Case k(d)≥K: λ^d_1≥δ/2 (3.14)
-* `lem-fixed-liminf#case-small-k` [PROPOSED] — Case k(d)≤K-1: max_{k≤K}λ^d_k≥δ
-* `lem-fixed-liminf#step2` [PROPOSED] — Step 2: max_{k≤K}λ^d_k≥δ/2 for all d (transfer to a bounded index)
-* `lem-fixed-limsup` [PROPOSED] — Lemma 3.2: limsup_d λ^d_k<∞ for each k
-* `lem-fixed-limsup#truncation-monotone` [PROPOSED] — ℙ_k[X^d_k(N)≥2] ≥ p_k for all d≥k (monotonicity of truncations)
-* `lem-gf-pos#two-individuals` [PROPOSED] — Positive chance of at least two individuals in generation N_0 + 1
-* `lem-mono` [PROPOSED] — Lemma 2.9 (Monotonicity): g^{(n)} is monotone, and strictly so after a fixed time
-* `lem-mono#positivity-all-n` [PROPOSED] — P_k[X_j(n) >= 1] > 0 for all n >= N (positive regularity propagated by the Markov property)
-* `lem-monotone-lim#limits-zero` [PROPOSED] — Contradiction argument: lambda-bar^s = 0 for every s, hence g^{(n)}(lambda) -> 0
-* `lem-monotone-lim#shifted-mono` [PROPOSED] — (2.7): g^{(m+n)}(lambda) <= g^{(n)}(lambda), strict for large n
-* `lem-ray-intersect#uniqueness` [PROPOSED] — At most one point of L outside S_0 u S_inf (application of Lemma 2.11)
-* `lem-retract#H-continuous` [PROPOSED] — H is jointly continuous on A x [0,1]
-* `lem-retract#H-preserves-A` [PROPOSED] — Each H_t maps A into A (norm of H_t(lambda) lies in [r,R])
-* `lem-retract#choose-r-R` [PROPOSED] — Choice of R > r > 0 with Lambda contained in A(r,R)
-* `lem-retract#phi-homeomorphism` [PROPOSED] — pi restricted to Lambda is a homeomorphism; continuous inverse phi : B -> Lambda
-* `lem-unstable-scaled#holder-bound` [PROPOSED] — Holder bound: E_k[Z_n 1_{Z_n > 1}] <= exp(r g_k^{(n)}(lambda)) P_k[Z_n > 1]^{1-r}
-* `prop-conjugate#ext-prob-hat` [PROPOSED] — Extinction probability vector of X-hat is 1/A (application of the unit-cube fixed-point statement)
-* `prop-single-type#at-most-two-fixed-points` [PROPOSED] — At most two fixed points: 1 and q̄
-* `prop-single-type#f-below-diagonal` [PROPOSED] — f(s) < s for some s > 1 close to 1 (Taylor expansion)
-* `prop-single-type#fixed-point-exists` [PROPOSED] — Intermediate value argument gives q̄ ∈ [s,t] with f(q̄) = q̄
-* `prop-single-type#mean-eq-derivative` [PROPOSED] — 𝔼[X(1)] equals f'(1)
-* `prop-single-type.conjugate#existence` [PROPOSED] — Existence of a conjugate for the single-type process
-* `prop-single-type.conjugate#hyps-imply-equivalence-hypotheses` [PROPOSED] — Single-type hypotheses (I)-(III) give the hypotheses of the equivalence for d = 1
-* `prop-unstable#part-i` [PROPOSED] — Assertion (i): eta < lambda implies lim |g^{(n)}(eta)| = 0
-* `rem:hyp-iii-necessary#no-conjugate` [PROPOSED] — No conjugate exists for the a·m^{-3} example
-* `thm-fixed` [PROPOSED] — Theorem 2.7: there exists lambda in (0,inf)^d with g(lambda) = lambda
-* `thm-fixed#A-homeomorphic-to-ball` [PROPOSED] — A is homeomorphic to a closed d-dimensional Euclidean ball
-* `thm-fixed#apply-retract` [PROPOSED] — Application of Lemma 2.19: A = A(r,R) with Lambda subset A and a continuous retraction H_1 : A -> Lambda
-* `thm-fixed#brouwer-on-A` [PROPOSED] — Brouwer fixed point theorem on A: every continuous self-map of A has a fixed point
-* `thm-fixed#fixed-point-in-Lambda` [PROPOSED] — There is lambda in Lambda with g(lambda) = lambda
-* `thm-fixed#gH1-self-map` [PROPOSED] — g o H_1 is a continuous function from A to itself (indeed into Lambda)
-* `thm-fixed#positivity` [PROPOSED] — Lemma 2.3 applied to q = e^lambda: a nonzero fixed point of g in [0,inf)^d lies in (0,inf)^d
-* `thm-fixed-gf.conjugate` [PROPOSED] — Theorem 1.4, conjugate form
-* `thm-fixed-gf.equivalence#conjugate-is-tilt` [PROPOSED] — A conjugate is an exponential tilt of X by A = 1/ℙ̂[E], and A is a fixed point
-* `thm-fixed-gf.equivalence#conjugate-regularity` [PROPOSED] — Premises of Proposition 2.1 for a conjugate process X̂ (positive regular, non-singular, 0 < ℙ̂_k[E] < 1)
-* `thm-fixed-gf.equivalence#fixed-point-to-conjugate` [PROPOSED] — Fixed point in (1,∞)^d gives a conjugate (application of Proposition 2.2)
-* `thm-fixed-gf.equivalence#hat-differs-from-X` [PROPOSED] — The tilted process of Proposition 2.2 is not equal in law to X
-* `thm-fixed-gf.fixed-point#reduce-to-thm-2-7` [PROPOSED] — Reduction of Theorem 1.4 to Theorem 2.7 via q = e^λ
-* `thm-fixed-pt-infty#as-convergence` [PROPOSED] — (3.21): almost sure convergence of exp(Σ_{j≤d}λ^d_jX_j(1)) along 𝒟
-* `thm-fixed-pt-infty#before-dct` [PROPOSED] — (3.20): e^{λ^d_k} = 𝔼_k[exp(Σ_{j≤d}λ^d_jX_j(1))] for k≤d
-* `thm-fixed-pt-infty#diagonal-limit` [PROPOSED] — Subsequential limit λ_k=lim_{𝒟∋d→∞}λ^d_k for all k (3.19), using Lemma 3.2
-* `thm-fixed-pt-infty#dominated-bound` [PROPOSED] — (3.22): domination of exp(Σ_{j≤d}λ^d_jX_j(1)) by ∏_j[ψ(j)t^{φ(j)}]^{X_j(1)} via Lemma 3.4
-* `thm-fixed-pt-infty#interchange` [PROPOSED] — Dominated convergence along 𝒟: g(λ)=λ
-* `thm-fixed-pt-infty#nonzero-limit` [PROPOSED] — λ∈[0,∞)^ℕ∖{0} via Lemma 3.3
-* `thm-fixed-pt-infty#positivity` [PROPOSED] — λ∈(0,∞)^ℕ: positive regularity upgrades λ∈[0,∞)^ℕ∖{0} to strict positivity
-* `thm-fixed-pt-infty#reduce-to-g` [PROPOSED] — Reduction to a fixed point λ∈(0,∞)^ℕ of g (q := exp λ)
+* _(none)_
 
 ### Dependency leaves in root closure
 
-* `claim:subcritical-extinction` [REVIEWED] — Subcritical, positive regular, non-singular implies extinction probability one
 * `counterexample#hyp-I-subcritical` [REVIEWED] — Example 1.5 is subcritical
 * `counterexample#hyp-II-regular` [REVIEWED] — Example 1.5 is positive regular and non-singular
 * `counterexample#hyp-III-continuous` [REVIEWED] — Example 1.5 satisfies the continuity hypothesis
 * `counterexample#three-fixed-points` [REVIEWED] — f(q) = q has three solutions in (1,∞)^2 for Example 1.5
 * `def-bp-basic.non-singular` [REVIEWED] — Non-singular branching process (Definition 1.3, second part)
-* `def-bp-basic.positive-regular` [PROPOSED] — Positive regular branching process (Definition 1.3, first part)
+* `def-bp-basic.positive-regular` [REVIEWED] — Positive regular branching process (Definition 1.3, first part)
 * `def-componentwise` [REVIEWED] — Definition 2.8: componentwise order on (-inf,inf]^d
 * `def-conjugate` [REVIEWED] — Conjugate branching process (Definition 1.1)
 * `def:extinction` [REVIEWED] — Extinction event E of a branching process
-* `def:population-sigma` [PROPOSED] — Measurable structure on populations and paths of a d-type branching process
+* `def:population-sigma` [REVIEWED] — Measurable structure on populations and paths of a d-type branching process
 * `def:stoch-dom` [REVIEWED] — Stochastic domination of one offspring law by another (componentwise order)
 * `def:subcritical` [REVIEWED] — Subcritical branching process (largest eigenvalue of M below one)
 * `def:truncation` [REVIEWED] — Branching process X^d truncated at level d (individuals of type ≥ d+1 killed)
 * `eqn-generating-function` [REVIEWED] — Generating function f of a d-type branching process (display 1.1)
 * `eqn-mean-matrix` [REVIEWED] — Mean matrix M of a d-type branching process (display 1.3)
-* `example-ctble#choose-s` [PROPOSED] — Existence of s>1 with 𝔼_1[s^{Σ_jjX_j(1)}]<s
-* `example-ctble#choose-t` [PROPOSED] — Existence of t>1 with 𝔼_1[t^{X_1(1)}]>t
+* `example-ctble#choose-s` [REVIEWED] — Existence of s>1 with 𝔼_1[s^{Σ_jjX_j(1)}]<s
+* `example-ctble#choose-t` [REVIEWED] — Existence of t>1 with 𝔼_1[t^{X_1(1)}]>t
 * `example-ctble#finite-offspring` [REVIEWED] — (3.23) implies finitely many non-zero X_j(1) almost surely (finite offspring (3.1))
 * `ext:an72-v3-thm2` [REVIEWED] — Athreya-Ney V.3 Thm 2: fixed points of f in the unit cube are the extinction vector a and (1,...,1)
 * `ext:brouwer` [REVIEWED] — Brouwer fixed point theorem
@@ -5745,7 +5673,7 @@ Regenerated by `proof_depgraph.py`; do not hand-edit.
 * `rem:hyp-iii-necessary#constants-and-hyp-I` [REVIEWED] — Appropriate constants a, b exist and the example is subcritical
 * `rem:hyp-iii-necessary#f-infinite` [REVIEWED] — f(q) = ∞ for every q > 1 in the a·m^{-3} example
 * `rem:hyp-iii-necessary#hyp-II-regular` [REVIEWED] — The a·m^{-3} example is positive regular and non-singular
-* `thm-fixed-gf.equivalence#conjugate-regularity` [PROPOSED] — Premises of Proposition 2.1 for a conjugate process X̂ (positive regular, non-singular, 0 < ℙ̂_k[E] < 1)
+* `thm-fixed-gf.equivalence#conjugate-regularity` [REVIEWED] — Premises of Proposition 2.1 for a conjugate process X̂ (positive regular, non-singular, 0 < ℙ̂_k[E] < 1)
 
 ### Assumption boundary leaves
 
@@ -5776,54 +5704,60 @@ Regenerated by `proof_depgraph.py`; do not hand-edit.
 
 ### Explicit source gaps
 
-* `claim:mean-matrix-powers` [PROPOSED] — Entries of M^n are n-th generation means
+* `claim:mean-matrix-powers` [REVIEWED] — Entries of M^n are n-th generation means
 * `claim:subcritical-extinction` [REVIEWED] — Subcritical, positive regular, non-singular implies extinction probability one
 * `counterexample#hyp-I-subcritical` [REVIEWED] — Example 1.5 is subcritical
 * `counterexample#hyp-II-regular` [REVIEWED] — Example 1.5 is positive regular and non-singular
 * `counterexample#hyp-III-continuous` [REVIEWED] — Example 1.5 satisfies the continuity hypothesis
 * `counterexample#three-fixed-points` [REVIEWED] — f(q) = q has three solutions in (1,∞)^2 for Example 1.5
-* `def-bp-basic.positive-regular#matrix-equiv` [PROPOSED] — Positive regularity at time N is equivalent to M^N having all positive entries
-* `eqn-gen-func-n` [PROPOSED] — Iterates of the generating function (display 1.2)
-* `eqn-infty-subset#blowup` [PROPOSED] — Positive regularity: g^{(N)}(lambda) = (inf,...,inf) whenever some coordinate of lambda in [0,inf]^d is inf
+* `def-bp-basic.positive-regular#matrix-equiv` [REVIEWED] — Positive regularity at time N is equivalent to M^N having all positive entries
+* `eqn-gen-func-n` [REVIEWED] — Iterates of the generating function (display 1.2)
+* `eqn-infty-subset#blowup` [REVIEWED] — Positive regularity: g^{(N)}(lambda) = (inf,...,inf) whenever some coordinate of lambda in [0,inf]^d is inf
 * `example-ctble#assume-I` [REVIEWED] — Assumption I holds: every truncation X^d satisfies the hypotheses of Theorem 1.4
-* `example-ctble#assume-II` [PROPOSED] — Assumption II holds with φ(k)=k, ψ(k)=1
-* `example-ctble#assume-III` [PROPOSED] — Assumption III holds with φ(k)=k and the chosen s
-* `example-ctble#assume-IV` [PROPOSED] — Assumption IV holds with ψ(k)=1, φ(k)=k and the chosen t
-* `example-ctble#choose-s` [PROPOSED] — Existence of s>1 with 𝔼_1[s^{Σ_jjX_j(1)}]<s
-* `example-ctble#choose-t` [PROPOSED] — Existence of t>1 with 𝔼_1[t^{X_1(1)}]>t
+* `example-ctble#assume-II` [REVIEWED] — Assumption II holds with φ(k)=k, ψ(k)=1
+* `example-ctble#assume-III` [REVIEWED] — Assumption III holds with φ(k)=k and the chosen s
+* `example-ctble#assume-IV` [REVIEWED] — Assumption IV holds with ψ(k)=1, φ(k)=k and the chosen t
+* `example-ctble#choose-s` [REVIEWED] — Existence of s>1 with 𝔼_1[s^{Σ_jjX_j(1)}]<s
+* `example-ctble#choose-t` [REVIEWED] — Existence of t>1 with 𝔼_1[t^{X_1(1)}]>t
 * `example-ctble#global-extinction` [REVIEWED] — The example process has global extinction probability one
 * `lem-1d-soln#convexity` [REVIEWED] — f̃_k is convex (second derivative positive) with f̃_k(1)=1
 * `lem-1d-soln#single-type-continuous` [REVIEWED] — f̃_k is continuous from (0,∞] to [0,∞]
 * `lem-1d-soln#single-type-subcritical` [REVIEWED] — X̃^k is subcritical (mean offspring number <1)
 * `lem-gf-bded#jacobian` [REVIEWED] — M is the Jacobian of f at 1; f is regular enough for a quadratic Taylor remainder
 * `lem-monotone-lim#limit-fixed` [REVIEWED] — g^{(r m)}(lambda-bar^s) = lambda-bar^s (passing the limit through g^{(m)})
+* `lem-monotone-lim#limits-zero` [REVIEWED] — Contradiction argument: lambda-bar^s = 0 for every s, hence g^{(n)}(lambda) -> 0
 * `lem-monotone-lim#part-b` [REVIEWED] — Second assertion (g^{(m)}(lambda) > lambda forces |g^{(n)}(lambda)| -> inf)
+* `lem-monotone-lim#shifted-mono` [REVIEWED] — (2.7): g^{(m+n)}(lambda) <= g^{(n)}(lambda), strict for large n
 * `lem-retract#Lambda-compact` [REVIEWED] — Lambda is compact (relatively closed in [0,inf]^d and bounded)
+* `lem-retract#radial-bijection` [REVIEWED] — pi restricted to Lambda is a bijection onto B = {lambda in [0,inf)^d : |lambda| = 1}
 * `lem-unstable-scaled#extinction-as` [REVIEWED] — Almost-sure extinction under Hypothesis I; Z_n -> 1 a.s.
-* `lem-unstable-scaled#holder-bound` [PROPOSED] — Holder bound: E_k[Z_n 1_{Z_n > 1}] <= exp(r g_k^{(n)}(lambda)) P_k[Z_n > 1]^{1-r}
+* `lem-unstable-scaled#holder-bound` [REVIEWED] — Holder bound: E_k[Z_n 1_{Z_n > 1}] <= exp(r g_k^{(n)}(lambda)) P_k[Z_n > 1]^{1-r}
 * `lem-unstable-ssl#skeleton-gf` [REVIEWED] — The log generating function of X-tilde is g^{(m)}, so its r-th iterate is g^{(r m)}
 * `lem-unstable-ssl#skeleton-hypotheses` [REVIEWED] — The m-skeleton X-tilde(r) = X(m r) satisfies the hypotheses of Theorem 1.4
 * `prop-conjugate#abs-continuity` [REVIEWED] — Mutual absolute continuity of the first-n-generation laws of X-hat and X
 * `prop-conjugate#cond-law-hat` [REVIEWED] — Application of Prop 2.1 (conditional law) to X-hat with a = 1/A; identification with the law of X
-* `prop-conjugate#ext-prob-hat` [PROPOSED] — Extinction probability vector of X-hat is 1/A (application of the unit-cube fixed-point statement)
-* `prop-single-type#mean-eq-derivative` [PROPOSED] — 𝔼[X(1)] equals f'(1)
+* `prop-conjugate#ext-prob-hat` [REVIEWED] — Extinction probability vector of X-hat is 1/A (application of the unit-cube fixed-point statement)
+* `prop-single-type#f-above-diagonal` [REVIEWED] — f(t) > t for some large t
+* `prop-single-type#mean-eq-derivative` [REVIEWED] — 𝔼[X(1)] equals f'(1)
 * `prop-single-type#strict-convexity` [REVIEWED] — f'' > 0 where f is finite, so f is convex on its maximal finite interval
-* `prop-single-type.conjugate#existence` [PROPOSED] — Existence of a conjugate for the single-type process
-* `prop-single-type.conjugate#hyps-imply-equivalence-hypotheses` [PROPOSED] — Single-type hypotheses (I)-(III) give the hypotheses of the equivalence for d = 1
+* `prop-single-type.conjugate#existence` [REVIEWED] — Existence of a conjugate for the single-type process
+* `prop-single-type.conjugate#hyps-imply-equivalence-hypotheses` [REVIEWED] — Single-type hypotheses (I)-(III) give the hypotheses of the equivalence for d = 1
 * `prop-single-type.conjugate#unique-in-law` [REVIEWED] — Any two conjugates of the single-type process have the same law
-* `prop-unstable#part-i` [PROPOSED] — Assertion (i): eta < lambda implies lim |g^{(n)}(eta)| = 0
+* `prop-unstable#part-i` [REVIEWED] — Assertion (i): eta < lambda implies lim |g^{(n)}(eta)| = 0
+* `prop-unstable#strict-case` [REVIEWED] — Strict-in-every-coordinate case via scaling (Lemma 2.11)
 * `rem:hyp-iii-automatic#continuity-from-finiteness` [REVIEWED] — Finiteness on (0,∞)^d implies continuity on (0,∞]^d
 * `rem:hyp-iii-necessary#constants-and-hyp-I` [REVIEWED] — Appropriate constants a, b exist and the example is subcritical
 * `rem:hyp-iii-necessary#f-infinite` [REVIEWED] — f(q) = ∞ for every q > 1 in the a·m^{-3} example
 * `rem:hyp-iii-necessary#hyp-II-regular` [REVIEWED] — The a·m^{-3} example is positive regular and non-singular
-* `rem:hyp-iii-necessary#no-conjugate` [PROPOSED] — No conjugate exists for the a·m^{-3} example
-* `thm-fixed#A-homeomorphic-to-ball` [PROPOSED] — A is homeomorphic to a closed d-dimensional Euclidean ball
+* `rem:hyp-iii-necessary#no-conjugate` [REVIEWED] — No conjugate exists for the a·m^{-3} example
+* `thm-fixed#A-homeomorphic-to-ball` [REVIEWED] — A is homeomorphic to a closed d-dimensional Euclidean ball
 * `thm-fixed#g-image-finite` [REVIEWED] — g(Lambda) has finite coordinates: g maps Lambda into [0,inf)^d
-* `thm-fixed#positivity` [PROPOSED] — Lemma 2.3 applied to q = e^lambda: a nonzero fixed point of g in [0,inf)^d lies in (0,inf)^d
-* `thm-fixed-gf.equivalence#conjugate-is-tilt` [PROPOSED] — A conjugate is an exponential tilt of X by A = 1/ℙ̂[E], and A is a fixed point
-* `thm-fixed-gf.equivalence#conjugate-regularity` [PROPOSED] — Premises of Proposition 2.1 for a conjugate process X̂ (positive regular, non-singular, 0 < ℙ̂_k[E] < 1)
+* `thm-fixed#positivity` [REVIEWED] — Lemma 2.3 applied to q = e^lambda: a nonzero fixed point of g in [0,inf)^d lies in (0,inf)^d
+* `thm-fixed#zero-notin-Lambda` [REVIEWED] — 0 is not in Lambda
+* `thm-fixed-gf.equivalence#conjugate-is-tilt` [REVIEWED] — A conjugate is an exponential tilt of X by A = 1/ℙ̂[E], and A is a fixed point
+* `thm-fixed-gf.equivalence#conjugate-regularity` [REVIEWED] — Premises of Proposition 2.1 for a conjugate process X̂ (positive regular, non-singular, 0 < ℙ̂_k[E] < 1)
 * `thm-fixed-gf.equivalence#conjugate-to-fixed-point` [REVIEWED] — Conjugate gives a fixed point in (1,∞)^d (uses Lemma 2.3 and clause (a))
-* `thm-fixed-gf.equivalence#fixed-point-to-conjugate` [PROPOSED] — Fixed point in (1,∞)^d gives a conjugate (application of Proposition 2.2)
-* `thm-fixed-gf.equivalence#hat-differs-from-X` [PROPOSED] — The tilted process of Proposition 2.2 is not equal in law to X
-* `thm-fixed-pt-infty#positivity` [PROPOSED] — λ∈(0,∞)^ℕ: positive regularity upgrades λ∈[0,∞)^ℕ∖{0} to strict positivity
+* `thm-fixed-gf.equivalence#fixed-point-to-conjugate` [REVIEWED] — Fixed point in (1,∞)^d gives a conjugate (application of Proposition 2.2)
+* `thm-fixed-gf.equivalence#hat-differs-from-X` [REVIEWED] — The tilted process of Proposition 2.2 is not equal in law to X
+* `thm-fixed-pt-infty#positivity` [REVIEWED] — λ∈(0,∞)^ℕ: positive regularity upgrades λ∈[0,∞)^ℕ∖{0} to strict positivity
 <!-- END PROOF DEPGRAPH GENERATED -->

@@ -9,8 +9,8 @@ EXTERNAL_POLICY: cited literature results and named standard theorems explicitly
 FROZEN_ANCHORS: def:population-sigma, def:step-kernel, def:path-law, def:extinction, def-conjugate, eqn-generating-function, eqn-mean-matrix, def:subcritical, def-bp-basic.positive-regular, def-bp-basic.non-singular, def-log-gf, eqn-basin-def.zero, eqn-basin-def.infty, def:truncation, def:stoch-dom, thm-fixed-gf.fixed-point, thm-fixed-gf.conjugate, thm-fixed-gf.equivalence, prop-single-type.fixed-point, prop-single-type.conjugate, prop-cond-on-ext.cond-law, prop-conjugate, thm-fixed, thm-fixed-pt-infty, counterexample, example-ctble, rem:hyp-iii-necessary, rem:hyp-iii-automatic
 FROZEN_MANIFEST: frozen-anchor-manifest.json | sha256:a735f3ce9e29a57154affcc72f18e05490295a40306a231e960ef604bfca2844
 WRITER: orchestrator/opus-5.5/session-f41ccbab
-GLOBAL_REVIEWER: -
-GLOBAL_REVIEW_REF: -
+GLOBAL_REVIEWER: global-reviewer/sonnet
+GLOBAL_REVIEW_REF: graph/reviews/global.review.md (root verdicts §1, follow-up §5)
 
 The dependency direction is `NODE -> prerequisite`. `DEPS` is conjunctive. `ROUTES` lists
 alternative `KIND: route` nodes; one route is sufficient. Lean fields are initialized planning

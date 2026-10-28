@@ -47,3 +47,13 @@
 ## Review bookkeeping
 - Records given PASS by a slice reviewer: TOPOLOGY_STATUS/COVERAGE_STATUS REVIEWED, REVIEWER = that reviewer.
 - Records rewritten from a reviewer's own fragment, orchestrator-authored records (slice O, slice X) and reviewer-added items stay PROPOSED; listed in graph/GLOBAL_QUEUE.md for the fresh global reviewer.
+
+## Global review (global-reviewer/sonnet) and queue review (queue-reviewer/sonnet) — applied 2026-10-28
+- Queue fragments Q1, Q9-Q12, Q17, Q32, Q45, Q66, Q78, Q87 applied verbatim. Q27 (re-add `eqn-infty-subset#blowup -> eqn-convex-func-n`) NOT applied: edges only for cited uses (C5; global reviewer Q2 agrees the policy is consistent).
+- Global fragments G1-G9 applied verbatim. G1: `claim:subcritical-extinction` now concludes extinction from every initial population and depends on `claim:branching-property` (the per-type → any-state step is unwritten in the source; SOURCE_GAP note extended). Chosen over the alternative new node (global Q1) because the any-state form subsumes the per-type consumers.
+- Global Q3: `thm-fixed-pt-infty` PROOF_SOURCE widened to L989-L1179 (graph not yet published; manifest untouched).
+- Global Q5: keep the full premise set 0 < ℙ̂_k[E] < 1 on `#conjugate-regularity` (SOURCE_GAP).
+- Global Q8: EDGE `thm-fixed-pt-infty#positivity -> lem-fixed-pos#pos-reg-strict` marked "analogy only:".
+- Each rewritten record is re-verified by the other final reviewer (global ↔ queue), never by its author.
+- Author questions carried to the report: E9 (L1127), Ex 3.5 stops at the fixed point (A-2), StochDominated locator (A-1/Q4), external hypotheses of AN72/JL08 (Q6), per-type reading of "global extinction probability one" in Thm 3.1 (Q10).
+- Edge policy (stated once, 2026-10-28): an EDGE records either a use the source cites, or an uncited use that the consuming node's SOURCE_GAP note explicitly names as a reconstruction. Under this rule Q27 is applied (reverses C5), with the NOTE of `eqn-infty-subset#blowup` naming the reconstructed edge; queue follow-up P1 applied to `claim:subcritical-extinction`. Both re-verified by the global reviewer.

@@ -371,9 +371,9 @@ ROUTE_FOR: -
 EDGE: ext:an72-v3-thm2 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#ext-prob-hat@L431-L431 | Prop 2.1 first paragraph applied to X-hat: its only fixed points in [0,1]^d are its extinction vector and (1,...,1), and 1/A is a fixed point
 EDGE: prop-conjugate#hat-fixed-point | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#ext-prob-hat@L431-L431 | supplies the fixed point 1/A of f-hat in [0,1]^d
 EDGE: prop-conjugate#hat-pos-reg-nonsing | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate#ext-prob-hat@L430-L431 | hypothesis (positive regular, non-singular) of Proposition 2.1 for X-hat
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -570,9 +570,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-gf-pos#choose-N0-k0 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-pos#two-individuals@L493-L493 | supplies N_0 (reach a type-k_0 individual from any type k) and k_0 (two offspring with positive chance)
 EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-gf-pos#two-individuals@L493-L493 | 'Conditional on this ...' uses the Markov/branching property of the process at generation N_0
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -906,9 +906,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: eqn-convex-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-mono@L600-L600 | first assertion 'immediate from the definition of g^{(n)}': g_k^{(n)} = log E_k[prod_j e^{lambda_j X_j(n)}] is monotone in lambda since X_j(n) >= 0
 EDGE: lem-mono#strict-ineq | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-mono@L602-L603 | second assertion is the strict-inequality argument
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -934,9 +934,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: def-bp-basic.positive-regular | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-mono#positivity-all-n@L602-L602 | 'By positive regularity (Definition 1.3), there exists N in N such that ...'
 EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-mono#positivity-all-n@L602-L602 | 'From this and the Markov property of the branching process, in fact ... for each n >= N'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1046,9 +1046,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: ext:holder | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-scaled#holder-bound@L631-L632 | Holder's inequality with exponents 1/r and 1/(1-r) applied to Z_n and 1_{Z_n > 1}
 EDGE: eqn-convex-func-n | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-unstable-scaled#holder-bound@L633-L633 | E_k[Z_n^{1/r}] = E_k[prod_j e^{lambda_j X_j(n)}] = exp(g_k^{(n)}(lambda))
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1134,11 +1134,11 @@ EDGE: lem-unstable-scaled | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#p
 EDGE: lem-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable#strict-case@L642-L643 | implicit in 'this implies': eta <= r lambda gives g^{(n)}(eta) <= g^{(n)}(r lambda) coordinatewise (first assertion of Lemma 2.9), with g^{(n)} >= 0 on [0,inf)^d, so ‖g^{(n)}(eta)‖ is controlled by ‖g^{(n)}(r lambda)‖
 TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: reviewer-B/sonnet
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: The monotonicity step from eta <= r lambda to the norm bound is not stated in the source (the edge to lem-mono records an implicit use; this node is not a gap node).
+NOTE: SOURCE_GAP: the monotonicity step from eta <= r lambda to the norm bound |g^{(n)}(eta)| <= |g^{(n)}(r lambda)| (first assertion of Lemma 2.9, g^{(n)} >= 0 on [0,inf)^d) is not stated in the source ('By Lemma 2.11, this implies', L643); the edge to lem-mono records that unwritten use.
 
 NODE: prop-unstable#part-i
 KIND: step
@@ -1161,9 +1161,9 @@ ROUTE_FOR: -
 EDGE: prop-unstable#strict-case | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable#part-i@L646-L646 | apply 'the first paragraph' with g^{(N)}(lambda) in place of lambda and g^{(N)}(eta) in place of eta
 EDGE: lem-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable#part-i@L646-L646 | 'By the second assertion of Lemma 2.9, there exists N with g_k^{(N)}(eta) < g_k^{(N)}(lambda) for each k'
 EDGE: def-componentwise | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-unstable#part-i@L645-L645 | unfolds eta < lambda: eta_j <= lambda_j for every j with at least one strict inequality
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1353,13 +1353,13 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#shifted-mono@L676-L680 | both assertions of Lemma 2.9 applied to g^{(m)}(lambda) < lambda: monotonicity gives (2.7), the strict clause gives strictness for large n
 EDGE: def-componentwise | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#shifted-mono@L675-L675 | the hypothesis g^{(m)}(lambda) < lambda is in the sense of Definition 2.8
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP (minor): the strict clause of Lemma 2.9 holds only for n >= N with |g^{(n)}(lambda)| < inf (lambda is the larger argument); the source asserts 'strict if n is sufficiently large' (L680) without showing that this finiteness proviso holds for all large n.
+NOTE: SOURCE_GAP: the strict clause of Lemma 2.9 holds only for n >= N with |g^{(n)}(lambda)| < inf (lambda is the larger argument); the source asserts 'strict if n is sufficiently large' (L680) without showing that this finiteness proviso holds for all large n.
 
 NODE: lem-monotone-lim#limits-exist
 KIND: step
@@ -1403,13 +1403,14 @@ FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: lem-monotone-lim#limits-exist
+DEPS: lem-monotone-lim#limits-exist, lem-basin-open#g-iter-continuous
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-monotone-lim#limits-exist | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#limit-fixed@L689-L689 | lambda-bar^s is the limit (2.8) of g^{(r m + s)}(lambda)
+EDGE: lem-basin-open#g-iter-continuous | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#limit-fixed@L689-L689 | SOURCE_GAP reconstruction, not cited at L689: g^{(m)}(lambda-bar^s) = lim_r g^{(m)}(g^{(r m + s)}(lambda)) needs continuity of g^{(m)} on [0,inf)^d, which the paper derives from Hypothesis III only later (L814)
 TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: reviewer-B/sonnet
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1438,13 +1439,13 @@ EDGE: lem-monotone-lim#limit-fixed | source/arxiv-2411.06301v2/fixed-pt-finite-t
 EDGE: lem-monotone-lim#shifted-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#limits-zero@L689-L689 | strictness of (2.7) for large n gives lambda-bar^s < g^{(s)}(lambda)
 EDGE: lem-unstable-ssl | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#limits-zero@L690-L690 | assertion (ii) of Lemma 2.12 with lambda-bar^s and eta = g^{(s)}(lambda) gives limsup_r ‖g^{(r m)}(g^{(s)}(lambda))‖ = inf, contradicting (2.8)
 EDGE: def-componentwise | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#limits-zero@L688-L689 | 'lambda-bar^s > 0 (at least one component positive)' and 'lambda-bar^s < g^{(s)}(lambda)' use Definition 2.8
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP (minor): Lemma 2.12(ii) is applied at L690 with lambda := lambda-bar^s and eta := g^{(s)}(lambda), but its premises (lambda-bar^s in [0,inf)^d \ {0}, eta in [0,inf)^d, i.e. finiteness of g^{(s)}(lambda) for s in {0,...,m-1}) are not discharged in the source; lambda-bar^s < g^{(s)}(lambda) is asserted in one clause from the large-n strictness of (2.7). Proof by contradiction for the first assertion; the m subsequences s = 0,...,m-1 are combined to conclude convergence of the full sequence (routine).
+NOTE: SOURCE_GAP: Lemma 2.12(ii) is applied at L690 with lambda := lambda-bar^s and eta := g^{(s)}(lambda), but its premises (lambda-bar^s in [0,inf)^d \ {0}, eta in [0,inf)^d, i.e. finiteness of g^{(s)}(lambda) for s in {0,...,m-1}) are not discharged in the source; lambda-bar^s < g^{(s)}(lambda) is asserted in one clause from the large-n strictness of (2.7). Proof by contradiction for the first assertion; the m subsequences s = 0,...,m-1 are combined to conclude convergence of the full sequence (routine).
 
 NODE: lem-monotone-lim#part-b
 KIND: step
@@ -1461,15 +1462,16 @@ FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: lem-mono, lem-unstable-ssl, def-componentwise
+DEPS: lem-mono, lem-unstable-ssl, def-componentwise, lem-basin-open#g-iter-continuous
 ROUTES: -
 ROUTE_FOR: -
 EDGE: lem-mono | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#part-b@L675-L693 | 'proven similarly' (L693): the increasing analogue of the (2.7) argument at L676-L680
 EDGE: lem-unstable-ssl | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#part-b@L675-L693 | 'proven similarly' (L693): the analogue of the contradiction argument at L690
 EDGE: def-componentwise | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#part-b@L675-L693 | 'proven similarly' (L693): the sense of '>' is that of Definition 2.8
+EDGE: lem-basin-open#g-iter-continuous | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#lem-monotone-lim#part-b@L689-L693 | SOURCE_GAP reconstruction: the analogue of the limit-fixed step (L689) passes a monotone limit through g^{(m)}, which needs continuity of g^{(m)} (Hypothesis III)
 TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: reviewer-B/sonnet
+REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -1680,9 +1682,9 @@ KIND: theorem
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed@L555-L557
 DISPOSITION: NODE thm-fixed
 REASON: Theorem 2.7: the statement (L555-L557) lies in slice-B lines, but the root node thm-fixed is owned by slice C per spec section 9 (statement L555-L557, proof L894-L905); slice B defines no block for it.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L560:g-convex
 KIND: claim

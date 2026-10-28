@@ -29,9 +29,9 @@ KIND: definition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#bp-setup@L176-L177
 DISPOSITION: NODE def:population-sigma, def:step-kernel, def:path-law, claim:branching-property
 REASON: the sentence introducing the d-type branching process X(n), the measures ℙ_k and expectations 𝔼_k is split into the three frozen definition anchors for population structure, one-generation mechanism and path law, plus the shared implicit branching/Markov-property node claim:branching-property used without statement by later proofs (ADJUDICATION B2)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L179:extinction-event
 KIND: definition
@@ -245,9 +245,9 @@ KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#def-bp-basic@L229-L229
 DISPOSITION: NODE def-bp-basic.positive-regular#matrix-equiv
 REASON: the clause 'which is equivalent to the condition that the matrix M^N has all positive entries' (L229) is consumed by the Perron-Frobenius application at L508 (lem-gf-bded#perron-frobenius); asserted without argument, so a SOURCE_GAP claim node (supersedes ADJUDICATION A1, whose condition 'if still unreachable' does not hold)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L238:conjugate-iff-fixed-point
 KIND: claim
@@ -299,36 +299,36 @@ KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#counterexample@L262-L262
 DISPOSITION: NODE counterexample, counterexample#hyp-I-subcritical, counterexample#hyp-II-regular, counterexample#hyp-III-continuous, counterexample#three-fixed-points
 REASON: 'clearly satisfies the hypotheses of Theorem 1.4' and 'one can check that f(q) = q has three solutions in (1,∞)^2' are the root and its SOURCE_GAP steps (R4)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: global-reviewer/sonnet
 
 ITEM: inv:L262:robustness-claim
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#counterexample@L262-L262
 DISPOSITION: EXCLUDED
 REASON: 'this example is robust' (three fixed points persist under small perturbations) feeds no root (spec §7; Example 1.5 is anchored only as the concrete offspring law with at least three fixed points, R4)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L262:d3-seven-fixed-points
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#counterexample@L262-L262
 DISPOSITION: EXCLUDED
 REASON: 'a similar example where d = 3 and there are seven fixed points' is not in the anchored statement and feeds no root (spec §7)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L263:arbitrarily-many-fixed-points
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#counterexample@L263-L263
 DISPOSITION: EXCLUDED
 REASON: 'we expect that ... the number of fixed points can be arbitrarily large' is a stated expectation with no proof obligation and feeds no root (spec §7)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:counterexample
 KIND: claim
@@ -362,27 +362,27 @@ KIND: heading
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#sec-outline@L359-L359
 DISPOSITION: EXCLUDED
 REASON: subsection heading 'Proof outline'; its body is the separate excluded item inv:outline:L360
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:outline:L360
 KIND: proof-region
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#sec-outline@L360-L379
 DISPOSITION: EXCLUDED
 REASON: §1.3 proof outline (spec §7): expository summary of §2 and §3; the display of S_0 and S_∞ (L366-L369) restates the basin definitions (2.9) (eqn-basin-def.zero/infty, L726-L729) and every lemma it cites (Lemmas 2.3, 2.16-2.19 and Theorem 3.1) has its own node in slices B-D; it supplies no hypothesis, step or edge for any root
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L188:equivalence-preview
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#equivalence-preview@L188-L188
 DISPOSITION: NODE thm-fixed-gf.equivalence
 REASON: 'By basic branching process theory, this is equivalent to the existence of a fixed point for the generating function which lies in (1,∞)^d' is the first informal statement of the equivalence of L238 (repeated at L249); same node, no separate obligation
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-A/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:heading:L380
 KIND: heading
@@ -587,9 +587,9 @@ KIND: theorem
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed@L555-L557
 DISPOSITION: NODE thm-fixed
 REASON: Theorem 2.7: the statement (L555-L557) lies in slice-B lines, but the root node thm-fixed is owned by slice C per spec section 9 (statement L555-L557, proof L894-L905); slice B defines no block for it.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L560:g-convex
 KIND: claim
@@ -740,9 +740,9 @@ KIND: display
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-infty-subset@L732-L735
 DISPOSITION: NODE eqn-infty-subset, eqn-infty-subset#blowup
 REASON: Display (2.10) is the node eqn-infty-subset; the preceding unproved claim (g^{(N)} blows up when a coordinate is infinite, L732) is the SOURCE_GAP step eqn-infty-subset#blowup.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:lem-basin-closed
 KIND: lemma
@@ -888,6 +888,15 @@ COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
 REVIEWER: reviewer-C/sonnet
 
+ITEM: inv:fig-brouwer-proof
+KIND: claim
+SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#fig-brouwer-proof@L841-L847
+DISPOSITION: EXCLUDED
+REASON: Figure 2 (illustration of the proof of Lemma 2.19 for d = 2: the deformation retraction from the region A to Λ by sliding points along rays through the origin) pictures the construction (2.13) and states nothing that the proof of Lemma 2.19 (nodes eqn-retract-def, lem-retract#phi-homeomorphism, #H-continuous, #H-fixes-Lambda, #H-preserves-A) does not prove; it is not a proof obligation
+COVERAGE_STATUS: REVIEWED
+EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
+REVIEWER: queue-reviewer/sonnet
+
 ITEM: inv:heading:L908
 KIND: heading
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#sec-infty@L908-L908
@@ -917,12 +926,12 @@ REVIEWER: reviewer-D/sonnet
 
 ITEM: inv:L930:ctble-extinction-facts
 KIND: claim
-SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-extinction-facts@L930-L936
+SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-extinction-facts@L930-L934
 DISPOSITION: EXCLUDED
-REASON: cited background on partial and local extinction, the inequalities q ≤ q(A) ≤ q̃ ≤ 1, the fixed-point sets S and Q and their literature (L930-L932), the conjugate remark L934 (inv:L934:ctble-conjugate-extension) and the introductory sentence L936 are excluded by spec §7: no step of Theorem 3.1 or Example 3.5 consumes them. The definition of global extinction that Theorem 3.1 and Example 3.5 do use is not excluded: it is the separate item inv:L930:global-extinction-def
-COVERAGE_STATUS: PROPOSED
+REASON: cited background in L930-L934 on partial and local extinction, the inequalities q ≤ q(A) ≤ q̃ ≤ 1, the fixed-point sets S and Q and their literature (L930-L932) and the countable-type conjugate remark L934 (also item inv:L934:ctble-conjugate-extension) is excluded by spec §7: no step of Theorem 3.1 or Example 3.5 consumes it. Not excluded: the definition of global extinction in L930 (separate item inv:L930:global-extinction-def) and the truncation paragraph L936-L937 (separate item inv:L936:def-truncation)
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: global-reviewer/sonnet
 
 ITEM: inv:cite:L930:Bertacchi2014
 KIND: citation
@@ -1280,411 +1289,420 @@ KIND: definition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#global-extinction-def@L930-L930
 DISPOSITION: NODE def:extinction, example-ctble#global-extinction
 REASON: 'global extinction, defined as lim_{n→∞} Σ_k X_k(n) = 0' is the extinction notion of the hypothesis 'global extinction probability one' of Theorem 3.1 (L958) and of the conclusion of Example 3.5; the frozen anchor def:extinction (owned by slice A, STATEMENT_SOURCE L179) has manifest range paper.tex:179,930, and example-ctble#global-extinction consumes it. No new node
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L936:def-truncation
 KIND: definition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#truncation@L936-L937
 DISPOSITION: NODE def:truncation
 REASON: the branching process X^d truncated at level d (individuals of type ≥ d+1 killed immediately, X^d_k(1)=0 for k≥d+1, superscript-d convention for all associated objects) is the frozen definition anchor def:truncation (manifest range paper.tex:937-948); the display (3.2) that follows is inv:eqn-gf-truncated
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L957:assumptions-I-IV
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#assumptions-I-IV@L957-L984
 DISPOSITION: NODE thm-fixed-pt-infty, lem-fixed-limsup, lem-fixed-liminf, lem-1d-soln, lem-fixed-liminf#choose-K, example-ctble#assume-I, example-ctble#assume-II, example-ctble#assume-III, example-ctble#assume-IV
 REASON: the global-extinction sentence (L958) and Assumptions I-IV (labels item-gf-trunc-infty, item-gf-growth-infty, item-gf-bded-infty, item-gf-perturb-infty; numbered display (3.4) at L970 is the inequality of Assumption II; unnumbered displays L974, L978-L979) are a local hypothesis package (spec §4): recorded whole in SOURCE_HYPOTHESES of the root and of the §3.2 lemmas and steps, used by name at L1028 and L1195, and each assumption is verified for Example 3.5 by the example-ctble#assume-I..IV nodes. The weights remark L982-L983 is expository (pointer to Example 3.5) and excluded
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L927:ctble-fn-iterate
 KIND: definition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-fn-iterate@L927-L927
 DISPOSITION: NODE thm-fixed-pt-infty#positivity
 REASON: 'We also define f^{(n)} to be the composition of f with itself n times' for the countable-type f of L920-L926; its only consumer is the unwritten countable-type identity f^{(N)}_k(q)=𝔼_k[∏_j q_j^{X_j(N)}] behind the SOURCE_GAP of #positivity (L1178); every other iterate in §3 is g^{d,(n)} of a finite-type truncation
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L928:ctble-regularity-extension
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-regularity-extension@L928-L928
 DISPOSITION: EXCLUDED
 REASON: extends positive regularity and non-singularity (Definition 1.3) to countable-type X; never consumed: Assumption I (L961), Lemma 3.4 (L1117) and the proof of Theorem 3.1 (L1178) use these notions only for the finite-type truncations X^d
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L1193:concrete-example
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#concrete-example@L1193-L1193
 DISPOSITION: EXCLUDED
 REASON: illustration of how a ℙ_1 satisfying (3.23) can be sampled (N from a law on ℕ_0 with mean <1 and exponential moments, then a uniform sequence with Σ j X_j(1) = N); the hypotheses of Example 3.5 are the display (3.23), not this recipe, and no root proof consumes it (spec §7: claims that feed no root)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L437:fixed-pos-remark
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#fixed-pos-remark@L437-L437
 DISPOSITION: NODE lem-fixed-pos, prop-conjugate#cond-law-hat
 REASON: Remark that Lemma 2.3 implies that in the setting of Proposition 2.2 the fixed point A is either (1,...,1) or in (1,inf)^d. It is the only source evidence for the edge prop-conjugate#cond-law-hat -> lem-fixed-pos, which the proof of Proposition 2.2 (L431) does not cite; the unverified hypothesis 0 < a_k < 1 of Proposition 2.1 is recorded as a SOURCE_GAP on prop-conjugate#cond-law-hat.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L553:thm-equivalence
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-equivalence-reduction@L553-L553
 DISPOSITION: NODE thm-fixed-gf.fixed-point#reduce-to-thm-2-7, eqn-fixed-pt-equiv
 REASON: The reduction of Theorem 1.4 to Theorem 2.7 through (2.6); the node is owned by slice A (root thm-fixed-gf.fixed-point), the display (2.6) by slice B.
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-B/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L731:asymmetry-note
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#eqn-basin-def@L731-L731
 DISPOSITION: EXCLUDED
 REASON: motivational remark: it cites Proposition 2.10 (prop-unstable) as the origin of the lim / limsup asymmetry in (2.9) but no proof in the root closure consumes it as an input (ADJUDICATION C2); prop-unstable is reached through lem-unstable-ssl and lem-monotone-lim, whose own proofs are owned by slice B
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-C/sonnet
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
+
+ITEM: inv:fig-counterexample
+KIND: claim
+SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#fig-counterexample@L267-L273
+DISPOSITION: EXCLUDED
+REASON: Figure 1 (plot of the solution sets of f_1(q_1,q_2) = q_1 and f_2(q_1,q_2) = q_2 for the offspring law of Example 1.5, made with Mathematica) illustrates the three fixed points asserted at L262; it states nothing beyond the definition of a fixed point and is not a proof obligation (the three-fixed-points claim itself is the node counterexample#three-fixed-points; spec §7, R4)
+COVERAGE_STATUS: REVIEWED
+EXTRACTOR: queue-reviewer/sonnet
+REVIEWER: global-reviewer/sonnet
 
 ITEM: inv:heading:L1216
 KIND: heading
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#heading-L1216@L1216-L1216
 DISPOSITION: EXCLUDED
 REASON: §4 Applications (L1216-L1345) is discussion of applications to LQG and biology; it states no formal claim and no root consumes it
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:heading:L1218
 KIND: heading
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#heading-L1218@L1218-L1218
 DISPOSITION: EXCLUDED
 REASON: §4 Applications (L1216-L1345) is discussion of applications to LQG and biology; it states no formal claim and no root consumes it
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1221:bp-lqg-notes
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1221-bp-lqg-notes@L1221-L1221
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1237:shef-cle
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1237-shef-cle@L1237-L1237
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1238:bbg-recursive-approach
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1238-bbg-recursive-approach@L1238-L1238
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1246:bp-lqg-notes
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1246-bp-lqg-notes@L1246-L1246
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1246:gms-tutte.2
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1246-gms-tutte.2@L1246-L1246
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1246:gms-tutte.3
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1246-gms-tutte.3@L1246-L1246
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1246:nachmias-circle-packing
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1246-nachmias-circle-packing@L1246-L1246
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1248:msw-non-simple-cle
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1248-msw-non-simple-cle@L1248-L1248
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1248:shef-cle
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1248-shef-cle@L1248-L1248
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1253:ag-supercritical-cle4
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1253-ag-supercritical-cle4@L1253-L1253
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1253:ghpr-central-charge
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1253-ghpr-central-charge@L1253-L1253
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1255:ag-supercritical-cle4
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1255-ag-supercritical-cle4@L1255-L1255
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1255:bgs-supercritical-crt
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1255-bgs-supercritical-crt@L1255-L1255
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1260:aldous-crt1
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1260-aldous-crt1@L1260-L1260
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1261:bgs-supercritical-crt
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1261-bgs-supercritical-crt@L1261-L1261
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1261:feng-fk-triviality
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1261-feng-fk-triviality@L1261-L1261
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1261:ghpr-central-charge
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1261-ghpr-central-charge@L1261-L1261
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1266:apps-central-charge
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1266-apps-central-charge@L1266-L1266
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1266:bgs-supercritical-crt
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1266-bgs-supercritical-crt@L1266-L1266
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1266:ghpr-central-charge
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1266-ghpr-central-charge@L1266-L1266
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1272:ag-supercritical-cle4
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1272-ag-supercritical-cle4@L1272-L1272
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1274:ag-supercritical-cle4
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1274-ag-supercritical-cle4@L1274-L1274
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1274:bgs-supercritical-crt.2
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1274-bgs-supercritical-crt.2@L1274-L1274
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1274:bgs-supercritical-crt.3
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1274-bgs-supercritical-crt.3@L1274-L1274
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1276:ag-supercritical-cle4.2
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1276-ag-supercritical-cle4.2@L1276-L1276
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1276:ag-supercritical-cle4.3
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1276-ag-supercritical-cle4.3@L1276-L1276
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1284:zinn-justin-six-vertex
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1284-zinn-justin-six-vertex@L1284-L1284
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:heading:L1289
 KIND: heading
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#heading-L1289@L1289-L1289
 DISPOSITION: EXCLUDED
 REASON: §4 Applications (L1216-L1345) is discussion of applications to LQG and biology; it states no formal claim and no root consumes it
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1294:Davis2017
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1294-Davis2017@L1294-L1294
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1296:Durrett2015cancer
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1296-Durrett2015cancer@L1296-L1296
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1298:Bozic2010
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1298-Bozic2010@L1298-L1298
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1307:Sottoriva2017
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1307-Sottoriva2017@L1307-L1307
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1333:Del2009
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1333-Del2009@L1333-L1333
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1335:Harnevo1991
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1335-Harnevo1991@L1335-L1335
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:cite:L1335:Jacob2010
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L1335-Jacob2010@L1335-L1335
 DISPOSITION: EXCLUDED
 REASON: citation inside §4 Applications (discussion only; no root consumes it)
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: queue-reviewer/sonnet
