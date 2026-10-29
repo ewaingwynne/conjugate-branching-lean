@@ -37,7 +37,18 @@ You may split these further under `Conjugate/Internal/Section2/`. Edit nothing e
 - `Conjugate.Internal.Section2.*`, the W-A4 and W-A5 files (Lemmas 2.3, 2.4, 2.5, 2.9, 2.10,
   2.11, 2.13, 2.18, display (2.8)).
 
-Read them for the exact statements. Never import non-`Defs` frozen files or
+Read them for the exact statements. Useful helpers:
+- W-A4: `iterate_logGenFun_mem_basin{Zero,Infty}_iff`, `logGenFun_mapsTo_basin{Zero,Infty}`,
+  `basinZero_inter_basinInfty`.
+- W-A5 (`Unstable.lean`): `abs_eq_toENNReal`, `abs_le_abs_of_nonneg`,
+  `logGenFun_iterate_apply`, `logGenFun_iterate_ne_top`, `tendsto_iSup_zero`,
+  `iterate_mul_add`, `exists_scale_lt_one`.
+
+Several earlier helper names are generic (`HasSlope`, `tendsto_monomial`, …). Pick distinctive
+names for your own helpers so they do not clash.
+
+For monotonicity and orthant invariance of `g^{(n)}`, use `(logGenFun_mono μ).iterate n` and
+`(mapsTo_logGenFun μ).iterate n`. Never import non-`Defs` frozen files or
 `Conjugate/Internal/<Anchor>.lean` providers.
 
 **Exact public API to prove** (namespace `Conjugate`, `variable {d : ℕ}`). Each statement was
