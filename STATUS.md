@@ -12,11 +12,11 @@ Single writer: orchestrator. Proof status is never inferred from compilation alo
 ## Mandatory report fields
 
 ```text
-DRAFT_ANCHORS: 3 (Theorem_3_1, Example_1_5, Example_3_5; all FROZEN_UNPROVED)
+DRAFT_ANCHORS: 2 (Theorem_3_1, Example_3_5; both FROZEN_UNPROVED)
 UNREGISTERED_SORRIES: 0
 DRAFT_IMPORT_VIOLATIONS: 0
-SEALED_THIS_TURN: 4 (exists_conjugate_iff_exists_fixedPoint, theorem_1_4_conjugate, proposition_1_6_conjugate, remark_hypIII_necessary — b7bb629)
-SEALED_CUMULATIVE: 10 — PROVED: remark_hypIII_automatic (AU-1), proposition_1_6_fixedPoint (AU-2); sealed, audit pending: proposition_2_1_condLaw, proposition_2_2, theorem_2_7, theorem_1_4_fixedPoint (AU-3); exists_conjugate_iff_exists_fixedPoint, theorem_1_4_conjugate, proposition_1_6_conjugate, remark_hypIII_necessary (AU-4)
+SEALED_THIS_TURN: 1 (Conjugate.example_1_5 — 3ea9ad2)
+SEALED_CUMULATIVE: 11 — PROVED: remark_hypIII_automatic (AU-1), proposition_1_6_fixedPoint (AU-2); sealed, audit pending: proposition_2_1_condLaw, proposition_2_2, theorem_2_7, theorem_1_4_fixedPoint (AU-3); exists_conjugate_iff_exists_fixedPoint, theorem_1_4_conjugate, proposition_1_6_conjugate, remark_hypIII_necessary, example_1_5 (AU-4)
 ```
 
 ## Anchors
@@ -47,7 +47,7 @@ SEALED_CUMULATIVE: 10 — PROVED: remark_hypIII_automatic (AU-1), proposition_1_
 | `Conjugate.proposition_2_2` | theorem | `Proposition_2_2.lean` | SEALED (7581f95) | PASS (2026-10-28) | approved | audit pending (AU-3) |
 | `Conjugate.theorem_2_7` | theorem | `Theorem_2_7.lean` | SEALED (5e015e1) | PASS (2026-10-28) | approved | audit pending (AU-3) |
 | `Conjugate.theorem_3_1` | theorem | `Theorem_3_1.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
-| `Conjugate.example_1_5` | theorem | `Example_1_5.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
+| `Conjugate.example_1_5` | theorem | `Example_1_5.lean` | SEALED (3ea9ad2) | PASS (2026-10-28) | approved | audit pending (AU-4) |
 | `Conjugate.example_3_5` | theorem | `Example_3_5.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
 | `Conjugate.remark_hypIII_necessary` | theorem | `Remark_HypIII_Necessary.lean` | SEALED (b7bb629) | PASS (2026-10-28) | approved | audit pending (AU-4) |
 | `Conjugate.remark_hypIII_automatic` | theorem | `Remark_HypIII_Automatic.lean` | **PROVED** (sealed a25a4fd) | PASS (2026-10-28) | approved | AU-1 PASS (2026-10-28) |
@@ -70,7 +70,7 @@ checks, and a fresh Sonnet audit.
 | W-A8 | B (Sonnet) | Prop 1.6 fixed-point provider + seal | `prop-single-type.fixed-point` and steps | **audited** (AU-2 PASS) |
 | W-A7 | A | Thm 2.7 (simplex route) + Thm 1.4 fixed-point providers | `thm-fixed`, `thm-fixed-gf.fixed-point` | written, checked, both anchors sealed (5e015e1); audit pending (AU-3) |
 | W-B2 | B | path-space Markov property, cylinder uniqueness, h-transform; Props 2.1(b), 2.2 providers | `prop-cond-on-ext.cond-law`, `prop-conjugate` | written, checked, both anchors sealed (7581f95); audit pending (AU-3) |
-| W-A9 | any | Example 1.5 provider | `counterexample` and steps | running |
+| W-A9 | any | Example 1.5 provider | `counterexample` and steps | written, checked, anchor sealed (3ea9ad2); audit pending (AU-4) |
 | W-B3 | A (Sonnet) | equivalence (both directions, explicit tilt), Thm 1.4 conj, Prop 1.6 conj, Hyp III necessary, subcriticality criteria | `thm-fixed-gf.equivalence`, `thm-fixed-gf.conjugate`, `prop-single-type.conjugate`, `rem:hyp-iii-necessary` | written, checked, four anchors sealed (b7bb629); audit pending (AU-4) |
 | W-A10 | B (Sonnet) | §3 truncation (3.2), Lemma 3.2, Lemma 3.4 | `eqn-gf-truncated`, `eqn-log-gf-*`, `lem-fixed-limsup`, `lem-1d-soln` | written, orchestrator-checked (c6b20e9); audit pending |
 | W-A11 | B (Fable) | Lemma 3.3, Theorem 3.1 provider + seal | `lem-fixed-liminf`, `thm-fixed-pt-infty` | running |
@@ -113,4 +113,5 @@ docstring sweep pending (quiet window).
 | 2026-10-28 | writer W-B3 | Sonnet | equivalence, Thm 1.4 conj, Prop 1.6 conj, Hyp III necessary | 4 providers + criteria, standard axioms; seal probes OK |
 | 2026-10-28 | writer W-A10 | Sonnet | §3 truncation layer, Lemmas 3.2, 3.4 | 8 public theorems, standard axioms; orchestrator checks pass |
 | 2026-10-28 | writer W-A11 | Fable | Lemma 3.3, Theorem 3.1 | running |
-| 2026-10-28 | writer W-A9 | Sonnet | Example 1.5 | running |
+| 2026-10-28 | writer W-A9 | Sonnet | Example 1.5 | provider + helpers, standard axioms; seal probe OK |
+| 2026-10-28 | auditor AU-3 (fresh) | Sonnet | path space, Thm 2.7 assembly, 4 seals | running |
