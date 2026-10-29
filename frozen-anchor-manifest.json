@@ -814,7 +814,7 @@
         "module": "Conjugate.Internal.Proposition_1_6_FixedPoint",
         "export": "Conjugate.Internal.proposition_1_6_fixedPoint"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "79a4ae37be5324f7ad921279501a682563b1b4d0c2e1f89f47d9e54d1766dacd",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {

@@ -35,7 +35,7 @@ theorem proposition_1_6_fixedPoint (μ : Fin 1 → PMF (Fin 1 →₀ ℕ))
     (hIII : ContinuousOn (fun q : ℝ≥0∞ => genFun μ (fun _ => q) 0) (Set.Ioi 0)) :
     ∃! q : ℝ≥0∞, 1 < q ∧ q < ∞ ∧ genFun μ (fun _ => q) 0 = q :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.proposition_1_6_fixedPoint μ hI hII hIII
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 
