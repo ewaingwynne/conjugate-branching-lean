@@ -7,7 +7,7 @@ CONVENTIONS: see graph/EXTRACTION_SPEC.md §3 (paper indexing in source fields; 
 STANDING_ASSUMPTIONS: -
 EXTERNAL_POLICY: cited literature results and named standard theorems explicitly invoked by a proof are KIND external leaves (graph/EXTRACTION_SPEC.md §5); routine facts below the step threshold are not nodes
 FROZEN_ANCHORS: def:population-sigma, def:step-kernel, def:path-law, def:extinction, def-conjugate, eqn-generating-function, eqn-mean-matrix, def:subcritical, def-bp-basic.positive-regular, def-bp-basic.non-singular, def-log-gf, eqn-basin-def.zero, eqn-basin-def.infty, def:truncation, def:stoch-dom, thm-fixed-gf.fixed-point, thm-fixed-gf.conjugate, thm-fixed-gf.equivalence, prop-single-type.fixed-point, prop-single-type.conjugate, prop-cond-on-ext.cond-law, prop-conjugate, thm-fixed, thm-fixed-pt-infty, counterexample, example-ctble, rem:hyp-iii-necessary, rem:hyp-iii-automatic, prop-cond-on-ext.ctble.cond-law, prop-conjugate.ctble, thm-fixed-gf.equivalence.ctble, thm-fixed-pt-infty.conjugate, example-ctble.conjugate
-FROZEN_MANIFEST: frozen-anchor-manifest.json | sha256:d3d15cf7b38a67ea41062d0e52d081c69d8f516f33127826687c1ecf51a9fea5
+FROZEN_MANIFEST: frozen-anchor-manifest.json | sha256:cd9bb4ac9136e6fcf7bc37c36679abfcbce975cb618a95ddf1fd044157b59ab8
 WRITER: orchestrator/opus-5.5/session-f41ccbab
 GLOBAL_REVIEWER: global-reviewer/sonnet
 GLOBAL_REVIEW_REF: graph/reviews/global.review.md (root verdicts §1, follow-up §5)

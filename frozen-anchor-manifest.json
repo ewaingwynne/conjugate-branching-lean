@@ -607,6 +607,10 @@
         {
           "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
           "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
         }
       ],
       "implementation": {
@@ -682,6 +686,10 @@
         {
           "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
           "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
         }
       ],
       "implementation": {
@@ -757,6 +765,10 @@
         {
           "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
           "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
         }
       ],
       "implementation": {
@@ -871,6 +883,10 @@
         {
           "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
           "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
         }
       ],
       "implementation": {
@@ -930,6 +946,10 @@
         {
           "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
           "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
         }
       ],
       "implementation": {
@@ -993,6 +1013,10 @@
         {
           "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
           "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
         }
       ],
       "implementation": {
@@ -1064,6 +1088,10 @@
         {
           "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
           "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
         }
       ],
       "implementation": {
@@ -1137,6 +1165,10 @@
           "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
         },
         {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
+        },
+        {
           "path": "Conjugate/Frozen/Defs/Truncate.lean",
           "sha256": "e2dab0ff3f095ca03d4ef14b4711858e2d6e3f3cff92fed93855df6fd27e67d9"
         }
@@ -1206,6 +1238,10 @@
         {
           "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
           "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
         }
       ],
       "implementation": {
@@ -1364,6 +1400,10 @@
         {
           "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
           "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
         }
       ],
       "implementation": {
@@ -1423,6 +1463,10 @@
         {
           "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
           "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
         }
       ],
       "implementation": {

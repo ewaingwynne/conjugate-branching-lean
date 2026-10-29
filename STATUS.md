@@ -86,8 +86,9 @@ checks, and a fresh Sonnet audit.
 
 Known limits (from AU-1): the branching property is proved at the level of generation laws
 (cylinder formula, convolution, Chapman–Kolmogorov), not yet as a path-level statement; briefs
-for Props 2.1/2.2 must add the path-level Markov property. Theorem-anchor `definition_closure`
-lists omit the transitively reached `Defs/StepKernel.lean` (sealed separately; revisit at closure).
+for Props 2.1/2.2 must add the path-level Markov property. The theorem-anchor `definition_closure`
+gap (missing `Defs/StepKernel.lean`) was fixed by author ruling R9: all 18 theorem entries now list
+exactly their transitive definition dependencies.
 
 Numbering note (AU-2): briefs W-A4–W-A7 and the Section2 Lean docstrings label §2 lemmas off by
 one from 2.12 on. Compiled numbering: 2.12 unstable-ssl, 2.13 monotone-lim, 2.14 basin-closed,
