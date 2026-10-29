@@ -28,7 +28,7 @@ theorem remark_hypIII_automatic {d : ℕ} (μ : Fin d → PMF (Fin d →₀ ℕ)
     (hfin : ∀ k (q : Fin d → ℝ≥0∞), (∀ j, 0 < q j ∧ q j < ∞) → genFun μ q k < ∞) :
     ∀ k, ContinuousOn (fun q => genFun μ q k) {q | ∀ j, 0 < q j} :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.remark_hypIII_automatic μ hpr hns hfin
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 

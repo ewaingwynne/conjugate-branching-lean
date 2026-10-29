@@ -1429,7 +1429,7 @@
         "module": "Conjugate.Internal.Remark_HypIII_Automatic",
         "export": "Conjugate.Internal.remark_hypIII_automatic"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "723463333098e966143546579ee41d1f29bd18fe755475e13047c70b45a9af3c",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {
