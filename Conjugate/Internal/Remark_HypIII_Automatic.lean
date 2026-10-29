@@ -12,7 +12,7 @@ import Conjugate.Internal.Analytic.GenFunContinuity
 # Provider for `Conjugate.remark_hypIII_automatic`
 
 Implementation module for the frozen anchor `Conjugate/Frozen/Remark_HypIII_Automatic.lean`.
-Quarantined while that anchor is `DRAFT_SORRY`: only the anchor itself may import it.
+The anchor is SEALED (its body is `by exact` of the theorem below); audited in AU-1.
 
 The proof is `Conjugate.continuousAt_genFun` (lower semicontinuity of `f_k` where `f_k = ∞`,
 dominated convergence where `f_k < ∞`); positive regularity and non-singularity are not needed.

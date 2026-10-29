@@ -35,7 +35,11 @@ You may split these further under `Conjugate/Internal/Section2/`. Edit nothing e
   `logGenFun_iterate`, `logGenFun_mono`, `logGenFun_zero`, `mapsTo_logGenFun`,
   `logGenFun_eq_self_iff`, continuity of iterates).
 
-Read these modules for the exact statements. Never import `Conjugate/Frozen/*` other than
+Read these modules for the exact statements. For monotonicity and orthant invariance of
+`g^{(n)}`, use `(logGenFun_mono μ).iterate n` and `(mapsTo_logGenFun μ).iterate n`. They have no
+separate named lemma. Foundations proves the branching property only at the level of
+generation laws: cylinder formula, convolution of the time-`n` laws, Chapman–Kolmogorov. That
+is enough for this brief. Never import `Conjugate/Frozen/*` other than
 `Defs`, nor any `Conjugate/Internal/<Anchor>.lean` provider.
 
 **Exact public API to prove** (namespace `Conjugate`). Each statement was elaborated against
