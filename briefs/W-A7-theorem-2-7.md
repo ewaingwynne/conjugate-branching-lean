@@ -50,6 +50,20 @@ The steps:
      from `hI` via `pathLaw_extinctionEvent_eq_one`. It gives `q_k > 1` for all `k`, hence
      `0 < λ_k < ⊤`.
 
+**W-A6 names you will use** (in `Conjugate/Internal/Section2/Ray.lean`, `BasinOpen.lean` and
+`Attractive.lean`). Read the files for exact binders.
+- `existsUnique_ray`;
+- `ray_mem_basinZero_of_not_mem_basinInfty`: if `t u ∉ S∞`, `0 ≤ s < t` and `u ≥ 0`, then
+  `s u ∈ S₀`;
+- `ray_mem_basinInfty_of_not_mem_basinZero`: if `s u ∉ S₀` and `0 ≤ s < t`, then `t u ∈ S∞`;
+- `exists_isOpen_basinZero`, `exists_isOpen_basinInfty`;
+- `exists_isOpen_eq_inter_orthant`;
+- W-A4: `basinZero_inter_basinInfty`, `logGenFun_mem_basinZero_iff`,
+  `logGenFun_mem_basinInfty_iff`.
+
+Note: compile with `lake build <module>`. A bare `lake env lean` ignores the lakefile options,
+including `autoImplicit false`.
+
 **Exact frozen types.** Read `Conjugate/Frozen/Theorem_2_7.lean` and
 `Conjugate/Frozen/Theorem_1_4_FixedPoint.lean`. Each provider must have exactly the frozen type,
 binder names and order:
