@@ -61,8 +61,9 @@ checks, and a fresh Sonnet audit.
 |-------|------|--------|-------------|-------|
 | W-B1 | B (Fable) | `Conjugate.Infrastructure.brouwer_simplex` | `ext:brouwer` | running |
 | W-A1 | A (Sonnet) | `stepKernel` / `pathLaw` characterization, (1.2), `M^n` | `claim:branching-property` (Markov part), `eqn-gen-func-n`, `claim:mean-matrix-powers` | written, orchestrator-checked (5ed026e); audit pending |
-| W-A2 | A (Sonnet) | branching (convolution), absorption, extinction formulas, subcritical extinction, `M^n → 0`, Neumann vector | `claim:branching-property` (independence), `claim:subcritical-extinction` | running |
-| W-A3 | A (Sonnet) | analytic basics of `f`, `g`; provider for `remark_hypIII_automatic` | `eqn-convex-func-n`, `eqn-fixed-pt-equiv`, `lem-basin-open#g-iter-continuous`, `lem-mono` (part 1), `rem:hyp-iii-automatic` | brief ready |
+| W-A2 | A (Sonnet) | branching (convolution), absorption, extinction formulas, subcritical extinction, `M^n → 0`, Neumann vector | `claim:branching-property` (independence), `claim:subcritical-extinction` | written, orchestrator-checked (c265242); audit pending |
+| W-A3 | A (Sonnet) | analytic basics of `f`, `g`; provider for `remark_hypIII_automatic` | `eqn-convex-func-n`, `eqn-fixed-pt-equiv`, `lem-basin-open#g-iter-continuous`, `lem-mono` (part 1), `rem:hyp-iii-automatic` | running |
+| W-A4 | A (Sonnet) | Lemmas 2.3, 2.4, 2.9 (strict), (2.8), 2.18 | `lem-fixed-pos`, `lem-gf-pos`, `lem-mono#*`, `eqn-infty-subset*`, `lem-basin-closed` | brief ready |
 
 ## Agent log
 
@@ -77,4 +78,5 @@ checks, and a fresh Sonnet audit.
 | 2026-10-28 | statement auditor B (fresh) | Sonnet | batch 1B: Props 2.1/2.2, Thm 3.1, Ex 3.5, StochDominated | 5/5 PASS; found E8, R6 wording |
 | 2026-10-28 | writer W-B1 | Fable | Brouwer on the simplex | running |
 | 2026-10-28 | writer W-A1 | Sonnet | path-space foundations | 13 public theorems, standard axioms; orchestrator checks pass |
-| 2026-10-28 | writer W-A2 | Sonnet | branching, extinction, mean decay | running |
+| 2026-10-28 | writer W-A2 | Sonnet | branching, extinction, mean decay | 10 public theorems, standard axioms; orchestrator checks pass |
+| 2026-10-28 | writer W-A3 | Sonnet | analytic basics; Hyp III remark provider | running |
