@@ -57,3 +57,23 @@
 - Each rewritten record is re-verified by the other final reviewer (global ↔ queue), never by its author.
 - Author questions carried to the report: E9 (L1127), Ex 3.5 stops at the fixed point (A-2), StochDominated locator (A-1/Q4), external hypotheses of AN72/JL08 (Q6), per-type reading of "global extinction probability one" in Thm 3.1 (Q10).
 - Edge policy (stated once, 2026-10-28): an EDGE records either a use the source cites, or an uncited use that the consuming node's SOURCE_GAP note explicitly names as a reconstruction. Under this rule Q27 is applied (reverses C5), with the NOTE of `eqn-infty-subset#blowup` naming the reconstructed edge; queue follow-up P1 applied to `claim:subcritical-extinction`. Both re-verified by the global reviewer.
+
+## Batch 2 extension (2026-10-28, after the closure; ERRATA R8, E10)
+
+- **Slice E** adds the five frozen batch-2 roots, their proof steps, and the leaf
+  `thm-fixed-gf.equivalence.ctble#conjugate-regularity`. The coverage items for L928 and L934 move
+  from EXCLUDED to the new nodes, with the Phase 2 disposition kept verbatim in each REASON.
+- **Graph review GR-E** (fresh Sonnet) passed 4 of the 10 original nodes and failed 6. All six
+  replacement records were applied:
+  - `#fixed-point-to-conjugate` now depends on the three unconditional steps of the countable
+    Prop 2.2 instead of its root, whose regularity premises Thm 3.1 does not supply.
+  - `cond-law ctble` loses its premise-only edges and gains `claim:branching-property`.
+  - `#conjugate-to-fixed-point` gains explicit edges and a `#conjugate-regularity` leaf.
+  - `thm-fixed-pt-infty.conjugate` and `example-ctble.conjugate` get full source fields.
+  - The coverage items `inv:L934`, the two L934 citations, `inv:L957`, `inv:example-ctble`,
+    `inv:L930`, `inv:L927` and `inv:thm-fixed-pt-infty` are re-worded.
+- **Stale NOTEs** on `example-ctble`, `example-ctble#apply-thm-3-1` and `ext:jl08-thm1` were updated
+  to reflect the new scope. These are NOTE-only changes; no DEPS change.
+- **Second review.** The rewritten records stay PROPOSED until a second independent reviewer clears
+  them.
+

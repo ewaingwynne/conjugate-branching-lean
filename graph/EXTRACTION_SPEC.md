@@ -159,3 +159,18 @@ Every node block uses exactly the schema in `~/.claude/skills/build-proof-depend
 Initial Lean fields: `LEAN_STATUS: NOT_STARTED` (`EXTERNAL` for external nodes), `LEAN_REF: -`,
 `LEAN_NOTE: -`. `TOPOLOGY_STATUS: PROPOSED`, `REVIEWER: -`. One `EDGE:` line per DEPS/ROUTES entry,
 citing where the **consumer's** proof uses it. `DEPS` direction is `NODE -> prerequisite`.
+
+## Addendum (2026-10-28): batch 2
+
+The author's ruling R8 adds five frozen roots for the countable-type passage:
+- `prop-cond-on-ext.ctble.cond-law`;
+- `prop-conjugate.ctble`;
+- `thm-fixed-gf.equivalence.ctble`;
+- `thm-fixed-pt-infty.conjugate`;
+- `example-ctble.conjugate`.
+
+The passage is paper.tex:934, with L958-959 and L1183. The §7 exclusion of "the countable-type
+extension of Prop 2.2 (L934)" is withdrawn for these statements. The remark on partial
+extinction (the last sentence of L934) stays excluded (R8(e)). The anchors are listed in
+`frozen-anchor-manifest.json` and in the graph header. §1 and §8 above predate batch 2.
+

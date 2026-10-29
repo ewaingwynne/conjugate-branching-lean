@@ -1166,7 +1166,7 @@ REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: Anchor root. The paper asserts the verification (One can easily verify …, follows easily from (3.23)) without proof: the child nodes #global-extinction, #assume-I..IV, #choose-s and #choose-t carry the gap markers; this root carries none itself. L1193 (a concrete example by sampling N and then uniform sequences) is an illustration with no claim and is not modeled. The text in the comment block L1204-L1213 is not part of the paper and is not used. The step from fixed point to conjugate branching process (L934, countable-type extension of Proposition 2.2) is excluded per spec §7 and not modeled.
+NOTE: Anchor root. The paper asserts the verification (One can easily verify …, follows easily from (3.23)) without proof: the child nodes #global-extinction, #assume-I..IV, #choose-s and #choose-t carry the gap markers; this root carries none itself. L1193 (a concrete example by sampling N and then uniform sequences) is an illustration with no claim and is not modeled. The text in the comment block L1204-L1213 is not part of the paper and is not used. The step from fixed point to conjugate (L1183, L934) is modeled by the root example-ctble.conjugate (batch 2, R8).
 
 NODE: example-ctble#finite-offspring
 KIND: step
@@ -1420,7 +1420,7 @@ REVIEWER: queue-reviewer/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: Premise discharge for Theorem 3.1: (3.1) by #finite-offspring; global extinction by #global-extinction; Assumptions I-IV by #assume-I..IV with φ(k)=k, ψ(k)=1 and the s,t of #choose-s and #choose-t (carried through #assume-III and #assume-IV). The fixed-point-to-conjugate step (L934) is excluded per spec §7.
+NOTE: Premise discharge for Theorem 3.1: (3.1) by #finite-offspring; global extinction by #global-extinction; Assumptions I-IV by #assume-I..IV with φ(k)=k, ψ(k)=1 and the s,t of #choose-s and #choose-t (carried through #assume-III and #assume-IV). The fixed-point-to-conjugate step (L934) is consumed by example-ctble.conjugate (batch 2, R8).
 
 NODE: ext:dct
 KIND: external
@@ -1505,10 +1505,10 @@ REVIEWER: reviewer-D/sonnet
 
 ITEM: inv:L930:ctble-extinction-facts
 KIND: claim
-SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-extinction-facts@L930-L934
+SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-extinction-facts@L930-L932
 DISPOSITION: EXCLUDED
-REASON: cited background in L930-L934 on partial and local extinction, the inequalities q ≤ q(A) ≤ q̃ ≤ 1, the fixed-point sets S and Q and their literature (L930-L932) and the countable-type conjugate remark L934 (also item inv:L934:ctble-conjugate-extension) is excluded by spec §7: no step of Theorem 3.1 or Example 3.5 consumes it. Not excluded: the definition of global extinction in L930 (separate item inv:L930:global-extinction-def) and the truncation paragraph L936-L937 (separate item inv:L936:def-truncation)
-COVERAGE_STATUS: REVIEWED
+REASON: cited background in L930-L932 on partial and local extinction, the inequalities q ≤ q(A) ≤ q̃ ≤ 1, the fixed-point sets S and Q and their literature, excluded by spec §7: no proof of a root consumes it. The sentence 'all of the extinction probabilities are solutions to s = f(s)' is the countable counterpart of the property of a taken from [AN72] in Proposition 2.1; L934 does not cite it, and f(a) = a is the first-step identity inside the SOURCE_GAP route of prop-cond-on-ext.ctble.cond-law (claim:branching-property). The sentence on a continuum of fixed points is only the rationale of the SOURCE_GAP of prop-conjugate.ctble#ext-prob-hat, not a consumed result. Not excluded: the definition of global extinction in L930 (item inv:L930:global-extinction-def), the truncation paragraph L936-L937 (item inv:L936:def-truncation) and L934 (item inv:L934:ctble-conjugate-extension, re-scoped by R8)
+COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-D/sonnet
 REVIEWER: global-reviewer/sonnet
 
@@ -1551,8 +1551,8 @@ REVIEWER: reviewer-D/sonnet
 ITEM: inv:L934:ctble-conjugate-extension
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934
-DISPOSITION: NODE prop-cond-on-ext.ctble.cond-law, prop-conjugate.ctble, prop-conjugate.ctble#offspring-law, prop-conjugate.ctble#ext-prob-hat, prop-conjugate.ctble#cond-law-hat, thm-fixed-gf.equivalence.ctble, thm-fixed-gf.equivalence.ctble#fixed-point-to-conjugate, thm-fixed-gf.equivalence.ctble#conjugate-to-fixed-point
-REASON: Re-scoped by the author's ruling R8 (2026-10-28): the countable-type (2.1), Proposition 2.2 and the conjugate/fixed-point correspondence are now frozen roots (batch 2); E10 records that the correspondence needs positive regularity. The partial-extinction remark (last sentence) remains excluded (R8(e)). [Phase 2 disposition was EXCLUDED: countable-type extension of (2.1) and Proposition 2.2 (conjugate processes correspond to fixed points in (1,∞)^ℕ) is excluded by spec §7: the proof of Theorem 3.1 constructs only a fixed point and does not consume it. Proof obligation not modeled: the step fixed point implies conjugate process asserted at L934 and in the first sentence of Example 3.5 (L1183)]
+DISPOSITION: NODE prop-cond-on-ext.ctble.cond-law, prop-conjugate.ctble, prop-conjugate.ctble#offspring-law, prop-conjugate.ctble#ext-prob-hat, prop-conjugate.ctble#cond-law-hat, thm-fixed-gf.equivalence.ctble, thm-fixed-gf.equivalence.ctble#fixed-point-to-conjugate, thm-fixed-gf.equivalence.ctble#conjugate-to-fixed-point, thm-fixed-gf.equivalence.ctble#conjugate-regularity, def-conjugate
+REASON: Re-scoped by the author's ruling R8 (2026-10-28), sentence by sentence: conditioning on global extinction gives a branching process and (2.1) still holds, both citing [JL08]: prop-cond-on-ext.ctble.cond-law; the conjugate is defined as in Definition 1.1: def-conjugate; Proposition 2.2 extends with the same proof: prop-conjugate.ctble and its three steps; conjugate processes correspond to fixed points in (1,∞)^ℕ: thm-fixed-gf.equivalence.ctble and its two direction steps (E10: this needs positive regularity). The last sentence is split: 'the conjugate process has global extinction probability less than 1' is a consequence of what is modeled (P̂_k[E] = 1/q_k < 1, prop-conjugate.ctble#ext-prob-hat and thm-fixed-gf.equivalence.ctble#fixed-point-to-conjugate); 'but the partial extinction probability may be 1' has no proof and remains excluded (R8(e)). [Phase 2 disposition was EXCLUDED: countable-type extension of (2.1) and Proposition 2.2 (conjugate processes correspond to fixed points in (1,∞)^ℕ) is excluded by spec §7: the proof of Theorem 3.1 constructs only a fixed point and does not consume it. Proof obligation not modeled: the step fixed point implies conjugate process asserted at L934 and in the first sentence of Example 3.5 (L1183)]
 COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-D/sonnet
 REVIEWER: reviewer-D/sonnet
@@ -1560,8 +1560,8 @@ REVIEWER: reviewer-D/sonnet
 ITEM: inv:cite:L934:jl-cond-on-ext.2
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L934-jl-cond-on-ext-2@L934-L934
-DISPOSITION: NODE prop-cond-on-ext.ctble.cond-law
-REASON: Re-scoped by R8: the citation supports the countable-type (2.1), now the root prop-cond-on-ext.ctble.cond-law (edge to ext:jl08-thm1). [Phase 2 disposition was EXCLUDED: citation supporting the countable-type extension of (2.1) and Proposition 2.2 (L934, excluded by spec §7); Theorem 3.1 and Example 3.5 produce a fixed point of f and never consume this extension]
+DISPOSITION: NODE ext:jl08-thm1, prop-cond-on-ext.ctble.cond-law
+REASON: Re-scoped by R8: first occurrence of [JL08] in L934 ('conditioning an infinite-type branching process on global extinction gives an infinite-type branching process'): the external leaf ext:jl08-thm1 (as for inv:cite:L405:jl-cond-on-ext), consumed by the root prop-cond-on-ext.ctble.cond-law (edge). [Phase 2 disposition was EXCLUDED: citation supporting the countable-type extension of (2.1) and Proposition 2.2 (L934, excluded by spec §7); Theorem 3.1 and Example 3.5 produce a fixed point of f and never consume this extension]
 COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-D/sonnet
 REVIEWER: reviewer-D/sonnet
@@ -1569,8 +1569,8 @@ REVIEWER: reviewer-D/sonnet
 ITEM: inv:cite:L934:jl-cond-on-ext.3
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L934-jl-cond-on-ext-3@L934-L934
-DISPOSITION: NODE prop-cond-on-ext.ctble.cond-law
-REASON: Re-scoped by R8: as inv:cite:L934:jl-cond-on-ext.2. [Phase 2 disposition was EXCLUDED: citation supporting the countable-type extension of (2.1) and Proposition 2.2 (L934, excluded by spec §7); Theorem 3.1 and Example 3.5 produce a fixed point of f and never consume this extension]
+DISPOSITION: NODE ext:jl08-thm1, prop-cond-on-ext.ctble.cond-law
+REASON: Re-scoped by R8: second occurrence of [JL08] in L934 ('since the result of [JL08] applies also in the countable-type case, (2.1) still holds'): the external leaf ext:jl08-thm1, consumed by the root prop-cond-on-ext.ctble.cond-law (edge). [Phase 2 disposition was EXCLUDED: citation supporting the countable-type extension of (2.1) and Proposition 2.2 (L934, excluded by spec §7); Theorem 3.1 and Example 3.5 produce a fixed point of f and never consume this extension]
 COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-D/sonnet
 REVIEWER: reviewer-D/sonnet
@@ -1614,9 +1614,9 @@ REVIEWER: reviewer-D/sonnet
 ITEM: inv:thm-fixed-pt-infty
 KIND: theorem
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed-pt-infty@L985-L987
-DISPOSITION: NODE thm-fixed-pt-infty
-REASON: Theorem 3.1 statement node (the frozen root)
-COVERAGE_STATUS: REVIEWED
+DISPOSITION: NODE thm-fixed-pt-infty, thm-fixed-pt-infty.conjugate
+REASON: Theorem 3.1 statement node (the frozen root); L985-L987 is also the PROOF_SOURCE of its conjugate form thm-fixed-pt-infty.conjugate
+COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-D/sonnet
 REVIEWER: reviewer-D/sonnet
 
@@ -1849,8 +1849,8 @@ ITEM: inv:example-ctble
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1182-L1201
 DISPOSITION: NODE example-ctble, example-ctble#finite-offspring, example-ctble#global-extinction, example-ctble#assume-I, example-ctble#assume-II, example-ctble#assume-III, example-ctble#assume-IV, example-ctble#choose-s, example-ctble#choose-t, example-ctble#apply-thm-3-1, def:stoch-dom, example-ctble.conjugate
-REASON: Example 3.5 root, the asserted verifications (global extinction, Assumptions I-IV, existence of s and t, each a SOURCE_GAP step), the note on finite offspring (L1192), the application of Theorem 3.1 (L1183), and the frozen definition anchor for stochastic domination (L1194). L1193 (concrete sampling construction) is an illustration with no claim and is not modeled
-COVERAGE_STATUS: REVIEWED
+REASON: Example 3.5 root, the asserted verifications (global extinction, Assumptions I-IV, existence of s and t, each a SOURCE_GAP step), the note on finite offspring (L1192), the application of Theorem 3.1 (L1183), and the frozen definition anchor for stochastic domination (L1194). L1193 (concrete sampling construction) is an illustration with no claim and is not modeled. The conjugate form of L1183 ('implies the existence of a conjugate branching process') is the root example-ctble.conjugate (R8(d)); it depends on example-ctble and on thm-fixed-gf.equivalence.ctble#fixed-point-to-conjugate
+COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-D/sonnet
 REVIEWER: reviewer-D/sonnet
 
@@ -1885,17 +1885,17 @@ ITEM: inv:L957:assumptions-I-IV
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#assumptions-I-IV@L957-L984
 DISPOSITION: NODE thm-fixed-pt-infty, lem-fixed-limsup, lem-fixed-liminf, lem-1d-soln, lem-fixed-liminf#choose-K, example-ctble#assume-I, example-ctble#assume-II, example-ctble#assume-III, example-ctble#assume-IV, thm-fixed-pt-infty.conjugate
-REASON: the global-extinction sentence (L958) and Assumptions I-IV (labels item-gf-trunc-infty, item-gf-growth-infty, item-gf-bded-infty, item-gf-perturb-infty; numbered display (3.4) at L970 is the inequality of Assumption II; unnumbered displays L974, L978-L979) are a local hypothesis package (spec §4): recorded whole in SOURCE_HYPOTHESES of the root and of the §3.2 lemmas and steps, used by name at L1028 and L1195, and each assumption is verified for Example 3.5 by the example-ctble#assume-I..IV nodes. The weights remark L982-L983 is expository (pointer to Example 3.5) and excluded
-COVERAGE_STATUS: REVIEWED
+REASON: the global-extinction sentence (L958) and Assumptions I-IV (labels item-gf-trunc-infty, item-gf-growth-infty, item-gf-bded-infty, item-gf-perturb-infty; numbered display (3.4) at L970 is the inequality of Assumption II; unnumbered displays L974, L978-L979) are a local hypothesis package (spec §4): recorded whole in SOURCE_HYPOTHESES of the root and of the §3.2 lemmas and steps, used by name at L1028 and L1195, and each assumption is verified for Example 3.5 by the example-ctble#assume-I..IV nodes. The weights remark L982-L983 is expository (pointer to Example 3.5) and excluded. The sentence L958-L959 ('assumptions which ensure the existence of a conjugate branching process, equivalently, a fixed point ... in (1,∞)^{ℕ_0}', E6) is the conjugate form of Theorem 3.1, the root thm-fixed-pt-infty.conjugate (R8(d)); it depends on thm-fixed-pt-infty and on thm-fixed-gf.equivalence.ctble#fixed-point-to-conjugate
+COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-D/sonnet
 REVIEWER: queue-reviewer/sonnet
 
 ITEM: inv:L927:ctble-fn-iterate
 KIND: definition
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-fn-iterate@L927-L927
-DISPOSITION: NODE thm-fixed-pt-infty#positivity
-REASON: 'We also define f^{(n)} to be the composition of f with itself n times' for the countable-type f of L920-L926; its only consumer is the unwritten countable-type identity f^{(N)}_k(q)=𝔼_k[∏_j q_j^{X_j(N)}] behind the SOURCE_GAP of #positivity (L1178); every other iterate in §3 is g^{d,(n)} of a finite-type truncation
-COVERAGE_STATUS: REVIEWED
+DISPOSITION: NODE thm-fixed-pt-infty#positivity, thm-fixed-gf.equivalence.ctble#conjugate-to-fixed-point
+REASON: 'We also define f^{(n)} to be the composition of f with itself n times' for the countable-type f of L920-L926; its consumers are the unwritten countable-type identity f^{(N)}_k(q)=𝔼_k[∏_j q_j^{X_j(N)}] behind the SOURCE_GAP of #positivity (L1178) and behind the transfer of Lemma 2.3 to ℕ types in thm-fixed-gf.equivalence.ctble#conjugate-to-fixed-point (L934, 'just as in the finite-type case'); every other iterate in §3 is g^{d,(n)} of a finite-type truncation
+COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-D/sonnet
 REVIEWER: queue-reviewer/sonnet
 
@@ -1904,7 +1904,7 @@ KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-regularity-extension@L928-L928
 DISPOSITION: NODE def-bp-basic.positive-regular, def-bp-basic.non-singular
 REASON: Re-scoped by R8: positive regularity and non-singularity for countable types are now consumed as premises of the batch-2 roots (R8(b), (c), E10). [Phase 2 disposition was EXCLUDED: extends positive regularity and non-singularity (Definition 1.3) to countable-type X; never consumed: Assumption I (L961), Lemma 3.4 (L1117) and the proof of Theorem 3.1 (L1178) use these notions only for the finite-type truncations X^d]
-COVERAGE_STATUS: PROPOSED
+COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
 REVIEWER: queue-reviewer/sonnet
 

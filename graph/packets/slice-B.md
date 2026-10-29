@@ -50,7 +50,7 @@ REVIEWER: reviewer-B/sonnet
 LEAN_STATUS: EXTERNAL
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: Cited at L405 (and L179, L934). The exact hypotheses of the cited theorem are not in the corpus; fields record the use the paper makes of it (the description of the conditional law, (2.1)).
+NOTE: Cited at L405 (and L179, L934). The exact hypotheses of the cited theorem are not in the corpus; fields record the use the paper makes of it (the description of the conditional law, (2.1)). L934 asserts the result applies also to countable-type processes (global extinction); consumed there by prop-cond-on-ext.ctble.cond-law (batch 2, R8).
 
 NODE: ext:fatou
 KIND: external
