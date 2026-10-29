@@ -72,7 +72,9 @@ checks, and a fresh Sonnet audit.
 | W-B2 | B | path-space Markov property, cylinder uniqueness, h-transform; Props 2.1(b), 2.2 providers | `prop-cond-on-ext.cond-law`, `prop-conjugate` | written, checked, both anchors sealed (7581f95); audit pending (AU-3) |
 | W-A9 | any | Example 1.5 provider | `counterexample` and steps | running |
 | W-B3 | A (Sonnet) | equivalence (both directions, explicit tilt), Thm 1.4 conj, Prop 1.6 conj, Hyp III necessary, subcriticality criteria | `thm-fixed-gf.equivalence`, `thm-fixed-gf.conjugate`, `prop-single-type.conjugate`, `rem:hyp-iii-necessary` | written, checked, four anchors sealed (b7bb629); audit pending (AU-4) |
-| W-A10 | B (Sonnet) | §3 truncation (3.2), Lemma 3.2, Lemma 3.4 | `eqn-gf-truncated`, `eqn-log-gf-*`, `lem-fixed-limsup`, `lem-1d-soln` | running |
+| W-A10 | B (Sonnet) | §3 truncation (3.2), Lemma 3.2, Lemma 3.4 | `eqn-gf-truncated`, `eqn-log-gf-*`, `lem-fixed-limsup`, `lem-1d-soln` | written, orchestrator-checked (c6b20e9); audit pending |
+| W-A11 | B (Fable) | Lemma 3.3, Theorem 3.1 provider + seal | `lem-fixed-liminf`, `thm-fixed-pt-infty` | running |
+| W-A12 | any | Example 3.5 provider + seal (after Thm 3.1) | `example-ctble` | brief ready |
 
 Known limits (from AU-1): the branching property is proved at the level of generation laws
 (cylinder formula, convolution, Chapman–Kolmogorov), not yet as a path-level statement; briefs
@@ -109,5 +111,6 @@ docstring sweep pending (quiet window).
 | 2026-10-28 | auditor AU-2 (fresh) | Sonnet | W-A4..W-A6 nodes, Brouwer, seal of proposition_1_6_fixedPoint | PASS, no blocking findings (`review/audits/AU-2.md`); numbering note |
 | 2026-10-28 | writer W-A7 | Sonnet | Thm 2.7 via Brouwer on the simplex (phase 1) | provider + 8 helpers, standard axioms; seal probe OK; phase 2 (Thm 1.4 fp, 3 lines) by orchestrator |
 | 2026-10-28 | writer W-B3 | Sonnet | equivalence, Thm 1.4 conj, Prop 1.6 conj, Hyp III necessary | 4 providers + criteria, standard axioms; seal probes OK |
-| 2026-10-28 | writer W-A10 | Sonnet | §3 truncation layer, Lemmas 3.2, 3.4 | running |
+| 2026-10-28 | writer W-A10 | Sonnet | §3 truncation layer, Lemmas 3.2, 3.4 | 8 public theorems, standard axioms; orchestrator checks pass |
+| 2026-10-28 | writer W-A11 | Fable | Lemma 3.3, Theorem 3.1 | running |
 | 2026-10-28 | writer W-A9 | Sonnet | Example 1.5 | running |
