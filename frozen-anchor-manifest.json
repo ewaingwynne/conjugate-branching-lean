@@ -1212,7 +1212,7 @@
         "module": "Conjugate.Internal.Example_1_5",
         "export": "Conjugate.Internal.example_1_5"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "8db7d688abe2880ac680817d63fc65a55ac1230c6b3ccb1274e2ba69f27ae86b",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {

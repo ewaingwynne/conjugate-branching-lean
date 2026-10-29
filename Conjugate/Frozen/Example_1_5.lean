@@ -35,7 +35,7 @@ theorem example_1_5 (μ : Fin 2 → PMF (Fin 2 →₀ ℕ))
       ∀ k, ContinuousOn (fun q => genFun μ q k) {q | ∀ j, 0 < q j}) ∧
     3 ≤ {q : Fin 2 → ℝ≥0∞ | (∀ j, 1 < q j ∧ q j < ∞) ∧ genFun μ q = q}.encard :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.example_1_5 μ hμ
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 
