@@ -9,7 +9,7 @@ Single writer: orchestrator. Proof status is never inferred from compilation alo
 - Phase 2 (dependency graph): **done** — 199 nodes, 400 edges, 13 roots, 12 external inputs, 56 SOURCE_GAP nodes; every node and coverage item independently REVIEWED; global review PASS after corrections; linter gate (`--require-reviewed … --check`) passes
 - Phase 3 (proofs): **done** (2026-10-28) — all 13 theorem anchors sealed and PROVED (AU-1–AU-5); every numbered result mapped in `RESULTS.md`
 - Phase 4 (closure): **done** — full gate passes (96 modules), closure audit AU-6 verdict CLOSED (`review/audits/AU-6.md`)
-- Batch 2 (countable-type conjugates, requested by the author after closure): 5 anchors approved and frozen (R8, E10; e731893), proved (W-B4), sealed (6514194) and audited (AU-7 PASS); graph slice E reviewed (GR-E, GR-E2, GR-E3)
+- Batch 2 (countable-type conjugates, requested by the author after closure): 5 anchors approved and frozen (R8, E10; e731893), proved (W-B4), sealed (6514194) and audited (AU-7 PASS); graph slice E fully reviewed (GR-E…GR-E4): 210 nodes, 434 edges, 33 frozen anchors, review queue 0, `--require-reviewed --require-complete-coverage --require-all-reachable --check` passes; full gate 109 modules
 
 ## Mandatory report fields
 
@@ -133,3 +133,4 @@ docstring sweep applied (all Internal docstrings now use the compiled numbering)
 | 2026-10-28 | graph reviewer GR-E | Sonnet | slice E + coverage re-scoping | 4/10 PASS, 6 replaced (regularity-premise fix) |
 | 2026-10-28 | graph reviewer GR-E2 | Sonnet | second review of GR-E rewrites | 13/15 PASS, 2 replaced |
 | 2026-10-28 | auditor AU-7 (fresh) | Sonnet | batch-2 seal audit | PASS, no blocking findings (`review/audits/AU-7.md`) |
+| 2026-10-28 | graph reviewers GR-E3, GR-E4 | Sonnet | third and fourth review of rewritten records | 1+1 PASS after one more replacement; review queue 0 |

@@ -86,3 +86,4 @@
   
   These two stay PROPOSED until a third reviewer clears them.
 - **Third review GR-E3.** `#conjugate-to-fixed-point` passed and is now REVIEWED (graph-reviewer-E3). `#cond-law-hat` was replaced: its hypotheses now list `X`'s extinction from any state instead of the previous step's conclusion, it gains named-reconstruction edges to `def:path-law` and `def:extinction`, and its NOTE is corrected so that each consumer misses at least one premise of the cited route. It stays PROPOSED until a fourth reviewer clears it.
+- **Fourth review GR-E4.** `prop-conjugate.ctble#cond-law-hat` passed and is now REVIEWED (graph-reviewer-E4). Every slice-E node and every re-scoped coverage item is now REVIEWED. The graph passes `--require-reviewed --require-complete-coverage --require-all-reachable --check`.

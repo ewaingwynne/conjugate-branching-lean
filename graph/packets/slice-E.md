@@ -142,9 +142,9 @@ EDGE: prop-conjugate.ctble#ext-prob-hat | source/arxiv-2411.06301v2/fixed-pt-fin
 EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | named reconstruction (SOURCE_GAP): independence of individuals gives the tilted cylinder probabilities of X-hat and the product formula P-hat_y[E] = prod_j P-hat_j[E]^{y_j}; the time-n Markov property of X-hat gives P-hat_k[cylinder, E] = P-hat_k[cylinder] P-hat_{x(n)}[E]
 EDGE: def:path-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | named reconstruction (SOURCE_GAP): the conditional law is a law on generation paths and is identified on cylinder sets of the first n generations
 EDGE: def:extinction | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | named reconstruction (SOURCE_GAP): global extinction E = {X(n) = 0 for all large n} is invariant under the time-n shift, which turns the time-n Markov property into P-hat_k[cylinder, E] = P-hat_k[cylinder] P-hat_{x(n)}[E]
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: graph-reviewer-E4/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
