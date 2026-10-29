@@ -36,7 +36,7 @@ theorem theorem_1_4_fixedPoint {d : ℕ} (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hIII : ∀ k, ContinuousOn (fun q => genFun μ q k) {q | ∀ j, 0 < q j}) :
     ∃ q : Fin d → ℝ≥0∞, (∀ j, 1 < q j ∧ q j < ∞) ∧ genFun μ q = q :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.theorem_1_4_fixedPoint μ hI hII hIII
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 

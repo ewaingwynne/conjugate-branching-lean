@@ -613,7 +613,7 @@
         "module": "Conjugate.Internal.Theorem_1_4_FixedPoint",
         "export": "Conjugate.Internal.theorem_1_4_fixedPoint"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "a56596806d33c283f8aa8dde2586d409cd69f0f8680e331d8a0837823738e540",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {
@@ -1070,7 +1070,7 @@
         "module": "Conjugate.Internal.Theorem_2_7",
         "export": "Conjugate.Internal.theorem_2_7"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "a18e5fc13871a5c2405fc8a493d8a89133f9a5d37d8d35ca01591e019feb3c19",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {

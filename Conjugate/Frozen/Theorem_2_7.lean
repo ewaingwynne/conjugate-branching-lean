@@ -26,7 +26,7 @@ theorem theorem_2_7 {d : ℕ} (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hIII : ∀ k, ContinuousOn (fun q => genFun μ q k) {q | ∀ j, 0 < q j}) :
     ∃ x : Fin d → EReal, (∀ j, 0 < x j ∧ x j < ⊤) ∧ logGenFun μ x = x :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.theorem_2_7 μ hI hII hIII
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 
