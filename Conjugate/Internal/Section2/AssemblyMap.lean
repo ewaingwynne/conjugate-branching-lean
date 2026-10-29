@@ -24,10 +24,10 @@ Paper.tex:894-899. With `ρ = rayParam μ` from `Conjugate.Internal.Section2.Ass
 (ρ u) u`), `G(u) = toReal ∘ g(φ(u))` and `F(u) = G(u) / ∑_j G(u)_j`.
 
 * `logGenFun_rayPt_eq_toE`: `g(φ(u))` is a finite nonnegative vector, and `G(u) ≠ 0`
-  (`g(Λ) ⊆ Λ`, from Lemma 2.18, display (2.8), and `0 ∈ S₀`);
+  (`g(Λ) ⊆ Λ`, from Lemma 2.14, display (2.10), and `0 ∈ S₀`);
 * `simplexMap_mem`, `continuousOn_simplexMap`: `F` is a continuous self-map of `Δ`;
 * `exists_logGenFun_rayPt_eq`: Brouwer's theorem on the simplex gives `u*` with `F(u*) = u*`,
-  and then uniqueness in Lemma 2.17 gives `g(φ(u*)) = φ(u*)`.
+  and then uniqueness in Lemma 2.18 gives `g(φ(u*)) = φ(u*)`.
 -/
 
 @[expose] public section

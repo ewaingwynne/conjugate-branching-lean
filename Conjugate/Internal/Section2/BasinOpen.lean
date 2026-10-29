@@ -17,7 +17,7 @@ import Conjugate.Internal.Section2.Strict
 import Conjugate.Internal.Section2.Unstable
 
 /-!
-# The basins of attraction are relatively open (Lemma 2.16)
+# The basins of attraction are relatively open (Lemma 2.17)
 
 Paper.tex:804-821. With `g = logGenFun μ` and `[0,∞]^d = {x | ∀ j, 0 ≤ x j}` inside
 `[-∞,∞]^d = Fin d → EReal`, relative openness of `S ⊆ [0,∞]^d` is stated as `S = U ∩ [0,∞]^d`
@@ -30,8 +30,8 @@ Both follow from `exists_isOpen_eq_inter_orthant`, the topological skeleton of t
 if `B ⊆ [0,∞]^d` is invariant under `g^{(-n)}`, contains `V ∩ [0,∞]^d` for an open `V`, and every
 point of `B` enters `V` under some `g^{(n)}`, then `B` is relatively open, because each `g^{(n)}`
 is continuous on `[0,∞]^d` (`continuousOn_logGenFun_iterate`, Hypothesis III).
-For `S₀`, `V = [0,ε)^d` with `ε` from Lemma 2.14; for `S∞`, `V = {∃ j, x_j > C}` with `C` from
-Lemma 2.15, where the points with an infinite coordinate lie in `S∞` by display (2.8)
+For `S₀`, `V = [0,ε)^d` with `ε` from Lemma 2.15; for `S∞`, `V = {∃ j, x_j > C}` with `C` from
+Lemma 2.16, where the points with an infinite coordinate lie in `S∞` by display (2.10)
 (`mem_basinInfty_of_exists_eq_top`).
 -/
 
@@ -67,7 +67,7 @@ lemma lt_of_ofReal_lt_abs {z : EReal} (hz : 0 ≤ z) {c : ℝ} (h : ENNReal.ofRe
     ← abs_eq_toENNReal hz] at h2
   exact absurd h (not_lt.2 h2)
 
-/-- **The topological skeleton of Lemma 2.16.** -/
+/-- **The topological skeleton of Lemma 2.17.** -/
 lemma exists_isOpen_eq_inter_orthant (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hIII : ∀ k, ContinuousOn (fun q => genFun μ q k) {q | ∀ j, 0 < q j})
     {B V : Set (Fin d → EReal)} (hV : IsOpen V)
@@ -96,7 +96,7 @@ lemma exists_isOpen_eq_inter_orthant (μ : Fin d → PMF (Fin d →₀ ℕ))
 
 end Helpers
 
-/-- **Lemma 2.16** (paper.tex:804-821), `S₀`. -/
+/-- **Lemma 2.17** (paper.tex:804-821), `S₀`. -/
 theorem exists_isOpen_basinZero (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hI : IsSubcritical μ) (hII : IsPositiveRegular μ ∧ IsNonsingular μ)
     (hIII : ∀ k, ContinuousOn (fun q => genFun μ q k) {q | ∀ j, 0 < q j}) :
@@ -117,7 +117,7 @@ theorem exists_isOpen_basinZero (μ : Fin d → PMF (Fin d →₀ ℕ))
   · intro n x hx0 hx
     exact (iterate_logGenFun_mem_basinZero_iff μ n hx0).1 hx
 
-/-- **Lemma 2.16** (paper.tex:804-821), `S∞`. -/
+/-- **Lemma 2.17** (paper.tex:804-821), `S∞`. -/
 theorem exists_isOpen_basinInfty (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hI : IsSubcritical μ) (hII : IsPositiveRegular μ ∧ IsNonsingular μ)
     (hIII : ∀ k, ContinuousOn (fun q => genFun μ q k) {q | ∀ j, 0 < q j}) :

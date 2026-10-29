@@ -8,7 +8,7 @@ public import Conjugate.Frozen.Defs.BasinZero
 import Conjugate.Internal.Analytic.LogGenFun
 
 /-!
-# Invariance of the basins of attraction (Lemma 2.18)
+# Invariance of the basins of attraction (Lemma 2.14)
 
 For `g = logGenFun μ`, paper.tex:737-742 states `g(S₀) ⊆ S₀`, `g(S∞) ⊆ S∞`, `g⁻¹(S₀) ⊆ S₀` and
 `g⁻¹(S∞) ⊆ S∞`. For `x ∈ [0,∞]^ι` this is the pair of equivalences
@@ -37,7 +37,7 @@ namespace Conjugate
 
 variable {ι : Type*} [Fintype ι] (μ : ι → PMF (ι →₀ ℕ))
 
-/-- **Lemma 2.18 for `S₀`**: `g(S₀) ⊆ S₀` and `g⁻¹(S₀) ⊆ S₀` (on `[0,∞]^ι`). -/
+/-- **Lemma 2.14 for `S₀`**: `g(S₀) ⊆ S₀` and `g⁻¹(S₀) ⊆ S₀` (on `[0,∞]^ι`). -/
 theorem logGenFun_mem_basinZero_iff {x : ι → EReal} (hx : ∀ j, 0 ≤ x j) :
     logGenFun μ x ∈ basinZero μ ↔ x ∈ basinZero μ := by
   have hgx : ∀ j, 0 ≤ logGenFun μ x j := mapsTo_logGenFun μ hx
@@ -50,7 +50,7 @@ theorem logGenFun_mem_basinZero_iff {x : ι → EReal} (hx : ∀ j, 0 ≤ x j) :
   · rintro ⟨-, h⟩
     exact ⟨hgx, (tendsto_add_atTop_iff_nat 1).2 h⟩
 
-/-- **Lemma 2.18 for `S∞`**: `g(S∞) ⊆ S∞` and `g⁻¹(S∞) ⊆ S∞` (on `[0,∞]^ι`). -/
+/-- **Lemma 2.14 for `S∞`**: `g(S∞) ⊆ S∞` and `g⁻¹(S∞) ⊆ S∞` (on `[0,∞]^ι`). -/
 theorem logGenFun_mem_basinInfty_iff {x : ι → EReal} (hx : ∀ j, 0 ≤ x j) :
     logGenFun μ x ∈ basinInfty μ ↔ x ∈ basinInfty μ := by
   have hgx : ∀ j, 0 ≤ logGenFun μ x j := mapsTo_logGenFun μ hx
@@ -60,7 +60,7 @@ theorem logGenFun_mem_basinInfty_iff {x : ι → EReal} (hx : ∀ j, 0 ≤ x j) 
   rw [limsup_nat_add (fun n => ⨆ j, ((logGenFun μ)^[n] x j).abs) 1]
   exact ⟨fun h => ⟨hx, h.2⟩, fun h => ⟨hgx, h.2⟩⟩
 
-/-- Lemma 2.18 for the iterates, `S₀` (on `[0,∞]^ι`): `g^{(n)}(x) ∈ S₀ ↔ x ∈ S₀`. -/
+/-- Lemma 2.14 for the iterates, `S₀` (on `[0,∞]^ι`): `g^{(n)}(x) ∈ S₀ ↔ x ∈ S₀`. -/
 theorem iterate_logGenFun_mem_basinZero_iff (n : ℕ) {x : ι → EReal} (hx : ∀ j, 0 ≤ x j) :
     (logGenFun μ)^[n] x ∈ basinZero μ ↔ x ∈ basinZero μ := by
   induction n generalizing x with
@@ -68,7 +68,7 @@ theorem iterate_logGenFun_mem_basinZero_iff (n : ℕ) {x : ι → EReal} (hx : �
   | succ n ih =>
     rw [Function.iterate_succ_apply, ih (mapsTo_logGenFun μ hx), logGenFun_mem_basinZero_iff μ hx]
 
-/-- Lemma 2.18 for the iterates, `S∞` (on `[0,∞]^ι`): `g^{(n)}(x) ∈ S∞ ↔ x ∈ S∞`. -/
+/-- Lemma 2.14 for the iterates, `S∞` (on `[0,∞]^ι`): `g^{(n)}(x) ∈ S∞ ↔ x ∈ S∞`. -/
 theorem iterate_logGenFun_mem_basinInfty_iff (n : ℕ) {x : ι → EReal} (hx : ∀ j, 0 ≤ x j) :
     (logGenFun μ)^[n] x ∈ basinInfty μ ↔ x ∈ basinInfty μ := by
   induction n generalizing x with

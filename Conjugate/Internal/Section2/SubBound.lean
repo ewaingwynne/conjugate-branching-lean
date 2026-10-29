@@ -29,7 +29,7 @@ The paper uses the Perron–Frobenius eigenvector and a Taylor expansion. Here:
   `f` is finite at some `𝟙 + ε₀ v` (continuity at `𝟙`, Hypothesis III).
 
 * `exists_genFun_lt_self`: Lemma 2.5;
-* `exists_logGenFun_lt_self`: Lemma 2.5 in log coordinates (used in Lemma 2.14).
+* `exists_logGenFun_lt_self`: Lemma 2.5 in log coordinates (used in Lemma 2.15).
 -/
 
 public section
@@ -215,7 +215,7 @@ theorem exists_genFun_lt_self (μ : Fin d → PMF (Fin d →₀ ℕ)) (hI : IsSu
     exact (ENNReal.add_lt_add_iff_left ENNReal.one_ne_top).2
       (ENNReal.mul_lt_mul_right hεpos''.ne' ENNReal.coe_ne_top (hεlt k))
 
-/-- **Lemma 2.5 in log coordinates** (used in Lemma 2.14): there is `x ∈ (0,∞)^d` with
+/-- **Lemma 2.5 in log coordinates** (used in Lemma 2.15): there is `x ∈ (0,∞)^d` with
 `g_k(x) < x_k` for every `k`. -/
 theorem exists_logGenFun_lt_self (μ : Fin d → PMF (Fin d →₀ ℕ)) (hI : IsSubcritical μ)
     (hIII : ∀ k, ContinuousOn (fun q => genFun μ q k) {q | ∀ j, 0 < q j}) :

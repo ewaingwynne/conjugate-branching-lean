@@ -23,14 +23,14 @@ Implementation module for the frozen anchor `Conjugate/Frozen/Theorem_2_7.lean`.
 The anchor is SEALED (its body is `by exact` of the theorem below).
 
 Proof (paper.tex:894-905), by Brouwer's theorem on the standard simplex `Δ` applied to
-`u ↦ π(g(φ(u)))` with `φ(u) = ρ(u) u` (`rayParam`, Lemma 2.17) and `π(λ) = λ / ∑_j λ_j`
+`u ↦ π(g(φ(u)))` with `φ(u) = ρ(u) u` (`rayParam`, Lemma 2.18) and `π(λ) = λ / ∑_j λ_j`
 (this replaces the paper's annulus and its homeomorphism with a ball, `PLAN.md` §6):
 
-* `Conjugate.continuousOn_rayParam`: `ρ` is continuous on `Δ` (Lemmas 2.16, 2.11, 2.18);
+* `Conjugate.continuousOn_rayParam`: `ρ` is continuous on `Δ` (Lemmas 2.17, 2.11, 2.14);
 * `Conjugate.simplexMap_mem`, `Conjugate.continuousOn_simplexMap`: `u ↦ π(g(φ(u)))` is a
-  continuous self-map of `Δ` (`g(Λ) ⊆ Λ`, Lemma 2.18 and display (2.8));
+  continuous self-map of `Δ` (`g(Λ) ⊆ Λ`, Lemma 2.14 and display (2.10));
 * `Conjugate.exists_logGenFun_rayPt_eq`: a fixed point `u*` gives `g(φ(u*)) = φ(u*)`, by
-  uniqueness in Lemma 2.17;
+  uniqueness in Lemma 2.18;
 * positivity of the fixed point `λ = φ(u*)` (paper.tex:904): `e^λ` is a fixed point of `f`
   (2.6) different from `𝟙`, so `e^{λ_k} > 1` for all `k` by Lemma 2.3.
 -/

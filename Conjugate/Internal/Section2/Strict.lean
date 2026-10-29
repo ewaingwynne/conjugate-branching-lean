@@ -18,7 +18,7 @@ import Conjugate.Internal.Section2.Positivity
   larger argument has a finite image in coordinate `k`;
 * `exists_logGenFun_iterate_eq_top`: paper.tex:732, if some coordinate of `x ∈ [0,∞]^d` is
   infinite then `g^{(n)}(x) = (∞, …, ∞)` for all `n ≥ N`;
-* `mem_basinInfty_of_exists_eq_top`: display (2.8), `[0,∞]^d ∖ [0,∞)^d ⊆ S∞`.
+* `mem_basinInfty_of_exists_eq_top`: display (2.10), `[0,∞]^d ∖ [0,∞)^d ⊆ S∞`.
 
 The proofs write `g^{(n)}_k(x) = log 𝔼_k[∏_j e^{x_j X_j(n)}]` and compare the integrands, using
 positivity of `ℙ_k[X_j(n) ≥ 1]` for every `n ≥ N` (`exists_pos_of_le`).
@@ -145,7 +145,7 @@ theorem exists_logGenFun_iterate_eq_top {d : ℕ} (μ : Fin d → PMF (Fin d →
         rw [lintegral_indicator_const hAm, ENNReal.top_mul (hN n hn k j).ne']
     _ ≤ _ := lintegral_mono hpt
 
-/-- **Display (2.8)** (paper.tex:732-735): `[0,∞]^d ∖ [0,∞)^d ⊆ S∞`. -/
+/-- **Display (2.10)** (paper.tex:732-735): `[0,∞]^d ∖ [0,∞)^d ⊆ S∞`. -/
 theorem mem_basinInfty_of_exists_eq_top {d : ℕ} (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hpr : IsPositiveRegular μ) {x : Fin d → EReal} (hx0 : ∀ j, 0 ≤ x j)
     (hx : ∃ j, x j = ⊤) : x ∈ basinInfty μ := by

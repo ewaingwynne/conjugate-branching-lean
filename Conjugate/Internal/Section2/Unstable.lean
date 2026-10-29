@@ -19,7 +19,7 @@ import Mathlib.MeasureTheory.Integral.MeanInequalities
 import Mathlib.Topology.Instances.EReal.Lemmas
 
 /-!
-# Instability of the intermediate regime (Lemma 2.11, Proposition 2.10, Lemma 2.13)
+# Instability of the intermediate regime (Lemma 2.11, Proposition 2.10, Lemma 2.12)
 
 Throughout, `g = logGenFun μ`.
 
@@ -29,7 +29,7 @@ Throughout, `g = logGenFun μ`.
   with exponents `1/r` and `1/(1-r)` gives
   `𝔼 Z_n ≤ 1 + (𝔼 Z_n^{1/r})^r ℙ[X(n) ≠ 0]^{1-r}` (`lintegral_prod_le_add`);
 * `tendsto_zero_of_lt`, `limsup_eq_top_of_lt`: **Proposition 2.10** (`m = 1`) and
-  **Lemma 2.13** (general `m`), directly along the times `r * m`, without the skeleton process.
+  **Lemma 2.12** (general `m`), directly along the times `r * m`, without the skeleton process.
 -/
 
 public section
@@ -290,7 +290,7 @@ lemma exists_scale_lt_one {a b : Fin d → ℝ} (h : ∀ k, 0 ≤ b k ∧ b k < 
   have hak : 0 < a k := lt_of_le_of_lt (h k).1 (h k).2
   exact (div_le_iff₀ hak).1 (hs2 k).le
 
-/-- **Proposition 2.10 (i)** for `m = 1`, **Lemma 2.13 (i)** in general (paper.tex:608-650,
+/-- **Proposition 2.10 (i)** for `m = 1`, **Lemma 2.12 (i)** in general (paper.tex:608-650,
 653-665), proved directly along the times `r * m`. -/
 theorem tendsto_zero_of_lt (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hext : ∀ k, pathLaw μ (Finsupp.single k 1) (extinctionEvent (Fin d)) = 1)
@@ -355,7 +355,7 @@ theorem tendsto_zero_of_lt (μ : Fin d → PMF (Fin d →₀ ℕ))
   rw [h2] at h1
   exact (tendsto_add_atTop_iff_nat r₀).1 h1
 
-/-- **Proposition 2.10 (ii)** for `m = 1`, **Lemma 2.13 (ii)** in general (paper.tex:650): the
+/-- **Proposition 2.10 (ii)** for `m = 1`, **Lemma 2.12 (ii)** in general (paper.tex:650): the
 contrapositive of `tendsto_zero_of_lt` with the roles of `x` and `y` exchanged. -/
 theorem limsup_eq_top_of_lt (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hext : ∀ k, pathLaw μ (Finsupp.single k 1) (extinctionEvent (Fin d)) = 1)

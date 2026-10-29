@@ -20,16 +20,16 @@ import Conjugate.Internal.Section2.SubBound
 import Conjugate.Internal.Section2.Unstable
 
 /-!
-# `0` and `∞` are attractive (Lemmas 2.14 and 2.15)
+# `0` and `∞` are attractive (Lemmas 2.15 and 2.16)
 
 Throughout, `g = logGenFun μ`.
 
-* `exists_mem_basinZero_of_le`: **Lemma 2.14** (paper.tex:767-776): there is `ε > 0` with
+* `exists_mem_basinZero_of_le`: **Lemma 2.15** (paper.tex:767-776): there is `ε > 0` with
   `[0,ε]^d ⊆ S₀`. By Lemma 2.5 (`exists_logGenFun_lt_self`) there is `λ⁰ ∈ (0,∞)^d` with
-  `g(λ⁰) < λ⁰`; Lemma 2.12 puts `λ⁰` in `S₀`, and monotonicity of `g^{(n)}` does the rest.
-* `exists_attractive_infty`: **Lemma 2.15** (paper.tex:781-800), read as in ERRATA E3: there are
+  `g(λ⁰) < λ⁰`; Lemma 2.13 puts `λ⁰` in `S₀`, and monotonicity of `g^{(n)}` does the rest.
+* `exists_attractive_infty`: **Lemma 2.16** (paper.tex:781-800), read as in ERRATA E3: there are
   `C > 0` and `N ≥ 1` such that every `λ ∈ [0,∞)^d` with some coordinate `> C` satisfies
-  `g^{(N)}(λ) > λ` in *every* coordinate, and `|g^{(n)}(λ)| → ∞` (Lemma 2.12, second part).
+  `g^{(N)}(λ) > λ` in *every* coordinate, and `|g^{(n)}(λ)| → ∞` (Lemma 2.13, second part).
   The estimate is `e^{g^{(N)}_k(λ)} ≥ e^{λ_k + λ_j} ℙ_k[X(N) ≥ e_k + e_j]` for every `j`
   (`mul_measure_le_lintegral`, from Lemma 2.4), so only `max_j λ_j` matters (not `min_j λ_j`).
 
@@ -95,7 +95,7 @@ lemma mul_le_prod_pow_of_single_add_le {q : Fin d → ℝ≥0∞} (hq : ∀ i, 1
         gcongr
         exact Finset.one_le_prod fun i _ => one_le_pow_of_one_le' (hq i) _
 
-/-- **The display of Lemma 2.15** (paper.tex:791-797, with `max` as in ERRATA E3): if the
+/-- **The display of Lemma 2.16** (paper.tex:791-797, with `max` as in ERRATA E3): if the
 population at time `N` contains `e_k + e_j` with probability `p`, then
 `𝔼_k[∏_i e^{x_i X_i(N)}] ≥ p e^{x_k + x_j}` for `x ∈ [0,∞]^d`. -/
 lemma mul_measure_le_lintegral (μ : Fin d → PMF (Fin d →₀ ℕ)) (N : ℕ) (k j : Fin d)
@@ -125,7 +125,7 @@ end Helpers
 
 section Lemma214
 
-/-- **Lemma 2.14** (paper.tex:767-776): `0` is attractive. -/
+/-- **Lemma 2.15** (paper.tex:767-776): `0` is attractive. -/
 theorem exists_mem_basinZero_of_le (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hI : IsSubcritical μ) (hII : IsPositiveRegular μ ∧ IsNonsingular μ)
     (hIII : ∀ k, ContinuousOn (fun q => genFun μ q k) {q | ∀ j, 0 < q j}) :
@@ -155,7 +155,7 @@ end Lemma214
 
 section Lemma215
 
-/-- **Lemma 2.15** (paper.tex:781-800, read as ERRATA E3): `∞` is attractive. -/
+/-- **Lemma 2.16** (paper.tex:781-800, read as ERRATA E3): `∞` is attractive. -/
 theorem exists_attractive_infty (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hI : IsSubcritical μ) (hII : IsPositiveRegular μ ∧ IsNonsingular μ)
     (hIII : ∀ k, ContinuousOn (fun q => genFun μ q k) {q | ∀ j, 0 < q j}) :

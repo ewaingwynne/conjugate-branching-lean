@@ -18,19 +18,19 @@ import Conjugate.Internal.Section2.Strict
 import Conjugate.Internal.Section2.Unstable
 
 /-!
-# Monotone orbits of `g` tend to `0` or to infinity (Lemma 2.12)
+# Monotone orbits of `g` tend to `0` or to infinity (Lemma 2.13)
 
 Throughout, `g = logGenFun μ` and `x ∈ [0,∞)^d`. Vector inequalities `y < x` of the paper
 (`y ≤ x`, `y ≠ x`) are spelled `y ≤ x ∧ y ≠ x`.
 
-* `mem_basinZero_of_iterate_lt`: **Lemma 2.12, first part** (paper.tex:675-697): if
+* `mem_basinZero_of_iterate_lt`: **Lemma 2.13, first part** (paper.tex:675-697): if
   `g^{(m)}(x) < x` then `g^{(n)}(x) → 0`, i.e. `x ∈ S₀`;
-* `tendsto_top_of_lt_iterate`: **Lemma 2.12, second part** (the commented "proven similarly"
+* `tendsto_top_of_lt_iterate`: **Lemma 2.13, second part** (the commented "proven similarly"
   paragraph, paper.tex:698-714): if `g^{(m)}(x) > x` then `|g^{(n)}(x)| → ∞`.
 
 The proofs follow the residue classes `n ≡ s (mod m)` as in the paper, but start each class at the
 time `s + N m`, `N` the strictness time of Lemma 2.9 (`exists_logGenFun_iterate_strict`). From
-there the class is strictly monotone, so Lemma 2.13 (`tendsto_zero_of_lt`,
+there the class is strictly monotone, so Lemma 2.12 (`tendsto_zero_of_lt`,
 `limsup_eq_top_of_lt`) applies directly to the starting point `g^{(s + N m)}(x)`.  In the second
 part an infinite coordinate is excluded first (otherwise `g^{(n)}(x) = (∞, …, ∞)` eventually).
 
@@ -97,7 +97,7 @@ end Helpers
 
 section Lemma212
 
-/-- **Lemma 2.12** (first part, paper.tex:675-697): `g^{(m)}(x) < x` implies `x ∈ S₀`. -/
+/-- **Lemma 2.13** (first part, paper.tex:675-697): `g^{(m)}(x) < x` implies `x ∈ S₀`. -/
 theorem mem_basinZero_of_iterate_lt (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hI : IsSubcritical μ) (hII : IsPositiveRegular μ ∧ IsNonsingular μ)
     (hIII : ∀ k, ContinuousOn (fun q => genFun μ q k) {q | ∀ j, 0 < q j})
@@ -145,7 +145,7 @@ theorem mem_basinZero_of_iterate_lt (μ : Fin d → PMF (Fin d →₀ ℕ))
   simp_rw [h1] at h0
   exact (tendsto_add_atTop_iff_nat (1 + N)).1 (by simpa [Function.comp_def, add_mul] using h0)
 
-/-- The class lemma behind the second part of Lemma 2.12: if `y ≤ g^{(m)} y` strictly, `y` and
+/-- The class lemma behind the second part of Lemma 2.13: if `y ≤ g^{(m)} y` strictly, `y` and
 `g^{(m)} y` finite, then `|g^{(r m)} y| → ∞`. -/
 lemma tendsto_top_of_iterate_class (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hext : ∀ k, pathLaw μ (Finsupp.single k 1) (extinctionEvent (Fin d)) = 1)
@@ -189,7 +189,7 @@ lemma tendsto_top_of_iterate_class (μ : Fin d → PMF (Fin d →₀ ℕ))
   rw [hlim.limsup_eq] at hshift
   rwa [hshift] at hlim
 
-/-- **Lemma 2.12** (second part, paper.tex:698-714): `g^{(m)}(x) > x` implies
+/-- **Lemma 2.13** (second part, paper.tex:698-714): `g^{(m)}(x) > x` implies
 `|g^{(n)}(x)| → ∞`. -/
 theorem tendsto_top_of_lt_iterate (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hI : IsSubcritical μ) (hII : IsPositiveRegular μ ∧ IsNonsingular μ)

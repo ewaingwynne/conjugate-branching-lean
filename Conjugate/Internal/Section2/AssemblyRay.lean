@@ -18,7 +18,7 @@ import Conjugate.Internal.Section2.Ray
 # The ray parameter on the simplex (assembly of Theorem 2.7)
 
 Paper.tex:894-905. Let `Δ = {u : Fin d → ℝ | (∀ j, 0 ≤ u j) ∧ ∑ j, u j = 1}` be the standard
-simplex. By Lemma 2.17 (`existsUnique_ray`) every `u ∈ Δ` has a unique `ρ(u) > 0` with
+simplex. By Lemma 2.18 (`existsUnique_ray`) every `u ∈ Δ` has a unique `ρ(u) > 0` with
 `ρ(u) u ∉ S₀ ∪ S∞`.
 
 * `toE v` and `rayPt r u = toE (r u)` embed real vectors into `[0,∞)^d ⊆ (Fin d → EReal)`;
@@ -28,7 +28,7 @@ simplex. By Lemma 2.17 (`existsUnique_ray`) every `u ∈ Δ` has a unique `ρ(u)
   `t < ρ(u) ↔ t u ∈ S₀` and `ρ(u) < t ↔ t u ∈ S∞` (from the ray ordering corollaries of
   Lemma 2.11 and the disjointness of the basins);
 * `continuousOn_rayParam`: `ρ` is continuous on `Δ`. The sets `{u ∈ Δ | t < ρ u}` and
-  `{u ∈ Δ | ρ u < t}` are relatively open by Lemma 2.16 and continuity of `u ↦ t u`.
+  `{u ∈ Δ | ρ u < t}` are relatively open by Lemma 2.17 and continuity of `u ↦ t u`.
 -/
 
 @[expose] public section
@@ -75,7 +75,7 @@ lemma simplex_ne_zero {u : Fin d → ℝ} (hu : (∀ j, 0 ≤ u j) ∧ ∑ j, u 
   simp at hu
 
 /-- **The ray parameter** `ρ(u)`: a chosen `r > 0` with `r u ∉ S₀ ∪ S∞`
-(unique for `u ≥ 0`, `u ≠ 0` by Lemma 2.17). -/
+(unique for `u ≥ 0`, `u ≠ 0` by Lemma 2.18). -/
 noncomputable def rayParam (μ : Fin d → PMF (Fin d →₀ ℕ)) (u : Fin d → ℝ) : ℝ :=
   Classical.epsilon fun r : ℝ => 0 < r ∧ rayPt r u ∉ basinZero μ ∪ basinInfty μ
 
@@ -86,12 +86,12 @@ variable (μ : Fin d → PMF (Fin d →₀ ℕ)) (hI : IsSubcritical μ)
   (hIII : ∀ k, ContinuousOn (fun q => genFun μ q k) {q | ∀ j, 0 < q j})
 include hI hII hIII
 
-/-- The defining property of `ρ(u)` (Lemma 2.17, existence). -/
+/-- The defining property of `ρ(u)` (Lemma 2.18, existence). -/
 theorem rayParam_spec {u : Fin d → ℝ} (hu0 : ∀ j, 0 ≤ u j) (hu : u ≠ 0) :
     0 < rayParam μ u ∧ rayPt (rayParam μ u) u ∉ basinZero μ ∪ basinInfty μ :=
   Classical.epsilon_spec (existsUnique_ray μ hI hII hIII hu0 hu).exists
 
-/-- `ρ(u)` is the only `r > 0` with `r u ∉ S₀ ∪ S∞` (Lemma 2.17, uniqueness). -/
+/-- `ρ(u)` is the only `r > 0` with `r u ∉ S₀ ∪ S∞` (Lemma 2.18, uniqueness). -/
 theorem eq_rayParam {u : Fin d → ℝ} (hu0 : ∀ j, 0 ≤ u j) (hu : u ≠ 0) {r : ℝ} (hr : 0 < r)
     (h : rayPt r u ∉ basinZero μ ∪ basinInfty μ) : r = rayParam μ u :=
   (existsUnique_ray μ hI hII hIII hu0 hu).unique ⟨hr, h⟩ (rayParam_spec μ hI hII hIII hu0 hu)
@@ -135,7 +135,7 @@ theorem rayParam_lt_iff {u : Fin d → ℝ} (hu0 : ∀ j, 0 ≤ u j) (hu : u ≠
 
 /-- **The ray parameter is continuous on the simplex** (paper.tex:894-896, replacing the
 compactness-and-homeomorphism argument): the sets `{u ∈ Δ | t < ρ u}` and `{u ∈ Δ | ρ u < t}`
-are relatively open by Lemma 2.16, for every `t > 0`. -/
+are relatively open by Lemma 2.17, for every `t > 0`. -/
 theorem continuousOn_rayParam :
     ContinuousOn (rayParam μ) {u : Fin d → ℝ | (∀ j, 0 ≤ u j) ∧ ∑ j, u j = 1} := by
   obtain ⟨U₀, hU₀, hS₀⟩ := exists_isOpen_basinZero μ hI hII hIII

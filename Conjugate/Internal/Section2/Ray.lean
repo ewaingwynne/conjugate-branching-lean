@@ -19,7 +19,7 @@ import Conjugate.Internal.Section2.MonotoneLimit
 import Conjugate.Internal.Section2.Unstable
 
 /-!
-# Every ray meets `Λ` exactly once (Lemma 2.17) and ray ordering
+# Every ray meets `Λ` exactly once (Lemma 2.18) and ray ordering
 
 Paper.tex:828-836. Here `Λ = [0,∞)^d ∖ (S₀ ∪ S∞)` and the ray through `u ∈ [0,∞)^d ∖ {0}` is
 `r ↦ r u = (fun j => ((r * u j : ℝ) : EReal))`. The statement is norm-free: `u` is any nonzero
@@ -28,10 +28,10 @@ vector with nonnegative coordinates, not only `|u| = 1`.
 * `ray_mem_basinZero_of_not_mem_basinInfty` and `ray_mem_basinInfty_of_not_mem_basinZero`: the two
   ray-ordering corollaries of Lemma 2.11 (with `φ = id` and scale `s / t`). For `u ≥ 0` and reals
   `0 ≤ s < t`: if `t u ∉ S∞` then `s u ∈ S₀`, and (contrapositive) if `s u ∉ S₀` then
-  `t u ∈ S∞`. They give the uniqueness in Lemma 2.17, and will show that the ray parameter
+  `t u ∈ S∞`. They give the uniqueness in Lemma 2.18, and will show that the ray parameter
   `u ↦ r(u)` is continuous in Theorem 2.7;
-* `existsUnique_ray`: **Lemma 2.17**. Existence: by Lemmas 2.14 and 2.15 the open sets
-  `{r > 0 | r u ∈ S₀}` and `{r > 0 | r u ∈ S∞}` (Lemma 2.16) are nonempty, disjoint, and
+* `existsUnique_ray`: **Lemma 2.18**. Existence: by Lemmas 2.15 and 2.16 the open sets
+  `{r > 0 | r u ∈ S₀}` and `{r > 0 | r u ∈ S∞}` (Lemma 2.17) are nonempty, disjoint, and
   cannot cover the connected set `(0,∞)`. Uniqueness: the first corollary.
 -/
 
@@ -93,7 +93,7 @@ end Corollaries
 
 section Lemma217
 
-/-- **Lemma 2.17** (paper.tex:828-836), norm-free: every nonzero `u ≥ 0` has exactly one `r > 0`
+/-- **Lemma 2.18** (paper.tex:828-836), norm-free: every nonzero `u ≥ 0` has exactly one `r > 0`
 with `r u ∉ S₀ ∪ S∞`. -/
 theorem existsUnique_ray (μ : Fin d → PMF (Fin d →₀ ℕ))
     (hI : IsSubcritical μ) (hII : IsPositiveRegular μ ∧ IsNonsingular μ)
