@@ -1436,6 +1436,353 @@
         "frozen_paths": [],
         "audit_paths": []
       }
+    },
+    {
+      "id": "thm.proposition_2_1_condLaw_countable.v1",
+      "kind": "theorem",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-2.md",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:934 (with paper.tex:390-403)"
+      },
+      "contract": {
+        "id": "paper.ctble.prop2_1.condLaw",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Proposition_2_1_CondLaw_Countable.lean",
+      "export": "Conjugate.proposition_2_1_condLaw_countable",
+      "split_policy": {
+        "source_group": "paper.ctble.prop2_1.condLaw",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R8"
+      },
+      "abi_sha256": "6d31e5333e5775f249b3e6ecaec7311196549dad6e52cf5b3b65ec24d5ff5f09",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/ExtinctionEvent.lean",
+          "sha256": "fe1efe0e9bdf068c18aef68988adf2854179fbff15df6502b62635e14bc0fa47"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/IsNonsingular.lean",
+          "sha256": "d8fd9ff4b76adf424094de86fa62b57ba7772359f700266707954f07b548edf9"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/IsPositiveRegular.lean",
+          "sha256": "dd1a38384b357f7bff350bb621e702d085efd61b189bbe036c4b749537fe207e"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/PathLaw.lean",
+          "sha256": "da3c41021d0dc5c517288c78b0f194b220817bd7cf77ac4b39ab34cef5ce9cc6"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
+        }
+      ],
+      "implementation": {
+        "module": "Conjugate.Internal.Proposition_2_1_CondLaw_Countable",
+        "export": "Conjugate.Internal.proposition_2_1_condLaw_countable"
+      },
+      "state": "DRAFT_SORRY",
+      "prefix_sha256": "81b130c440811bf37a99cbe20eab3c372ee4c798714b755ed2314ea0686aadc6",
+      "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
+      "draft_allowlist": {
+        "frozen_paths": [],
+        "audit_paths": []
+      }
+    },
+    {
+      "id": "thm.proposition_2_2_countable.v1",
+      "kind": "theorem",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-2.md",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:934 (with paper.tex:420-428)"
+      },
+      "contract": {
+        "id": "paper.ctble.prop2_2",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Proposition_2_2_Countable.lean",
+      "export": "Conjugate.proposition_2_2_countable",
+      "split_policy": {
+        "source_group": "paper.ctble.prop2_2",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R8"
+      },
+      "abi_sha256": "3ce6b7593e0e215319fa2cd52346f98d33a26c234ad66f94e039414252e8ad41",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/ExtinctionEvent.lean",
+          "sha256": "fe1efe0e9bdf068c18aef68988adf2854179fbff15df6502b62635e14bc0fa47"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/GenFun.lean",
+          "sha256": "1a22b82acfb5cff23c59854bc9b66b00dd4260b67d958222ad02eb7de44668bf"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/IsNonsingular.lean",
+          "sha256": "d8fd9ff4b76adf424094de86fa62b57ba7772359f700266707954f07b548edf9"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/IsPositiveRegular.lean",
+          "sha256": "dd1a38384b357f7bff350bb621e702d085efd61b189bbe036c4b749537fe207e"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/PathLaw.lean",
+          "sha256": "da3c41021d0dc5c517288c78b0f194b220817bd7cf77ac4b39ab34cef5ce9cc6"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
+        }
+      ],
+      "implementation": {
+        "module": "Conjugate.Internal.Proposition_2_2_Countable",
+        "export": "Conjugate.Internal.proposition_2_2_countable"
+      },
+      "state": "DRAFT_SORRY",
+      "prefix_sha256": "b55ef9a96f145f58a8840f18ff082a4635fd8ffb1a1a77d0c5c9227afcef4d3d",
+      "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
+      "draft_allowlist": {
+        "frozen_paths": [],
+        "audit_paths": []
+      }
+    },
+    {
+      "id": "thm.exists_conjugate_iff_exists_fixedPoint_countable.v1",
+      "kind": "theorem",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-2.md",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:934 (with paper.tex:238)"
+      },
+      "contract": {
+        "id": "paper.ctble.equivalence",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/ExistsConjugateIffCountable.lean",
+      "export": "Conjugate.exists_conjugate_iff_exists_fixedPoint_countable",
+      "split_policy": {
+        "source_group": "paper.ctble.equivalence",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R8"
+      },
+      "abi_sha256": "2c68124c547cb351e49fa2700161c11473cd26f397a7690b623045ddab2e4f6e",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/ExtinctionEvent.lean",
+          "sha256": "fe1efe0e9bdf068c18aef68988adf2854179fbff15df6502b62635e14bc0fa47"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/GenFun.lean",
+          "sha256": "1a22b82acfb5cff23c59854bc9b66b00dd4260b67d958222ad02eb7de44668bf"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/IsConjugate.lean",
+          "sha256": "3fb0bd6923c1b24591c62bb8d8639a1d7b80333a7902009580400cf43e441fd8"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/IsNonsingular.lean",
+          "sha256": "d8fd9ff4b76adf424094de86fa62b57ba7772359f700266707954f07b548edf9"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/IsPositiveRegular.lean",
+          "sha256": "dd1a38384b357f7bff350bb621e702d085efd61b189bbe036c4b749537fe207e"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/PathLaw.lean",
+          "sha256": "da3c41021d0dc5c517288c78b0f194b220817bd7cf77ac4b39ab34cef5ce9cc6"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
+        }
+      ],
+      "implementation": {
+        "module": "Conjugate.Internal.ExistsConjugateIffCountable",
+        "export": "Conjugate.Internal.exists_conjugate_iff_exists_fixedPoint_countable"
+      },
+      "state": "DRAFT_SORRY",
+      "prefix_sha256": "b67b3b78ad7f6f2ba031eecf708c9d0dbcd0270cebf03a507cff7629c797af60",
+      "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
+      "draft_allowlist": {
+        "frozen_paths": [],
+        "audit_paths": []
+      }
+    },
+    {
+      "id": "thm.theorem_3_1_conjugate.v1",
+      "kind": "theorem",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-2.md",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:958-959, 985-987"
+      },
+      "contract": {
+        "id": "paper.thm3_1.conjugate",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Theorem_3_1_Conjugate.lean",
+      "export": "Conjugate.theorem_3_1_conjugate",
+      "split_policy": {
+        "source_group": "paper.thm3_1.conjugate",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R8"
+      },
+      "abi_sha256": "e83a543ba30fcb1eae3b951a3e9641ca24dc9b11abe36174b523610544b54c49",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/ExtinctionEvent.lean",
+          "sha256": "fe1efe0e9bdf068c18aef68988adf2854179fbff15df6502b62635e14bc0fa47"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/GenFun.lean",
+          "sha256": "1a22b82acfb5cff23c59854bc9b66b00dd4260b67d958222ad02eb7de44668bf"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/IsConjugate.lean",
+          "sha256": "3fb0bd6923c1b24591c62bb8d8639a1d7b80333a7902009580400cf43e441fd8"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/IsNonsingular.lean",
+          "sha256": "d8fd9ff4b76adf424094de86fa62b57ba7772359f700266707954f07b548edf9"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/IsPositiveRegular.lean",
+          "sha256": "dd1a38384b357f7bff350bb621e702d085efd61b189bbe036c4b749537fe207e"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/IsSubcritical.lean",
+          "sha256": "bb474e3f83aec86690ec5a37f5e2adc99c158eadbb769f08b5b9f66cd2e137d9"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/MeanMatrix.lean",
+          "sha256": "acb7f93d0e972be3731d87cffee397f367d0c52d9fa2f1560d3028fbe9c7e2b5"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/PathLaw.lean",
+          "sha256": "da3c41021d0dc5c517288c78b0f194b220817bd7cf77ac4b39ab34cef5ce9cc6"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/Truncate.lean",
+          "sha256": "e2dab0ff3f095ca03d4ef14b4711858e2d6e3f3cff92fed93855df6fd27e67d9"
+        }
+      ],
+      "implementation": {
+        "module": "Conjugate.Internal.Theorem_3_1_Conjugate",
+        "export": "Conjugate.Internal.theorem_3_1_conjugate"
+      },
+      "state": "DRAFT_SORRY",
+      "prefix_sha256": "28dd502e191b108edf0507272692e8385df0d4f2671749341d32907fb3de6411",
+      "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
+      "draft_allowlist": {
+        "frozen_paths": [],
+        "audit_paths": []
+      }
+    },
+    {
+      "id": "thm.example_3_5_conjugate.v1",
+      "kind": "theorem",
+      "author_approval": {
+        "approved_by": "Ewain Gwynne",
+        "approved_at": "2026-10-28",
+        "approval_ref": "review/batch-2.md",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:2411.06301v2 fixed-pt-finite-type.tex sha256:b0fb466bfd59b1fd0e03757eddca48f8e67aa194a43b66880d2caeb677061670",
+        "range": "paper.tex:1183"
+      },
+      "contract": {
+        "id": "paper.ex3_5.conjugate",
+        "version": "1"
+      },
+      "path": "Conjugate/Frozen/Example_3_5_Conjugate.lean",
+      "export": "Conjugate.example_3_5_conjugate",
+      "split_policy": {
+        "source_group": "paper.ex3_5.conjugate",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "ERRATA.md R8"
+      },
+      "abi_sha256": "976e83537b839e3e47bf7f69c948909d005ee03f92231e81870631eacc4cdcc9",
+      "definition_closure": [
+        {
+          "path": "Conjugate/Frozen/Defs/ExtinctionEvent.lean",
+          "sha256": "fe1efe0e9bdf068c18aef68988adf2854179fbff15df6502b62635e14bc0fa47"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/IsConjugate.lean",
+          "sha256": "3fb0bd6923c1b24591c62bb8d8639a1d7b80333a7902009580400cf43e441fd8"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/PathLaw.lean",
+          "sha256": "da3c41021d0dc5c517288c78b0f194b220817bd7cf77ac4b39ab34cef5ce9cc6"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/PopulationMeasurableSpace.lean",
+          "sha256": "ef9465886f83bcc8e7e9561728b36405c46b246d01118b3036a9132829d75f64"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StepKernel.lean",
+          "sha256": "7a38e19b46aa3606078cc215434737a5e2ecec641107525d926714651df6e048"
+        },
+        {
+          "path": "Conjugate/Frozen/Defs/StochDominated.lean",
+          "sha256": "a985a00cd9ea8b3a07ef98ab1c9c6237fad2047ee83a7a3cb447174742a5e4ad"
+        }
+      ],
+      "implementation": {
+        "module": "Conjugate.Internal.Example_3_5_Conjugate",
+        "export": "Conjugate.Internal.example_3_5_conjugate"
+      },
+      "state": "DRAFT_SORRY",
+      "prefix_sha256": "e6633c3edf797cb430fde1405b0bed7fd7dcddd0fd9f1045a0ec569fe38fd527",
+      "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
+      "draft_allowlist": {
+        "frozen_paths": [],
+        "audit_paths": []
+      }
     }
   ]
 }
