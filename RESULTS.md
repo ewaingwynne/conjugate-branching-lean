@@ -74,10 +74,31 @@ compiled numbering of the PDF.
 
 ## Not formalized (author rulings or outside the formal content)
 
-- **Prop 2.1 (a) and (c).** Cited from Athreya–Ney; excluded by the author.
-- **Example 1.5: robustness, and the `d = 3` example with seven fixed points.** Asserted without
-  proof in the paper.
-- **§3 discussion of partial and local extinction.** Cited, and used in no proof.
+Each item is EXCLUDED with a reason in `DEPGRAPH_COVERAGE.md`.
+
+- **Prop 2.1 (a) and (c)** (cited from Athreya–Ney). Excluded by the author.
+- **Remark 1.2** (paper.tex:193-196). A literature remark on other ways to condition.
+- **"Hypothesis I is necessary"** (paper.tex:252). A supercritical process conditioned on extinction
+  is subcritical; this is cited background, with no proof obligation.
+- **Example 1.5, beyond the anchored statement.**
+  - "Robust under perturbation" (paper.tex:262), asserted without proof.
+  - The `d = 3` example with seven fixed points (paper.tex:262), asserted without proof.
+  - The expectation that the number of fixed points can be arbitrarily large (paper.tex:263).
+  - The exact count of three: the anchor states "at least three" (R4).
+- **Convexity of `g_k`** (paper.tex:560). The paper notes it is not needed, and its lemma is
+  commented out of the source.
+- **§3.1 background** (paper.tex:928-934):
+  - positive regularity and non-singularity for countable types (L928), never consumed;
+  - partial and local extinction (L930-932), cited;
+  - the countable-type extension of (2.1) and Prop 2.2, i.e. conjugates ⟺ fixed points for
+    countable types (L934). It is asserted "just as in the finite-type case", with citation.
+    Consequently Example 3.5 is anchored as "Theorem 3.1 applies and gives a fixed point", not as
+    "a conjugate exists".
+- **Illustrations.**
+  - The sampling recipe in Example 3.5 (paper.tex:1193).
+  - The proof outline in §1.3.
+  - Figures 1-2.
+  - The remark on the lim / limsup asymmetry (paper.tex:731).
 - **§4 (Liouville quantum gravity, biology).** Discussion only.
 
 ## Proof-route deviations
@@ -99,3 +120,10 @@ These are approved in `PLAN.md` §6, or are internal. They change proofs, never 
   to `X̂`.
 - **Lemma 3.2 and the positivity in Thm 3.1** use truncation monotonicity of the generating-function
   iterates, in place of couplings.
+- **Theorem 3.1** gets compactness from Lemma 3.4(c), (3.17), which the paper itself uses for
+  domination, instead of Lemma 3.2. Lemma 3.2 is still proved, as stated.
+- **Lemma 2.19** builds its homotopy with the radial projection onto the simplex and the Theorem 2.7
+  ray parameter. This replaces the unit sphere and the compactness / homeomorphism step. The
+  statement, a strong deformation retraction in the sup norm (R1), is the paper's.
+- **Lemma 2.18** is stated norm-free, for every nonzero `u ≥ 0`. This implies the paper's `|u| = 1`
+  form.

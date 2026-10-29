@@ -2,7 +2,7 @@
 
 *Gwynne & Liu, "Inverting the operation of conditioning a branching process on extinction"*
 
-**Status: plan only. Nothing is frozen or proved yet.**
+**Status (2026-10-28): CLOSED.** All 13 author-approved theorem anchors are PROVED (sealed and independently audited, AU-1 to AU-5), and the closure audit AU-6 returned CLOSED. The results index is in `RESULTS.md` and the ledger in `STATUS.md`. The plan text below is kept as written.
 
 This plan follows the `lean-orchestrator` and `build-proof-dependency-graph` skills from
 LeanAutoformalizationSkills (CC-BY 4.0; read from leonardob's vendored copy). Their

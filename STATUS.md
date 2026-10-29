@@ -7,7 +7,8 @@ Single writer: orchestrator. Proof status is never inferred from compilation alo
 - Phase 0 (setup): done
 - Phase 1 (anchors): **done** — 15 definitions sealed, 13 root theorems frozen as DRAFT_SORRY (author-approved 2026-10-28)
 - Phase 2 (dependency graph): **done** — 199 nodes, 400 edges, 13 roots, 12 external inputs, 56 SOURCE_GAP nodes; every node and coverage item independently REVIEWED; global review PASS after corrections; linter gate (`--require-reviewed … --check`) passes
-- Phase 3 (proofs): **in progress** (started 2026-10-28) — see "Phase 3 work" below
+- Phase 3 (proofs): **done** (2026-10-28) — all 13 theorem anchors sealed and PROVED (AU-1–AU-5); every numbered result mapped in `RESULTS.md`
+- Phase 4 (closure): **done** — full gate passes (96 modules), closure audit AU-6 verdict CLOSED (`review/audits/AU-6.md`)
 
 ## Mandatory report fields
 
@@ -15,7 +16,7 @@ Single writer: orchestrator. Proof status is never inferred from compilation alo
 DRAFT_ANCHORS: 0
 UNREGISTERED_SORRIES: 0
 DRAFT_IMPORT_VIOLATIONS: 0
-SEALED_THIS_TURN: 1 (Conjugate.example_3_5 — 4d7fe6a)
+SEALED_THIS_TURN: 0 (closure)
 SEALED_CUMULATIVE: 13 — all 13 theorem anchors PROVED (AU-1 remark_hypIII_automatic; AU-2 proposition_1_6_fixedPoint; AU-3 proposition_2_1_condLaw, proposition_2_2, theorem_2_7, theorem_1_4_fixedPoint; AU-4 exists_conjugate_iff_exists_fixedPoint, theorem_1_4_conjugate, proposition_1_6_conjugate, remark_hypIII_necessary, example_1_5; AU-5 theorem_3_1, example_3_5); all 28 manifest entries SEALED
 ```
 
@@ -75,7 +76,7 @@ checks, and a fresh Sonnet audit.
 | W-A10 | B (Sonnet) | §3 truncation (3.2), Lemma 3.2, Lemma 3.4 | `eqn-gf-truncated`, `eqn-log-gf-*`, `lem-fixed-limsup`, `lem-1d-soln` | **audited** (AU-5 PASS) |
 | W-A11 | B (Fable) | Lemma 3.3, Theorem 3.1 provider + seal | `lem-fixed-liminf`, `thm-fixed-pt-infty` | written, checked, anchor sealed (260327e); **audited** (AU-5 PASS) |
 | W-A12 | any | Example 3.5 provider + seal | `example-ctble` | written, checked, anchor sealed (4d7fe6a); **audited** (AU-5 PASS) |
-| W-A13 | A (Sonnet) | Lemma 2.19 (deformation retraction) | `lem-retract` and steps | written, orchestrator-checked; audit in AU-6 (closure) |
+| W-A13 | A (Sonnet) | Lemma 2.19 (deformation retraction) | `lem-retract` and steps | **audited** (AU-6 PASS) |
 
 Known limits (from AU-1): the branching property is proved at the level of generation laws
 (cylinder formula, convolution, Chapman–Kolmogorov), not yet as a path-level statement; briefs
@@ -120,4 +121,4 @@ docstring sweep applied (all Internal docstrings now use the compiled numbering)
 | 2026-10-28 | writer W-A12 | Sonnet | Example 3.5 | provider + 41 helpers, standard axioms; seal probe OK |
 | 2026-10-28 | auditor AU-5 (fresh) | Sonnet | §3, Thm 3.1 and Ex 3.5 seals | PASS, no blocking findings (`review/audits/AU-5.md`); non-vacuity witness for Ex 3.5 |
 | 2026-10-28 | writer W-A13 | Sonnet | Lemma 2.19 | done, standard axioms |
-| 2026-10-28 | auditor AU-6 (fresh) | Sonnet | Phase 4 full-closure audit | running |
+| 2026-10-28 | auditor AU-6 (fresh) | Sonnet | Phase 4 full-closure audit | CLOSED, no blocking findings (`review/audits/AU-6.md`) |
