@@ -5,9 +5,7 @@ and by `DEPGRAPH.md`. Rulings are made only by the author. Entries are append-on
 
 ## Open (proposed by the orchestrator, awaiting the author)
 
-| ID | Source | Issue | Proposed reading |
-|----|--------|-------|-----------------|
-| E9 | paper.tex:1127, proof of Lemma 3.4 | "For each k ≥ d" | read as `d ≥ k` (forced by (3.16) and the definition of λ^d); graph-level only, no frozen statement depends on it |
+_(none)_
 
 ## Decided
 
@@ -27,3 +25,5 @@ and by `DEPGRAPH.md`. Rulings are made only by the author. Entries are append-on
 | E8 | 2026-10-28 | paper.tex:1188-1190, Ex 3.5: "(3.23) with `𝔼_k` in place of `𝔼_1`": changing only the expectations allows `ℙ_k = δ_0` for `k ≥ 2`, which breaks positive regularity of `X^d` → **read as: all four conditions of (3.23) hold with `ℙ_k`, `𝔼_k` in place of `ℙ_1`, `𝔼_1`** | `review/batch-1B.md` |
 | R5 | 2026-10-28 | Prop 1.6: split → **two anchors: fixed-point form (unique `q`) and conjugate form (exists, unique in law); independent witnesses** | `review/batch-1B.md` |
 | R6 | 2026-10-28 | Prop 2.1: partial anchor → **anchor only the conditional-law paragraph (2.1), without "Moreover, this branching process is subcritical"; part (a) and the subcriticality claim are not frozen (author's earlier decision); part (a) may still be proved as a graph node** | `review/batch-1B.md` |
+| E9 | 2026-10-28 | paper.tex:1127, proof of Lemma 3.4: "For each k ≥ d" → **read as `d ≥ k`** (forced by (3.16) and the definition of λ^d); graph-level only, no frozen statement depends on it. Accepted with the instruction to start Phase 3. | Phase 2 report |
+| R7 | 2026-10-28 | Thm 3.1 (paper.tex:957-987): "global extinction probability one" is read **per starting type** (`∀ k`, from one individual of each type), as in the frozen `theorem_3_1`; no step of the proof uses the hypothesis beyond this reading. Accepted with the instruction to start Phase 3. | Phase 2 report (global review Q10) |

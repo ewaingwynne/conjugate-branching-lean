@@ -7,7 +7,7 @@ Single writer: orchestrator. Proof status is never inferred from compilation alo
 - Phase 0 (setup): done
 - Phase 1 (anchors): **done** — 15 definitions sealed, 13 root theorems frozen as DRAFT_SORRY (author-approved 2026-10-28)
 - Phase 2 (dependency graph): **done** — 199 nodes, 400 edges, 13 roots, 12 external inputs, 56 SOURCE_GAP nodes; every node and coverage item independently REVIEWED; global review PASS after corrections; linter gate (`--require-reviewed … --check`) passes
-- Phase 3 (proofs): not started
+- Phase 3 (proofs): **in progress** (started 2026-10-28) — see "Phase 3 work" below
 
 ## Mandatory report fields
 
@@ -51,6 +51,17 @@ SEALED_THIS_TURN: 0
 | `Conjugate.remark_hypIII_necessary` | theorem | `Remark_HypIII_Necessary.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
 | `Conjugate.remark_hypIII_automatic` | theorem | `Remark_HypIII_Automatic.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
 
+## Phase 3 work
+
+Lane A = Sonnet writers (sequential); Lane B = Fable (Brouwer). Two agents in total.
+Briefs are in `briefs/`. A graph node is PROVED only after writer evidence, orchestrator
+checks, and a fresh Sonnet audit.
+
+| Brief | Lane | Target | Graph nodes | State |
+|-------|------|--------|-------------|-------|
+| W-B1 | B (Fable) | `Conjugate.Infrastructure.brouwer_simplex` | `ext:brouwer` | running |
+| W-A1 | A (Sonnet) | `stepKernel` / `pathLaw` characterization, (1.2), `M^n` | `claim:branching-property` (Markov part), `eqn-gen-func-n`, `claim:mean-matrix-powers` | running |
+
 ## Agent log
 
 | Date | Agent | Model | Task | Result |
@@ -62,3 +73,5 @@ SEALED_THIS_TURN: 0
 | 2026-10-28 | statement auditor (fresh) | Sonnet | lean-statement-audit of batch 1A definitions | 14/14 PASS; 17 semantic probes proved; 3 author questions |
 | 2026-10-28 | statement auditor A (fresh) | Sonnet | batch 1B: Thm 1.4 ×3, Prop 1.6 ×2, Thm 2.7, Ex 1.5, remarks ×2 | 9/9 PASS; found E7 |
 | 2026-10-28 | statement auditor B (fresh) | Sonnet | batch 1B: Props 2.1/2.2, Thm 3.1, Ex 3.5, StochDominated | 5/5 PASS; found E8, R6 wording |
+| 2026-10-28 | writer W-B1 | Fable | Brouwer on the simplex | running |
+| 2026-10-28 | writer W-A1 | Sonnet | path-space foundations | running |
