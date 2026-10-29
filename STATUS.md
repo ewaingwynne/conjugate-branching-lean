@@ -15,7 +15,8 @@ Single writer: orchestrator. Proof status is never inferred from compilation alo
 DRAFT_ANCHORS: 9 (Theorem_1_4_FixedPoint, Theorem_1_4_Conjugate, ExistsConjugateIff, Proposition_1_6_Conjugate, Theorem_2_7, Theorem_3_1, Example_1_5, Example_3_5, Remark_HypIII_Necessary; all FROZEN_UNPROVED)
 UNREGISTERED_SORRIES: 0
 DRAFT_IMPORT_VIOLATIONS: 0
-SEALED (cumulative): 4 — remark_hypIII_automatic (a25a4fd, PROVED after AU-1); proposition_1_6_fixedPoint (d3a4c17); proposition_2_1_condLaw and proposition_2_2 (7581f95); seal audits pending for the last three
+SEALED_THIS_TURN: 2 (Conjugate.proposition_2_1_condLaw, Conjugate.proposition_2_2 — 7581f95)
+SEALED_CUMULATIVE: 4 — remark_hypIII_automatic (a25a4fd, PROVED after AU-1); proposition_1_6_fixedPoint (d3a4c17); proposition_2_1_condLaw and proposition_2_2 (7581f95); seal audits pending for the last three
 ```
 
 ## Anchors
