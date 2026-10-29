@@ -1,4 +1,4 @@
-# Brief W-A9 — Example 1.5 (provider + seal), and a reusable subcriticality criterion
+# Brief W-A9 — Example 1.5 (provider + seal)
 
 **Goal.** Prove the provider for the frozen anchor `Conjugate.example_1_5` (paper.tex:255-262,
 anchored per ERRATA R4 as "the hypotheses of Theorem 1.4 hold and there are at least three
@@ -25,7 +25,6 @@ The seal will be `by exact Conjugate.Internal.example_1_5 μ hμ`.
 
 **Ownership.**
 - Edit the stub `Conjugate/Internal/Example_1_5.lean` (keep its header and docstring).
-- Create `Conjugate/Internal/Analytic/Subcritical.lean` for the criterion.
 - Create files under `Conjugate/Internal/Examples/` for the rest.
 - Edit nothing else.
 
@@ -41,16 +40,12 @@ The seal will be `by exact Conjugate.Internal.example_1_5 μ hμ`.
 
 Never import a DRAFT anchor or another anchor's provider.
 
-**Reusable criterion** (put it in `Analytic/Subcritical.lean`, namespace `Conjugate`; the
-statement has been elaborated):
+**Subcriticality criterion.** It is proved by W-B3 in `Conjugate/Internal/Analytic/Subcritical.lean`
+(import it, do not re-prove it):
 ```lean
 theorem isSubcritical_of_sum_lt_one {ι : Type*} [Fintype ι] [DecidableEq ι]
     (μ : ι → PMF (ι →₀ ℕ)) (h : ∀ k, ∑ j, meanMatrix μ k j < 1) : IsSubcritical μ
 ```
-Use `spectrum.spectralRadius_le_nnnorm` (or the current name) with the `L^∞` operator-norm
-normed algebra on `Matrix ι ι ℂ`, opened with `open scoped Matrix.Norms.Operator` (see
-`Conjugate/Internal/Foundations/MeanDecay.lean`, which uses it). That norm is the maximal row
-sum of absolute values. The entries are finite because each row sum is `< 1`.
 
 **Mathematics of the example.**
 
@@ -88,10 +83,9 @@ Never use `native_decide`.
 **Checks** (run them and paste the output):
 ```bash
 export PATH="$HOME/.elan/bin:$HOME/.local/bin:$PATH"
-lake build Conjugate.Internal.Example_1_5 Conjugate.Internal.Analytic.Subcritical
-python3 -I tools/check_lean_modules.py --root . --max-lines 1500 --files Conjugate/Internal/Example_1_5.lean Conjugate/Internal/Analytic/Subcritical.lean Conjugate/Internal/Examples/*.lean
+lake build Conjugate.Internal.Example_1_5
+python3 -I tools/check_lean_modules.py --root . --max-lines 1500 --files Conjugate/Internal/Example_1_5.lean Conjugate/Internal/Examples/*.lean
 python3 -I tools/leanprobe.py axioms Conjugate.Internal.Example_1_5 Conjugate.Internal.example_1_5
-python3 -I tools/leanprobe.py axioms Conjugate.Internal.Analytic.Subcritical Conjugate.isSubcritical_of_sum_lt_one
 ```
 Only `propext`, `Classical.choice` and `Quot.sound` are acceptable.
 
@@ -105,7 +99,7 @@ Only `propext`, `Classical.choice` and `Quot.sound` are acceptable.
 - Build only your own modules, with explicit targets, or `lake env lean <your file>`.
 - Never run `lake build` with no target.
 
-**Stop condition.** You are done when the provider and the criterion compile without `sorry`,
+**Stop condition.** You are done when the provider compiles without `sorry`,
 with the standard axioms only, and the seal probe passes. Stop early and report if the frozen
 statement appears false or mis-typed (do not change it).
 
