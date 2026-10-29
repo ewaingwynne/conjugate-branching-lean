@@ -13,7 +13,8 @@ import Conjugate.Internal.Countable.FixedPointToConjugate
 # Provider for `Conjugate.example_3_5_conjugate`
 
 Implementation module for the frozen anchor
-`Conjugate/Frozen/Example_3_5_Conjugate.lean`. The anchor is SEALED (its body is `by exact` of the theorem below).
+`Conjugate/Frozen/Example_3_5_Conjugate.lean`.
+The anchor is SEALED (its body is `by exact` of the theorem below); audited in AU-7.
 
 The sealed `Conjugate.example_3_5` gives, under the same hypotheses, global extinction from each
 single individual (its first conjunct) and a fixed point `q ∈ (1,∞)^ℕ` of `f` (its last

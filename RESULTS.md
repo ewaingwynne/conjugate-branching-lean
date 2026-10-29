@@ -72,6 +72,18 @@ compiled numbering of the PDF.
 | Example 3.5 (E8) | `Conjugate.example_3_5` | `Frozen/Example_3_5.lean` |
 | stochastic domination (Ex 3.5) | `Conjugate.StochDominated` (frozen def) | `Frozen/Defs/StochDominated.lean` |
 
+### §3 — countable-type conjugates (batch 2, ERRATA R8, E10)
+
+| Paper | Lean | File |
+|---|---|---|
+| L934: (2.1) still holds for countable types | `Conjugate.proposition_2_1_condLaw_countable` | `Frozen/Proposition_2_1_CondLaw_Countable.lean` |
+| L934: Proposition 2.2 for countable types (global extinction) | `Conjugate.proposition_2_2_countable` | `Frozen/Proposition_2_2_Countable.lean` |
+| L934: conjugate ⟺ fixed point in `(1,∞)^ℕ`, needing positive regularity (E10) | `Conjugate.exists_conjugate_iff_exists_fixedPoint_countable` | `Frozen/ExistsConjugateIffCountable.lean` |
+| L958-959: Theorem 3.1 gives a conjugate | `Conjugate.theorem_3_1_conjugate` | `Frozen/Theorem_3_1_Conjugate.lean` |
+| L1183: Example 3.5 gives a conjugate | `Conjugate.example_3_5_conjugate` | `Frozen/Example_3_5_Conjugate.lean` |
+| fixed point ⇒ conjugate, countable types, no regularity of `X` | `Conjugate.isConjugate_of_fixedPoint_nat` | `Internal/Countable/FixedPointToConjugate.lean` |
+| conjugate ⇒ fixed point, countable types | `Conjugate.exists_fixedPoint_of_isConjugate_nat` | `Internal/Countable/ConjugateToFixedPoint.lean` |
+
 ## Not formalized (author rulings or outside the formal content)
 
 Each item is EXCLUDED with a reason in `DEPGRAPH_COVERAGE.md`.
@@ -87,13 +99,10 @@ Each item is EXCLUDED with a reason in `DEPGRAPH_COVERAGE.md`.
   - The exact count of three: the anchor states "at least three" (R4).
 - **Convexity of `g_k`** (paper.tex:560). The paper notes it is not needed, and its lemma is
   commented out of the source.
-- **§3.1 background** (paper.tex:928-934):
-  - positive regularity and non-singularity for countable types (L928), never consumed;
+- **§3.1 background** (paper.tex:930-934):
   - partial and local extinction (L930-932), cited;
-  - the countable-type extension of (2.1) and Prop 2.2, i.e. conjugates ⟺ fixed points for
-    countable types (L934). It is asserted "just as in the finite-type case", with citation.
-    Consequently Example 3.5 is anchored as "Theorem 3.1 applies and gives a fixed point", not as
-    "a conjugate exists".
+  - the remark at the end of L934 that the conjugate's partial extinction probability may be 1
+    (R8(e)). The rest of L934 is formalized in batch 2 (above).
 - **Illustrations.**
   - The sampling recipe in Example 3.5 (paper.tex:1193).
   - The proof outline in §1.3.
@@ -125,5 +134,10 @@ These are approved in `PLAN.md` §6, or are internal. They change proofs, never 
 - **Lemma 2.19** builds its homotopy with the radial projection onto the simplex and the Theorem 2.7
   ray parameter. This replaces the unit sphere and the compactness / homeomorphism step. The
   statement, a strong deformation retraction in the sup norm (R1), is the paper's.
+- **Countable Prop 2.2 (batch 2):** the global extinction probability of `X̂` is computed
+  directly. The finite proof's appeal to [AN72] (uniqueness of fixed points in `[0,1]^d`) fails for
+  countable types (L930).
+- **Conjugate forms of Thm 3.1 and Ex 3.5:** these use a "fixed point ⇒ conjugate" step with no
+  regularity of `X`. Thm 3.1 assumes regularity only for the truncations `X^d`.
 - **Lemma 2.18** is stated norm-free, for every nonzero `u ≥ 0`. This implies the paper's `|u| = 1`
   form.

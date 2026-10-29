@@ -18,7 +18,8 @@ import Conjugate.Internal.Countable.FixedPointToConjugate
 # Provider for `Conjugate.theorem_3_1_conjugate`
 
 Implementation module for the frozen anchor
-`Conjugate/Frozen/Theorem_3_1_Conjugate.lean`. The anchor is SEALED (its body is `by exact` of the theorem below).
+`Conjugate/Frozen/Theorem_3_1_Conjugate.lean`.
+The anchor is SEALED (its body is `by exact` of the theorem below); audited in AU-7.
 
 The sealed `Conjugate.theorem_3_1` gives `q ∈ (1,∞)^ℕ` with `f(q) = q` under the same
 hypotheses. The tilt of `μ` by `q` is then a conjugate (paper.tex:934), by

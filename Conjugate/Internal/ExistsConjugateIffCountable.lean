@@ -16,7 +16,8 @@ import Conjugate.Internal.Countable.FixedPointToConjugate
 # Provider for `Conjugate.exists_conjugate_iff_exists_fixedPoint_countable`
 
 Implementation module for the frozen anchor
-`Conjugate/Frozen/ExistsConjugateIffCountable.lean`. The anchor is SEALED (its body is `by exact` of the theorem below).
+`Conjugate/Frozen/ExistsConjugateIffCountable.lean`.
+The anchor is SEALED (its body is `by exact` of the theorem below); audited in AU-7.
 
 The two directions are `Conjugate.exists_fixedPoint_of_isConjugate_nat` (a conjugate is the tilt
 of a fixed point `q ∈ (1,∞)^ℕ`, read off generation `1`; this is where positive regularity is
