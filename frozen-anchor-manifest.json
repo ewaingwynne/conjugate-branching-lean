@@ -936,7 +936,7 @@
         "module": "Conjugate.Internal.Proposition_2_1_CondLaw",
         "export": "Conjugate.Internal.proposition_2_1_condLaw"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "51739625b1a40abb62f9a96ec7c17a96cabd93eaf1ab6d61e1581a3eae685661",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {
@@ -999,7 +999,7 @@
         "module": "Conjugate.Internal.Proposition_2_2",
         "export": "Conjugate.Internal.proposition_2_2"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "ecc23ca59df5dc48eec4d29e72a5d45b53623e6f1b7f565e6e406d83d5ba2e42",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {

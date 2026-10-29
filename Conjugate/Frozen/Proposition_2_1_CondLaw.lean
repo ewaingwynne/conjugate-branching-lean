@@ -43,7 +43,7 @@ theorem proposition_2_1_condLaw {d : ℕ} (μ : Fin d → PMF (Fin d →₀ ℕ)
       ∀ k, (pathLaw μ (Finsupp.single k 1))[|extinctionEvent (Fin d)] =
         pathLaw ν (Finsupp.single k 1) :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.proposition_2_1_condLaw μ hpr hns a ha ha01
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 

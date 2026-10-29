@@ -41,7 +41,7 @@ theorem proposition_2_2 {d : ℕ} (μ : Fin d → PMF (Fin d →₀ ℕ))
       ∀ k, (pathLaw μHat (Finsupp.single k 1))[|extinctionEvent (Fin d)] =
         pathLaw μ (Finsupp.single k 1) :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.proposition_2_2 μ hpr hns hext A hA hfix
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 
