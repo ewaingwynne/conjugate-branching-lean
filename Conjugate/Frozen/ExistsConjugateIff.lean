@@ -31,7 +31,7 @@ theorem exists_conjugate_iff_exists_fixedPoint {d : ℕ} (μ : Fin d → PMF (Fi
     (∃ μHat : Fin d → PMF (Fin d →₀ ℕ), IsConjugate μ μHat) ↔
       ∃ q : Fin d → ℝ≥0∞, (∀ j, 1 < q j ∧ q j < ∞) ∧ genFun μ q = q :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.exists_conjugate_iff_exists_fixedPoint μ hsub hpr hns
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 

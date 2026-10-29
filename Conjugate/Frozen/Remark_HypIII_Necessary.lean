@@ -34,7 +34,7 @@ theorem remark_hypIII_necessary :
       (∀ q : ℝ≥0∞, 1 < q → q < ∞ → genFun μ (fun _ => q) 0 = ∞) ∧
       ¬ ∃ μHat, IsConjugate μ μHat :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.remark_hypIII_necessary
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 

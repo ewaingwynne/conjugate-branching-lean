@@ -34,7 +34,7 @@ theorem proposition_1_6_conjugate (μ : Fin 1 → PMF (Fin 1 →₀ ℕ))
       ∀ μ₁ μ₂, IsConjugate μ μ₁ → IsConjugate μ μ₂ →
         pathLaw μ₁ (Finsupp.single 0 1) = pathLaw μ₂ (Finsupp.single 0 1) :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.proposition_1_6_conjugate μ hI hII hIII
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 

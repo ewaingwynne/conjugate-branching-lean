@@ -688,7 +688,7 @@
         "module": "Conjugate.Internal.Theorem_1_4_Conjugate",
         "export": "Conjugate.Internal.theorem_1_4_conjugate"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "34f7b26cf1c64f84fc638039aa6b2a70ffce690d96c4b63dad25df85cf94a39f",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {
@@ -763,7 +763,7 @@
         "module": "Conjugate.Internal.ExistsConjugateIff",
         "export": "Conjugate.Internal.exists_conjugate_iff_exists_fixedPoint"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "341e45ab68ccaa80a41010b8938116ee1644a4ce6ca77f269c4d36078f43dfbd",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {
@@ -877,7 +877,7 @@
         "module": "Conjugate.Internal.Proposition_1_6_Conjugate",
         "export": "Conjugate.Internal.proposition_1_6_conjugate"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "408e78eeda3fc4536c19dc0cf412b894859713d4d7f372a43e9dcfb8962583c1",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {
@@ -1370,7 +1370,7 @@
         "module": "Conjugate.Internal.Remark_HypIII_Necessary",
         "export": "Conjugate.Internal.remark_hypIII_necessary"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "5ea185c5d3a32dbe87fcc5c1f2e5d15ca2efdbcd5be85fa93f87471814be1543",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {
