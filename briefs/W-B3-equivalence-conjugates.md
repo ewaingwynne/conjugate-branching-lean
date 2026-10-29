@@ -1,10 +1,13 @@
 # Brief W-B3 — Thm 1.4 equivalence, Prop 1.6 conjugate form, Remark "Hyp. III necessary"
 
-**Goal.** Prove the providers of three frozen anchors:
+**Goal.** Prove the providers of four frozen anchors:
 - `Conjugate.exists_conjugate_iff_exists_fixedPoint` (paper.tex:238; ERRATA R3);
 - `Conjugate.proposition_1_6_conjugate` (paper.tex:343-356; ERRATA R5): a conjugate exists, and
   it is unique in law;
-- `Conjugate.remark_hypIII_necessary` (paper.tex:252): the `a m⁻³` example.
+- `Conjugate.remark_hypIII_necessary` (paper.tex:252): the `a m⁻³` example;
+- `Conjugate.theorem_1_4_conjugate` (paper.tex:241-250; ERRATA R3). It is the sealed
+  `Conjugate.theorem_1_4_fixedPoint` (module `Conjugate.Frozen.Theorem_1_4_FixedPoint`) followed by
+  `isConjugate_of_fixedPoint`.
 
 Along the way, prove two reusable subcriticality criteria and the two directions of the
 equivalence with an **explicit tilt formula**.
@@ -42,8 +45,9 @@ so the laws differ.
   - `Conjugate/Internal/Conjugacy/*.lean`, for the equivalence directions;
   - `Conjugate/Internal/Examples/HypIIINecessary*.lean`, for the remark's example.
 - The existing stubs `Conjugate/Internal/ExistsConjugateIff.lean`,
-  `Conjugate/Internal/Proposition_1_6_Conjugate.lean` and
-  `Conjugate/Internal/Remark_HypIII_Necessary.lean`. Keep header and docstring.
+  `Conjugate/Internal/Proposition_1_6_Conjugate.lean`,
+  `Conjugate/Internal/Remark_HypIII_Necessary.lean` and
+  `Conjugate/Internal/Theorem_1_4_Conjugate.lean`. Keep header and docstring.
 - Edit nothing else.
 
 **Allowed inputs.**
@@ -52,8 +56,9 @@ so the laws differ.
 - `Conjugate.Infrastructure.{Population,StepKernel}`.
 - `Conjugate.Internal.{Foundations,Analytic,Section2,PathSpace,SingleType}.*`.
 - The **sealed** frozen modules `Conjugate.Frozen.Proposition_2_2`,
-  `Conjugate.Frozen.Proposition_1_6_FixedPoint`, `Conjugate.Frozen.Proposition_2_1_CondLaw` and
-  `Conjugate.Frozen.Remark_HypIII_Automatic`.
+  `Conjugate.Frozen.Proposition_1_6_FixedPoint`, `Conjugate.Frozen.Proposition_2_1_CondLaw`,
+  `Conjugate.Frozen.Remark_HypIII_Automatic`, `Conjugate.Frozen.Theorem_2_7` and
+  `Conjugate.Frozen.Theorem_1_4_FixedPoint`.
 
 Never import a DRAFT anchor (check `frozen-anchor-manifest.json` states) or a provider of
 another anchor.
@@ -115,11 +120,17 @@ theorem remark_hypIII_necessary :
       IsSubcritical μ ∧ (IsPositiveRegular μ ∧ IsNonsingular μ) ∧
       (∀ q : ℝ≥0∞, 1 < q → q < ∞ → genFun μ (fun _ => q) 0 = ∞) ∧
       ¬ ∃ μHat, IsConjugate μ μHat
+
+theorem theorem_1_4_conjugate {d : ℕ} (μ : Fin d → PMF (Fin d →₀ ℕ))
+    (hI : IsSubcritical μ) (hII : IsPositiveRegular μ ∧ IsNonsingular μ)
+    (hIII : ∀ k, ContinuousOn (fun q => genFun μ q k) {q | ∀ j, 0 < q j}) :
+    ∃ μHat : Fin d → PMF (Fin d →₀ ℕ), IsConjugate μ μHat
 ```
 The seals will be:
 - `by exact Conjugate.Internal.exists_conjugate_iff_exists_fixedPoint μ hsub hpr hns`;
 - `by exact Conjugate.Internal.proposition_1_6_conjugate μ hI hII hIII`;
-- `by exact Conjugate.Internal.remark_hypIII_necessary`.
+- `by exact Conjugate.Internal.remark_hypIII_necessary`;
+- `by exact Conjugate.Internal.theorem_1_4_conjugate μ hI hII hIII`.
 
 **Prop 1.6 (conjugate).**
 - *Existence.* Use the sealed `Conjugate.proposition_1_6_fixedPoint`, which gives a unique fixed
@@ -150,9 +161,9 @@ The seals will be:
 **Checks** (run them and paste the output):
 ```bash
 export PATH="$HOME/.elan/bin:$HOME/.local/bin:$PATH"
-lake build Conjugate.Internal.ExistsConjugateIff Conjugate.Internal.Proposition_1_6_Conjugate Conjugate.Internal.Remark_HypIII_Necessary Conjugate.Internal.Analytic.Subcritical
+lake build Conjugate.Internal.ExistsConjugateIff Conjugate.Internal.Proposition_1_6_Conjugate Conjugate.Internal.Remark_HypIII_Necessary Conjugate.Internal.Theorem_1_4_Conjugate Conjugate.Internal.Analytic.Subcritical
 python3 -I tools/check_lean_modules.py --root . --max-lines 1500 --files <all your files>
-python3 -I tools/leanprobe.py axioms <Module> <Decl>   # every public theorem above and all three providers
+python3 -I tools/leanprobe.py axioms <Module> <Decl>   # every public theorem above and all four providers
 ```
 Only `propext`, `Classical.choice` and `Quot.sound` are acceptable.
 
@@ -168,7 +179,7 @@ Only `propext`, `Classical.choice` and `Quot.sound` are acceptable.
 - Never run `lake build` with no target.
 
 **Stop condition.** You are done when everything listed compiles without `sorry`, with the
-standard axioms only, and the three seal probes pass. Stop early and report if:
+standard axioms only, and the four seal probes pass. Stop early and report if:
 - a statement appears false or mis-typed (do not change it);
 - a sealed anchor you need is not sealed.
 
@@ -196,7 +207,7 @@ standard axioms only, and the three seal probes pass. Stop early and report if:
 10. Report exactly: files changed, approach, the exact commands run and their output,
     `#print axioms` for every new public theorem, and anything unproved or uncertain.
 
-(Rule 4: you author these three providers. Never import their frozen files. Keep unfinished work
+(Rule 4: you author these four providers. Never import their frozen files. Keep unfinished work
 in `.lake/probes/b3/`, never in `Conjugate/`.)
 
 Use the copyright header of the existing files.
