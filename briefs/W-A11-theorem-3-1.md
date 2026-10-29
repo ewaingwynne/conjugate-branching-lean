@@ -40,6 +40,16 @@ have exactly that type, binder names and order:
   - W-A4: `exists_pos_of_le`;
   - W-A2: `pathLaw_extinctionEvent_eq_one`;
   - W-A3: `genFun_mono`, `logGenFun_mono`, `logGenFun_iterate`, `genFun_iterate_eq`.
+- Useful W-A10 helpers, in `Section3/Truncation.lean`, `LimsupBound.lean`,
+  `SingleTypeRestriction.lean` and `SingleTypeFixedPoint.lean`:
+  - `genFun_truncate_le` (one step);
+  - `genFun_extend_exp_of_fixed`;
+  - `exp_update_zero`;
+  - `prod_comapDomain_val`;
+  - `pos_of_isNonsingular_truncate_one`;
+  - `meanMatrix_truncate`.
+
+  From `Section2/Attractive.lean`: `mul_measure_le_lintegral`.
 - The **sealed** frozen module `Conjugate.Frozen.Theorem_2_7` (export `Conjugate.theorem_2_7`),
   applied to each truncation.
 
