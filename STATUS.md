@@ -64,14 +64,15 @@ checks, and a fresh Sonnet audit.
 | W-A1 | A (Sonnet) | `stepKernel` / `pathLaw` characterization, (1.2), `M^n` | `claim:branching-property` (Markov part), `eqn-gen-func-n`, `claim:mean-matrix-powers` | **audited** (AU-1 PASS) |
 | W-A2 | A (Sonnet) | branching (convolution), absorption, extinction formulas, subcritical extinction, `M^n → 0`, Neumann vector | `claim:branching-property` (independence), `claim:subcritical-extinction` | **audited** (AU-1 PASS) |
 | W-A3 | A (Sonnet) | analytic basics of `f`, `g`; provider for `remark_hypIII_automatic` | `eqn-convex-func-n`, `eqn-fixed-pt-equiv`, `lem-basin-open#g-iter-continuous`, `lem-mono` (part 1), `rem:hyp-iii-automatic` | **audited** (AU-1 PASS); anchor PROVED |
-| W-A4 | A (Sonnet) | Lemmas 2.3, 2.4, 2.9 (strict), (2.8), 2.18 | `lem-fixed-pos`, `lem-gf-pos`, `lem-mono#*`, `eqn-infty-subset*`, `lem-basin-closed` | **audited** (AU-2 PASS) |
-| W-A5 | A (Sonnet) | Lemmas 2.5, 2.10, 2.11, 2.13 | `lem-gf-bded`, `prop-unstable`, `lem-unstable-scaled`, `lem-unstable-ssl` | **audited** (AU-2 PASS) |
-| W-A6 | A (Sonnet) | Lemmas 2.12, 2.14-2.17 | `lem-monotone-lim`, `lem-attractive-*`, `lem-basin-open`, `lem-ray-intersect` | **audited** (AU-2 PASS) |
+| W-A4 | A (Sonnet) | Lemmas 2.3, 2.4, 2.9 (strict), (2.10), 2.14 | `lem-fixed-pos`, `lem-gf-pos`, `lem-mono#*`, `eqn-infty-subset*`, `lem-basin-closed` | **audited** (AU-2 PASS) |
+| W-A5 | A (Sonnet) | Lemmas 2.5, 2.10, 2.11, 2.12 | `lem-gf-bded`, `prop-unstable`, `lem-unstable-scaled`, `lem-unstable-ssl` | **audited** (AU-2 PASS) |
+| W-A6 | A (Sonnet) | Lemmas 2.13, 2.15-2.18 | `lem-monotone-lim`, `lem-attractive-*`, `lem-basin-open`, `lem-ray-intersect` | **audited** (AU-2 PASS) |
 | W-A8 | B (Sonnet) | Prop 1.6 fixed-point provider + seal | `prop-single-type.fixed-point` and steps | **audited** (AU-2 PASS) |
 | W-A7 | A | Thm 2.7 (simplex route) + Thm 1.4 fixed-point providers | `thm-fixed`, `thm-fixed-gf.fixed-point` | written, checked, both anchors sealed (5e015e1); audit pending (AU-3) |
 | W-B2 | B | path-space Markov property, cylinder uniqueness, h-transform; Props 2.1(b), 2.2 providers | `prop-cond-on-ext.cond-law`, `prop-conjugate` | written, checked, both anchors sealed (7581f95); audit pending (AU-3) |
 | W-A9 | any | Example 1.5 provider + row-sum subcriticality criterion | `counterexample` and steps | brief ready |
 | W-B3 | A (Sonnet) | equivalence (both directions, explicit tilt), Thm 1.4 conj, Prop 1.6 conj, Hyp III necessary, subcriticality criteria | `thm-fixed-gf.equivalence`, `thm-fixed-gf.conjugate`, `prop-single-type.conjugate`, `rem:hyp-iii-necessary` | running |
+| W-A10 | B (Sonnet) | §3 truncation (3.2), Lemma 3.2, Lemma 3.4 | `eqn-gf-truncated`, `eqn-log-gf-*`, `lem-fixed-limsup`, `lem-1d-soln` | running |
 
 Known limits (from AU-1): the branching property is proved at the level of generation laws
 (cylinder formula, convolution, Chapman–Kolmogorov), not yet as a path-level statement; briefs
@@ -101,10 +102,11 @@ docstring sweep pending (quiet window).
 | 2026-10-28 | writer W-A3 | Sonnet | analytic basics; Hyp III remark provider | 17 public theorems, standard axioms; seal probe OK |
 | 2026-10-28 | auditor AU-1 (fresh) | Sonnet | W-A1-A3 node audit + seal audit of remark_hypIII_automatic | PASS, no blocking findings (`review/audits/AU-1.md`) |
 | 2026-10-28 | writer W-A4 | Sonnet | §2 positivity layer | 12 public theorems, standard axioms; orchestrator checks pass |
-| 2026-10-28 | writer W-A5 | Sonnet | Lemmas 2.5, 2.10, 2.11, 2.13 | 5 public theorems, standard axioms; orchestrator checks pass |
+| 2026-10-28 | writer W-A5 | Sonnet | Lemmas 2.5, 2.10, 2.11, 2.12 | 5 public theorems, standard axioms; orchestrator checks pass |
 | 2026-10-28 | writer W-A8 | Sonnet | Prop 1.6 fixed-point provider | provider + 21 helpers, standard axioms; seal probe OK |
-| 2026-10-28 | writer W-A6 | Sonnet | Lemmas 2.12, 2.14-2.17 | 9 public theorems, standard axioms; orchestrator checks pass |
+| 2026-10-28 | writer W-A6 | Sonnet | Lemmas 2.13, 2.15-2.18 | 9 public theorems, standard axioms; orchestrator checks pass |
 | 2026-10-28 | writer W-B2 | Sonnet | path space: Markov, uniqueness, h-transform; Props 2.1(b), 2.2 | 14 public decls + 2 providers, standard axioms; seal probes OK |
 | 2026-10-28 | auditor AU-2 (fresh) | Sonnet | W-A4..W-A6 nodes, Brouwer, seal of proposition_1_6_fixedPoint | PASS, no blocking findings (`review/audits/AU-2.md`); numbering note |
 | 2026-10-28 | writer W-A7 | Sonnet | Thm 2.7 via Brouwer on the simplex (phase 1) | provider + 8 helpers, standard axioms; seal probe OK; phase 2 (Thm 1.4 fp, 3 lines) by orchestrator |
 | 2026-10-28 | writer W-B3 | Sonnet | equivalence, Thm 1.4 conj, Prop 1.6 conj, Hyp III necessary | running |
+| 2026-10-28 | writer W-A10 | Sonnet | §3 truncation layer, Lemmas 3.2, 3.4 | running |
