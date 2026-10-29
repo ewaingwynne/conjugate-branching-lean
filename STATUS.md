@@ -75,7 +75,7 @@ checks, and a fresh Sonnet audit.
 | W-A10 | B (Sonnet) | §3 truncation (3.2), Lemma 3.2, Lemma 3.4 | `eqn-gf-truncated`, `eqn-log-gf-*`, `lem-fixed-limsup`, `lem-1d-soln` | written, orchestrator-checked (c6b20e9); audit pending |
 | W-A11 | B (Fable) | Lemma 3.3, Theorem 3.1 provider + seal | `lem-fixed-liminf`, `thm-fixed-pt-infty` | written, checked, anchor sealed (260327e); audit pending (AU-5) |
 | W-A12 | any | Example 3.5 provider + seal | `example-ctble` | written, checked, anchor sealed (4d7fe6a); audit pending (AU-5) |
-| W-A13 | A (Sonnet) | Lemma 2.19 (deformation retraction) | `lem-retract` and steps | running |
+| W-A13 | A (Sonnet) | Lemma 2.19 (deformation retraction) | `lem-retract` and steps | written, orchestrator-checked; audit in AU-6 (closure) |
 
 Known limits (from AU-1): the branching property is proved at the level of generation laws
 (cylinder formula, convolution, Chapman–Kolmogorov), not yet as a path-level statement; briefs
@@ -119,4 +119,4 @@ docstring sweep pending (quiet window).
 | 2026-10-28 | auditor AU-4 (fresh) | Sonnet | W-B3 four seals, Example 1.5 seal | PASS, no blocking findings (`review/audits/AU-4.md`) |
 | 2026-10-28 | writer W-A12 | Sonnet | Example 3.5 | provider + 41 helpers, standard axioms; seal probe OK |
 | 2026-10-28 | auditor AU-5 (fresh) | Sonnet | §3, Thm 3.1 and Ex 3.5 seals | running |
-| 2026-10-28 | writer W-A13 | Sonnet | Lemma 2.19 | running |
+| 2026-10-28 | writer W-A13 | Sonnet | Lemma 2.19 | done, standard axioms |
