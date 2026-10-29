@@ -33,6 +33,18 @@ SECTION = re.compile(
     r"section(?:\s+[A-Za-z_][A-Za-z0-9_']*(?:\.[A-Za-z_][A-Za-z0-9_']*)*)?[ \t]*$")
 END = re.compile(r"^[ \t]*end(?:\s+[A-Za-z_][A-Za-z0-9_']*(?:\.[A-Za-z_][A-Za-z0-9_']*)*)?[ \t]*$")
 PLACEHOLDER = re.compile(r"\b(?:sorry|admit)\b")
+# Names bound by `(x y : T)`, `{x : T}`, `[x : T]`, `⦃x : T⦄` binders of a declaration header.
+BINDER_GROUP = re.compile(r"[({\[⦃]\s*([^\s:(){}\[\]⦃⦄][^:(){}\[\]⦃⦄]*?)\s*:")
+THEOREM_HEADER = re.compile(r"(?m)^[ \t]*(?:theorem|lemma)\s")
+
+
+def binder_names(prefix: str) -> set[str]:
+    """Binder names of the last theorem header in a frozen prefix (docstrings excluded)."""
+    heads = list(THEOREM_HEADER.finditer(prefix))
+    if not heads:
+        return set()
+    header = prefix[heads[-1].start():]
+    return {name for group in BINDER_GROUP.findall(header) for name in group.split()}
 MODULE_KEYWORD = re.compile(r"module(?![\w'.!?])")
 
 
@@ -437,7 +449,13 @@ class Guard:
             implementation = anchor.get("implementation")
             export = implementation.get("export") if isinstance(implementation, dict) else None
             escaped = re.escape(export) if isinstance(export, str) else r"(?!)"
-            if not re.fullmatch(r"\s*by\s+(?:exact\s+|simpa\s+using\s+)" + escaped + r"\s*", body):
+            # Project amendment (2026-10-28): frozen theorems state their binders before the
+            # colon, so the export may be applied to bare local names that are binders of the
+            # frozen declaration itself (`by exact Impl.foo μ hI hII`). No other terms allowed.
+            sealed = re.fullmatch(r"\s*by\s+(?:exact\s+|simpa\s+using\s+)" + escaped
+                                  + r"(?P<args>(?:[ \t]+[^\s()\[\]{}.,:;@`]+)*)\s*", body)
+            binders = binder_names(prefix)
+            if sealed is None or any(arg not in binders for arg in sealed.group("args").split()):
                 self.fail(f"{label}: SEALED body must be trivial assembly of exactly implementation.export")
             lines = 0 if not body.strip() else body.strip().count("\n") + 1
             if lines > limits["max_body_lines"] or len(body.encode("utf-8")) > limits["max_body_bytes"]:
