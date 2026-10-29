@@ -12,10 +12,10 @@ Single writer: orchestrator. Proof status is never inferred from compilation alo
 ## Mandatory report fields
 
 ```text
-DRAFT_ANCHORS: 12 (Conjugate/Frozen/*.lean theorem anchors except Remark_HypIII_Automatic; all FROZEN_UNPROVED)
+DRAFT_ANCHORS: 11 (Conjugate/Frozen/*.lean theorem anchors except Remark_HypIII_Automatic and Proposition_1_6_FixedPoint; all FROZEN_UNPROVED)
 UNREGISTERED_SORRIES: 0
 DRAFT_IMPORT_VIOLATIONS: 0
-SEALED_THIS_TURN: 1 (Conjugate.remark_hypIII_automatic, a25a4fd; PROVED after AU-1)
+SEALED_THIS_TURN: 2 (Conjugate.remark_hypIII_automatic, a25a4fd, PROVED after AU-1; Conjugate.proposition_1_6_fixedPoint, d3a4c17, seal audit pending)
 ```
 
 ## Anchors
@@ -40,7 +40,7 @@ SEALED_THIS_TURN: 1 (Conjugate.remark_hypIII_automatic, a25a4fd; PROVED after AU
 | `Conjugate.theorem_1_4_fixedPoint` | theorem | `Theorem_1_4_FixedPoint.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
 | `Conjugate.theorem_1_4_conjugate` | theorem | `Theorem_1_4_Conjugate.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
 | `Conjugate.exists_conjugate_iff_exists_fixedPoint` | theorem | `ExistsConjugateIff.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
-| `Conjugate.proposition_1_6_fixedPoint` | theorem | `Proposition_1_6_FixedPoint.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
+| `Conjugate.proposition_1_6_fixedPoint` | theorem | `Proposition_1_6_FixedPoint.lean` | SEALED (d3a4c17) | PASS (2026-10-28) | approved | audit pending |
 | `Conjugate.proposition_1_6_conjugate` | theorem | `Proposition_1_6_Conjugate.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
 | `Conjugate.proposition_2_1_condLaw` | theorem | `Proposition_2_1_CondLaw.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
 | `Conjugate.proposition_2_2` | theorem | `Proposition_2_2.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
@@ -66,9 +66,9 @@ checks, and a fresh Sonnet audit.
 | W-A4 | A (Sonnet) | Lemmas 2.3, 2.4, 2.9 (strict), (2.8), 2.18 | `lem-fixed-pos`, `lem-gf-pos`, `lem-mono#*`, `eqn-infty-subset*`, `lem-basin-closed` | written, orchestrator-checked (6c5f35d); audit pending |
 | W-A5 | A (Sonnet) | Lemmas 2.5, 2.10, 2.11, 2.13 | `lem-gf-bded`, `prop-unstable`, `lem-unstable-scaled`, `lem-unstable-ssl` | written, orchestrator-checked (d5caab7); audit pending |
 | W-A6 | A (Sonnet) | Lemmas 2.12, 2.14-2.17 | `lem-monotone-lim`, `lem-attractive-*`, `lem-basin-open`, `lem-ray-intersect` | running |
-| W-A8 | B (Sonnet) | Prop 1.6 fixed-point provider + seal | `prop-single-type.fixed-point` and steps | running |
+| W-A8 | B (Sonnet) | Prop 1.6 fixed-point provider + seal | `prop-single-type.fixed-point` and steps | written, checked, anchor sealed (d3a4c17); audit pending |
 | W-A7 | A | Thm 2.7 (simplex route) + Thm 1.4 fixed-point providers | `thm-fixed`, `thm-fixed-gf.fixed-point` | brief ready (after W-A6) |
-| W-B2 | B | path-space Markov property, cylinder uniqueness, h-transform; Props 2.1(b), 2.2 providers | `prop-cond-on-ext.cond-law`, `prop-conjugate` | brief ready |
+| W-B2 | B | path-space Markov property, cylinder uniqueness, h-transform; Props 2.1(b), 2.2 providers | `prop-cond-on-ext.cond-law`, `prop-conjugate` | running |
 
 Known limits (from AU-1): the branching property is proved at the level of generation laws
 (cylinder formula, convolution, Chapman–Kolmogorov), not yet as a path-level statement; briefs
@@ -93,5 +93,6 @@ lists omit the transitively reached `Defs/StepKernel.lean` (sealed separately; r
 | 2026-10-28 | auditor AU-1 (fresh) | Sonnet | W-A1-A3 node audit + seal audit of remark_hypIII_automatic | PASS, no blocking findings (`review/audits/AU-1.md`) |
 | 2026-10-28 | writer W-A4 | Sonnet | §2 positivity layer | 12 public theorems, standard axioms; orchestrator checks pass |
 | 2026-10-28 | writer W-A5 | Sonnet | Lemmas 2.5, 2.10, 2.11, 2.13 | 5 public theorems, standard axioms; orchestrator checks pass |
-| 2026-10-28 | writer W-A8 | Sonnet | Prop 1.6 fixed-point provider | running |
+| 2026-10-28 | writer W-A8 | Sonnet | Prop 1.6 fixed-point provider | provider + 21 helpers, standard axioms; seal probe OK |
 | 2026-10-28 | writer W-A6 | Sonnet | Lemmas 2.12, 2.14-2.17 | running |
+| 2026-10-28 | writer W-B2 | Sonnet | path space: Markov, uniqueness, h-transform; Props 2.1(b), 2.2 | running |
