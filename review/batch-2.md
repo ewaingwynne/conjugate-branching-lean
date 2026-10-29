@@ -42,6 +42,22 @@ for them:
   probability less than 1, but the partial extinction probability may be 1" has no proof in the
   paper.
 
+## Statement audit (AU-B2, `review/audits/AU-B2-statement.md`)
+
+All five PASS, conditional on R8. All five are TRUE (Lean-checked in probes).
+
+The audit found that L934, read literally, is false without positive regularity. With a sterile
+type and types that reproduce only themselves, a conjugate exists but there is no fixed point in
+`(1,∞)^ℕ`. Hence the proposed erratum:
+
+- **E10 (proposed).** paper.tex:934, "conjugate branching processes correspond to solutions of
+  `f(q) = q` in `(1,∞)^ℕ`" holds under positive regularity (Definition 1.3, `d` extended to `ℕ`),
+  which is the hypothesis of the finite-type statement. It is not true for every process with
+  global extinction one. Anchor #3 includes positive regularity.
+
+The docstrings of #3 and #4 were updated on the auditor's recommendation. The bytes below are
+current.
+
 ## Exact proposed files
 
 Each file has the standard frozen layout (prefix / proof / suffix markers). The body is
@@ -201,10 +217,13 @@ finite-type case, conjugate branching processes correspond to solutions of `f(q)
 
 Types are indexed by `ℕ`; extinction is global extinction. Let `X` have global extinction
 probability one started from one individual of each type (the context of Definition 1.1, read
-per starting type as in ERRATA.md R7), and be positive regular and non-singular (the hypotheses
-of the finite-type statement, paper.tex:238, with `d` extended to `ℕ`, paper.tex:928). Then a
-conjugate branching process for `X` exists if and only if there is `q ∈ (1,∞)^ℕ` with
-`f(q) = q`. -/
+per starting type as in ERRATA.md R7; it replaces the finite-type subcriticality of paper.tex:238),
+and be positive regular and non-singular (Definition 1.3 with `d` extended to `ℕ`,
+paper.tex:928). Then a conjugate branching process for `X` exists if and only if there is
+`q ∈ (1,∞)^ℕ` with `f(q) = q` (existence form, as in ERRATA.md R3 (iii)).
+Positive regularity is necessary (ERRATA.md E10): with a sterile type and types that only
+reproduce themselves, a conjugate exists but `f` has no fixed point in `(1,∞)^ℕ`.
+Non-singularity is kept for parity with the finite-type statement. -/
 theorem exists_conjugate_iff_exists_fixedPoint_countable (μ : ℕ → PMF (ℕ →₀ ℕ))
     (hext : ∀ k, pathLaw μ (Finsupp.single k 1) (extinctionEvent ℕ) = 1)
     (hpr : IsPositiveRegular μ) (hns : IsNonsingular μ) :
@@ -255,8 +274,8 @@ namespace Conjugate
 /-- **Theorem 3.1, conjugate form** (paper.tex:958-959: "Let `X` be a countable type branching
 process with global extinction probability one. Let us now state a list of assumptions which
 ensure the existence of a conjugate branching process, equivalently, a fixed point for the
-generating function `f` in `(1,∞)^ℕ`"; Theorem 3.1, paper.tex:985-987; the equivalence,
-paper.tex:934).
+generating function `f` in `(1,∞)^ℕ`" (`ℕ_0` read as `ℕ`, ERRATA.md E6); Theorem 3.1,
+paper.tex:985-987; the equivalence, paper.tex:934).
 
 Under exactly the hypotheses of the frozen `Conjugate.theorem_3_1` (global extinction per
 starting type, ERRATA.md R7; Assumptions I-IV with the Lean indexing explained there), there
