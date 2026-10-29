@@ -63,9 +63,10 @@ checks, and a fresh Sonnet audit.
 | W-A1 | A (Sonnet) | `stepKernel` / `pathLaw` characterization, (1.2), `M^n` | `claim:branching-property` (Markov part), `eqn-gen-func-n`, `claim:mean-matrix-powers` | **audited** (AU-1 PASS) |
 | W-A2 | A (Sonnet) | branching (convolution), absorption, extinction formulas, subcritical extinction, `M^n → 0`, Neumann vector | `claim:branching-property` (independence), `claim:subcritical-extinction` | **audited** (AU-1 PASS) |
 | W-A3 | A (Sonnet) | analytic basics of `f`, `g`; provider for `remark_hypIII_automatic` | `eqn-convex-func-n`, `eqn-fixed-pt-equiv`, `lem-basin-open#g-iter-continuous`, `lem-mono` (part 1), `rem:hyp-iii-automatic` | **audited** (AU-1 PASS); anchor PROVED |
-| W-A4 | A (Sonnet) | Lemmas 2.3, 2.4, 2.9 (strict), (2.8), 2.18 | `lem-fixed-pos`, `lem-gf-pos`, `lem-mono#*`, `eqn-infty-subset*`, `lem-basin-closed` | running |
-| W-A5 | A (Sonnet) | Lemmas 2.5, 2.10, 2.11, 2.13 | `lem-gf-bded`, `prop-unstable`, `lem-unstable-scaled`, `lem-unstable-ssl` | brief ready |
+| W-A4 | A (Sonnet) | Lemmas 2.3, 2.4, 2.9 (strict), (2.8), 2.18 | `lem-fixed-pos`, `lem-gf-pos`, `lem-mono#*`, `eqn-infty-subset*`, `lem-basin-closed` | written, orchestrator-checked (6c5f35d); audit pending |
+| W-A5 | A (Sonnet) | Lemmas 2.5, 2.10, 2.11, 2.13 | `lem-gf-bded`, `prop-unstable`, `lem-unstable-scaled`, `lem-unstable-ssl` | running |
 | W-A6 | A (Sonnet) | Lemmas 2.12, 2.14-2.17 | `lem-monotone-lim`, `lem-attractive-*`, `lem-basin-open`, `lem-ray-intersect` | brief ready |
+| W-A8 | any | Prop 1.6 fixed-point provider + seal | `prop-single-type.fixed-point` and steps | brief ready |
 
 Known limits (from AU-1): the branching property is proved at the level of generation laws
 (cylinder formula, convolution, Chapman–Kolmogorov), not yet as a path-level statement; briefs
@@ -88,4 +89,5 @@ lists omit the transitively reached `Defs/StepKernel.lean` (sealed separately; r
 | 2026-10-28 | writer W-A2 | Sonnet | branching, extinction, mean decay | 10 public theorems, standard axioms; orchestrator checks pass |
 | 2026-10-28 | writer W-A3 | Sonnet | analytic basics; Hyp III remark provider | 17 public theorems, standard axioms; seal probe OK |
 | 2026-10-28 | auditor AU-1 (fresh) | Sonnet | W-A1-A3 node audit + seal audit of remark_hypIII_automatic | PASS, no blocking findings (`review/audits/AU-1.md`) |
-| 2026-10-28 | writer W-A4 | Sonnet | §2 positivity layer | running |
+| 2026-10-28 | writer W-A4 | Sonnet | §2 positivity layer | 12 public theorems, standard axioms; orchestrator checks pass |
+| 2026-10-28 | writer W-A5 | Sonnet | Lemmas 2.5, 2.10, 2.11, 2.13 | running |
