@@ -1551,27 +1551,27 @@ REVIEWER: reviewer-D/sonnet
 ITEM: inv:L934:ctble-conjugate-extension
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934
-DISPOSITION: EXCLUDED
-REASON: countable-type extension of (2.1) and Proposition 2.2 (conjugate processes correspond to fixed points in (1,∞)^ℕ) is excluded by spec §7: the proof of Theorem 3.1 constructs only a fixed point and does not consume it. Proof obligation not modeled: the step fixed point implies conjugate process asserted at L934 and in the first sentence of Example 3.5 (L1183)
-COVERAGE_STATUS: REVIEWED
+DISPOSITION: NODE prop-cond-on-ext.ctble.cond-law, prop-conjugate.ctble, prop-conjugate.ctble#offspring-law, prop-conjugate.ctble#ext-prob-hat, prop-conjugate.ctble#cond-law-hat, thm-fixed-gf.equivalence.ctble, thm-fixed-gf.equivalence.ctble#fixed-point-to-conjugate, thm-fixed-gf.equivalence.ctble#conjugate-to-fixed-point
+REASON: Re-scoped by the author's ruling R8 (2026-10-28): the countable-type (2.1), Proposition 2.2 and the conjugate/fixed-point correspondence are now frozen roots (batch 2); E10 records that the correspondence needs positive regularity. The partial-extinction remark (last sentence) remains excluded (R8(e)). [Phase 2 disposition was EXCLUDED: countable-type extension of (2.1) and Proposition 2.2 (conjugate processes correspond to fixed points in (1,∞)^ℕ) is excluded by spec §7: the proof of Theorem 3.1 constructs only a fixed point and does not consume it. Proof obligation not modeled: the step fixed point implies conjugate process asserted at L934 and in the first sentence of Example 3.5 (L1183)]
+COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-D/sonnet
 REVIEWER: reviewer-D/sonnet
 
 ITEM: inv:cite:L934:jl-cond-on-ext.2
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L934-jl-cond-on-ext-2@L934-L934
-DISPOSITION: EXCLUDED
-REASON: citation supporting the countable-type extension of (2.1) and Proposition 2.2 (L934, excluded by spec §7); Theorem 3.1 and Example 3.5 produce a fixed point of f and never consume this extension
-COVERAGE_STATUS: REVIEWED
+DISPOSITION: NODE prop-cond-on-ext.ctble.cond-law
+REASON: Re-scoped by R8: the citation supports the countable-type (2.1), now the root prop-cond-on-ext.ctble.cond-law (edge to ext:jl08-thm1). [Phase 2 disposition was EXCLUDED: citation supporting the countable-type extension of (2.1) and Proposition 2.2 (L934, excluded by spec §7); Theorem 3.1 and Example 3.5 produce a fixed point of f and never consume this extension]
+COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-D/sonnet
 REVIEWER: reviewer-D/sonnet
 
 ITEM: inv:cite:L934:jl-cond-on-ext.3
 KIND: citation
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#cite-L934-jl-cond-on-ext-3@L934-L934
-DISPOSITION: EXCLUDED
-REASON: citation supporting the countable-type extension of (2.1) and Proposition 2.2 (L934, excluded by spec §7); Theorem 3.1 and Example 3.5 produce a fixed point of f and never consume this extension
-COVERAGE_STATUS: REVIEWED
+DISPOSITION: NODE prop-cond-on-ext.ctble.cond-law
+REASON: Re-scoped by R8: as inv:cite:L934:jl-cond-on-ext.2. [Phase 2 disposition was EXCLUDED: citation supporting the countable-type extension of (2.1) and Proposition 2.2 (L934, excluded by spec §7); Theorem 3.1 and Example 3.5 produce a fixed point of f and never consume this extension]
+COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-D/sonnet
 REVIEWER: reviewer-D/sonnet
 
@@ -1848,7 +1848,7 @@ REVIEWER: reviewer-D/sonnet
 ITEM: inv:example-ctble
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1182-L1201
-DISPOSITION: NODE example-ctble, example-ctble#finite-offspring, example-ctble#global-extinction, example-ctble#assume-I, example-ctble#assume-II, example-ctble#assume-III, example-ctble#assume-IV, example-ctble#choose-s, example-ctble#choose-t, example-ctble#apply-thm-3-1, def:stoch-dom
+DISPOSITION: NODE example-ctble, example-ctble#finite-offspring, example-ctble#global-extinction, example-ctble#assume-I, example-ctble#assume-II, example-ctble#assume-III, example-ctble#assume-IV, example-ctble#choose-s, example-ctble#choose-t, example-ctble#apply-thm-3-1, def:stoch-dom, example-ctble.conjugate
 REASON: Example 3.5 root, the asserted verifications (global extinction, Assumptions I-IV, existence of s and t, each a SOURCE_GAP step), the note on finite offspring (L1192), the application of Theorem 3.1 (L1183), and the frozen definition anchor for stochastic domination (L1194). L1193 (concrete sampling construction) is an illustration with no claim and is not modeled
 COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
@@ -1884,7 +1884,7 @@ REVIEWER: queue-reviewer/sonnet
 ITEM: inv:L957:assumptions-I-IV
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#assumptions-I-IV@L957-L984
-DISPOSITION: NODE thm-fixed-pt-infty, lem-fixed-limsup, lem-fixed-liminf, lem-1d-soln, lem-fixed-liminf#choose-K, example-ctble#assume-I, example-ctble#assume-II, example-ctble#assume-III, example-ctble#assume-IV
+DISPOSITION: NODE thm-fixed-pt-infty, lem-fixed-limsup, lem-fixed-liminf, lem-1d-soln, lem-fixed-liminf#choose-K, example-ctble#assume-I, example-ctble#assume-II, example-ctble#assume-III, example-ctble#assume-IV, thm-fixed-pt-infty.conjugate
 REASON: the global-extinction sentence (L958) and Assumptions I-IV (labels item-gf-trunc-infty, item-gf-growth-infty, item-gf-bded-infty, item-gf-perturb-infty; numbered display (3.4) at L970 is the inequality of Assumption II; unnumbered displays L974, L978-L979) are a local hypothesis package (spec §4): recorded whole in SOURCE_HYPOTHESES of the root and of the §3.2 lemmas and steps, used by name at L1028 and L1195, and each assumption is verified for Example 3.5 by the example-ctble#assume-I..IV nodes. The weights remark L982-L983 is expository (pointer to Example 3.5) and excluded
 COVERAGE_STATUS: REVIEWED
 EXTRACTOR: extractor-D/sonnet
@@ -1902,9 +1902,9 @@ REVIEWER: queue-reviewer/sonnet
 ITEM: inv:L928:ctble-regularity-extension
 KIND: claim
 SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-regularity-extension@L928-L928
-DISPOSITION: EXCLUDED
-REASON: extends positive regularity and non-singularity (Definition 1.3) to countable-type X; never consumed: Assumption I (L961), Lemma 3.4 (L1117) and the proof of Theorem 3.1 (L1178) use these notions only for the finite-type truncations X^d
-COVERAGE_STATUS: REVIEWED
+DISPOSITION: NODE def-bp-basic.positive-regular, def-bp-basic.non-singular
+REASON: Re-scoped by R8: positive regularity and non-singularity for countable types are now consumed as premises of the batch-2 roots (R8(b), (c), E10). [Phase 2 disposition was EXCLUDED: extends positive regularity and non-singularity (Definition 1.3) to countable-type X; never consumed: Assumption I (L961), Lemma 3.4 (L1117) and the proof of Theorem 3.1 (L1178) use these notions only for the finite-type truncations X^d]
+COVERAGE_STATUS: PROPOSED
 EXTRACTOR: extractor-D/sonnet
 REVIEWER: queue-reviewer/sonnet
 
