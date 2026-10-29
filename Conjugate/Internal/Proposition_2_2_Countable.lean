@@ -13,8 +13,8 @@ import Conjugate.Internal.Countable.CondLaw
 /-!
 # Provider for `Conjugate.proposition_2_2_countable`
 
-Implementation module for the frozen anchor `Conjugate/Frozen/Proposition_2_2_Countable.lean`.
-Quarantined while that anchor is `DRAFT_SORRY`: only the anchor itself may import it.
+Implementation module for the frozen anchor
+`Conjugate/Frozen/Proposition_2_2_Countable.lean`. The anchor is SEALED (its body is `by exact` of the theorem below).
 
 The proof is the Doob h-transform on cylinder sets (`PLAN.md` §6) for the fixed point `A` of `f`,
 exactly as for finite types (paper.tex:934). The general result for a countable type set is

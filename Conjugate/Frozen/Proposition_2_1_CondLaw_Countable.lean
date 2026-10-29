@@ -42,7 +42,7 @@ theorem proposition_2_1_condLaw_countable (μ : ℕ → PMF (ℕ →₀ ℕ))
       ∀ k, (pathLaw μ (Finsupp.single k 1))[|extinctionEvent ℕ] =
         pathLaw ν (Finsupp.single k 1) :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.proposition_2_1_condLaw_countable μ hpr hns a ha ha01
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 

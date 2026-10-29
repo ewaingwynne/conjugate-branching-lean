@@ -39,7 +39,7 @@ theorem example_3_5_conjugate (μ : ℕ → PMF (ℕ →₀ ℕ))
       StochDominated (μ k).toMeasure (stepKernel μ (Finsupp.single 0 (k + 1)))) :
     ∃ μHat : ℕ → PMF (ℕ →₀ ℕ), IsConjugate μ μHat :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.example_3_5_conjugate μ h323 hdom
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 

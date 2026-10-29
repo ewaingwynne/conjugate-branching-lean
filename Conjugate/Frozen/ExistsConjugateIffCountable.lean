@@ -45,7 +45,7 @@ theorem exists_conjugate_iff_exists_fixedPoint_countable (μ : ℕ → PMF (ℕ 
     (∃ μHat : ℕ → PMF (ℕ →₀ ℕ), IsConjugate μ μHat) ↔
       ∃ q : ℕ → ℝ≥0∞, (∀ j, 1 < q j ∧ q j < ∞) ∧ genFun μ q = q :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.exists_conjugate_iff_exists_fixedPoint_countable μ hext hpr hns
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 

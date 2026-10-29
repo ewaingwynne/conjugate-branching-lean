@@ -1492,7 +1492,7 @@
         "module": "Conjugate.Internal.Proposition_2_1_CondLaw_Countable",
         "export": "Conjugate.Internal.proposition_2_1_condLaw_countable"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "81b130c440811bf37a99cbe20eab3c372ee4c798714b755ed2314ea0686aadc6",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {
@@ -1559,7 +1559,7 @@
         "module": "Conjugate.Internal.Proposition_2_2_Countable",
         "export": "Conjugate.Internal.proposition_2_2_countable"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "b55ef9a96f145f58a8840f18ff082a4635fd8ffb1a1a77d0c5c9227afcef4d3d",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {
@@ -1630,7 +1630,7 @@
         "module": "Conjugate.Internal.ExistsConjugateIffCountable",
         "export": "Conjugate.Internal.exists_conjugate_iff_exists_fixedPoint_countable"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "b67b3b78ad7f6f2ba031eecf708c9d0dbcd0270cebf03a507cff7629c797af60",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {
@@ -1713,7 +1713,7 @@
         "module": "Conjugate.Internal.Theorem_3_1_Conjugate",
         "export": "Conjugate.Internal.theorem_3_1_conjugate"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "28dd502e191b108edf0507272692e8385df0d4f2671749341d32907fb3de6411",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {
@@ -1776,7 +1776,7 @@
         "module": "Conjugate.Internal.Example_3_5_Conjugate",
         "export": "Conjugate.Internal.example_3_5_conjugate"
       },
-      "state": "DRAFT_SORRY",
+      "state": "SEALED",
       "prefix_sha256": "e6633c3edf797cb430fde1405b0bed7fd7dcddd0fd9f1045a0ec569fe38fd527",
       "suffix_sha256": "a9cfd459a24f8aa47737d84a9ee4423e5bb584a04b0036424927a67b05abc849",
       "draft_allowlist": {

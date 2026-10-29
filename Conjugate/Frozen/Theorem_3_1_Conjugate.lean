@@ -54,7 +54,7 @@ theorem theorem_3_1_conjugate (μ : ℕ → PMF (ℕ →₀ ℕ))
       ∀ k, genFun μ (fun j => ENNReal.ofReal (ψ j * t ^ φ j)) k < ∞) :
     ∃ μHat : ℕ → PMF (ℕ →₀ ℕ), IsConjugate μ μHat :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.theorem_3_1_conjugate μ hext hI φ ψ hφ hψ hφ_lim hψφ_lim hII hIII hIV
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 

@@ -12,8 +12,8 @@ import Conjugate.Internal.Countable.CondLaw
 /-!
 # Provider for `Conjugate.proposition_2_1_condLaw_countable`
 
-Implementation module for the frozen anchor `Conjugate/Frozen/Proposition_2_1_CondLaw_Countable.lean`.
-Quarantined while that anchor is `DRAFT_SORRY`: only the anchor itself may import it.
+Implementation module for the frozen anchor
+`Conjugate/Frozen/Proposition_2_1_CondLaw_Countable.lean`. The anchor is SEALED (its body is `by exact` of the theorem below).
 
 The proof is the Doob h-transform on cylinder sets (`PLAN.md` §6), exactly as for finite types
 (paper.tex:934). The path-space machinery is stated for an arbitrary countable type set, and the
