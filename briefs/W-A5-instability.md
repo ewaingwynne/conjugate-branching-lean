@@ -47,7 +47,15 @@ You may split these further under `Conjugate/Internal/Section2/`. Edit nothing e
 - `Conjugate.Internal.Foundations.*`, `Conjugate.Internal.Analytic.*` (W-A3), and
   `Conjugate.Internal.Section2.{Positivity,Strict,BasinInvariance}` (W-A4).
 
-Read them for the exact statements. Never import non-`Defs` frozen files or
+Read them for the exact statements. Useful W-A4 helpers:
+- `measurableSet_extinctionEvent` and `ae_eventually_eval_eq_zero` (certain extinction ⇒ a.s.
+  `X(n) = 0` eventually);
+- `pathLaw_eval_mem`;
+- `iterate_logGenFun_mem_basin{Zero,Infty}_iff`;
+- `basinZero_inter_basinInfty`.
+
+For monotonicity and orthant invariance of `g^{(n)}`, use `(logGenFun_mono μ).iterate n` and
+`(mapsTo_logGenFun μ).iterate n`. Never import non-`Defs` frozen files or
 `Conjugate/Internal/<Anchor>.lean` providers.
 
 **Exact public API to prove** (namespace `Conjugate`, `variable {d : ℕ}`). Each statement was
