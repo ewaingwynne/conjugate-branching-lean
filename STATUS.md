@@ -9,11 +9,12 @@ Single writer: orchestrator. Proof status is never inferred from compilation alo
 - Phase 2 (dependency graph): **done** — 199 nodes, 400 edges, 13 roots, 12 external inputs, 56 SOURCE_GAP nodes; every node and coverage item independently REVIEWED; global review PASS after corrections; linter gate (`--require-reviewed … --check`) passes
 - Phase 3 (proofs): **done** (2026-10-28) — all 13 theorem anchors sealed and PROVED (AU-1–AU-5); every numbered result mapped in `RESULTS.md`
 - Phase 4 (closure): **done** — full gate passes (96 modules), closure audit AU-6 verdict CLOSED (`review/audits/AU-6.md`)
+- Batch 2 (countable-type conjugates, requested by the author after closure): 5 anchors approved and frozen (R8, E10; e731893); graph slice E proposed; providers W-B4 and topology review GR-E running
 
 ## Mandatory report fields
 
 ```text
-DRAFT_ANCHORS: 0
+DRAFT_ANCHORS: 5 (batch 2: Proposition_2_1_CondLaw_Countable, Proposition_2_2_Countable, ExistsConjugateIffCountable, Theorem_3_1_Conjugate, Example_3_5_Conjugate; FROZEN_UNPROVED)
 UNREGISTERED_SORRIES: 0
 DRAFT_IMPORT_VIOLATIONS: 0
 SEALED_THIS_TURN: 0 (closure)
@@ -52,6 +53,11 @@ SEALED_CUMULATIVE: 13 — all 13 theorem anchors PROVED (AU-1 remark_hypIII_auto
 | `Conjugate.example_3_5` | theorem | `Example_3_5.lean` | **PROVED** (sealed 4d7fe6a) | PASS (2026-10-28) | approved | AU-5 PASS (2026-10-28) |
 | `Conjugate.remark_hypIII_necessary` | theorem | `Remark_HypIII_Necessary.lean` | **PROVED** (sealed b7bb629) | PASS (2026-10-28) | approved | AU-4 PASS (2026-10-28) |
 | `Conjugate.remark_hypIII_automatic` | theorem | `Remark_HypIII_Automatic.lean` | **PROVED** (sealed a25a4fd) | PASS (2026-10-28) | approved | AU-1 PASS (2026-10-28) |
+| `Conjugate.proposition_2_1_condLaw_countable` | theorem | `Proposition_2_1_CondLaw_Countable.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | AU-B2 PASS (2026-10-28) | approved (R8) | — |
+| `Conjugate.proposition_2_2_countable` | theorem | `Proposition_2_2_Countable.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | AU-B2 PASS (2026-10-28) | approved (R8) | — |
+| `Conjugate.exists_conjugate_iff_exists_fixedPoint_countable` | theorem | `ExistsConjugateIffCountable.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | AU-B2 PASS (2026-10-28) | approved (R8, E10) | — |
+| `Conjugate.theorem_3_1_conjugate` | theorem | `Theorem_3_1_Conjugate.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | AU-B2 PASS (2026-10-28) | approved (R8) | — |
+| `Conjugate.example_3_5_conjugate` | theorem | `Example_3_5_Conjugate.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | AU-B2 PASS (2026-10-28) | approved (R8) | — |
 
 ## Phase 3 work
 
@@ -122,3 +128,6 @@ docstring sweep applied (all Internal docstrings now use the compiled numbering)
 | 2026-10-28 | auditor AU-5 (fresh) | Sonnet | §3, Thm 3.1 and Ex 3.5 seals | PASS, no blocking findings (`review/audits/AU-5.md`); non-vacuity witness for Ex 3.5 |
 | 2026-10-28 | writer W-A13 | Sonnet | Lemma 2.19 | done, standard axioms |
 | 2026-10-28 | auditor AU-6 (fresh) | Sonnet | Phase 4 full-closure audit | CLOSED, no blocking findings (`review/audits/AU-6.md`) |
+| 2026-10-28 | statement auditor AU-B2 (fresh) | Sonnet | batch-2 pre-approval statement audit | 5/5 PASS (conditional on R8); found E10 |
+| 2026-10-28 | writer W-B4 | Sonnet | batch-2 providers | running |
+| 2026-10-28 | graph reviewer GR-E | Sonnet | slice E + coverage re-scoping | running |
