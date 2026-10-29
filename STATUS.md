@@ -86,7 +86,7 @@ Numbering note (AU-2): briefs W-A4–W-A7 and the Section2 Lean docstrings label
 one from 2.12 on. Compiled numbering: 2.12 unstable-ssl, 2.13 monotone-lim, 2.14 basin-closed,
 2.15 attractive-zero, 2.16 attractive-infty, 2.17 basin-open, 2.18 ray-intersect, 2.19 retract;
 display (2.10) is [0,∞]^d∖[0,∞)^d ⊆ S∞. DEPGRAPH, ERRATA and frozen files are correct; Lean
-docstring sweep pending (quiet window).
+docstring sweep applied (all Internal docstrings now use the compiled numbering).
 
 ## Agent log
 
@@ -120,3 +120,4 @@ docstring sweep pending (quiet window).
 | 2026-10-28 | writer W-A12 | Sonnet | Example 3.5 | provider + 41 helpers, standard axioms; seal probe OK |
 | 2026-10-28 | auditor AU-5 (fresh) | Sonnet | §3, Thm 3.1 and Ex 3.5 seals | PASS, no blocking findings (`review/audits/AU-5.md`); non-vacuity witness for Ex 3.5 |
 | 2026-10-28 | writer W-A13 | Sonnet | Lemma 2.19 | done, standard axioms |
+| 2026-10-28 | auditor AU-6 (fresh) | Sonnet | Phase 4 full-closure audit | running |
