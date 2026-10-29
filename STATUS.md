@@ -16,7 +16,7 @@ DRAFT_ANCHORS: 0
 UNREGISTERED_SORRIES: 0
 DRAFT_IMPORT_VIOLATIONS: 0
 SEALED_THIS_TURN: 1 (Conjugate.example_3_5 — 4d7fe6a)
-SEALED_CUMULATIVE: 13 (all theorem anchors; all 28 manifest entries SEALED) — PROVED (11): remark_hypIII_automatic (AU-1), proposition_1_6_fixedPoint (AU-2), proposition_2_1_condLaw, proposition_2_2, theorem_2_7, theorem_1_4_fixedPoint (AU-3), exists_conjugate_iff_exists_fixedPoint, theorem_1_4_conjugate, proposition_1_6_conjugate, remark_hypIII_necessary, example_1_5 (AU-4); sealed, audit pending (2): theorem_3_1, example_3_5 (AU-5)
+SEALED_CUMULATIVE: 13 — all 13 theorem anchors PROVED (AU-1 remark_hypIII_automatic; AU-2 proposition_1_6_fixedPoint; AU-3 proposition_2_1_condLaw, proposition_2_2, theorem_2_7, theorem_1_4_fixedPoint; AU-4 exists_conjugate_iff_exists_fixedPoint, theorem_1_4_conjugate, proposition_1_6_conjugate, remark_hypIII_necessary, example_1_5; AU-5 theorem_3_1, example_3_5); all 28 manifest entries SEALED
 ```
 
 ## Anchors
@@ -46,9 +46,9 @@ SEALED_CUMULATIVE: 13 (all theorem anchors; all 28 manifest entries SEALED) — 
 | `Conjugate.proposition_2_1_condLaw` | theorem | `Proposition_2_1_CondLaw.lean` | **PROVED** (sealed 7581f95) | PASS (2026-10-28) | approved | AU-3 PASS (2026-10-28) |
 | `Conjugate.proposition_2_2` | theorem | `Proposition_2_2.lean` | **PROVED** (sealed 7581f95) | PASS (2026-10-28) | approved | AU-3 PASS (2026-10-28) |
 | `Conjugate.theorem_2_7` | theorem | `Theorem_2_7.lean` | **PROVED** (sealed 5e015e1) | PASS (2026-10-28) | approved | AU-3 PASS (2026-10-28) |
-| `Conjugate.theorem_3_1` | theorem | `Theorem_3_1.lean` | SEALED (260327e) | PASS (2026-10-28) | approved | audit pending (AU-5) |
+| `Conjugate.theorem_3_1` | theorem | `Theorem_3_1.lean` | **PROVED** (sealed 260327e) | PASS (2026-10-28) | approved | AU-5 PASS (2026-10-28) |
 | `Conjugate.example_1_5` | theorem | `Example_1_5.lean` | **PROVED** (sealed 3ea9ad2) | PASS (2026-10-28) | approved | AU-4 PASS (2026-10-28) |
-| `Conjugate.example_3_5` | theorem | `Example_3_5.lean` | SEALED (4d7fe6a) | PASS (2026-10-28) | approved | audit pending (AU-5) |
+| `Conjugate.example_3_5` | theorem | `Example_3_5.lean` | **PROVED** (sealed 4d7fe6a) | PASS (2026-10-28) | approved | AU-5 PASS (2026-10-28) |
 | `Conjugate.remark_hypIII_necessary` | theorem | `Remark_HypIII_Necessary.lean` | **PROVED** (sealed b7bb629) | PASS (2026-10-28) | approved | AU-4 PASS (2026-10-28) |
 | `Conjugate.remark_hypIII_automatic` | theorem | `Remark_HypIII_Automatic.lean` | **PROVED** (sealed a25a4fd) | PASS (2026-10-28) | approved | AU-1 PASS (2026-10-28) |
 
@@ -72,9 +72,9 @@ checks, and a fresh Sonnet audit.
 | W-B2 | B | path-space Markov property, cylinder uniqueness, h-transform; Props 2.1(b), 2.2 providers | `prop-cond-on-ext.cond-law`, `prop-conjugate` | written, checked, both anchors sealed (7581f95); **audited** (AU-3 PASS) |
 | W-A9 | any | Example 1.5 provider | `counterexample` and steps | written, checked, anchor sealed (3ea9ad2); **audited** (AU-4 PASS) |
 | W-B3 | A (Sonnet) | equivalence (both directions, explicit tilt), Thm 1.4 conj, Prop 1.6 conj, Hyp III necessary, subcriticality criteria | `thm-fixed-gf.equivalence`, `thm-fixed-gf.conjugate`, `prop-single-type.conjugate`, `rem:hyp-iii-necessary` | written, checked, four anchors sealed (b7bb629); **audited** (AU-4 PASS) |
-| W-A10 | B (Sonnet) | §3 truncation (3.2), Lemma 3.2, Lemma 3.4 | `eqn-gf-truncated`, `eqn-log-gf-*`, `lem-fixed-limsup`, `lem-1d-soln` | written, orchestrator-checked (c6b20e9); audit pending |
-| W-A11 | B (Fable) | Lemma 3.3, Theorem 3.1 provider + seal | `lem-fixed-liminf`, `thm-fixed-pt-infty` | written, checked, anchor sealed (260327e); audit pending (AU-5) |
-| W-A12 | any | Example 3.5 provider + seal | `example-ctble` | written, checked, anchor sealed (4d7fe6a); audit pending (AU-5) |
+| W-A10 | B (Sonnet) | §3 truncation (3.2), Lemma 3.2, Lemma 3.4 | `eqn-gf-truncated`, `eqn-log-gf-*`, `lem-fixed-limsup`, `lem-1d-soln` | **audited** (AU-5 PASS) |
+| W-A11 | B (Fable) | Lemma 3.3, Theorem 3.1 provider + seal | `lem-fixed-liminf`, `thm-fixed-pt-infty` | written, checked, anchor sealed (260327e); **audited** (AU-5 PASS) |
+| W-A12 | any | Example 3.5 provider + seal | `example-ctble` | written, checked, anchor sealed (4d7fe6a); **audited** (AU-5 PASS) |
 | W-A13 | A (Sonnet) | Lemma 2.19 (deformation retraction) | `lem-retract` and steps | written, orchestrator-checked; audit in AU-6 (closure) |
 
 Known limits (from AU-1): the branching property is proved at the level of generation laws
@@ -118,5 +118,5 @@ docstring sweep pending (quiet window).
 | 2026-10-28 | auditor AU-3 (fresh) | Sonnet | path space, Thm 2.7 assembly, 4 seals | PASS, no blocking findings (`review/audits/AU-3.md`); composition witness on Ex 1.5 law |
 | 2026-10-28 | auditor AU-4 (fresh) | Sonnet | W-B3 four seals, Example 1.5 seal | PASS, no blocking findings (`review/audits/AU-4.md`) |
 | 2026-10-28 | writer W-A12 | Sonnet | Example 3.5 | provider + 41 helpers, standard axioms; seal probe OK |
-| 2026-10-28 | auditor AU-5 (fresh) | Sonnet | §3, Thm 3.1 and Ex 3.5 seals | running |
+| 2026-10-28 | auditor AU-5 (fresh) | Sonnet | §3, Thm 3.1 and Ex 3.5 seals | PASS, no blocking findings (`review/audits/AU-5.md`); non-vacuity witness for Ex 3.5 |
 | 2026-10-28 | writer W-A13 | Sonnet | Lemma 2.19 | done, standard axioms |
