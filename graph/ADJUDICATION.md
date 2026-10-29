@@ -76,4 +76,13 @@
   to reflect the new scope. These are NOTE-only changes; no DEPS change.
 - **Second review.** The rewritten records stay PROPOSED until a second independent reviewer clears
   them.
+- **Second review GR-E2** (fresh Sonnet) of the GR-E rewrites: 5 of 7 nodes and all 8 coverage
+  items PASS, now REVIEWED (graph-reviewer-E2). The 2 FAILs were applied:
+  - `prop-conjugate.ctble#cond-law-hat` drops its edge to `prop-cond-on-ext.ctble.cond-law`. That
+    root's premises for `X̂` (regularity, `1/A_k < 1`) are false for the step's Thm 3.1 consumer.
+    The step is now unconditional, via the h-transform.
+  - `#conjugate-to-fixed-point` lists non-singularity in SOURCE_HYPOTHESES and tightens the
+    wording of edge 1.
+  
+  These two stay PROPOSED until a third reviewer clears them.
 

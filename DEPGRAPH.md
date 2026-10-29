@@ -5587,9 +5587,9 @@ EDGE: ext:jl08-thm1 | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-c
 EDGE: def:path-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | named reconstruction (SOURCE_GAP): the conditional law is a law on generation paths, computed on cylinder sets by the h-transform
 EDGE: def:extinction | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | global extinction replaces extinction; h(y) = P_y[E] (named reconstruction, SOURCE_GAP)
 EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | named reconstruction (SOURCE_GAP): h(y) = P_y[E] = prod_j a_j^{y_j} (independence of individuals) and E_x[h(X(1))] = h(x) (Markov property at time 1)
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: graph-reviewer-E2/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5688,27 +5688,26 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conju
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate@L431-L431
 CONTRACT_ID: paper.ctble.prop2_2#cond-law-hat
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: X-hat as in (2.2), with global extinction probabilities 1/A_k
-SOURCE_QUANTIFIERS: k in N
+SOURCE_HYPOTHESES: A in [1,inf)^N with f(A) = A; X-hat the countable-type branching process with offspring distribution (2.2) built from X and A; P-hat_k[global extinction] = 1/A_k for every k in N (the conclusion of prop-conjugate.ctble#ext-prob-hat); no positive regularity or non-singularity of X or X-hat
+SOURCE_QUANTIFIERS: X; A; X-hat; for each k in N
 SOURCE_CONCLUSION: the P-hat_k-conditional law of X-hat given global extinction is P_k
 CONSTANT_SCOPE: none
 FROZEN_FILE: -
 FROZEN_DECL: -
 FROZEN_ANCHOR_ID: -
 FROZEN_ABI_SHA256: -
-DEPS: prop-cond-on-ext.ctble.cond-law, prop-conjugate.ctble#ext-prob-hat, claim:branching-property
+DEPS: prop-conjugate.ctble#ext-prob-hat, claim:branching-property
 ROUTES: -
 ROUTE_FOR: -
-EDGE: prop-cond-on-ext.ctble.cond-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate@L431-L431 | 'By Proposition 2.1 ... the conditional law of X-hat given extinction is the same as the law of X' (finite proof, reused); the premises of Proposition 2.1 for X-hat are unsupplied, see NOTE
-EDGE: prop-conjugate.ctble#ext-prob-hat | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate@L431-L431 | the a_k of Proposition 2.1 for X-hat are 1/A_k
-EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | named reconstruction (SOURCE_GAP): time-n Markov property of X-hat and the product formula for P-hat_y[E] give the conditional law on cylinder sets
+EDGE: prop-conjugate.ctble#ext-prob-hat | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#prop-conjugate@L431-L431 | the finite proof first identifies the extinction probabilities of X-hat as 1/A (L431); here they are the tilting constants a_k = 1/A_k and the factor P-hat_y[E] of the conditional-law computation
+EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | named reconstruction (SOURCE_GAP): independence of individuals gives the tilted cylinder probabilities of X-hat and the product formula P-hat_y[E] = prod_j A_j^{-y_j}; the time-n Markov property of X-hat gives P-hat_k[cylinder, E] = P-hat_k[cylinder] P-hat_{x(n)}[E]
 TOPOLOGY_STATUS: PROPOSED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
 REVIEWER: -
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
-NOTE: SOURCE_GAP (as for prop-conjugate#cond-law-hat): the finite proof applies Proposition 2.1 to X-hat (the edge to prop-cond-on-ext.ctble.cond-law records that cited route) and that application needs X-hat positive regular, non-singular and 0 < 1/A_k < 1. No node supplies these premises: positive regularity and non-singularity of X-hat come from those of X (mutual absolute continuity), which are not hypotheses of this node and not available to its consumer thm-fixed-gf.equivalence.ctble#fixed-point-to-conjugate (hence theorem_3_1_conjugate); and 1/A_k < 1 fails when A = 1. The Lean route must therefore not use that edge: it reads the conditional law off cylinder sets with the time-n Markov property of X-hat and the product formula P-hat_y[E] = prod_j A_j^{-y_j} (edge to claim:branching-property, named here), P-hat_k[cylinder, E] = P_k[cylinder]/A_k, with no regularity of X-hat.
+NOTE: SOURCE_GAP (as for prop-conjugate#cond-law-hat): the finite proof obtains the conditional law by applying Proposition 2.1 to X-hat (L431), which needs X-hat positive regular, non-singular and 0 < 1/A_k < 1. For countable types the source supplies none of these and neither do the consumers of this step: positive regularity and non-singularity of X-hat come from those of X (mutual absolute continuity, L430), which are hypotheses of the root prop-conjugate.ctble but not of thm-fixed-gf.equivalence.ctble#fixed-point-to-conjugate (hence not of theorem_3_1_conjugate, whose Assumptions I-IV give regularity only for the truncations X^d with N = N(d), and not of example_3_5_conjugate as a graph consumer), and 1/A_k < 1 fails when A = 1. This step is shared by those consumers, so it is stated without these premises and has no edge to prop-cond-on-ext.ctble.cond-law (the cited route): such an edge would make its premise package a hidden conditional premise that fixed-point-to-conjugate cannot supply. The Lean route reads the conditional law off cylinder sets: P-hat_k[cylinder of the first n generations] = P_k[cylinder] prod_j A_j^{x_j(n)} / A_k (the tilt (2.2), independence of individuals), the time-n Markov property of X-hat and the product formula P-hat_y[E] = prod_j A_j^{-y_j} (claim:branching-property, named reconstruction), so P-hat_k[cylinder, E] = P_k[cylinder] / A_k; with P-hat_k[E] = 1/A_k (prop-conjugate.ctble#ext-prob-hat) the conditional law is P_k. No regularity of X or X-hat is used.
 
 NODE: thm-fixed-gf.equivalence.ctble
 KIND: theorem
@@ -5761,9 +5760,9 @@ EDGE: prop-conjugate.ctble#ext-prob-hat | source/arxiv-2411.06301v2/fixed-pt-fin
 EDGE: prop-conjugate.ctble#cond-law-hat | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | clause (b) of Definition 1.1: the conditional law of X-hat given global extinction is P_k
 EDGE: claim:branching-property | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | global extinction from every state follows from per-type extinction (independence of individuals)
 EDGE: def-conjugate | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | 'we can define a conjugate branching process for X in exactly the same manner as in the finite-type case'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: graph-reviewer-E2/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5776,7 +5775,7 @@ STATEMENT_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conju
 PROOF_SOURCE: source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934
 CONTRACT_ID: paper.ctble.equivalence#conjugate-to-fixed-point
 CONTRACT_VERSION: 1
-SOURCE_HYPOTHESES: X positive regular with global extinction probability one per type; X-hat a conjugate of X
+SOURCE_HYPOTHESES: X a positive regular, non-singular countable-type branching process with global extinction probability one per type (non-singularity is a premise of thm-fixed-gf.equivalence.ctble#conjugate-regularity and is kept as in the root, R8(c); the Lean route does not use it); X-hat a conjugate of X
 SOURCE_QUANTIFIERS: X; X-hat
 SOURCE_CONCLUSION: q_k := 1 / P-hat_k[global extinction] lies in (1,inf)^N and satisfies f(q) = q
 CONSTANT_SCOPE: none
@@ -5787,7 +5786,7 @@ FROZEN_ABI_SHA256: -
 DEPS: prop-cond-on-ext.ctble.cond-law, thm-fixed-gf.equivalence.ctble#conjugate-regularity, lem-fixed-pos, def-conjugate, def:extinction, eqn-generating-function, claim:branching-property
 ROUTES: -
 ROUTE_FOR: -
-EDGE: prop-cond-on-ext.ctble.cond-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | the conditional law of X-hat given global extinction has offspring law (2.1), i.e. X is the tilt of X-hat; its premises for X-hat are unsupplied, see NOTE
+EDGE: prop-cond-on-ext.ctble.cond-law | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | the conditional law of X-hat given global extinction has offspring law (2.1), i.e. X is the tilt of X-hat; its premises for X-hat are supplied only by the unwritten package thm-fixed-gf.equivalence.ctble#conjugate-regularity, see NOTE
 EDGE: thm-fixed-gf.equivalence.ctble#conjugate-regularity | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | premise package of Proposition 2.1 for the given conjugate X-hat (unsupplied by the source; named in the SOURCE_GAP)
 EDGE: lem-fixed-pos | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | analogy only: 'just as in the finite-type case': under positive regularity a fixed point is in (1,inf)^N rather than [1,inf)^N minus {1} (Lemma 2.3 is a d-type statement)
 EDGE: def-conjugate | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#ctble-conjugate-extension@L934-L934 | clause (a) excludes the trivial tilt q = (1,...,1); clause (b) identifies the conditional law with P (the source never writes this)
@@ -5822,9 +5821,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: thm-fixed-pt-infty | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#thm-fixed-pt-infty@L985-L987 | Theorem 3.1 gives q in (1,inf)^N with f(q) = q
 EDGE: thm-fixed-gf.equivalence.ctble#fixed-point-to-conjugate | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#assumptions-I-IV@L958-L959 | 'equivalently': the fixed point yields a conjugate
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: graph-reviewer-E2/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5850,9 +5849,9 @@ ROUTES: -
 ROUTE_FOR: -
 EDGE: example-ctble | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1183-L1183 | Theorem 3.1 applies and gives a fixed point in (1,inf)^N, and global extinction holds
 EDGE: thm-fixed-gf.equivalence.ctble#fixed-point-to-conjugate | source/arxiv-2411.06301v2/fixed-pt-finite-type.tex#example-ctble@L1183-L1183 | 'implies the existence of a conjugate'
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: graph-reviewer-E2/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5876,9 +5875,9 @@ FROZEN_ABI_SHA256: -
 DEPS: -
 ROUTES: -
 ROUTE_FOR: -
-TOPOLOGY_STATUS: PROPOSED
+TOPOLOGY_STATUS: REVIEWED
 EXTRACTOR: orchestrator/opus-5.5/session-f41ccbab
-REVIEWER: -
+REVIEWER: graph-reviewer-E2/sonnet
 LEAN_STATUS: NOT_STARTED
 LEAN_REF: -
 LEAN_NOTE: -
@@ -5922,13 +5921,13 @@ Regenerated by `proof_depgraph.py`; do not hand-edit.
 * Total nodes: **210**
 * Frozen anchors: **33**
 * Versioned statement contracts: **210**
-* Total edges: **433**
+* Total edges: **432**
 * Root-closure nodes: **210**
 * Dependency leaves in root closure: **40**
 * Assumption boundary leaves: **0**
 * External boundary leaves: **12**
 * Alternative routes: **0**
-* Topology review queue: **7**
+* Topology review queue: **2**
 * Explicit source gaps: **62**
 * Coverage items: **189**; excluded: **76**
 
@@ -5947,21 +5946,16 @@ Regenerated by `proof_depgraph.py`; do not hand-edit.
 * `example-ctble` [REVIEWED; frozen] — contract `paper.ex3_5@1`
 * `rem:hyp-iii-necessary` [REVIEWED; frozen] — contract `paper.rem1_4.hypIII_necessary@1`
 * `rem:hyp-iii-automatic` [REVIEWED; frozen] — contract `paper.rem1_4.hypIII_automatic@1`
-* `prop-cond-on-ext.ctble.cond-law` [PROPOSED; frozen] — contract `paper.ctble.prop2_1.condLaw@1`
+* `prop-cond-on-ext.ctble.cond-law` [REVIEWED; frozen] — contract `paper.ctble.prop2_1.condLaw@1`
 * `prop-conjugate.ctble` [REVIEWED; frozen] — contract `paper.ctble.prop2_2@1`
 * `thm-fixed-gf.equivalence.ctble` [REVIEWED; frozen] — contract `paper.ctble.equivalence@1`
-* `thm-fixed-pt-infty.conjugate` [PROPOSED; frozen] — contract `paper.thm3_1.conjugate@1`
-* `example-ctble.conjugate` [PROPOSED; frozen] — contract `paper.ex3_5.conjugate@1`
+* `thm-fixed-pt-infty.conjugate` [REVIEWED; frozen] — contract `paper.thm3_1.conjugate@1`
+* `example-ctble.conjugate` [REVIEWED; frozen] — contract `paper.ex3_5.conjugate@1`
 
 ### Topology review queue
 
-* `example-ctble.conjugate` [PROPOSED] — Example 3.5, conjugate form: the example class admits a conjugate branching process
-* `prop-cond-on-ext.ctble.cond-law` [PROPOSED] — Proposition 2.1 (conditional law (2.1)) for countable types, with global extinction
 * `prop-conjugate.ctble#cond-law-hat` [PROPOSED] — Countable types: the conditional law of X-hat given global extinction is P
-* `thm-fixed-gf.equivalence.ctble#conjugate-regularity` [PROPOSED] — Countable types: premises of Proposition 2.1 for a conjugate process X-hat (positive regular, non-singular, 0 < P-hat_k[E] < 1)
 * `thm-fixed-gf.equivalence.ctble#conjugate-to-fixed-point` [PROPOSED] — Countable types: a conjugate gives a fixed point q in (1,inf)^N
-* `thm-fixed-gf.equivalence.ctble#fixed-point-to-conjugate` [PROPOSED] — Countable types: a fixed point q in (1,inf)^N gives a conjugate (the tilt by q)
-* `thm-fixed-pt-infty.conjugate` [PROPOSED] — Theorem 3.1, conjugate form: Assumptions I-IV ensure a conjugate branching process
 
 ### Dependency leaves in root closure
 
@@ -6004,7 +5998,7 @@ Regenerated by `proof_depgraph.py`; do not hand-edit.
 * `rem:hyp-iii-necessary#f-infinite` [REVIEWED] — f(q) = ∞ for every q > 1 in the a·m^{-3} example
 * `rem:hyp-iii-necessary#hyp-II-regular` [REVIEWED] — The a·m^{-3} example is positive regular and non-singular
 * `thm-fixed-gf.equivalence#conjugate-regularity` [REVIEWED] — Premises of Proposition 2.1 for a conjugate process X̂ (positive regular, non-singular, 0 < ℙ̂_k[E] < 1)
-* `thm-fixed-gf.equivalence.ctble#conjugate-regularity` [PROPOSED] — Countable types: premises of Proposition 2.1 for a conjugate process X-hat (positive regular, non-singular, 0 < P-hat_k[E] < 1)
+* `thm-fixed-gf.equivalence.ctble#conjugate-regularity` [REVIEWED] — Countable types: premises of Proposition 2.1 for a conjugate process X-hat (positive regular, non-singular, 0 < P-hat_k[E] < 1)
 
 ### Assumption boundary leaves
 
@@ -6051,7 +6045,7 @@ Regenerated by `proof_depgraph.py`; do not hand-edit.
 * `example-ctble#choose-s` [REVIEWED] — Existence of s>1 with 𝔼_1[s^{Σ_jjX_j(1)}]<s
 * `example-ctble#choose-t` [REVIEWED] — Existence of t>1 with 𝔼_1[t^{X_1(1)}]>t
 * `example-ctble#global-extinction` [REVIEWED] — The example process has global extinction probability one
-* `example-ctble.conjugate` [PROPOSED] — Example 3.5, conjugate form: the example class admits a conjugate branching process
+* `example-ctble.conjugate` [REVIEWED] — Example 3.5, conjugate form: the example class admits a conjugate branching process
 * `lem-1d-soln#convexity` [REVIEWED] — f̃_k is convex (second derivative positive) with f̃_k(1)=1
 * `lem-1d-soln#single-type-continuous` [REVIEWED] — f̃_k is continuous from (0,∞] to [0,∞]
 * `lem-1d-soln#single-type-subcritical` [REVIEWED] — X̃^k is subcritical (mean offspring number <1)
@@ -6066,7 +6060,7 @@ Regenerated by `proof_depgraph.py`; do not hand-edit.
 * `lem-unstable-scaled#holder-bound` [REVIEWED] — Holder bound: E_k[Z_n 1_{Z_n > 1}] <= exp(r g_k^{(n)}(lambda)) P_k[Z_n > 1]^{1-r}
 * `lem-unstable-ssl#skeleton-gf` [REVIEWED] — The log generating function of X-tilde is g^{(m)}, so its r-th iterate is g^{(r m)}
 * `lem-unstable-ssl#skeleton-hypotheses` [REVIEWED] — The m-skeleton X-tilde(r) = X(m r) satisfies the hypotheses of Theorem 1.4
-* `prop-cond-on-ext.ctble.cond-law` [PROPOSED] — Proposition 2.1 (conditional law (2.1)) for countable types, with global extinction
+* `prop-cond-on-ext.ctble.cond-law` [REVIEWED] — Proposition 2.1 (conditional law (2.1)) for countable types, with global extinction
 * `prop-conjugate#abs-continuity` [REVIEWED] — Mutual absolute continuity of the first-n-generation laws of X-hat and X
 * `prop-conjugate#cond-law-hat` [REVIEWED] — Application of Prop 2.1 (conditional law) to X-hat with a = 1/A; identification with the law of X
 * `prop-conjugate#ext-prob-hat` [REVIEWED] — Extinction probability vector of X-hat is 1/A (application of the unit-cube fixed-point statement)
@@ -6093,8 +6087,8 @@ Regenerated by `proof_depgraph.py`; do not hand-edit.
 * `thm-fixed-gf.equivalence#conjugate-to-fixed-point` [REVIEWED] — Conjugate gives a fixed point in (1,∞)^d (uses Lemma 2.3 and clause (a))
 * `thm-fixed-gf.equivalence#fixed-point-to-conjugate` [REVIEWED] — Fixed point in (1,∞)^d gives a conjugate (application of Proposition 2.2)
 * `thm-fixed-gf.equivalence#hat-differs-from-X` [REVIEWED] — The tilted process of Proposition 2.2 is not equal in law to X
-* `thm-fixed-gf.equivalence.ctble#conjugate-regularity` [PROPOSED] — Countable types: premises of Proposition 2.1 for a conjugate process X-hat (positive regular, non-singular, 0 < P-hat_k[E] < 1)
+* `thm-fixed-gf.equivalence.ctble#conjugate-regularity` [REVIEWED] — Countable types: premises of Proposition 2.1 for a conjugate process X-hat (positive regular, non-singular, 0 < P-hat_k[E] < 1)
 * `thm-fixed-gf.equivalence.ctble#conjugate-to-fixed-point` [PROPOSED] — Countable types: a conjugate gives a fixed point q in (1,inf)^N
 * `thm-fixed-pt-infty#positivity` [REVIEWED] — λ∈(0,∞)^ℕ: positive regularity upgrades λ∈[0,∞)^ℕ∖{0} to strict positivity
-* `thm-fixed-pt-infty.conjugate` [PROPOSED] — Theorem 3.1, conjugate form: Assumptions I-IV ensure a conjugate branching process
+* `thm-fixed-pt-infty.conjugate` [REVIEWED] — Theorem 3.1, conjugate form: Assumptions I-IV ensure a conjugate branching process
 <!-- END PROOF DEPGRAPH GENERATED -->
