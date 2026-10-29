@@ -12,10 +12,10 @@ Single writer: orchestrator. Proof status is never inferred from compilation alo
 ## Mandatory report fields
 
 ```text
-DRAFT_ANCHORS: 11 (Conjugate/Frozen/*.lean theorem anchors except Remark_HypIII_Automatic and Proposition_1_6_FixedPoint; all FROZEN_UNPROVED)
+DRAFT_ANCHORS: 9 (Theorem_1_4_FixedPoint, Theorem_1_4_Conjugate, ExistsConjugateIff, Proposition_1_6_Conjugate, Theorem_2_7, Theorem_3_1, Example_1_5, Example_3_5, Remark_HypIII_Necessary; all FROZEN_UNPROVED)
 UNREGISTERED_SORRIES: 0
 DRAFT_IMPORT_VIOLATIONS: 0
-SEALED_THIS_TURN: 2 (Conjugate.remark_hypIII_automatic, a25a4fd, PROVED after AU-1; Conjugate.proposition_1_6_fixedPoint, d3a4c17, seal audit pending)
+SEALED (cumulative): 4 — remark_hypIII_automatic (a25a4fd, PROVED after AU-1); proposition_1_6_fixedPoint (d3a4c17); proposition_2_1_condLaw and proposition_2_2 (7581f95); seal audits pending for the last three
 ```
 
 ## Anchors
@@ -40,10 +40,10 @@ SEALED_THIS_TURN: 2 (Conjugate.remark_hypIII_automatic, a25a4fd, PROVED after AU
 | `Conjugate.theorem_1_4_fixedPoint` | theorem | `Theorem_1_4_FixedPoint.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
 | `Conjugate.theorem_1_4_conjugate` | theorem | `Theorem_1_4_Conjugate.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
 | `Conjugate.exists_conjugate_iff_exists_fixedPoint` | theorem | `ExistsConjugateIff.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
-| `Conjugate.proposition_1_6_fixedPoint` | theorem | `Proposition_1_6_FixedPoint.lean` | SEALED (d3a4c17) | PASS (2026-10-28) | approved | audit pending |
+| `Conjugate.proposition_1_6_fixedPoint` | theorem | `Proposition_1_6_FixedPoint.lean` | SEALED (d3a4c17) | PASS (2026-10-28) | approved | AU-2 running |
 | `Conjugate.proposition_1_6_conjugate` | theorem | `Proposition_1_6_Conjugate.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
-| `Conjugate.proposition_2_1_condLaw` | theorem | `Proposition_2_1_CondLaw.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
-| `Conjugate.proposition_2_2` | theorem | `Proposition_2_2.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
+| `Conjugate.proposition_2_1_condLaw` | theorem | `Proposition_2_1_CondLaw.lean` | SEALED (7581f95) | PASS (2026-10-28) | approved | audit pending (AU-3) |
+| `Conjugate.proposition_2_2` | theorem | `Proposition_2_2.lean` | SEALED (7581f95) | PASS (2026-10-28) | approved | audit pending (AU-3) |
 | `Conjugate.theorem_2_7` | theorem | `Theorem_2_7.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
 | `Conjugate.theorem_3_1` | theorem | `Theorem_3_1.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
 | `Conjugate.example_1_5` | theorem | `Example_1_5.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
@@ -68,7 +68,7 @@ checks, and a fresh Sonnet audit.
 | W-A6 | A (Sonnet) | Lemmas 2.12, 2.14-2.17 | `lem-monotone-lim`, `lem-attractive-*`, `lem-basin-open`, `lem-ray-intersect` | written, orchestrator-checked (68cf307); audit pending |
 | W-A8 | B (Sonnet) | Prop 1.6 fixed-point provider + seal | `prop-single-type.fixed-point` and steps | written, checked, anchor sealed (d3a4c17); audit pending |
 | W-A7 | A | Thm 2.7 (simplex route) + Thm 1.4 fixed-point providers | `thm-fixed`, `thm-fixed-gf.fixed-point` | phase 1 (Thm 2.7) running |
-| W-B2 | B | path-space Markov property, cylinder uniqueness, h-transform; Props 2.1(b), 2.2 providers | `prop-cond-on-ext.cond-law`, `prop-conjugate` | running |
+| W-B2 | B | path-space Markov property, cylinder uniqueness, h-transform; Props 2.1(b), 2.2 providers | `prop-cond-on-ext.cond-law`, `prop-conjugate` | written, checked, both anchors sealed (7581f95); audit pending (AU-3) |
 | W-A9 | any | Example 1.5 provider + row-sum subcriticality criterion | `counterexample` and steps | brief ready |
 
 Known limits (from AU-1): the branching property is proved at the level of generation laws
@@ -96,5 +96,6 @@ lists omit the transitively reached `Defs/StepKernel.lean` (sealed separately; r
 | 2026-10-28 | writer W-A5 | Sonnet | Lemmas 2.5, 2.10, 2.11, 2.13 | 5 public theorems, standard axioms; orchestrator checks pass |
 | 2026-10-28 | writer W-A8 | Sonnet | Prop 1.6 fixed-point provider | provider + 21 helpers, standard axioms; seal probe OK |
 | 2026-10-28 | writer W-A6 | Sonnet | Lemmas 2.12, 2.14-2.17 | 9 public theorems, standard axioms; orchestrator checks pass |
-| 2026-10-28 | writer W-B2 | Sonnet | path space: Markov, uniqueness, h-transform; Props 2.1(b), 2.2 | running |
+| 2026-10-28 | writer W-B2 | Sonnet | path space: Markov, uniqueness, h-transform; Props 2.1(b), 2.2 | 14 public decls + 2 providers, standard axioms; seal probes OK |
+| 2026-10-28 | auditor AU-2 (fresh) | Sonnet | W-A4..W-A6 nodes, Brouwer, seal of proposition_1_6_fixedPoint | running |
 | 2026-10-28 | writer W-A7 | Sonnet | Thm 2.7 via Brouwer on the simplex (phase 1) | running |
