@@ -63,7 +63,7 @@ theorem example_3_5 (μ : ℕ → PMF (ℕ →₀ ℕ))
       ∀ k, genFun μ (fun j => ENNReal.ofReal (1 * t ^ ((j : ℝ) + 1))) k < ∞) ∧
     ∃ q : ℕ → ℝ≥0∞, (∀ j, 1 < q j ∧ q j < ∞) ∧ genFun μ q = q :=
 -- FROZEN_ANCHOR_PROOF_BEGIN
-  by sorry
+  by exact Conjugate.Internal.example_3_5 μ h323 hdom
 -- FROZEN_ANCHOR_PROOF_END
 -- FROZEN_ANCHOR_SUFFIX_BEGIN
 
