@@ -12,11 +12,11 @@ Single writer: orchestrator. Proof status is never inferred from compilation alo
 ## Mandatory report fields
 
 ```text
-DRAFT_ANCHORS: 7 (Theorem_1_4_Conjugate, ExistsConjugateIff, Proposition_1_6_Conjugate, Theorem_3_1, Example_1_5, Example_3_5, Remark_HypIII_Necessary; all FROZEN_UNPROVED)
+DRAFT_ANCHORS: 3 (Theorem_3_1, Example_1_5, Example_3_5; all FROZEN_UNPROVED)
 UNREGISTERED_SORRIES: 0
 DRAFT_IMPORT_VIOLATIONS: 0
-SEALED_THIS_TURN: 2 (Conjugate.theorem_2_7, Conjugate.theorem_1_4_fixedPoint — 5e015e1)
-SEALED_CUMULATIVE: 6 — remark_hypIII_automatic (a25a4fd, PROVED after AU-1); proposition_1_6_fixedPoint (d3a4c17, PROVED after AU-2); proposition_2_1_condLaw, proposition_2_2 (7581f95); theorem_2_7, theorem_1_4_fixedPoint (5e015e1); seal audits pending for the last four (AU-3)
+SEALED_THIS_TURN: 4 (exists_conjugate_iff_exists_fixedPoint, theorem_1_4_conjugate, proposition_1_6_conjugate, remark_hypIII_necessary — b7bb629)
+SEALED_CUMULATIVE: 10 — PROVED: remark_hypIII_automatic (AU-1), proposition_1_6_fixedPoint (AU-2); sealed, audit pending: proposition_2_1_condLaw, proposition_2_2, theorem_2_7, theorem_1_4_fixedPoint (AU-3); exists_conjugate_iff_exists_fixedPoint, theorem_1_4_conjugate, proposition_1_6_conjugate, remark_hypIII_necessary (AU-4)
 ```
 
 ## Anchors
@@ -39,17 +39,17 @@ SEALED_CUMULATIVE: 6 — remark_hypIII_automatic (a25a4fd, PROVED after AU-1); p
 | `Conjugate.truncate` | def | `Truncate.lean` | SEALED (definition) | PASS (2026-10-28) | R1 | n/a |
 | `Conjugate.StochDominated` | def | `StochDominated.lean` | SEALED (definition) | PASS (2026-10-28) | approved | n/a |
 | `Conjugate.theorem_1_4_fixedPoint` | theorem | `Theorem_1_4_FixedPoint.lean` | SEALED (5e015e1) | PASS (2026-10-28) | approved | audit pending (AU-3) |
-| `Conjugate.theorem_1_4_conjugate` | theorem | `Theorem_1_4_Conjugate.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
-| `Conjugate.exists_conjugate_iff_exists_fixedPoint` | theorem | `ExistsConjugateIff.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
+| `Conjugate.theorem_1_4_conjugate` | theorem | `Theorem_1_4_Conjugate.lean` | SEALED (b7bb629) | PASS (2026-10-28) | approved | audit pending (AU-4) |
+| `Conjugate.exists_conjugate_iff_exists_fixedPoint` | theorem | `ExistsConjugateIff.lean` | SEALED (b7bb629) | PASS (2026-10-28) | approved | audit pending (AU-4) |
 | `Conjugate.proposition_1_6_fixedPoint` | theorem | `Proposition_1_6_FixedPoint.lean` | **PROVED** (sealed d3a4c17) | PASS (2026-10-28) | approved | AU-2 PASS (2026-10-28) |
-| `Conjugate.proposition_1_6_conjugate` | theorem | `Proposition_1_6_Conjugate.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
+| `Conjugate.proposition_1_6_conjugate` | theorem | `Proposition_1_6_Conjugate.lean` | SEALED (b7bb629) | PASS (2026-10-28) | approved | audit pending (AU-4) |
 | `Conjugate.proposition_2_1_condLaw` | theorem | `Proposition_2_1_CondLaw.lean` | SEALED (7581f95) | PASS (2026-10-28) | approved | audit pending (AU-3) |
 | `Conjugate.proposition_2_2` | theorem | `Proposition_2_2.lean` | SEALED (7581f95) | PASS (2026-10-28) | approved | audit pending (AU-3) |
 | `Conjugate.theorem_2_7` | theorem | `Theorem_2_7.lean` | SEALED (5e015e1) | PASS (2026-10-28) | approved | audit pending (AU-3) |
 | `Conjugate.theorem_3_1` | theorem | `Theorem_3_1.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
 | `Conjugate.example_1_5` | theorem | `Example_1_5.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
 | `Conjugate.example_3_5` | theorem | `Example_3_5.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
-| `Conjugate.remark_hypIII_necessary` | theorem | `Remark_HypIII_Necessary.lean` | DRAFT_SORRY (FROZEN_UNPROVED) | PASS (2026-10-28) | approved | — |
+| `Conjugate.remark_hypIII_necessary` | theorem | `Remark_HypIII_Necessary.lean` | SEALED (b7bb629) | PASS (2026-10-28) | approved | audit pending (AU-4) |
 | `Conjugate.remark_hypIII_automatic` | theorem | `Remark_HypIII_Automatic.lean` | **PROVED** (sealed a25a4fd) | PASS (2026-10-28) | approved | AU-1 PASS (2026-10-28) |
 
 ## Phase 3 work
@@ -70,8 +70,8 @@ checks, and a fresh Sonnet audit.
 | W-A8 | B (Sonnet) | Prop 1.6 fixed-point provider + seal | `prop-single-type.fixed-point` and steps | **audited** (AU-2 PASS) |
 | W-A7 | A | Thm 2.7 (simplex route) + Thm 1.4 fixed-point providers | `thm-fixed`, `thm-fixed-gf.fixed-point` | written, checked, both anchors sealed (5e015e1); audit pending (AU-3) |
 | W-B2 | B | path-space Markov property, cylinder uniqueness, h-transform; Props 2.1(b), 2.2 providers | `prop-cond-on-ext.cond-law`, `prop-conjugate` | written, checked, both anchors sealed (7581f95); audit pending (AU-3) |
-| W-A9 | any | Example 1.5 provider + row-sum subcriticality criterion | `counterexample` and steps | brief ready |
-| W-B3 | A (Sonnet) | equivalence (both directions, explicit tilt), Thm 1.4 conj, Prop 1.6 conj, Hyp III necessary, subcriticality criteria | `thm-fixed-gf.equivalence`, `thm-fixed-gf.conjugate`, `prop-single-type.conjugate`, `rem:hyp-iii-necessary` | running |
+| W-A9 | any | Example 1.5 provider | `counterexample` and steps | running |
+| W-B3 | A (Sonnet) | equivalence (both directions, explicit tilt), Thm 1.4 conj, Prop 1.6 conj, Hyp III necessary, subcriticality criteria | `thm-fixed-gf.equivalence`, `thm-fixed-gf.conjugate`, `prop-single-type.conjugate`, `rem:hyp-iii-necessary` | written, checked, four anchors sealed (b7bb629); audit pending (AU-4) |
 | W-A10 | B (Sonnet) | §3 truncation (3.2), Lemma 3.2, Lemma 3.4 | `eqn-gf-truncated`, `eqn-log-gf-*`, `lem-fixed-limsup`, `lem-1d-soln` | running |
 
 Known limits (from AU-1): the branching property is proved at the level of generation laws
@@ -108,5 +108,6 @@ docstring sweep pending (quiet window).
 | 2026-10-28 | writer W-B2 | Sonnet | path space: Markov, uniqueness, h-transform; Props 2.1(b), 2.2 | 14 public decls + 2 providers, standard axioms; seal probes OK |
 | 2026-10-28 | auditor AU-2 (fresh) | Sonnet | W-A4..W-A6 nodes, Brouwer, seal of proposition_1_6_fixedPoint | PASS, no blocking findings (`review/audits/AU-2.md`); numbering note |
 | 2026-10-28 | writer W-A7 | Sonnet | Thm 2.7 via Brouwer on the simplex (phase 1) | provider + 8 helpers, standard axioms; seal probe OK; phase 2 (Thm 1.4 fp, 3 lines) by orchestrator |
-| 2026-10-28 | writer W-B3 | Sonnet | equivalence, Thm 1.4 conj, Prop 1.6 conj, Hyp III necessary | running |
+| 2026-10-28 | writer W-B3 | Sonnet | equivalence, Thm 1.4 conj, Prop 1.6 conj, Hyp III necessary | 4 providers + criteria, standard axioms; seal probes OK |
 | 2026-10-28 | writer W-A10 | Sonnet | §3 truncation layer, Lemmas 3.2, 3.4 | running |
+| 2026-10-28 | writer W-A9 | Sonnet | Example 1.5 | running |
