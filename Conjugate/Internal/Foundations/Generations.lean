@@ -17,8 +17,8 @@ import Mathlib.Data.Matrix.Mul
   `∏_k (f^{(n)}(q))_k ^ {x_k}` (with the product over the types `k` present in `x`, ERRATA E2);
 * `lintegral_pathLaw_apply`: paper.tex:219-220, the mean number of type-`j` individuals in
   generation `n` of the process started from one individual of type `k` is `(Mⁿ)_{k,j}`;
-* `lintegral_pathLaw_apply_vecMul`, `lintegral_pathLaw_apply_sum`: the same for a general
-  starting population `x`, namely the row vector `x` times `Mⁿ`.
+* `lintegral_pathLaw_apply_vecMul`: the same for a general starting population `x`, namely the
+  row vector `x` times `Mⁿ`.
 
 The proofs go by induction on `n`, via the Markov property
 `lintegral_pathLaw_succ` and the one-step formulas of `Conjugate.Internal.Foundations.StepKernel`.
@@ -110,14 +110,6 @@ theorem lintegral_pathLaw_apply_vecMul (μ : ι → PMF (ι →₀ ℕ)) (x : ι
     simp_rw [ih]
     rw [pow_succ, ← Matrix.vecMul_vecMul]
     rfl
-
-/-- The general-start mean formula, in terms of the starting population as a finite sum:
-`𝔼_x[X_j(n)] = ∑_k x_k (Mⁿ)_{k,j}`. -/
-theorem lintegral_pathLaw_apply_sum (μ : ι → PMF (ι →₀ ℕ)) (x : ι →₀ ℕ) (n : ℕ) (j : ι) :
-    ∫⁻ ω, (ω n j : ℝ≥0∞) ∂(pathLaw μ x) =
-      x.sum fun k m => (m : ℝ≥0∞) * (meanMatrix μ ^ n) k j := by
-  rw [lintegral_pathLaw_apply_vecMul, Finsupp.sum_fintype _ _ (fun k => by simp)]
-  rfl
 
 end Mean
 

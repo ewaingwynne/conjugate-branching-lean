@@ -65,9 +65,6 @@ theorem vert_le {c : Cell n} (hc : c ∈ cells n m) (k : Fin (n + 1)) (j : Fin n
 theorem vert_zero (c : Cell n) (j : Fin n) : vert c 0 j = c.1 j + 1 := by
   simp [vert]
 
-theorem vert_last (c : Cell n) (j : Fin n) : vert c (Fin.last n) j = c.1 j := by
-  simp [vert, (c.2 j).isLt.not_ge]
-
 theorem vert_le_vert_zero (c : Cell n) (k : Fin (n + 1)) (j : Fin n) :
     vert c k j ≤ vert c 0 j := by
   rw [vert_zero]; unfold vert

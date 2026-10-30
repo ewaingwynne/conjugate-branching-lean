@@ -94,9 +94,6 @@ lemma measurable_geomSum_comp (hX : Measurable X) (ε : ℝ≥0∞) :
 
 lemma pgf_one [IsProbabilityMeasure ν] : pgf ν X 1 = 1 := by simp [pgf]
 
-lemma pgf_mono : Monotone (pgf ν X) := fun _ _ h =>
-  lintegral_mono fun _ => pow_le_pow_left' h _
-
 /-- `F(ε + 1) = H(ε) * ε + 1`. -/
 lemma pgf_add_one [IsProbabilityMeasure ν] (hX : Measurable X) (ε : ℝ≥0∞) :
     pgf ν X (ε + 1) = diffQuot ν X ε * ε + 1 := by

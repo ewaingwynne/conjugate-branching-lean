@@ -10,6 +10,7 @@ Single writer: orchestrator. Proof status is never inferred from compilation alo
 - Phase 3 (proofs): **done** (2026-10-28) — all 13 theorem anchors sealed and PROVED (AU-1–AU-5); every numbered result mapped in `RESULTS.md`
 - Phase 4 (closure): **done** — full gate passes (96 modules), closure audit AU-6 verdict CLOSED (`review/audits/AU-6.md`)
 - Batch 2 (countable-type conjugates, requested by the author after closure): 5 anchors approved and frozen (R8, E10; e731893), proved (W-B4), sealed (6514194) and audited (AU-7 PASS); graph slice E fully reviewed (GR-E…GR-E4): 210 nodes, 434 edges, 33 frozen anchors, review queue 0, `--require-reviewed --require-complete-coverage --require-all-reachable --check` passes; full gate 109 modules
+- Dead-code cleanup (2026-10-30, author request): deleted the 10 declarations outside the dependency closure of the 33 anchors plus Lemmas 2.19 and 3.2, which the author chose to keep (`vert_last`, `apply_le_wt`, `pgf_mono`, `lintegral_pathLaw_apply_sum`, `logGenFun_mapsTo_basinZero`/`Infty`, `toE_ne_top`, `rayPt_ne_top`, `simplex_nonneg`, private `measurableSet_tailZero`). `lowerLabel_none` stays because `simp [lowerLabel_none]` names it; as an `rfl` lemma it leaves no constant in the proof term. Deletions only: all 731 remaining declarations have the same elaborated type and value hashes as before. Full gate passes, ABI OK (33). Lean total 11,786 lines (7,812 code).
 
 ## Mandatory report fields
 

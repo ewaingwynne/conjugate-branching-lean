@@ -20,7 +20,6 @@ Further statements:
 
 * `iterate_logGenFun_mem_basinZero_iff`, `iterate_logGenFun_mem_basinInfty_iff`: the same for
   `g^{(n)}`;
-* `logGenFun_mapsTo_basinZero`, `logGenFun_mapsTo_basinInfty`: `g(S) ⊆ S` as `Set.MapsTo`;
 * `basinZero_inter_basinInfty`: `S₀ ∩ S∞ = ∅`.
 
 The proofs use `g^{(n)}(g(x)) = g^{(n+1)}(x)`, so that the sequences defining the basins for `x`
@@ -76,14 +75,6 @@ theorem iterate_logGenFun_mem_basinInfty_iff (n : ℕ) {x : ι → EReal} (hx : 
   | succ n ih =>
     rw [Function.iterate_succ_apply, ih (mapsTo_logGenFun μ hx),
       logGenFun_mem_basinInfty_iff μ hx]
-
-/-- `g(S₀) ⊆ S₀`, as a `Set.MapsTo`. -/
-theorem logGenFun_mapsTo_basinZero : Set.MapsTo (logGenFun μ) (basinZero μ) (basinZero μ) :=
-  fun _ hx => (logGenFun_mem_basinZero_iff μ hx.1).2 hx
-
-/-- `g(S∞) ⊆ S∞`, as a `Set.MapsTo`. -/
-theorem logGenFun_mapsTo_basinInfty : Set.MapsTo (logGenFun μ) (basinInfty μ) (basinInfty μ) :=
-  fun _ hx => (logGenFun_mem_basinInfty_iff μ hx.1).2 hx
 
 /-- The basins of attraction of `0` and `∞` are disjoint. -/
 theorem basinZero_inter_basinInfty : basinZero μ ∩ basinInfty μ = ∅ := by

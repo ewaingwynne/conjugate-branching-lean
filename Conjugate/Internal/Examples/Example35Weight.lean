@@ -22,7 +22,7 @@ individuals.
 * `wt_eq`, `wt_real`, `wt_rpow`: the three forms of the weight used in the anchor
   (`ℕ`-valued, `ℝ`-valued, and as the exponent of a real power);
 * `wt_eq_zero_iff`, `one_le_wt`: `wt c ≥ 1` unless `c = 0`;
-* `sum_mul_le_wt`, `apply_le_wt`: the weight dominates `∑_{j ∈ S} (j + 1) c_j`;
+* `sum_mul_le_wt`: the weight dominates `∑_{j ∈ S} (j + 1) c_j`;
 * `wt_mono`: the weight is monotone for the componentwise order;
 * `prod_ofReal_pow`: the monomial at `q_j = u^{j+1}` is `u ^ wt c`;
 * `genFun_le_lintegral`: a bound on `f_k(q)` by `𝔼_k[u ^ W]` when `q_j ≤ u^{j+1}`.
@@ -76,11 +76,6 @@ lemma sum_mul_le_wt (c : ℕ →₀ ℕ) (S : Finset ℕ) : ∑ j ∈ S, (j + 1)
   rw [wt_eq, Finsupp.sum_of_support_subset c (Finset.subset_union_right (s₁ := S))
     (fun j n => (j + 1) * n) (fun j _ => by simp)]
   exact Finset.sum_le_sum_of_subset (Finset.subset_union_left)
-
-lemma apply_le_wt (c : ℕ →₀ ℕ) (j : ℕ) : c j ≤ wt c := by
-  have h := sum_mul_le_wt c {j}
-  rw [Finset.sum_singleton] at h
-  exact le_trans (Nat.le_mul_of_pos_left _ (Nat.succ_pos j)) h
 
 /-- The sum of the first `d` coordinates is at most the weight. -/
 lemma sum_fin_le_wt (c : ℕ →₀ ℕ) (d : ℕ) : ∑ j : Fin d, c j ≤ wt c := by

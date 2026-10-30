@@ -80,15 +80,6 @@ private lemma extinctionEvent_eq_iUnion :
   simp [extinctionEvent, tailZero, eventually_atTop]
 
 omit [Countable ι] in
-private lemma measurableSet_tailZero (N : ℕ) : MeasurableSet (tailZero ι N) := by
-  have : tailZero ι N = ⋂ m, ⋂ (_ : N ≤ m), (fun ω : ℕ → ι →₀ ℕ => ω m) ⁻¹' {0} := by
-    ext ω
-    simp [tailZero]
-  rw [this]
-  exact MeasurableSet.iInter fun m => MeasurableSet.iInter fun _ =>
-    measurable_pi_apply m (measurableSet_singleton _)
-
-omit [Countable ι] in
 private lemma tailZero_mono : Monotone (tailZero ι) :=
   fun _ _ h _ hω m hm => hω m (h.trans hm)
 

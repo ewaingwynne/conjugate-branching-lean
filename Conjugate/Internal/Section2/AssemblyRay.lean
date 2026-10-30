@@ -55,19 +55,9 @@ lemma toE_nonneg {v : Fin d → ℝ} (hv : ∀ j, 0 ≤ v j) (j : Fin d) : 0 ≤
   simp only [toE]
   exact_mod_cast hv j
 
-lemma toE_ne_top (v : Fin d → ℝ) (j : Fin d) : toE v j ≠ ⊤ :=
-  EReal.coe_ne_top _
-
 lemma rayPt_nonneg {r : ℝ} (hr : 0 ≤ r) {u : Fin d → ℝ} (hu : ∀ j, 0 ≤ u j) (j : Fin d) :
     0 ≤ rayPt r u j :=
   toE_nonneg (fun j => mul_nonneg hr (hu j)) j
-
-lemma rayPt_ne_top (r : ℝ) (u : Fin d → ℝ) (j : Fin d) : rayPt r u j ≠ ⊤ :=
-  EReal.coe_ne_top _
-
-/-- A point of the simplex has nonnegative coordinates. -/
-lemma simplex_nonneg {u : Fin d → ℝ} (hu : (∀ j, 0 ≤ u j) ∧ ∑ j, u j = 1) (j : Fin d) :
-    0 ≤ u j := hu.1 j
 
 /-- A point of the simplex is nonzero. -/
 lemma simplex_ne_zero {u : Fin d → ℝ} (hu : (∀ j, 0 ≤ u j) ∧ ∑ j, u j = 1) : u ≠ 0 := by
